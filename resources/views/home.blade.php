@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require('./includes/head.blade.php'); ?>
+ @include('includes.head')
 
 <body>
   <style>
@@ -18,7 +18,7 @@
   </style>
   <div class="container-fluid" id="topo">
     <div>
-      <?php require('./includes/navbar-home.blade.php'); ?>
+      @include('includes.navbar-home')
     </div>
   </div>
 
@@ -101,8 +101,8 @@
     </div>
   </main>
   <div>
-    <?php require('./includes/footer.blade.php'); ?>
-    <?php require('./includes/script.blade.php'); ?>
+    @include('includes.footer')
+    @include('includes.script')
   </div>
 </body>
 
