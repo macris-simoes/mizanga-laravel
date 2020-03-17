@@ -79,3 +79,5 @@ Route::get('/parecerista-vizualizar-trabalho', function () {
 Route::get('/avaliar-trabalho', function () {
     return view('parecerista-avaliar-trabalho');
 });
+
+Route::resource ('crud','CrudController');
