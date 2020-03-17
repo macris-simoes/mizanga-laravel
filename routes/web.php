@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,6 @@
 
 Route::get('/', function () {
     return view('welcome');
-
-    //cris teste :) teste 2
 });
+
+Route::resource ('crud','CrudController');
