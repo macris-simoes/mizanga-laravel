@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 
-    //cris teste :)
+    //cris teste :) teste 2
 });
