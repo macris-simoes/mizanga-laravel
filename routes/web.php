@@ -81,3 +81,6 @@ Route::get('/avaliar-trabalho', function () {
 });
 
 Route::resource ('crud','CrudController');
+
+
+//cris
