@@ -15,6 +15,7 @@
         </div>
         <div class="col-6 offset-3">
             <form class="card card-sm mb-4">
+                @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="inlineFormInputName">Nome</label>

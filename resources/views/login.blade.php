@@ -31,7 +31,8 @@
 		<div class="flex-container">
 			<div class="col-lg-4 col-sm-6 py-5 px-4 shadow-lg bg-lightrounded">
 				<img class="mx-auto d-block mb-5" src="img/logoMZ.png" alt="icone usuario" style="height: 80px;">
-				<form method="post">
+				<form action="" method="post">
+					@csrf
 					<div class="form-group">
 						<label for="nome">Usuário</label>
 						<input type="text" class="form-control" id="usuario" name="usuario" required>
@@ -56,12 +57,6 @@
 			</div>
 		</div>
 	</main>
-
-	<!-- <footer>
-        <div class="p-0 my-2 text-primary text-center">
-            <p class="mb-0">© Mizanga 2020</p>
-        </div>
-    </footer> -->
 
 	<div>
 		@include('includes.footer')

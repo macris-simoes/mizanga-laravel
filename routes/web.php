@@ -3,58 +3,38 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home','HomeController@index');
+Route::get('/inscricao-usuario','InscricaoController@inscricaoIndex');
+Route::get('/instrucoes-inscricao','InscricaoController@inscricaoInstrucao');
+//envio de form//  Route::post('/inscricao-usuario','InscricaoController@inscricaoSubmitPost');
 
-Route::get('/inscricao-usuario', function () {
-    return view('inscricao-usuario');
-});
-
-Route::get('/contato', function () {
-    return view('contato');
-});
+//-----------CONTATO------------
+Route::get('/contato','ContatoController@contatoIndex');
+//envio de form// Route::post('/contato', 'ContatoController@contatoSubmitPost');
 
 //-----------LINKS------------
-Route::get('/criterios-trabalho', function () {
-    return view('link-criterios-trabalho');
-});
-Route::get('/instrucao-avaliadores', function () {
-    return view('link-instrucao-avaliadores');
-});
-Route::get('/instrucoes-inscricao', function () {
-    return view('instrucoes-inscricao');
-});
-
+Route::get('/criterios-trabalho','LinksController@criteriosTrabalho');
+Route::get('/instrucao-avaliadores','LinksController@instrucaoAvaliadores');
 
 //----------LOGIN--------------
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login','LoginController@loginIndex');
+//envio de form// Route::post('/login', 'ContatoController@loginSubmitPost');
         
 
-//------------INSCRITOS------------
-Route::get('/inscrito', function () {
-    return view('inscrito-tabs');
-});
-
+//------------INSCRITO------------
+Route::get('/inscrito','InscritoController@inscritoIndex');
 
 //----------ADMIN-------------
-Route::get('/admin', function () {
-    return view('admin-tabs');
-});
+Route::get('/admin','AdminController@adminIndex');
 
 //DIABÉISS TIPSY//
 // Route::get('/gerenciar', function () {
 //     return view('admin-gerenciar-parecerista');
 // });
 
-
 //--------Parecerista----------
-Route::get('/parecerista', function () {
-    return view('parecerista-tabs');
-});
+Route::get('/parecerista','PareceristaController@pareceristaIndex');
 
-// Route::resource ('crud','CrudController');
+Route::resource ('crud','CrudController');
 
 

@@ -13,6 +13,7 @@
             <p class="lead font-italic"></p>
         </div>
         <form action="" method="post">
+            @csrf
             <div class="my-3">
                 <div class="form-row">
                     <div class="form-group col-md-6">
