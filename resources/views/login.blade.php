@@ -51,7 +51,7 @@
 							</label>
 						</div>
 					</div>
-					<a href="inscrito-tabs.php" class="btn btn-primary btn-block" type="submit">Login</a>
+					<a href="/inscrito" class="btn btn-primary btn-block" type="submit">Login</a>
 				</form>
 				<small>Ainda não tem cadastro? <a href="instrucoes-inscricao.php">Clique aqui e faça a sua inscrição.</a></small>
 			</div>

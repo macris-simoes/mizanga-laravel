@@ -85,7 +85,7 @@
         <a class="font-weight-bold" href="#"> Clique aqui para fazer o download da ficha de reembolso.</a>
       </div>
       <div class="mt-4 d-flex justify-content-center">
-        <a href="./inscricao-usuario.php" class="p-1 px-5 mb-3 btn btn-outline-primary" role="button"> Clique aqui para realizar sua inscrição</a>
+        <a href="/inscricao-usuario" class="p-1 px-5 mb-3 btn btn-outline-primary" role="button"> Clique aqui para realizar sua inscrição</a>
       </div>
     </main>
   </div>

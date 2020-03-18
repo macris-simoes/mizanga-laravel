@@ -71,7 +71,7 @@
     </form>
     <div class="my-4">
       <button type="submit" class="btn btn-primary" style="width: 10%">Enviar</button>
-      <button type="button" class="btn btn-primary" style="width: 10%">Voltar</button>
+      <a href="/parecerista" class="btn btn-primary" style="width: 10%">Voltar</a>
     </div>
   </div>
   

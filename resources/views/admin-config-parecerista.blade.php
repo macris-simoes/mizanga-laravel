@@ -102,8 +102,8 @@
         </form>
 
         <div class="my-4">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <button type="button" class="btn btn-primary">Voltar</button>
+            <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
+            <a href="/admin" class="btn btn-primary" style="width:120px">Voltar</a>
         </div>
     </div>
 
