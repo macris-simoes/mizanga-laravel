@@ -29,7 +29,7 @@
             </div>
 
             <div class="my-3">
-                <h5>Eixos teimáticos</h5>
+                <h5>Eixos temáticos</h5>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         Eixo 01 - Lorem ipsum dolor sit amet consectetur
