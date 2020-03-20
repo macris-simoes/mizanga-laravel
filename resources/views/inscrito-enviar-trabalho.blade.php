@@ -16,15 +16,18 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12 pb-2">
-                    <select class="form-control">
+                    <select class="form-control" name="category">
                         <option selected disabled>Selecione a modalidade</option>
                         <option value="1">Pôster</option>
                         <!-- aqui vai ter que por php -->
                     </select>
                 </div>
+            </div>
+
+            <div class="form-row">
 
                 <div class="form-group col-md-6 pb-2">
-                    <select class="form-group form-control">
+                    <select class="form-group form-control" name="first_topic">
                         <option selected disabled>Primeira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
@@ -35,7 +38,7 @@
                 </div>
 
                 <div class="form-group col-md-6 pb-2">
-                    <select class="form-group form-control">
+                    <select class="form-group form-control" name="second_topic">
                         <option selected disabled>Segunda opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
@@ -44,38 +47,92 @@
                         <!-- aqui vai ter que por php -->
                     </select>
                 </div>
+            </div>
 
+            <div class="form-row">
                 <div class="form-group col-12">
-                    <label for="exampleFormControlInput1">Título</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insira um título com, no máximo, 80 caracteres com espaço">
+                    <label for="abstract_title">Título</label>
+                    <input type="text" class="form-control" id="abstract_title" name="abstract_title" placeholder="Insira um título com, no máximo, 80 caracteres com espaço">
                 </div>
+            </div>
 
+            <div class="form-row">
                 <div class="form-group col-12 row-5">
-                    <label for="exampleFormControlTextarea1">Resumo</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                    <label for="abstract_body">Resumo</label>
+                    <textarea class="form-control" id="abstract_body" rows="10" name="abstract_body"></textarea>
                     <small class="form-text text-muted">O resumo deverá conter no mínimo 800 e no máximo 1200 caracteres com espaço.</small>
                     <!-- aqui tem que por o php conforme a config no admin -->
                 </div>
-
-                <div class="form-group col-4">
-                    <label for="exampleFormControlInput1">Palavra-chave 1</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insira uma palavra-chave">
-                </div>
-                <div class="form-group col-4">
-                    <label for="exampleFormControlInput1">Palavra-chave 2</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insira uma palavra-chave">
-                </div>
-                <div class="form-group col-4">
-                    <label for="exampleFormControlInput1">Palavra-chave 3</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insira uma palavra-chave">
-                </div>
-
-                <div class="form-group col-12">
-                    <label for="exampleFormControlInput1">Financiamento</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Se houver, identifique a agência financiadora ou fonte de financiamento">
-                </div>
-
             </div>
+
+            <div class="form-row">
+                <div class="form-group col-4">
+                    <label for="first_keyword">Palavra-chave 1</label>
+                    <input type="text" class="form-control" id="first_keyword" placeholder="Insira uma palavra-chave" name="first_keyword">
+                </div>
+                <div class="form-group col-4">
+                    <label for="second_keyword">Palavra-chave 2</label>
+                    <input type="text" class="form-control" id="second_keyword" placeholder="Insira uma palavra-chave" name="second_keyword">
+                </div>
+                <div class="form-group col-4">
+                    <label for="third_keyword">Palavra-chave 3</label>
+                    <input type="text" class="form-control" id="third_keyword" placeholder="Insira uma palavra-chave" name="third_keyword">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="">Autor</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="">Filiação Institucional</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+            </div>
+            
+            <div class="form-row d-flex">
+                <div class="form-group col-6">
+                    <label for="">Co-autor 1</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+
+                <div class="form-group col-5">
+                    <label for="">Filiação Institucional</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+                <div class="form-group d-flex align-items-end col-1">
+                    <button class="btn btn-outline-primary ml-auto">Excluir</button>
+                </div>
+            </div>
+
+            <div class="form-row d-flex">
+                <div class="form-group col-6">
+                    <label for="">Co-autor 2</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+
+                <div class="form-group col-5">
+                    <label for="">Filiação Institucional</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+                <div class="form-group d-flex align-items-end col-1">
+                    <button class="btn btn-outline-primary ml-auto">Excluir</button>
+                </div>
+            </div>
+
+            <div class="form-row mb-2">
+                <button class="btn btn-outline-primary">Adicionar co-autor</button>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="financial_support">Financiamento</label>
+                    <input type="text" class="form-control" id="financial_support" placeholder="Se houver, identifique a agência financiadora ou fonte de financiamento" name="financial_support">
+                </div>
+            </div>
+
 
         </form>
 
