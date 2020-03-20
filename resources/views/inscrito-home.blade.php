@@ -32,15 +32,7 @@
                     <li><a href="#">Inscrever-se em atividade</a></li>
                 </ul>
             </div>
-            <hr>
-    
-            <div class="my-3">
-                <h5>Dados da inscrição</h5>
-                <p>Código da Inscrição: XXXXXX <br>
-                    Modalidade: Estudante não associado <br>
-                    Data de inscrição: 20/11/2019 - 10:20 <br>
-                    Pedido XXXXXX - R$200,00</p>
-            </div>        
+            <hr>  
     
         </div>
     </body>
