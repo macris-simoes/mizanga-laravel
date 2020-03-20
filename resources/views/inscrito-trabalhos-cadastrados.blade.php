@@ -14,6 +14,7 @@
             <h5>Trabalhos submetidos</h5>
                 <p> 
                     Proposta para Grupos de Trabalho <br>
+                    <strong>Nome do trabalho</strong> <br>
                     Código do trabalho: XXXXXX <br>
                     Resumo: <br>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus montes, posuere dis elit arcu. Enim viverra ornare integer rhoncus facilisis ipsum. Ornare malesuada et neque, eu a, mauris vulputate dolor, sagittis. Aliquam, elit id vitae placerat eget erat elit tortor eu. Libero, massa vitae, senectus ullamcorper. Cursus sit in viverra convallis volutpat. Nunc velit vitae sociis amet rhoncus, egestas ut a sed.
@@ -37,6 +38,7 @@
             <h5>Participação em outras propostas</h5>
             <p> 
                 Proposta para Grupos de Trabalho <br>
+                <strong>Nome do trabalho</strong> <br>
                 Código do trabalho: XXXXXX <br>
                 Resumo: <br>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus montes, posuere dis elit arcu. Enim viverra ornare integer rhoncus facilisis ipsum. Ornare malesuada et neque, eu a, mauris vulputate dolor, sagittis. Aliquam, elit id vitae placerat eget erat elit tortor eu. Libero, massa vitae, senectus ullamcorper. Cursus sit in viverra convallis volutpat. Nunc velit vitae sociis amet rhoncus, egestas ut a sed.
