@@ -82,49 +82,32 @@
 
             <div class="form-row">
                 <div class="form-group col-6">
-                    <label for="">Autor</label>
-                    <input type="text" name="" id="" class="form-control">
+                    <label for="author">Autor</label>
+                    <input type="text" name="author" id="author" class="form-control">
                 </div>
 
                 <div class="form-group col-6">
-                    <label for="">Filiação Institucional</label>
-                    <input type="text" name="" id="" class="form-control">
+                    <label for="author_place_of_work">Filiação Institucional</label>
+                    <input type="text" name="author_place_of_work" id="author_place_of_work" class="form-control">
                 </div>
             </div>
             
             <div class="form-row d-flex">
                 <div class="form-group col-6">
-                    <label for="">Co-autor 1</label>
-                    <input type="text" name="" id="" class="form-control">
+                    <label for="first_coauthor">Co-autor 1</label>
+                    <input type="text" name="first_coauthor" id="first_coauthor" class="form-control">
                 </div>
 
                 <div class="form-group col-5">
-                    <label for="">Filiação Institucional</label>
-                    <input type="text" name="" id="" class="form-control">
+                    <label for="first_coauthor_place_of_work">Filiação Institucional</label>
+                    <input type="text" name="first_coauthor_place_of_work" id="first_coauthor_place_of_work" class="form-control">
                 </div>
                 <div class="form-group d-flex align-items-end col-1">
                     <button class="btn btn-outline-primary ml-auto">Excluir</button>
                 </div>
             </div>
-
-            <div class="form-row d-flex">
-                <div class="form-group col-6">
-                    <label for="">Co-autor 2</label>
-                    <input type="text" name="" id="" class="form-control">
-                </div>
-
-                <div class="form-group col-5">
-                    <label for="">Filiação Institucional</label>
-                    <input type="text" name="" id="" class="form-control">
-                </div>
-                <div class="form-group d-flex align-items-end col-1">
-                    <button class="btn btn-outline-primary ml-auto">Excluir</button>
-                </div>
-            </div>
-
-            <div class="form-row mb-2">
-                <button class="btn btn-outline-primary">Adicionar co-autor</button>
-            </div>
+            
+            <button class="btn btn-outline-primary mb-2">Adicionar co-autor</button>
 
             <div class="form-row">
                 <div class="form-group col-12">
@@ -132,7 +115,6 @@
                     <input type="text" class="form-control" id="financial_support" placeholder="Se houver, identifique a agência financiadora ou fonte de financiamento" name="financial_support">
                 </div>
             </div>
-
 
         </form>
 
