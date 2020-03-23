@@ -29,31 +29,32 @@
       <div class="col-md-9 my-1">
         <!-- início do form de modalidades -->
         <form>
+          @csrf
 
           <!-- início da div form-row -->
           <div class="form-row">
             <!-- identificação -->
               <div class="col-md-12 mb-4">
                 <label class="font-weight-bold" for="validationTooltip01">Identificação</label>
-                <input type="text" class="form-control" id="validationTooltip01" placeholder="Escolha um nome" required>
+                <input type="text" class="form-control" id="validationTooltip01" placeholder="Escolha um nome" name="modality_id" required>
               </div>
 
             <!-- Prazo de início -->
               <div class="col-md-4">
                 <label class="font-weight-bold" for="validationTooltip04">Início das inscrições</label>
-                <input type="date" class="form-control" id="validationTooltip04" placeholder="dd/mm/aaaa" required>
+                <input type="date" class="form-control" id="validationTooltip04" placeholder="dd/mm/aaaa" name="start_date" required>
               </div>
 
             <!-- Prazo de término -->
               <div class="col-md-4">
                 <label class="font-weight-bold" for="validationTooltip05">Fim das inscrições</label>
-                <input type="date" class="form-control" id="validationTooltip05" placeholder="dd/mm/aaaa" required>
+                <input type="date" class="form-control" id="validationTooltip05" placeholder="dd/mm/aaaa" name="end_date" required>
               </div>
 
             <!-- Anexar comprovante? -->
               <div class="col-md-12 mt-3 ">
                   <div class = "custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="receipt">
                     <label class="custom-control-label" for="customSwitch1">Anexar comprovante</label>
                   </div>
               </div>
