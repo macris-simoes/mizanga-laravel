@@ -35,13 +35,13 @@
 					@csrf
 					<div class="form-group">
 						<label for="nome">Usuário</label>
-						<input type="text" class="form-control" id="usuario" name="usuario" required>
+						<input type="text" class="form-control" id="usuario" name="user" required>
 						<div class="invalid-feedback">Digite um usuário válido</div>
 					</div>
 
 					<div class="form-group">
 						<label for="senha">Senha</label>
-						<input type="password" class="form-control" id="senha" name="senha" required>
+						<input type="password" class="form-control" id="senha" name="password" required>
 					</div>
 					<div class="form-group">
 						<div class="form-check">
