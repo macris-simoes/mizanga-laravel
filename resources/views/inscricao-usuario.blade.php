@@ -18,14 +18,14 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="modalidade">Modalidade</label>
-                        <input type="text" class="form-control" id="modalidade" placeholder="Modalidade">
+                        <input type="text" class="form-control" id="modalidade" name="type" placeholder="Modalidade">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="compMatricula" class="align-self-center mr-2">Comprovante de matrícula</label>
                         <div class="custom-file mb-4">
-                            <input type="file" class="custom-file-input" id="customFile">
+                            <input type="file" class="custom-file-input" name="file" id="customFile">
                             <label class="custom-file-label" for="customFile" data-browse="Buscar"></label>
                         </div>
                     </div>
@@ -37,37 +37,37 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="cpf">CPF*</label>
-                        <input type="text" class="form-control" id="cpf" placeholder="CPF">
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="rg">RG*</label>
-                        <input type="text" class="form-control" id="rg" placeholder="RG">
+                        <input type="text" class="form-control" id="rg" name="rg" placeholder="RG">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="emissor">Orgão emissor*</label>
-                        <input type="text" class="form-control" id="emissor" placeholder="Orgão Emissor">
+                        <input type="text" class="form-control" id="emissor" name="emissor" placeholder="Orgão Emissor">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="nome">Nome*</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                        <input type="text" class="form-control" id="nome" name="name" placeholder="Nome">
                         <small id="passwordHelpBlock" class="form-text text-muted">*Atenção: Confira se seu nome foi digitado corretamente!</small>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="nascimento">Data nascimento*</label>
-                        <input type="date" class="form-control" id="nascimento" placeholder="DD/MM/AAAA">
+                        <input type="date" class="form-control" id="nascimento" name="birthday" placeholder="DD/MM/AAAA">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="nomeSocial">Nome Social*</label>
-                        <input type="text" class="form-control" id="nomeSocial" placeholder="Nome Social">
+                        <input type="text" class="form-control" id="nomeSocial" name="social-name" placeholder="Nome Social">
                         <small id="passwordHelpBlock" class="form-text text-muted">Se desejar, inclua neste campo seu nome de uso habitual.</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="instituicao">Instituição para crachá</label>
-                        <input type="text" class="form-control" id="instituicao" placeholder="Instituição para crachá">
+                        <input type="text" class="form-control" id="instituicao" name="institution" placeholder="Instituição para crachá">
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="titulacao">Titulação mais alta*</label>
-                        <select class="form-control" id="titulacao">
+                        <select class="form-control" name="education-level" id="titulacao">
                             <option selected disabled>Escolha...</option>
                             <option value="1">Ensino Médio</option>
                             <option value="2">Graduação</option>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="instituicaoTitul">Instituição de titulação*</label>
-                        <input type="text" class="form-control" id="instituicaoTitul" placeholder="Instituição de titulação">
+                        <input type="text" class="form-control" id="instituicaoTitul" name="grad-school" placeholder="Instituição de titulação">
                     </div>
                 </div>
             </div>
@@ -98,21 +98,21 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="situacaoProfis">Situação profissional*</label>
-                        <input type="text" class="form-control" id="situacaoProfis" placeholder="Situação profissional">
+                        <input type="text" class="form-control" id="situacaoProfis" name="profession" placeholder="Situação profissional">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="filiacao">Filiação institucional</label>
-                        <input type="text" class="form-control" id="filiacao" placeholder="Filiação Institucional">
+                        <input type="text" class="form-control" id="filiacao" name="filiation" placeholder="Filiação Institucional">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="cargo">Função institucional/cargo</label>
-                        <input type="text" class="form-control" id="cargo" placeholder="Função institucional/cargo">
+                        <input type="text" class="form-control" id="cargo" name="job-title" placeholder="Função institucional/cargo">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="areasAtuacao">Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</label>
-                        <input type="text" class="form-control" id="areasAtuacao" placeholder="Áreas de atuação">
+                        <input type="text" class="form-control" id="areasAtuacao" name="expertise" placeholder="Áreas de atuação">
                     </div>
                 </div>
             </div>
@@ -120,18 +120,18 @@
             <div class="my-3">
                 <h5>Endereço</h5>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input" type="radio" name="location" id="inlineRadio1" value="brasil">
                     <label class="form-check-label" for="inlineRadio1">Residência no Brasil</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="location" id="inlineRadio2" value="exterior">
                     <label class="form-check-label" for="inlineRadio2">Residência no Exterior</label>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="cep">CEP*</label>
-                        <input type="text" class="form-control" id="cep" placeholder="CEP">
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
                         <a href="">Consulte seu CEP</a>
                         <!-- https://www.devmedia.com.br/forum/api-de-cep-correios/571512 -->
                     </div>
@@ -139,29 +139,29 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="logradouro">Logradouro*</label>
-                        <input type="text" class="form-control" id="logradouro" placeholder="Logradouro">
+                        <input type="text" class="form-control" id="logradouro" name="address" placeholder="Logradouro">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="numero">Número</label>
-                        <input type="text" class="form-control" id="numero" placeholder="Número">
+                        <input type="text" class="form-control" id="numero" name="number" placeholder="Número">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="complemento">Complemento</label>
-                        <input type="text" class="form-control" id="complemento" placeholder="Complemento">
+                        <input type="text" class="form-control" id="complemento" name="complement" placeholder="Complemento">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                        <input type="text" class="form-control" id="bairro" name="district" placeholder="Bairro">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="municipio">Município</label>
-                        <input type="text" class="form-control" id="municipio" placeholder="Município">
+                        <input type="text" class="form-control" id="municipio"  name="city" placeholder="Município">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="uf">UF*</label>
-                        <select class="form-control" id="uf">
+                        <select class="form-control" name="uf" id="uf">
                             <option selected disabled>Escolha...</option>
                             <option value="1">AC</option>
                             <option value="2">AL</option>
@@ -200,22 +200,22 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="telResid">Telefone residencial</label>
-                        <input type="text" class="form-control" id="telResid" placeholder="Telefone residencial">
+                        <input type="text" class="form-control" id="telResid" name="tel" placeholder="Telefone residencial">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="telProfis">Telefone profissional</label>
-                        <input type="text" class="form-control" id="telProfis" placeholder="Telefone profissional">
+                        <input type="text" class="form-control" id="telProfis" name="tel2" placeholder="Telefone profissional">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="telCelular">Telefone celular</label>
-                        <input type="text" class="form-control" id="telCelular" placeholder="Telefone celular">
+                        <input type="text" class="form-control" id="telCelular" name="tel3" placeholder="Telefone celular">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">E-mail*</label>
-                        <input type="text" class="form-control" id="email" placeholder="E-mail">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="confirmEmail">Confirmar e-mail*</label>
@@ -231,12 +231,12 @@
                         Necessita de recursos de acessibilidade?*
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="acess" id="acessSim" value="sim">
-                        <label class="form-check-label" for="acessSim">Sim</label>
+                        <input class="form-check-input" type="radio" name="accessibility" id="accessSim" value="sim">
+                        <label class="form-check-label" for="accessSim">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="acess" id="acessNao" value="nao">
-                        <label class="form-check-label" for="acessNao">Não</label>
+                        <input class="form-check-input" type="radio" name="accessibility" id="accessNao" value="nao">
+                        <label class="form-check-label" for="accessNao">Não</label>
                     </div>
                 </div>
                 <div class="form-row">
@@ -244,11 +244,11 @@
                         Possui alguma deficiência?
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="defic" id="deficSim" value="sim">
+                        <input class="form-check-input" type="radio" name="disability" id="deficSim" value="sim">
                         <label class="form-check-label" for="deficSim">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="defic" id="deficNao" value="nao">
+                        <input class="form-check-input" type="radio" name="disability" id="deficNao" value="nao">
                         <label class="form-check-label" for="deficNao">Não</label>
                     </div>
                 </div>
@@ -257,32 +257,19 @@
                         Faz uso de assistência pessoal e/ou equipamento de tecnologia assistiva?
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tecassis" id="tecAssistSim" value="sim">
+                        <input class="form-check-input" type="radio" name="tecassist" id="tecAssistSim" value="sim">
                         <label class="form-check-label" for="tecAssistSim">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tecassis" id="tecAssistNao" value="nao">
+                        <input class="form-check-input" type="radio" name="tecassist" id="tecAssistNao" value="nao">
                         <label class="form-check-label" for="tecAssistNao">Não</label>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        Necessita de recursos de acessibilidade?
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="recurso" id="recursoSim" value="sim">
-                        <label class="form-check-label" for="recursoSim">Sim</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="recurso" id="recursoNao" value="nao">
-                        <label class="form-check-label" for="recursoNao">Não</label>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="outrasQuestoes">Utilize este espaço para indicar outras questões, orientações ou necessidades não previstas por nosso formulário</label>
-                        <input type="text" class="form-control" id="outrasQuestoes" placeholder="">
+                        <input type="text" class="form-control" id="outrasQuestoes" name="info" placeholder="">
                     </div>
                 </div>
             </div>
@@ -292,11 +279,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="genero">Gênero</label>
-                        <input type="text" class="form-control" id="genero" placeholder="Gênero">
+                        <input type="text" class="form-control" id="genero" name="gender" placeholder="Gênero">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="raca">Raça/Cor*</label>
-                        <select class="form-control" id="raca">
+                        <select class="form-control" name="color" id="raca">
                             <option selected disabled>Escolha...</option>
                             <option value="1">Amarela</option>
                             <option value="2">Branca</option>
@@ -308,7 +295,7 @@
                     </div>
                     <div class="form-group col-md-8">
                         <label for="nomeCertific">Prefere que o nome social seja utilizado na emissão do certificado?*</label>
-                        <select class="form-control" id="nomeCertific">
+                        <select class="form-control" name="use-social-name" id="nomeCertific">
                             <option selected disabled>Escolha...</option>
                             <option value="1">Sim</option>
                             <option value="2">Não</option>
