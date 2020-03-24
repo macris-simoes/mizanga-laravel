@@ -54,10 +54,10 @@
       <p>Avaliar Trabalho</p>
       <select class="form-control mb-4" name="rate_work">
         <option selected disabled>Escolha...</option>
-        <option value="aprovado">Aprovado</option>
-        <option value="recusado">Recusado</option>
-        <option value="aprovado_poster">Aprovado com pôster</option>
-        <option value="encaminhado_outra_opcao">Encaminhado para Opção 2° ou 3° de GT</option>
+        <option value="approved">Aprovado</option>
+        <option value="refused">Recusado</option>
+        <option value="approved_with_poster">Aprovado com pôster</option>
+        <option value="sent_to_another_option">Encaminhado para Opção 2° ou 3° de GT</option>
       </select>
     </form>
     <div></div>
