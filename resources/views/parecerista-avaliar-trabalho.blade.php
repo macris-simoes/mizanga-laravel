@@ -52,12 +52,12 @@
     </div>
     <form>
       <p>Avaliar Trabalho</p>
-      <select class="form-control mb-4">
+      <select class="form-control mb-4" name="rate_work">
         <option selected disabled>Escolha...</option>
-        <option>Aprovado</option>
-        <option>Recusado</option>
-        <option>Aprovado com pôster</option>
-        <option>Encaminhado para Opção 2° ou 3° de GT</option>
+        <option value="aprovado">Aprovado</option>
+        <option value="recusado">Recusado</option>
+        <option value="aprovado_poster">Aprovado com pôster</option>
+        <option value="outra_opcao">Encaminhado para Opção 2° ou 3° de GT</option>
       </select>
     </form>
     <div></div>
@@ -65,7 +65,7 @@
     <form>
       <p>Incluir Parecer</p>
       <div class="custom-file mb-4">
-        <input type="file" class="custom-file-input" id="customFile">
+        <input type="file" class="custom-file-input" id="customFile" name="include_parecer">
         <label class="custom-file-label" for="customFile"></label>
       </div>
     </form>
