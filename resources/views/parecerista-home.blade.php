@@ -25,7 +25,7 @@
                 </div>
                 <div class="col">
                     <label for="nome-trabalho">Título do trabalho</label>
-                    <input type="text" class="form-control" id="nome-trabalho" name="Work_title" placeholder="nome do trabalho">
+                    <input type="text" class="form-control" id="nome-trabalho" name="work_title" placeholder="nome do trabalho">
                 </div>
                 <div class="col align-self-end"> <a href="parecerista-avaliar-trabalho.php">Avaliar trabalho</a></div>
             </div>

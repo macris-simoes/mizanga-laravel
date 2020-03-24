@@ -57,7 +57,7 @@
         <option value="aprovado">Aprovado</option>
         <option value="recusado">Recusado</option>
         <option value="aprovado_poster">Aprovado com pôster</option>
-        <option value="outra_opcao">Encaminhado para Opção 2° ou 3° de GT</option>
+        <option value="encaminhado_outra_opcao">Encaminhado para Opção 2° ou 3° de GT</option>
       </select>
     </form>
     <div></div>
