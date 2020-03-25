@@ -264,7 +264,7 @@
 
         <div class="my-4">
             <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
-            <button type="button" class="btn btn-primary" style="width:120px">Voltar</button>
+            <a href="instrucoes-inscricao" class="btn btn-primary" style="width:120px">Voltar</a>
         </div>
     </div>
 
