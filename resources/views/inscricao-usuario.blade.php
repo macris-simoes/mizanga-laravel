@@ -37,7 +37,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="cpf">CPF*</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                        <input type="text" class="form-control cpf" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="rg">RG*</label>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="nascimento">Data nascimento*</label>
-                        <input type="date" class="form-control" id="nascimento" name="birthday" placeholder="DD/MM/AAAA">
+                        <input type="date" class="form-control" id="nascimento" name="birthday" placeholder="dd/mm/aaaa">
                     </div>
                 </div>
                 <div class="form-row">
@@ -102,10 +102,10 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="filiacao">Filiação institucional</label>
-                        <input type="text" class="form-control" id="filiacao" name="filiation" placeholder="Filiação Institucional">
+                        <input type="text" class="form-control" id="filiacao" name="filiation" placeholder="Filiação institucional">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="cargo">Função institucional/cargo</label>
+                        <label for="cargo">Função institucional/Cargo</label>
                         <input type="text" class="form-control" id="cargo" name="job-title" placeholder="Função institucional/cargo">
                     </div>
                 </div>
@@ -119,47 +119,23 @@
 
             <div class="my-3">
                 <h5>Endereço</h5>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="location" id="inlineRadio1" value="brasil">
-                    <label class="form-check-label" for="inlineRadio1">Residência no Brasil</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="location" id="inlineRadio2" value="exterior">
-                    <label class="form-check-label" for="inlineRadio2">Residência no Exterior</label>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="cep">CEP*</label>
-                        <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP">
-                        <a href="">Consulte seu CEP</a>
-                        <!-- https://www.devmedia.com.br/forum/api-de-cep-correios/571512 -->
+                <div class="my-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="location" id="inlineRadio1" value="brasil">
+                        <label class="form-check-label" for="inlineRadio1">Residência no Brasil</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="location" id="inlineRadio2" value="exterior">
+                        <label class="form-check-label" for="inlineRadio2">Residência no Exterior</label>
                     </div>
                 </div>
-                <div class="form-row">
+                
+                <div class="form-row">                    
                     <div class="form-group col-md-6">
-                        <label for="logradouro">Logradouro*</label>
-                        <input type="text" class="form-control" id="logradouro" name="address" placeholder="Logradouro">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="numero">Número</label>
-                        <input type="text" class="form-control" id="numero" name="number" placeholder="Número">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="complemento">Complemento</label>
-                        <input type="text" class="form-control" id="complemento" name="complement" placeholder="Complemento">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="bairro">Bairro</label>
-                        <input type="text" class="form-control" id="bairro" name="district" placeholder="Bairro">
-                    </div>
-                    <div class="form-group col-md-4">
                         <label for="municipio">Município</label>
                         <input type="text" class="form-control" id="municipio"  name="city" placeholder="Município">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label for="uf">UF*</label>
                         <select class="form-control" name="uf" id="uf">
                             <option selected disabled>Escolha...</option>
@@ -193,6 +169,13 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="pais">País*</label>
+                        <input type="text" class="form-control" id="pais"  name="country" placeholder="País">
+                    </div>
+                </div>
             </div>
 
             <div class="my-3">
@@ -200,15 +183,15 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="telResid">Telefone residencial</label>
-                        <input type="text" class="form-control" id="telResid" name="tel" placeholder="Telefone residencial">
+                        <input type="text" class="form-control phone_with_ddd" id="telResid" name="tel" placeholder="Ex.: (00)0000-0000">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="telProfis">Telefone profissional</label>
-                        <input type="text" class="form-control" id="telProfis" name="tel2" placeholder="Telefone profissional">
+                        <input type="text" class="form-control phone_with_ddd" id="telProfis" name="tel2" placeholder="Ex.: (00)0000-0000">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="telCelular">Telefone celular</label>
-                        <input type="text" class="form-control" id="telCelular" name="tel3" placeholder="Telefone celular">
+                        <input type="text" class="form-control mobile_with_ddd" id="telCelular" name="tel3" placeholder="Ex.: (00)00000-0000">
                     </div>
                 </div>
 
@@ -239,36 +222,10 @@
                         <label class="form-check-label" for="accessNao">Não</label>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        Possui alguma deficiência?
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="disability" id="deficSim" value="sim">
-                        <label class="form-check-label" for="deficSim">Sim</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="disability" id="deficNao" value="nao">
-                        <label class="form-check-label" for="deficNao">Não</label>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        Faz uso de assistência pessoal e/ou equipamento de tecnologia assistiva?
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tecassist" id="tecAssistSim" value="sim">
-                        <label class="form-check-label" for="tecAssistSim">Sim</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tecassist" id="tecAssistNao" value="nao">
-                        <label class="form-check-label" for="tecAssistNao">Não</label>
-                    </div>
-                </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="outrasQuestoes">Utilize este espaço para indicar outras questões, orientações ou necessidades não previstas por nosso formulário</label>
+                        <label for="outrasQuestoes">Utilize este espaço para indicar quais recursos de acessibilidade você necessita</label>
                         <input type="text" class="form-control" id="outrasQuestoes" name="info" placeholder="">
                     </div>
                 </div>
@@ -315,7 +272,21 @@
         @include('includes.footer')
         @include('includes.script')
     </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.phone_with_ddd').mask('(00)0000-0000');
+        $('.mobile_with_ddd').mask('(00)00000-0000');
+        $('.cpf').mask('000.000.000-00', {reverse: true});
+        $('.date').mask('00/00/0000');
+        $('.cep').mask('00000-000');
+        $('.phone').mask('0000-0000');
+        $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
+        $('.money').mask('000.000.000.000.000,00', {reverse: true});
+        $('.money2').mask("#.##0,00", {reverse: true});
+        $('.percent').mask('##0,00%', {reverse: true});
+    });
+</script>
 </body>
 
 </html>
