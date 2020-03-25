@@ -8,15 +8,18 @@
       scroll-behavior: smooth;
     }
 
-    .contador {
+    .contador, .regressiva {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       height: 50%;
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: bold;
       font-family: 'Roboto';
+    }
+    .regressiva {      
+      font-size: 3rem;
     }
   </style>
   <div class="container-fluid" id="topo">
@@ -43,9 +46,8 @@
 
     <div class="border border-primary my-4">
       <!-- Contador -->
-      <div class="contador my-4" id="contador">
-        
-      </div>
+      <div class="contador">Tempo para o final das inscrições</div>
+      <div class="regressiva my-1" id="contador"></div>
 
       <!--botão inscreva-se -->
       <div class="my-4 d-flex justify-content-center">
@@ -110,7 +112,7 @@
 
   <script>
     // Definino a data para o countdown
-    var dataDaRegressiva = new Date("Apr 29, 2020 23:59:59").getTime();
+    var dataDaRegressiva = new Date("Oct 2, 2020 23:59:59").getTime();
 
     function executaRegressiva() {
       // Pega a data e a hora do dia de hoje
