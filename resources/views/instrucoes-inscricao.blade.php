@@ -28,7 +28,7 @@
           <p class="font-weight-bold d-inline">Critérios para inscrições de trabalhos:</p> <a target="_blank" href="./link-criterios-trabalho.php"> clique aqui.</a>
           <!-- add JS para abrir nova pagina pop-up -->
         </div>
-        <p class="font-weight-bold d-inline"> Dúvidas? </p> <a href="mailto:email@email.com.br?subject=Dúvida">Mande uma mensagem.</a>
+        <p class="font-weight-bold d-inline"> Dúvidas? </p> <a href="contato">Mande uma mensagem.</a>
       </div>
       <div class="title mt-4">
         <h5> Valores <h5>
