@@ -9,57 +9,50 @@
             <h4 class="display-3">Área do parecerista</h4>
             <p class="lead font-italic"> </p>
         </div>
-        <div>
-            <a href="./link-instrucoes-avaliadores.php" target="_blank" class="d-block">Instruções aos avaliadores</a>
-            <!-- add JS para abrir nova pagina pop-up -->
-            <a href="#" class="d-block">Exportar resultados para Excel</a>
-        </div>
+        <a href="./link-instrucoes-avaliadores.php" target="_blank" class="d-block">Instruções aos avaliadores</a>
+        <!-- add JS para abrir nova pagina pop-up -->
+        <a href="#" class="d-block">Exportar resultados para Excel</a>
         <hr class="my-3">
+
         <h5> Trabalhos pendentes </h5>
         <!-- add PHP para popular campos de trabalhos -->
-        <form>
-            <div class="form-row">
-                <div class="col">
-                    <label for="codigo-trabalho">Código do trabalho</label>
-                    <input type="text" class="form-control" id="codigo-trabalho" name="work_code" placeholder="codigo do trabalho">
-                </div>
-                <div class="col">
-                    <label for="nome-trabalho">Título do trabalho</label>
-                    <input type="text" class="form-control" id="nome-trabalho" name="work_title" placeholder="nome do trabalho">
-                </div>
-                <div class="col align-self-end"> <a href="parecerista-avaliar-trabalho.php">Avaliar trabalho</a></div>
-            </div>
-        </form>
+        <table class="table table-striped table-bordered">            
+            <tbody>
+                <tr>
+                    <td>Psicologia da saúde e psicologia positiva: perspectivas e desafios</td>
+                    <td class="col-2 align-middle"><a href="parecerista-avaliar-trabalho/12301">Avaliar trabalho</a></td>
+                </tr>
+                <tr>
+                    <td>Psicologia da Literatura e Psicologia na Literatura</td>
+                    <td class="col-2 align-middle"><a href="parecerista-avaliar-trabalho/12356">Avaliar trabalho</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
         <hr class="my-3">
+
         <h5> Trabalhos aprovados </h5>
-        <form>
-            <div class="form-row">
-                <div class="col">
-                    <label for="codigo-trabalho">Código do trabalho</label>
-                    <input type="text" class="form-control" id="codigo-trabalho" name="work_code" placeholder="codigo do trabalho">
-                </div>
-                <div class="col">
-                    <label for="nome-trabalho">Título do trabalho</label>
-                    <input type="text" class="form-control" id="nome-trabalho" name="work_title" placeholder="nome do trabalho">
-                </div>
-                <div class="col align-self-end"> <a href="#">Visualizar trabalho</a></div>
-            </div>
-        </form>
+        <table class="table table-striped table-bordered">            
+            <tbody>
+                <tr>
+                    <td>Marxismo e psicologia: aportes para uma reflexão materialista sobre o indivíduo</td>
+                    <td class="col-2 align-middle"><a href="parecerista-avaliar-trabalho/12350">Avaliar trabalho</a></td>
+                </tr>
+                <tr>
+                    <td>Quando a ciência é ídolo: um comentário crítico sobre a psicologia moral nietzschiana de Leiter</td>
+                    <td class="col-2 align-middle"><a href="parecerista-avaliar-trabalho/12320">Avaliar trabalho</a></td>
+                </tr>
+                <tr>
+                    <td>Conhecimentos especializados sobre os problemas de rendimento escolar: um estudo de manuais de psicologia e da Revista de Educação</td>
+                    <td class="col-2 align-middle"><a href="parecerista-avaliar-trabalho/12305">Avaliar trabalho</a></td>
+                </tr>
+            </tbody>
+        </table>
+
         <hr class="my-3">
+        
         <h5> Trabalhos reprovados </h5>
-        <form>
-            <div class="form-row">
-                <div class="col">
-                    <label for="codigo-trabalho">Código do trabalho</label>
-                    <input type="text" class="form-control" id="codigo-trabalho" name="work_code" placeholder="codigo do trabalho">
-                </div>
-                <div class="col">
-                    <label for="nome-trabalho">Título do trabalho</label>
-                    <input type="text" class="form-control" id="nome-trabalho" name="work_title" placeholder="nome do trabalho">
-                </div>
-                <div class="col align-self-end"> <a href="#">Visualizar trabalho</a></div>
-            </div>
-        </form>
+        <p class="font-italic my-3">Não há trabalhos nesta lista.</p>
         <hr class="my-3">
     </div>
 
