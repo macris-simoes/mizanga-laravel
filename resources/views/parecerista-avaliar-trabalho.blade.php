@@ -43,7 +43,7 @@
         <p>2° Opção de Grupo de Trabalho: Psicologia social, políticas públicas e direitos sociais</p>
       </div>
       <div>
-        <p>3° Opção de Grupo de Trabalho: </p>
+        <p>3° Opção de Grupo de Trabalho: <em> n.a. </em></p>
       </div>
     </div>
     <form>
