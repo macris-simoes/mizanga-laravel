@@ -14,13 +14,13 @@
     <!-- Inicio-->
     <div>
       <div>
-        <p><strong>Lorem ipsum dolor sit amet consectet</strong></p>
+        <p><strong>Psicologia da saúde e psicologia positiva: perspectivas e desafios</strong></p>
       </div>
       <div>
-        <p>Código do trabalho: XXX-XXX</p>
+        <p>Código do trabalho: 12301</p>
       </div>
       <div>
-        <p>Data de submissão: dd/mm/aaaa - hh:min</p>
+        <p>Data de submissão: 26/02/2020 - 17:22</p>
       </div>
       <div></div>
     </div>
@@ -29,25 +29,21 @@
     <form>
       <div class="form-group mt-4">
         <label for="exampleFormControlTextarea1">Resumo</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis maiores voluptatum, nihil ducimus fuga id quibusdam. Quam repellat, aliquam ea suscipit aperiam, impedit temporibus ad itaque vitae architecto inventore reprehenderit.
-        Sint est veniam enim commodi voluptates reiciendis quis porro quisquam assumenda, sit minus delectus corrupti eaque officia possimus ut doloribus id iste veritatis non maiores asperiores! Minima eius similique id.
-        In, provident voluptas. Ab quasi autem placeat modi fuga sint, cum ipsa in aspernatur vel, quod error et tenetur rem, molestias sunt dignissimos voluptatibus est facere ex blanditiis! Magnam, debitis.
-        Voluptatum cumque ipsum earum quas? Assumenda fuga ullam cum laborum saepe dolore placeat reprehenderit. Reiciendis eveniet a, quos, nostrum qui rem tempore fugit ratione beatae perferendis enim officia! Rem, unde! Dolores minima nulla soluta cupiditate. Odio consequatur ipsam et nobis dicta sequi architecto rem consectetur dolore voluptatem error maxime tenetur ab atque, dignissimos impedit quia, unde voluptates magni? Assumenda, libero.
-        </textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">O presente artigo visa a discutir a interface entre Psicologia da saúde e Psicologia positiva, destacando a relevância dos aspectos positivos do desenvolvimento humano como foco de pesquisas e intervenções. Salienta-se a necessidade de avanços nos estudos relacionados aos fatores protetores e de manutenção do desenvolvimento humano saudável. Na discussão em foco neste artigo, a Psicologia da saúde e a Psicologia positiva têm importante papel na compreensão dos aspectos envolvidos no enfrentamento da doença bem como na manutenção da saúde da pessoa, e apontam a relevância do investimento científico na investigação dos fatores de proteção da saúde.&#13;&#10;Referências&#13;&#10;ASPINWALL, L.; STAUDINGER, U. A psychology of human strengths: some central issues of an emerging field. In: A psychology of human strengths: fundamental questions and future directions for a Positive Psychology. Washington: American Psychological Association, 2003. p. 9-22.&#13;&#10;BRANNON, L.; FEIST, J. Psicología de la Salud. Madrid: Thomson Learning, 2001.&#13;&#10;CASTRO, E., BORNHORD, E. Psicologia da saúde x Psicologia hospitalar: definições e possibilidades de inserção profissional. Psicologia: Ciência e Profissão, Brasília, v. 24, n. 3, p. 48-57, 2004.&#13;&#10;CULLOFORD, L. Spirituality and clinical care. British Medical Journal, London, v. 325, p. 1434-1436, 2002.</textarea>
       </div>
     </form>
     <div>
       <div>
-        <p><strong>Palavras-chave: Lorem ipsum dolor sit amet consectet</strong> </p>
+        <p>Palavras-chave: Psicologia da saúde, Psicologia positiva, Proteção da saúde. </p>
       </div>
       <div>
-        <p><strong>1° Opção de Grupo de Trabalho:</strong> Lorem ipsum dolor sit amet consectet</p>
+        <p>1° Opção de Grupo de Trabalho: Psicologia da saúde</p>
       </div>
       <div>
-        <p><strong>2° Opção de Grupo de Trabalho:</strong> Lorem ipsum dolor sit amet consectet</p>
+        <p>2° Opção de Grupo de Trabalho: Psicologia social, políticas públicas e direitos sociais</p>
       </div>
       <div>
-        <p><strong>3° Opção de Grupo de Trabalho:</strong> Lorem ipsum dolor sit amet consectet</p>
+        <p>3° Opção de Grupo de Trabalho: </p>
       </div>
     </div>
     <form>
