@@ -17,12 +17,12 @@ Route::get('/criterios-trabalho','LinksController@criteriosTrabalho');
 Route::get('/instrucao-avaliadores','LinksController@instrucaoAvaliadores');
 
 //----------LOGIN--------------
-Route::get('/login','LoginController@loginIndex');//->name('login');
+Route::get('/login','LoginController@loginIndex')->name('login');
 //envio de form// Route::post('/login', 'ContatoController@loginSubmitPost');
         
 
 //------------INSCRITO------------
-Route::get('/inscrito','InscritoController@inscritoIndex');
+Route::get('/inscrito','InscritoController@inscritoIndex');//->middleware('auth');
 
 //----------ADMIN-------------
 Route::get('/admin','AdminController@adminIndex');//->middleware('auth');
@@ -33,7 +33,7 @@ Route::get('/admin','AdminController@adminIndex');//->middleware('auth');
 // });
 
 //--------Parecerista----------
-Route::get('/parecerista','PareceristaController@pareceristaIndex');
+Route::get('/parecerista','PareceristaController@pareceristaIndex');//->middleware('auth');
 
 Route::resource ('crud','CrudController');
 
