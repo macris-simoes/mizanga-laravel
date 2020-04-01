@@ -26,7 +26,7 @@
 
             <div class="form-row">
 
-                <div class="form-group col-md-6 pb-2">
+                <div class="form-group col-md-4 pb-2">
                     <select class="form-group form-control" name="first_topic">
                         <option selected disabled>Primeira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
@@ -37,9 +37,20 @@
                     </select>
                 </div>
 
-                <div class="form-group col-md-6 pb-2">
+                <div class="form-group col-md-4 pb-2">
                     <select class="form-group form-control" name="second_topic">
                         <option selected disabled>Segunda opção de eixo temático</option>
+                        <option value="1">Eixo 1. lorem ipsum</option>
+                        <option value="1">Eixo 2. lorem ipsum</option>
+                        <option value="1">Eixo 3. lorem ipsum</option>
+                        <option value="1">Eixo 4. lorem ipsum</option>
+                        <!-- aqui vai ter que por php -->
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4 pb-2">
+                    <select class="form-group form-control" name="third_topic">
+                        <option selected disabled>Terceira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
                         <option value="1">Eixo 3. lorem ipsum</option>
