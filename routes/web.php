@@ -17,7 +17,7 @@ Route::get('/criterios-trabalho','LinksController@criteriosTrabalho');
 Route::get('/instrucao-avaliadores','LinksController@instrucaoAvaliadores');
 
 //----------LOGIN--------------
-Route::get('/login','LoginController@loginIndex');
+Route::get('/login','LoginController@loginIndex');//->name('login');
 //envio de form// Route::post('/login', 'ContatoController@loginSubmitPost');
         
 
@@ -25,7 +25,7 @@ Route::get('/login','LoginController@loginIndex');
 Route::get('/inscrito','InscritoController@inscritoIndex');
 
 //----------ADMIN-------------
-Route::get('/admin','AdminController@adminIndex');
+Route::get('/admin','AdminController@adminIndex');//->middleware('auth');
 
 //DIABÉISS TIPSY//
 // Route::get('/gerenciar', function () {
