@@ -38,12 +38,10 @@
       <!-- BUTTON Não está funcionando :(  -->
       <a class="btn btn-primary nav-link rounded-right" href="/login">LOGIN</a>
       <!-- início dropdown do perfil do usuário *** STE, NÃO ESTÁ RESPONSIVO, NÃO É UM PROBLEMA MAS SÓ AVISANDO-->
-      <div class="btn-group">
+      <div class="dropdown">
         <!-- parte de fora -->
-        <div type="" class="px-4">
-          <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" width="40px" height="40px">
-        </div>
         <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+          <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" width="40px" height="40px">
         </button>
         <!-- parte de dentro (dropdown) -->
         <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
