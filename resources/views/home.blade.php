@@ -16,7 +16,7 @@
       height: 50%;
       font-size: 2rem;
       font-weight: bold;
-      font-family: 'Roboto';
+      font-family: 'Roboto' sans-serif;
     }
     .regressiva {      
       font-size: 3rem;
