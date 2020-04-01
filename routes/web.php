@@ -22,10 +22,10 @@ Route::get('/login','LoginController@loginIndex')->name('login');
         
 
 //------------INSCRITO------------
-Route::get('/inscrito','InscritoController@inscritoIndex');//->middleware('auth');
+Route::get('/inscrito','InscritoController@inscritoIndex');
 
 //----------ADMIN-------------
-Route::get('/admin','AdminController@adminIndex');//->middleware('auth');
+Route::get('/admin','AdminController@adminIndex');
 
 //DIABÉISS TIPSY//
 // Route::get('/gerenciar', function () {
@@ -33,8 +33,15 @@ Route::get('/admin','AdminController@adminIndex');//->middleware('auth');
 // });
 
 //--------Parecerista----------
-Route::get('/parecerista','PareceristaController@pareceristaIndex');//->middleware('auth');
+Route::get('/parecerista','PareceristaController@pareceristaIndex');
 
 Route::resource ('crud','CrudController');
 
 
+//middleware group - habilitar no final, para acesso somente com login.
+
+// route::middleware('auth')->group(function() {
+//     Route::get('/parecerista','PareceristaController@pareceristaIndex');
+//     Route::get('/admin','AdminController@adminIndex');
+//     Route::get('/inscrito','InscritoController@inscritoIndex');
+// });
