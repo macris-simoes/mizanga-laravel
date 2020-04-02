@@ -36,23 +36,23 @@
           <div class="form-row">
 
             <div class="font-weight-bold form-group col-md-12">
-              <label for="validationTooltip01">Identificação</label>
-              <input type="text" class="form-control" id="validationTooltip01" placeholder="Escolha um nome" name="abstract_id" required>
+              <label for="work_modality">Identificação</label>
+              <input type="text" class="form-control" id="work_modality" placeholder="Escolha um nome" name="work_modality" required>
             </div>
           
             <div class="form-group col-md-5">
-              <label for="validationTooltip04">Início das inscrições</label>
-              <input type="datetime-local" class="form-control" id="validationTooltip04" placeholder="dd/mm/aaaa" name="start_date" required>
+              <label for="work_start_date">Início das inscrições</label>
+              <input type="datetime-local" class="form-control" id="work_start_date" placeholder="dd/mm/aaaa" name="work_start_date" required>
             </div>
 
             <div class="form-group col-md-5">
-              <label for="validationTooltip05">Fim das inscrições</label>
-              <input type="datetime-local" class="form-control" id="validationTooltip05" placeholder="dd/mm/aaaa" name="end_date" required>
+              <label for="work_end_date">Fim das inscrições</label>
+              <input type="datetime-local" class="form-control" id="work_end_date" placeholder="dd/mm/aaaa" name="work_end_date" required>
             </div>
 
-            <div for="validationTooltip06" class="form-group col-md-2" data-toggle="tooltip" data-placement="right" title="Sem limite? Deixe em branco">
+            <div for="coauthor_quantity" class="form-group col-md-2" data-toggle="tooltip" data-placement="right" title="Sem limite? Deixe em branco">
               <label>Coautores</label>
-              <input type="number" class="form-control" id="validationTooltip06" name="coauthor">
+              <input type="number" class="form-control" id="coauthor_quantity" name="coauthor_quantity">
             </div>
 
           </div>
@@ -67,13 +67,13 @@
 
               <h6 class="col-md-12">Configurar título</h6>
               <div class="col-md-6">
-                <label for="exampleFormControlTextarea1">Mínimo de caracteres</label>
-                <input class="form-control" type="number" id="exampleFormControlTextarea1" placeholder="inserir número" name="title_min_char">
+                <label for="abstract_title_min_char">Mínimo de caracteres</label>
+                <input class="form-control" type="number" id="abstract_title_min_char" placeholder="inserir número" name="abstract_title_min_char">
               </div>
 
               <div class="col-md-6">
-                <label for="exampleFormControlTextarea2">Máximo de caracteres</label>
-                <input class="form-control" type="number" id="exampleFormControlTextarea2" placeholder="inserir número" name="title_max_char">
+                <label for="abstract_title_max_char">Máximo de caracteres</label>
+                <input class="form-control" type="number" id="abstract_title_max_char" placeholder="inserir número" name="abstract_title_max_char">
               </div>
             </div>
 
@@ -82,13 +82,13 @@
 
               <h6 class="col-md-12">Configurar resumo</h6>
               <div class="col-md-6">
-                <label for="exampleFormControlTextarea1">Mínimo de caracteres</label>
-                <input class="form-control" type="number" id="exampleFormControlTextarea1" placeholder="inserir número" name="resume_min_char">
+                <label for="abstract_min_char">Mínimo de caracteres</label>
+                <input class="form-control" type="number" id="abstract_min_char" placeholder="inserir número" name="abstract_min_char">
               </div>
 
               <div div class="col-md-6">
-                <label for="exampleFormControlTextarea2">Máximo de caracteres</label>
-                <input class="form-control" type="number" id="exampleFormControlTextarea2" placeholder="inserir número" name="resume_max_char">
+                <label for="abstract_max_char">Máximo de caracteres</label>
+                <input class="form-control" type="number" id="abstract_max_char" placeholder="inserir número" name="abstract_max_char">
               </div>
           
             </div>
@@ -97,8 +97,8 @@
         <!-- Fim da div dos Parâmetros do trabalho -->
           <div class="form-row">
             <div class="col-md-12">
-              <label for="exampleFormControlTextarea1">Texto de instrução aos autores</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="instructions_coauth"></textarea>
+              <label for="author_instructions">Texto de instrução aos autores</label>
+              <textarea class="form-control" id="author_instructions" rows="3" name="author_instructions"></textarea>
             </div>
 
             <div class="col-md-12">

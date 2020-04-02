@@ -35,27 +35,27 @@
           <div class="form-row">
             <!-- identificação -->
               <div class="col-md-12 mb-4">
-                <label class="font-weight-bold" for="validationTooltip01">Identificação</label>
-                <input type="text" class="form-control" id="validationTooltip01" placeholder="Escolha um nome" name="modality_id" required>
+                <label class="font-weight-bold" for="modality">Identificação</label>
+                <input type="text" class="form-control" id="modality" placeholder="Escolha um nome" name="register_modality" required>
               </div>
 
             <!-- Prazo de início -->
               <div class="col-md-4">
-                <label class="font-weight-bold" for="validationTooltip04">Início das inscrições</label>
-                <input type="date" class="form-control" id="validationTooltip04" placeholder="dd/mm/aaaa" name="start_date" required>
+                <label class="font-weight-bold" for="register_start_date">Início das inscrições</label>
+                <input type="date" class="form-control" id="register_start_date" placeholder="dd/mm/aaaa" name="register_start_date" required>
               </div>
 
             <!-- Prazo de término -->
               <div class="col-md-4">
-                <label class="font-weight-bold" for="validationTooltip05">Fim das inscrições</label>
-                <input type="date" class="form-control" id="validationTooltip05" placeholder="dd/mm/aaaa" name="end_date" required>
+                <label class="font-weight-bold" for="register_end_date">Fim das inscrições</label>
+                <input type="date" class="form-control" id="register_end_date" placeholder="dd/mm/aaaa" name="register_end_date" required>
               </div>
 
             <!-- Anexar comprovante? -->
               <div class="col-md-12 mt-3 ">
                   <div class = "custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="receipt">
-                    <label class="custom-control-label" for="customSwitch1">Anexar comprovante</label>
+                    <input type="checkbox" class="custom-control-input" id="attach_receipt" name="attach_receipt">
+                    <label class="custom-control-label" for="attach_receipt">Anexar comprovante</label>
                   </div>
               </div>
 
