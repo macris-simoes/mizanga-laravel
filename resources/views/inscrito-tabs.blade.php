@@ -18,7 +18,7 @@
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Início</a>
         <a class="nav-item nav-link" id="nav-certificados-tab" data-toggle="tab" href="#nav-certificados" role="tab" aria-controls="nav-certificados" aria-selected="false">Certificados</a>
-        <a class="nav-item nav-link" id="nav-trabalho-tab" data-toggle="tab" href="#nav-trabalho" role="tab" aria-controls="nav-trabalho" aria-selected="false">Trabalhos cadastrados</a>
+        <a class="nav-item nav-link" id="nav-trabalho-tab" data-toggle="tab" href="#nav-trabalho" role="tab" aria-controls="nav-trabalho" aria-selected="false">Trabalhos submetidos</a>
         <a class="nav-item nav-link" id="nav-novotrabalho-tab" data-toggle="tab" href="#nav-novotrabalho" role="tab" aria-controls="nav-novotrabalho" aria-selected="false">Cadastrar trabalho</a>
       </div>
     </nav>
