@@ -98,7 +98,7 @@
 
                         <!-- botão -->
                         <div class=" mt-4 col-md-12">
-                            <button class="btn btn-success" type="submit" style="width:120px">Criar</button>
+                            <button class="btn btn-primary" type="submit" style="width:120px">Criar</button>
                         </div>
 
                     </div>

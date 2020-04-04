@@ -102,7 +102,7 @@
             </div>
 
             <div class="col-md-12">
-              <button class="mt-3 btn btn-outline-info" type="submit" style="width:120px">OK</button>
+              <button class="mt-3 btn btn-outline-primary" type="submit" style="width:120px">OK</button>
             </div>
           </div>
 
