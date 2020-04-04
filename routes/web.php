@@ -19,7 +19,6 @@ Route::get('/instrucao-avaliadores','LinksController@instrucaoAvaliadores');
 //----------LOGIN--------------
 Route::get('/login','LoginController@loginIndex')->name('login');
 //envio de form// Route::post('/login', 'ContatoController@loginSubmitPost');
-        
 
 //------------INSCRITO------------
 Route::get('/inscrito','InscritoController@inscritoIndex');
@@ -27,10 +26,6 @@ Route::get('/inscrito','InscritoController@inscritoIndex');
 //----------ADMIN-------------
 Route::get('/admin','AdminController@adminIndex');
 
-//DIABÉISS TIPSY//
-// Route::get('/gerenciar', function () {
-//     return view('admin-gerenciar-parecerista');
-// });
 
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
