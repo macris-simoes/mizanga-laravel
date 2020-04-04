@@ -37,7 +37,7 @@
         </div>
         
         <div class="tab-pane fade" id="nav-congresso" role="tabpanel" aria-labelledby="nav-congresso-tab">
-          @include('includes.admin-config-congresso')
+          @include('admin-config-congresso')
         </div>
         
         <div class="tab-pane fade" id="nav-inscrito" role="tabpanel" aria-labelledby="nav-inscrito-tab">
