@@ -16,6 +16,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12 pb-2">
+                    <label for="">Modalidade</label>
                     <select class="form-control" name="category">
                         <option selected disabled>Selecione a modalidade</option>
                         <option value="1">Pôster</option>
@@ -27,6 +28,7 @@
             <div class="form-row">
 
                 <div class="form-group col-md-4 pb-2">
+                    <label for="">1º Eixo temático</label>
                     <select class="form-group form-control" name="first_topic">
                         <option selected disabled>Primeira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
@@ -38,6 +40,7 @@
                 </div>
 
                 <div class="form-group col-md-4 pb-2">
+                    <label for=""> 2º Eixo temático</label>
                     <select class="form-group form-control" name="second_topic">
                         <option selected disabled>Segunda opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
@@ -49,6 +52,7 @@
                 </div>
 
                 <div class="form-group col-md-4 pb-2">
+                    <label for="">3º Eixo temático</label>
                     <select class="form-group form-control" name="third_topic">
                         <option selected disabled>Terceira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
