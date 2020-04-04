@@ -17,7 +17,7 @@
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Início</a>
-        <a class="nav-item nav-link" id="nav-infopessoal-tab" data-toggle="tab" href="#nav-infopessoal" role="tab" aria-controls="nav-infopessoal" aria-selected="false">Informações pessoais</a>
+        <a class="nav-item nav-link" id="nav-certificados-tab" data-toggle="tab" href="#nav-certificados" role="tab" aria-controls="nav-certificados" aria-selected="false">Certificados</a>
         <a class="nav-item nav-link" id="nav-trabalho-tab" data-toggle="tab" href="#nav-trabalho" role="tab" aria-controls="nav-trabalho" aria-selected="false">Trabalhos cadastrados</a>
         <a class="nav-item nav-link" id="nav-novotrabalho-tab" data-toggle="tab" href="#nav-novotrabalho" role="tab" aria-controls="nav-novotrabalho" aria-selected="false">Cadastrar trabalho</a>
       </div>
@@ -30,8 +30,8 @@
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         @include('inscrito-home')
       </div>
-      <div class="tab-pane fade" id="nav-infopessoal" role="tabpanel" aria-labelledby="nav-infopessoal-tab">
-        @include('inscrito-infopessoais')
+      <div class="tab-pane fade" id="nav-certificados" role="tabpanel" aria-labelledby="nav-certificados-tab">
+        @include('inscrito-certificados')
       </div>
       <div class="tab-pane fade" id="nav-trabalho" role="tabpanel" aria-labelledby="nav-trabalho-tab">
         @include('inscrito-trabalhos-cadastrados')
