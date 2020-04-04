@@ -85,21 +85,6 @@
                 </div>
             </div>
 
-            <div class="my-3">
-                <h5>Após salvar:</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="opcao1" value="true" name="acceptance_letter">
-                    <label class="form-check-label" for="opcao1">
-                        Enviar carta convite
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" id="opcao2" value="false" name="acceptance_letter">
-                    <label class="form-check-label" for="opcao2">
-                        Cadastrar novo
-                    </label>
-                </div>
-            </div>
         </form>
 
         <div class="my-4">
