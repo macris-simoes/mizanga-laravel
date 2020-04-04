@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white container">
-    <!-- 26/12 Cris não conseguiu fazer fixed-top direito -->
+
       <a class="navbar-brand" href="/home"> 
         <h2 class="text-primary"> Mizanga</h2> 
       </a>

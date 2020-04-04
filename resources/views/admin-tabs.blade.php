@@ -19,7 +19,6 @@
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Início</a>
           
           <a class="nav-item nav-link font-weight-bolder" id="nav-congresso-tab" data-toggle="tab" href="#nav-congresso" role="tab" aria-controls="nav-congresso" aria-selected="false">Congresso</a>
-          
           <a class="nav-item nav-link" id="nav-inscrito-tab" data-toggle="tab" href="#nav-inscrito" role="tab" aria-controls="nav-inscrito" aria-selected="false">Inscritos</a>
           
           <a class="nav-item nav-link" id="nav-trabalho-tab" data-toggle="tab" href="#nav-trabalho" role="tab" aria-controls="nav-trabalho" aria-selected="false">Trabalhos</a>
