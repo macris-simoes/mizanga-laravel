@@ -6,6 +6,9 @@
 <body>
     <!-- início divona container CONFIG CONGRESSO -->
     <div class="container">
+        <div>
+            @include('includes.admin-congresso-pills')
+        </div>
 
         <!-- início Cabeçalho1 -->
         <div class="mb-1 pt-1">
@@ -13,6 +16,7 @@
             <p class="lead font-italic"> Gerenciar informações do congresso</p>
         </div>
         <!-- fim Cabeçalho1 -->
+        
 
         <!-- início div row -->
         <div class="row">
@@ -26,9 +30,9 @@
                     <div class="form-row">
                         <!-- identificação -->
                         <div class="col-md-12 mb-4">
-                            <label class="font-weight-bold" for="name_congress">Nome do congresso</label>
-                            <input type="text" class="form-control" id="name_congress" placeholder="Escolha um nome"
-                                name="name_congress" required>
+                            <label class="font-weight-bold" for="name_conference">Nome do congresso</label>
+                            <input type="text" class="form-control" id="name_conference" placeholder="Escolha um nome"
+                                name="name_conference" required>
                         </div>
 
                         <!-- Entidade Promotora -->
@@ -58,24 +62,6 @@
                             <input type="date" class="form-control" id="event_end_date" placeholder="dd/mm/aaaa"
                                 name="event_end_date" required>
                         </div>
-
-                        {{-- eixos temáticos --}}
-                        <!-- Início lista de modalidades -->
-                        <div class=" list-group-flush col-md-6 border rounded">
-                            <h6 class="my-1 font-weight-bold">Eixos temáticos</h6>
-                            <li class="list-group-item"> <a href="#">Psicologia social, políticas públicas e direitos sociais: práticas de resistência e emancipação em contextos neoliberais</a></li>
-                            <li class="list-group-item"> <a href="#">Psicologia social, gênero e sexualidades </a></li>
-                            <li class="list-group-item"> <a href="#"> Psicologia social, comunicação e mídias</a></li>
-                            <li class="list-group-item"> <a href="#"> Insurgências ético-estético-políticas: contribuições da psicologia social</a></li>
-                        </div>
-                        <!-- fim lista de modalidades -->
-                        <div class="col-md-6 mb-6">
-                            <label class="font-weight-bold" for="eixo">Cadastrar eixo</label>
-                            <input type="text" class="form-control" id="eixo" placeholder="Insira seu eixo" name="eixo"
-                                required>
-                        </div>
-
-
 
                         <div class="col-md-6 mb-4">
                             <label class="font-weight-bold" for="how_to_subscribe">Instruções sobre como se
