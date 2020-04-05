@@ -30,6 +30,7 @@
                         <label for="subject_contact">Assunto*</label>
                         <select class="form-control" id="subject_contact" name="subject_contact">
                             <option>Inscrição</option>
+                            <option>Editar dados pessoais</option>
                             <option>Dúvidas sobre trabalhos</option>
                             <option>Outros</option>
                         </select>
