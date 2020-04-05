@@ -29,7 +29,7 @@
 
                 <div class="form-group col-md-4 pb-2">
                     <label for="">1º Eixo temático</label>
-                    <select class="form-group form-control" name="first_topic">
+                    <select class="form-group form-control" name="first_axis">
                         <option selected disabled>Primeira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
@@ -41,7 +41,7 @@
 
                 <div class="form-group col-md-4 pb-2">
                     <label for=""> 2º Eixo temático</label>
-                    <select class="form-group form-control" name="second_topic">
+                    <select class="form-group form-control" name="second_axis">
                         <option selected disabled>Segunda opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
@@ -53,7 +53,7 @@
 
                 <div class="form-group col-md-4 pb-2">
                     <label for="">3º Eixo temático</label>
-                    <select class="form-group form-control" name="third_topic">
+                    <select class="form-group form-control" name="third_axis">
                         <option selected disabled>Terceira opção de eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
@@ -102,8 +102,8 @@
                 </div>
 
                 <div class="form-group col-6">
-                    <label for="author_place_of_work">Filiação Institucional</label>
-                    <input type="text" name="author_place_of_work" id="author_place_of_work" class="form-control">
+                    <label for="author_affiliation">Filiação Institucional</label>
+                    <input type="text" name="author_affiliation" id="author_affiliation" class="form-control">
                 </div>
             </div>
             
@@ -113,16 +113,135 @@
                     <input type="text" name="first_coauthor" id="first_coauthor" class="form-control">
                 </div>
 
-                <div class="form-group col-5">
-                    <label for="first_coauthor_place_of_work">Filiação Institucional</label>
-                    <input type="text" name="first_coauthor_place_of_work" id="first_coauthor_place_of_work" class="form-control">
+                <div class="form-group col-6">
+                    <label for="first_coauthor_affiliation">Filiação Institucional</label>
+                    <input type="text" name="first_coauthor_affiliation" id="first_coauthor_affiliation" class="form-control">
                 </div>
-                <div class="form-group d-flex align-items-end col-1">
+                {{-- <div class="form-group d-flex align-items-end col-1">
                     <button class="btn btn-outline-primary ml-auto">Excluir</button>
-                </div>
+                </div> --}}
             </div>
             
-            <button class="btn btn-outline-primary mb-2">Adicionar co-autor</button>
+            {{-- <button class="btn btn-outline-primary mb-2">Adicionar co-autor</button> --}}
+
+            <div class="accordion mb-2" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Adicionar co-autor
+                    </button>
+                    </h5>
+                  </div>
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+
+
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="second_coauthor">Co-autor 2</label>
+                                <input type="text" name="second_coauthor" id="second_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="second_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="second_coauthor_affiliation" id="second_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="third_coauthor">Co-autor 3</label>
+                                <input type="text" name="third_coauthor" id="third_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="third_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="third_coauthor_affiliation" id="third_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="fourth_coauthor">Co-autor 4</label>
+                                <input type="text" name="fourth_coauthor" id="fourth_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="fourth_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="fourth_coauthor_affiliation" id="fourth_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="fifth_coauthor">Co-autor 5</label>
+                                <input type="text" name="fifth_coauthor" id="fifth_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="fifth_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="fifth_coauthor_affiliation" id="fifth_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="sixth_coauthor">Co-autor 6</label>
+                                <input type="text" name="sixth_coauthor" id="sixth_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="sixth_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="sixth_coauthor_affiliation" id="sixth_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="seventh_coauthor">Co-autor 7</label>
+                                <input type="text" name="seventh_coauthor" id="seventh_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="seventh_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="seventh_coauthor_affiliation" id="seventh_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="eighth_coauthor">Co-autor 8</label>
+                                <input type="text" name="eighth_coauthor" id="eighth_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="eighth_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="eighth_coauthor_affiliation" id="eighth_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="nineth_coauthor">Co-autor 9</label>
+                                <input type="text" name="nineth_coauthor" id="nineth_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="nineth_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="nineth_coauthor_affiliation" id="nineth_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="tenth_coauthor">Co-autor 10</label>
+                                <input type="text" name="tenth_coauthor" id="tenth_coauthor" class="form-control">
+                            </div>
+            
+                            <div class="form-group col-6">
+                                <label for="tenth_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="tenth_coauthor_affiliation" id="tenth_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="form-row">
                 <div class="form-group col-12">
