@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AbstractConfigs extends Model
+class AbstractConfig extends Model
 {
     //
 }
