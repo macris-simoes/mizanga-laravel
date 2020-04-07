@@ -46,7 +46,7 @@
 
     <div class="border border-primary my-4">
       <!-- Contador -->
-      <div class="contador">Tempo para o final das inscrições</div>
+      <div class="contador text-center">Tempo para o final das inscrições</div>
       <div class="regressiva my-1" id="contador"></div>
 
       <!--botão inscreva-se -->
