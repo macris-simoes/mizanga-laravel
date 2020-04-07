@@ -15,6 +15,10 @@ class CreateAtendeeInfosTable extends Migration
     {
         Schema::create('atendee_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('home_phone',11)->nullable();
+            $table->string('work_phone',11)->nullable();
+            $table->string('mobile_phone',11)->nullable();
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
