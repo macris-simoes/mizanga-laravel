@@ -9,4 +9,10 @@ $(document).ready(function(){
     $('.money').mask('000.000.000.000.000,00', {reverse: true});
     $('.money2').mask("#.##0,00", {reverse: true});
     $('.percent').mask('##0,00%', {reverse: true});
+ 
+    $('#inscricao-usuario').submit(function(form){
+        $('.phone_with_ddd').unmask();
+        $('.cpf').unmask();
+        $('.mobile_with_ddd').unmask();
+    });
 });

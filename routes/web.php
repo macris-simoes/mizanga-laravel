@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home','HomeController@index');
 Route::get('/inscricao-usuario','InscricaoController@inscricaoIndex');
+Route::post('/inscricao-usuario','InscricaoController@inscricaoSubmitPost');
 Route::get('/instrucoes-inscricao','InscricaoController@inscricaoInstrucao');
 //envio de form//  Route::post('/inscricao-usuario','InscricaoController@inscricaoSubmitPost');
 

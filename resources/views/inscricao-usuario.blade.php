@@ -12,12 +12,12 @@
             <h4 class="display-3">Ficha de Inscrição</h4>
             <p class="lead font-italic"></p>
         </div>
-        <form action="" method="post">
+        <form id="inscricao-usuario" name="inscricao-usuario" method="post">
             @csrf
             <div class="my-3">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="modalidade">Modalidade</label>
+                        <label for="modalidade">Modalidade*</label>
                         <input type="text" class="form-control" id="modalidade" name="register_modality" placeholder="Modalidade">
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                 
                 <div class="form-row">                    
                     <div class="form-group col-md-6">
-                        <label for="municipio">Município</label>
+                        <label for="municipio">Município*</label>
                         <input type="text" class="form-control" id="municipio" name="city" placeholder="Município">
                     </div>
                     <div class="form-group col-md-6">
@@ -214,11 +214,11 @@
                         Necessita de recursos de acessibilidade?*
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="accessibility" id="accessSim" value="true">
+                        <input class="form-check-input" type="radio" name="accessibility" id="accessSim" value="1">
                         <label class="form-check-label" for="accessSim">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="accessibility" id="accessNao" value="false">
+                        <input class="form-check-input" type="radio" name="accessibility" id="accessNao" value="0">
                         <label class="form-check-label" for="accessNao">Não</label>
                     </div>
                 </div>
@@ -254,18 +254,18 @@
                         <label for="nomeCertific">Prefere que o nome social seja utilizado na emissão do certificado?*</label>
                         <select class="form-control" name="use_social_name" id="nomeCertific">
                             <option selected disabled>Escolha...</option>
-                            <option value="true">Sim</option>
-                            <option value="false">Não</option>
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
                         </select>
                     </div>
                 </div>
             </div>
+            <div class="my-4">
+                <input type="submit" class="btn btn-primary" style="width:120px" value="Enviar">
+                <a href="instrucoes-inscricao" class="btn btn-primary" style="width:120px">Voltar</a>
+            </div>
         </form>
 
-        <div class="my-4">
-            <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
-            <a href="instrucoes-inscricao" class="btn btn-primary" style="width:120px">Voltar</a>
-        </div>
     </div>
 
     <div>

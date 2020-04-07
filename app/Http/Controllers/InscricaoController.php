@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Registration;
 
 class InscricaoController extends Controller
 {
@@ -13,9 +14,15 @@ class InscricaoController extends Controller
     public function inscricaoInstrucao() {
        return view('instrucoes-inscricao');
     }
-        //enviar o formulário de incricao
-//  public function inscricaoSubmitPost (InscritoRequest $request) 
-//  {
-        //
-//  }
+    //enviar o formulário de incricao
+    public function inscricaoSubmitPost (Request $request) 
+    {
+        $dados = $request->all();
+        $novoInscrito = new Registration();
+        $novoInscrito -> fill($dados);
+        $novoInscrito ->save();
+        //dd($dados);
+        return "Usuário adicionado com sucesso";
+        
+    }
 }
