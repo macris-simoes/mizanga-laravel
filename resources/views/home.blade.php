@@ -65,7 +65,7 @@
     <h2 class="text-center my-3 display-4">Informações e datas</h2>
 
     <div class="row my-4">
-      <div class="col-sm-4">
+      <div class="col-sm-4 my-2">
         <div class="card border-primary">
           <div class="card-body">
             <h5 class="card-title">Local</h5>
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 my-2">
         <div class="card border-primary">
           <div class="card-body">
             <h5 class="card-title">Cronograma</h5>
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 my-2">
         <div class="card border-primary">
           <div class="card-body">
             <h5 class="card-title">Palestrantes</h5>
