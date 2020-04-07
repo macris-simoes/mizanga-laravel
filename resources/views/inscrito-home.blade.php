@@ -139,7 +139,7 @@
         </div>
         <div class="form-row">
                 <div class="col-12">
-                    <button class="mt-3 btn btn-primary" type="submite" style="width:120px">Enviar </button>
+                    <button class="mt-3 btn btn-primary" type="submit" style="width:120px">Enviar </button>
                 </div>
             </div>
     </form>
