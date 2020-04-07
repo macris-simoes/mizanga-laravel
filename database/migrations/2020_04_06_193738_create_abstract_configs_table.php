@@ -20,11 +20,11 @@ class CreateAbstractConfigsTable extends Migration
             $table->date('work_start_date');
             $table->date('work_end_date');
             $table->string('coauthor_quantity');
-            $table->interger('queue');
-            $table->interger('abstract_title_min_char');
-            $table->interger('abstract_title_max_char');
-            $table->interger('abstract_min_char');
-            $table->interger('abstract_max_char');
+            $table->integer('queue');
+            $table->integer('abstract_title_min_char');
+            $table->integer('abstract_title_max_char');
+            $table->integer('abstract_min_char');
+            $table->integer('abstract_max_char');
             $table->text('author_instructions');
 
 
