@@ -17,8 +17,11 @@
             <div class="my-3">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="modalidade">Modalidade*</label>
-                        <input type="text" class="form-control" id="modalidade" name="register_modality" placeholder="Modalidade">
+                        <label for="register_modality">Modalidade*</label>
+                        <input type="text" class="form-control" id="register_modality" name="register_modality" placeholder="Modalidade" value="{{ old('register_modality') }}">
+                        @error('register_modality')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-row">
@@ -37,37 +40,55 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="cpf">CPF*</label>
-                        <input type="text" class="form-control cpf" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
+                        <input type="text" class="form-control cpf" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00" value="{{ old('cpf') }}">
+                        @error('cpf')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-4">
                         <label for="rg">RG*</label>
-                        <input type="text" class="form-control" id="rg" name="rg" placeholder="RG">
+                        <input type="text" class="form-control" id="rg" name="rg" placeholder="RG" value="{{ old('rg') }}">
+                        @error('rg')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-4">
                         <label for="emissor">Orgão emissor*</label>
-                        <input type="text" class="form-control" id="emissor" name="emissor" placeholder="Orgão Emissor">
+                        <input type="text" class="form-control" id="emissor" name="emissor" placeholder="Orgão Emissor" value="{{ old('emissor') }}">
+                        @error('emissor')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
-                        <label for="nome">Nome*</label>
-                        <input type="text" class="form-control" id="nome" name="name" placeholder="Nome">
+                        <label for="name">Nome*</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nome"  value="{{ old('name') }}">
                         <small id="passwordHelpBlock" class="form-text text-muted">*Atenção: Confira se seu nome foi digitado corretamente!</small>
+                        @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="nascimento">Data nascimento*</label>
-                        <input type="date" class="form-control" id="nascimento" name="birth_date" placeholder="dd/mm/aaaa">
+                        <label for="birth_date">Data de nascimento*</label>
+                        <input type="date" class="form-control" id="birth_date" name="birth_date" placeholder="dd/mm/aaaa">
+                        @error('birth_date')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="nomeSocial">Nome Social*</label>
-                        <input type="text" class="form-control" id="nomeSocial" name="social_name" placeholder="Nome Social">
+                        <label for="social_name">Nome Social*</label>
+                        <input type="text" class="form-control" id="social_name" name="social_name" placeholder="Nome Social" value="{{ old('social_name') }}">
                         <small id="passwordHelpBlock" class="form-text text-muted">Se desejar, inclua neste campo seu nome de uso habitual.</small>
+                        @error('social_name')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="instituicao">Instituição para crachá</label>
-                        <input type="text" class="form-control" id="instituicao" name="institution" placeholder="Instituição para crachá">
+                        <label for="institution">Instituição para crachá</label>
+                        <input type="text" class="form-control" id="institution" name="institution" placeholder="Instituição para crachá" value="{{ old('institution') }}">
                     </div>
                 </div>
             </div>
@@ -76,8 +97,8 @@
                 <h5>Formação</h5>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="titulacao">Titulação mais alta*</label>
-                        <select class="form-control" name="education_level" id="titulacao">
+                        <label for="education_level">Titulação mais alta*</label>
+                        <select class="form-control" name="education_level" id="education_level">
                             <option selected disabled>Escolha...</option>
                             <option value="Ensino Medio">Ensino Médio</option>
                             <option value="Graduacao">Graduação</option>
@@ -85,10 +106,16 @@
                             <option value="Doutorado">Doutorado</option>
                             <option value="Pos-Doutorado">Pós-Doutorado</option>
                         </select>
+                        @error('education_level')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="instituicaoTitul">Instituição de titulação*</label>
-                        <input type="text" class="form-control" id="instituicaoTitul" name="grad_school" placeholder="Instituição de titulação">
+                        <label for="grad_school">Instituição de titulação*</label>
+                        <input type="text" class="form-control" id="grad_school" name="grad_school" placeholder="Instituição de titulação"  value="{{ old('grad_school') }}">
+                        @error('grad_school')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -97,29 +124,35 @@
                 <h5>Atuação Profissional</h5>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="situacaoProfis">Situação profissional*</label>
-                        <input type="text" class="form-control" id="situacaoProfis" name="profession" placeholder="Situação profissional">
+                        <label for="profession">Situação profissional*</label>
+                        <input type="text" class="form-control" id="profession" name="profession" placeholder="Situação profissional" value="{{ old('profession') }}">
+                        @error('profession')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="filiacao">Filiação institucional</label>
-                        <input type="text" class="form-control" id="filiacao" name="filiation" placeholder="Filiação institucional">
+                        <label for="filiation">Filiação institucional</label>
+                        <input type="text" class="form-control" id="filiation" name="filiation" placeholder="Filiação institucional" value="{{ old('filiation') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="cargo">Função institucional/Cargo</label>
-                        <input type="text" class="form-control" id="cargo" name="job_title" placeholder="Função institucional/cargo">
+                        <label for="job_title">Função institucional/Cargo</label>
+                        <input type="text" class="form-control" id="job_title" name="job_title" placeholder="Função institucional/cargo" value="{{ old('job_title') }}">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="areasAtuacao">Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</label>
-                        <input type="text" class="form-control" id="areasAtuacao" name="expertise" placeholder="Áreas de atuação">
+                        <label for="expertise">Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</label>
+                        <input type="text" class="form-control" id="expertise" name="expertise" placeholder="Áreas de atuação" value="{{ old('expertise') }}">
                     </div>
                 </div>
             </div>
 
             <div class="my-3">
                 <h5>Endereço</h5>
-                <div class="my-2">
+                <div class="form-row">
+                    <div class="form-group col-md-2 mb-0"> 
+                        País de residência*
+                    </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="location" id="inlineRadio1" value="brasil">
                         <label class="form-check-label" for="inlineRadio1">Residência no Brasil</label>
@@ -129,11 +162,17 @@
                         <label class="form-check-label" for="inlineRadio2">Residência no Exterior</label>
                     </div>
                 </div>
+                @error('location')
+                        <div class="text-danger">{{ $message }}</div>
+                @enderror
                 
                 <div class="form-row">                    
                     <div class="form-group col-md-6">
-                        <label for="municipio">Município*</label>
-                        <input type="text" class="form-control" id="municipio" name="city" placeholder="Município">
+                        <label for="city">Município*</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Município" value="{{ old('city') }}">
+                        @error('city')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-6">
                         <label for="uf">UF*</label>
@@ -167,13 +206,19 @@
                             <option value="26">SE</option>
                             <option value="27">TO</option>
                         </select>
+                        @error('uf')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="pais">País*</label>
-                        <input type="text" class="form-control" id="pais" name="country" placeholder="País">
+                        <label for="country">País*</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="País" value="{{ old('country') }}">
+                        @error('country')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -182,27 +227,33 @@
                 <h5>Dados de contato</h5>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="telResid">Telefone residencial</label>
-                        <input type="text" class="form-control phone_with_ddd" id="telResid" name="home_phone" placeholder="Ex.: (00)0000-0000">
+                        <label for="home_phone">Telefone residencial</label>
+                        <input type="text" class="form-control phone_with_ddd" id="home_phone" name="home_phone" placeholder="Ex.: (00)0000-0000" value="{{ old('home_phone') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="telProfis">Telefone profissional</label>
-                        <input type="text" class="form-control phone_with_ddd" id="telProfis" name="work_phone" placeholder="Ex.: (00)0000-0000">
+                        <label for="work_phone">Telefone profissional</label>
+                        <input type="text" class="form-control phone_with_ddd" id="work_phone" name="work_phone" placeholder="Ex.: (00)0000-0000" value="{{ old('work_phone') }}">
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="telCelular">Telefone celular</label>
-                        <input type="text" class="form-control mobile_with_ddd" id="telCelular" name="mobile_phone" placeholder="Ex.: (00)00000-0000">
+                        <label for="mobile_phone">Telefone celular</label>
+                        <input type="text" class="form-control mobile_with_ddd" id="mobile_phone" name="mobile_phone" placeholder="Ex.: (00)00000-0000" value="{{ old('mobile_phone') }}">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">E-mail*</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" value="{{ old('email') }}">
+                        @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-6">
                         <label for="confirmEmail">Confirmar e-mail*</label>
-                        <input type="text" class="form-control" id="confirmEmail" placeholder="Confirmar e-mail">
+                        <input type="text" class="form-control" id="confirmEmail" name="confirmEmail" placeholder="Confirmar e-mail">
+                        @error('confirmEmail')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -222,11 +273,14 @@
                         <label class="form-check-label" for="accessNao">Não</label>
                     </div>
                 </div>
+                @error('accessibility')
+                        <div class="text-danger">{{ $message }}</div>
+                @enderror
 
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="outrasQuestoes">Utilize este espaço para indicar quais recursos de acessibilidade você necessita</label>
-                        <input type="text" class="form-control" id="outrasQuestoes" name="accessibility_info" placeholder="">
+                        <label for="accessibility_info">Utilize este espaço para indicar quais recursos de acessibilidade você necessita</label>
+                        <input type="text" class="form-control" id="accessibility_info" name="accessibility_info" placeholder="" value="{{ old('accessibility_info') }}">
                     </div>
                 </div>
             </div>
@@ -235,12 +289,12 @@
                 <h5>Dados complementares</h5>
                 <div class="form-row">
                     <div class="form-group col-md-2">
-                        <label for="genero">Gênero</label>
-                        <input type="text" class="form-control" id="genero" name="gender" placeholder="Gênero">
+                        <label for="gender">Gênero</label>
+                        <input type="text" class="form-control" id="gender" name="gender" placeholder="Gênero" value="{{ old('gender') }}">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="raca">Raça/Cor*</label>
-                        <select class="form-control" name="color" id="raca">
+                        <label for="color">Raça/Cor*</label>
+                        <select class="form-control" name="color" id="color">
                             <option selected disabled>Escolha...</option>
                             <option value="Amarela">Amarela</option>
                             <option value="Branca">Branca</option>
@@ -249,14 +303,20 @@
                             <option value="Preta">Preta</option>
                             <option value="Nao declarado">Não desejo declarar</option>
                         </select>
+                        @error('color')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group col-md-8">
-                        <label for="nomeCertific">Prefere que o nome social seja utilizado na emissão do certificado?*</label>
-                        <select class="form-control" name="use_social_name" id="nomeCertific">
+                        <label for="use_social_name">Prefere que o nome social seja utilizado na emissão do certificado?*</label>
+                        <select class="form-control" name="use_social_name" id="use_social_name">
                             <option selected disabled>Escolha...</option>
                             <option value="1">Sim</option>
                             <option value="0">Não</option>
                         </select>
+                        @error('use_social_name')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
