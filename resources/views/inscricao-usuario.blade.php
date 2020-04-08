@@ -79,11 +79,11 @@
                         <label for="titulacao">Titulação mais alta*</label>
                         <select class="form-control" name="education_level" id="titulacao">
                             <option selected disabled>Escolha...</option>
-                            <option value="1">Ensino Médio</option>
-                            <option value="2">Graduação</option>
-                            <option value="3">Mestrado</option>
-                            <option value="4">Doutorado</option>
-                            <option value="5">Pós-Doutorado</option>
+                            <option value="Ensino Medio">Ensino Médio</option>
+                            <option value="Graduacao">Graduação</option>
+                            <option value="Mestrado">Mestrado</option>
+                            <option value="Doutorado">Doutorado</option>
+                            <option value="Pos-Doutorado">Pós-Doutorado</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
@@ -242,12 +242,12 @@
                         <label for="raca">Raça/Cor*</label>
                         <select class="form-control" name="color" id="raca">
                             <option selected disabled>Escolha...</option>
-                            <option value="1">Amarela</option>
-                            <option value="2">Branca</option>
-                            <option value="3">Indígena</option>
-                            <option value="4">Parda</option>
-                            <option value="5">Preta</option>
-                            <option value="6">Não desejo declarar</option>
+                            <option value="Amarela">Amarela</option>
+                            <option value="Branca">Branca</option>
+                            <option value="Indigena">Indígena</option>
+                            <option value="Parda">Parda</option>
+                            <option value="Preta">Preta</option>
+                            <option value="Nao declarado">Não desejo declarar</option>
                         </select>
                     </div>
                     <div class="form-group col-md-8">
