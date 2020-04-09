@@ -18,7 +18,7 @@ class CreateRefereeConfigsTable extends Migration
             $table->string('appraiser_cpf', 11)->unique();
             $table->string('appraiser_name', 255);
             $table->string('appraiser_email', 255);
-            $table->boolean('axis_01php','confirmed');
+            $table->boolean('axis_01','confirmed');
             $table->boolean('axis_02','confirmed');
             $table->boolean('axis_03','confirmed');
             $table->boolean('axis_04','confirmed');
