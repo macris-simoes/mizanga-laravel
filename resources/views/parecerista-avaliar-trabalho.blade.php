@@ -59,7 +59,7 @@
     </form>
     <div></div>
     <!--Add arquivo -->
-    <form method="POST" name="">
+    <form method="POST" name="" enctype="multipart/form-data">
       @csrf
       <p>Incluir Parecer</p>
       <div class="custom-file mb-4">
