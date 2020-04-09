@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-@include('includes.head')
-
-<body>
+@extends('layout')
     <!-- início divona container CONFIG CONGRESSO -->
     <div class="container">
 
@@ -98,7 +93,3 @@
 
     </div>
     <!-- div container -->
-
-</body>
-
-</html>
