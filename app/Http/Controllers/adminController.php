@@ -9,6 +9,7 @@ class adminController extends Controller
 {
     public function adminIndex() {
         return view('admin-tabs');
+        return view('admin-congresso-pills');
     }
 
     public function adminInscritoSubmitPost(Request $request) {
