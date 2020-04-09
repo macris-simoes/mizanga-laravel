@@ -2,14 +2,13 @@
 
 @section('content')
 
-
 {{-- início da pills do ADMIN --}}
 <!-- início divona container -->
 <div class="container">
   <!-- Início do menu das tabs -->
   <nav>
     <div class="nav nav-pills" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" href="#nav-home">Início</a>
+      <a class="nav-item nav-link active" href="/admin-home">Início</a>
 
       <a class="nav-item nav-link font-weight-bolder" href="#nav-congresso">Congresso</a>
 
@@ -22,11 +21,12 @@
   </nav>
   <!-- fim do menu das tabs -->
   <!-- fim da divona container -->
-{{-- </div> --}}
+</div>
 {{-- fim da pills do ADMIN --}}
 
+
 <!-- início div container -->
-{{-- <div class="container"> --}}
+<div class="container">
 
   <!-- Cabeçalho -->
   <div class="row">

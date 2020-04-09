@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
- @include('includes.head')
+@extends('template')
 
-<body>
-  <style>
+@section('content')
+    
+<style>
     html {
       scroll-behavior: smooth;
     }
@@ -22,18 +21,13 @@
       font-size: 3rem;
     }
   </style>
-  <div class="container-fluid" id="topo">
-    <div>
-      @include('includes.navbar-home')
-    </div>
-  </div>
-
+  
   <main class="container">
-
+    
     <div class="bg-primary py-4" style="height:50%">
       <p class="text-white display-3 ml-3 font-weight-bold">XXI CONGRESSO</p>
       <p class="text-white display-3 ml-3 font-weight-bold">NACIONAL XXXXX</p>
-
+      
       <div>
         <div class="ml-3">
           <i class="material-icons text-white"> room </i>
@@ -43,27 +37,27 @@
         </div>
       </div>
     </div>
-
+    
     <div class="border border-primary my-4">
       <!-- Contador -->
       <div class="contador text-center">Tempo para o final das inscrições</div>
       <div class="regressiva my-1" id="contador"></div>
-
+      
       <!--botão inscreva-se -->
       <div class="my-4 d-flex justify-content-center">
         <a href="./inscricao-usuario" class="p-1 px-5 mb-3 btn btn-primary" role="button"> Clique aqui para realizar sua inscrição</a>
       </div>
     </div>
-
+    
     <!-- Sobre o Congresso -->
     <div>
       <h2 class="text-center my-3 display-4">Sobre o Congresso Nacional XXXXXX</h2>
       <p class="text-justify mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hicLorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hic.</p>
     </div>
-
+    
     <!-- Informacoes e datas -->
     <h2 class="text-center my-3 display-4">Informações e datas</h2>
-
+    
     <div class="row my-4">
       <div class="col-sm-4 my-2">
         <div class="card border-primary">
@@ -74,7 +68,7 @@
           </div>
         </div>
       </div>
-
+      
       <div class="col-sm-4 my-2">
         <div class="card border-primary">
           <div class="card-body">
@@ -84,7 +78,7 @@
           </div>
         </div>
       </div>
-
+      
       <div class="col-sm-4 my-2">
         <div class="card border-primary">
           <div class="card-body">
@@ -95,7 +89,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- voltar ao topo da pagina -->
     <div class="text-right">
       <a href="#topo" style="text-decoration:none">
@@ -105,13 +99,7 @@
       </a>
     </div>
   </main>
-  <div>
-    @include('includes.footer')
-    @include('includes.script')
-  </div>
-
+  
   <script src="/js/home-regressiva.js"></script>
-
-</body>
-
-</html>
+ 
+@endsection

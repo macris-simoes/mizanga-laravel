@@ -25,9 +25,12 @@ Route::get('/login','LoginController@loginIndex')->name('login');
 Route::get('/inscrito','InscritoController@inscritoIndex');
 
 //----------ADMIN-------------
-Route::get('/admin','AdminController@adminIndex');
+// Route::get('/admin','AdminController@adminIndex');
 Route::post('/admin','AdminController@adminInscritoSubmitPost');
 
+
+// cris
+Route::get('/admin','AdminController@adminIndex');
 
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
