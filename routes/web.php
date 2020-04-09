@@ -34,6 +34,8 @@ Route::get('/parecerista','PareceristaController@pareceristaIndex');
 
 Route::resource ('crud','CrudController');
 
+Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
+
 
 //middleware group - habilitar no final, para acesso somente com login.
 
