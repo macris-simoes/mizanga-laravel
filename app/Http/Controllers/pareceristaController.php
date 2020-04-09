@@ -13,9 +13,9 @@ class pareceristaController extends Controller
 
     public function pareceristaSubmitPost(Request $request) {
         $dados=$request->all();
-        $newModalidade=new AbstractEvaluations();
-        $newModalidade-> fill($dados);
-        $newModalidade-> save();
+        $newParecer=new AbstractEvaluations();
+        $newParecer-> fill($dados);
+        $newParecer-> save();
         return "Dados salvo com sucesso";
     }
 }
