@@ -9,7 +9,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-            aria-controls="pills-contact" aria-selected="false">Contact</a>
+            aria-controls="pills-contact" aria-selected="false">Configurar trabalhos</a>
     </li>
 </ul>
 
@@ -17,8 +17,8 @@
 <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
         @include('admin-config-congresso')
-        
-        
+
+
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
         @include('admin-config-inscrito')
