@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    @include('includes.head')
-<body>
-  <main>
-
-    <!-- navbar -->
-    <div class="sticky-top">
-      <div>
-        @include('includes.navbar')
-      </div>
-    </div>
+@extends('template')
     
     <!-- início divona container -->
     <div class="container">
@@ -58,13 +47,3 @@
       
       <!-- fim da divona container -->
     </div>
-  </main>
-  
-<!-- scripts e footer -->
-  <div>
-    @include('includes.footer')
-    @include('includes.script')
-  </div>
-
-</body>
-</html>

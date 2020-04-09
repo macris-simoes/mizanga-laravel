@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('template')
     <!-- início divona container CONFIG CONGRESSO -->
     <div class="container">
 

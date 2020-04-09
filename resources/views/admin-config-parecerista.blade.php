@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-@include('includes.head')
-
-<body>
+@extends('template')
     
     <div class="container">
         <div class="mb-1 pt-1">
@@ -93,8 +89,3 @@
         </div>
     </div>
 
-
-
-</body>
-
-</html>

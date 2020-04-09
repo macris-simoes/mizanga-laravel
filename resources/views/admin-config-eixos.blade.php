@@ -1,3 +1,4 @@
+@extends('template')
 {{-- eixos temáticos --}}
                         <!-- Início lista de modalidades -->
                         <div class=" list-group-flush col-md-6 border rounded">

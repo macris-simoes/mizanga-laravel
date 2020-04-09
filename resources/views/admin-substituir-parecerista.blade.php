@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+@extends('template')
 
-@include('includes.head')
-
-<body>
   <div class="sticky-top">
-    @include('includes.navbar')
+
   </div>
   <div>
     <form class="form-inline flex-row-reverse mr-4">
@@ -127,12 +123,3 @@
       <button type="submit" class="btn btn-primary btn-lg mb-5 mt-3">Voltar</button>
     </div>
   </div>
-
-  <div>
-    @include('includes.footer')
-    @include('includes.script')
-  </div>
-
-</body>
-
-</html>

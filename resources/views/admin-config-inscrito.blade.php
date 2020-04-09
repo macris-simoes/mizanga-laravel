@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-@include('includes.head')
-
-<body>
+@extends('template')
 <!-- início divona container -->
   <div class="container">
 
@@ -81,6 +77,3 @@
 
   </div>
 <!-- div container -->
-
-</body>
-</html>
