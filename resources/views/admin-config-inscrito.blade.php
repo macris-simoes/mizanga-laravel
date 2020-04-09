@@ -28,7 +28,7 @@
     <!-- início div config -->    
       <div class="col-md-9 my-1">
         <!-- início do form de modalidades -->
-        <form>
+        <form method="post" name="admin-config-incrito">
           @csrf
 
           <!-- início da div form-row -->
@@ -53,10 +53,14 @@
 
             <!-- Anexar comprovante? -->
               <div class="col-md-12 mt-3 ">
-                  <div class = "custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="attach_receipt" name="attach_receipt">
-                    <label class="custom-control-label" for="attach_receipt">Anexar comprovante</label>
-                  </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="attach_receipt_yes" name="attach_receipt" class="custom-control-input" value="1">
+                <label class="custom-control-label" for="attach_receipt_yes">Sim</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="attach_receipt_no" name="attach_receipt" class="custom-control-input" value="0">
+                <label class="custom-control-label" for="attach_receipt_no">Não</label>
+              </div>
               </div>
 
             <!-- botão -->

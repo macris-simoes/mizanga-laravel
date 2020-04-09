@@ -26,6 +26,7 @@ Route::get('/inscrito','InscritoController@inscritoIndex');
 
 //----------ADMIN-------------
 Route::get('/admin','AdminController@adminIndex');
+Route::post('/admin','AdminController@adminInscritoSubmitPost');
 
 
 //--------Parecerista----------
