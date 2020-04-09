@@ -6,9 +6,7 @@
 <body>
     <!-- início divona container CONFIG CONGRESSO -->
     <div class="container">
-        <div>
-            @include('includes.admin-congresso-pills')
-        </div>
+
 
         <!-- início Cabeçalho1 -->
         <div class="mb-1 pt-1">
