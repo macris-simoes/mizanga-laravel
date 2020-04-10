@@ -10,13 +10,13 @@
     <div class="nav nav-pills" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active" href="/admin-home">Início</a>
 
-      <a class="nav-item nav-link font-weight-bolder" href="admin-congresso">Congresso</a>
+      <a class="nav-item nav-link font-weight-bolder" href="admin-config-congresso">Congresso</a>
 
-      <a class="nav-item nav-link" href="admin-inscrito">Inscritos</a>
+      <a class="nav-item nav-link" href="admin-config-inscrito">Inscritos</a>
 
-      <a class="nav-item nav-link" href="admin-trabalho">Trabalhos</a>
+      <a class="nav-item nav-link" href="admin-config-trabalho">Trabalhos</a>
 
-      <a class="nav-item nav-link" href="admin-parecerista">Pareceristas</a>
+      <a class="nav-item nav-link" href="admin-config-parecerista">Pareceristas</a>
     </div>
   </nav>
   <!-- fim do menu das tabs -->

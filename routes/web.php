@@ -26,10 +26,10 @@ Route::get('/inscrito','InscritoController@inscritoIndex');
 
 //----------ADMIN GET-------------
 Route::get('/admin-home','AdminController@adminHome');
-Route::get('/admin-congresso','AdminController@adminCongresso');
-Route::get('/admin-parecerista','AdminController@adminParecerista');
-Route::get('/admin-inscrito','AdminController@adminInscrito');
-Route::get('/admin-trabalho','AdminController@adminTrabalho');
+Route::get('/admin-config-congresso','AdminController@adminCongresso');
+Route::get('/admin-config-parecerista','AdminController@adminParecerista');
+Route::get('/admin-config-inscrito','AdminController@adminInscrito');
+Route::get('/admin-config-trabalho','AdminController@adminTrabalho');
 
 
 //----------ADMIN POST-------------

@@ -2,33 +2,52 @@
 
 @section('content')
 
-
-
-
 {{-- início da pills do ADMIN --}}
-<!-- início divona container -->
+<!-- início div container -->
 <div class="container">
-  <!-- Início do menu das tabs -->
-  <nav>
-    <div class="nav nav-pills" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link " href="/admin-home">Início</a>
+    <!-- Início do menu das pills -->
+    <nav>
+        <div class="nav nav-pills" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link " href="/admin-home">Início</a>
 
-      <a class="nav-item nav-link font-weight-bolder" href="admin-congresso">Congresso</a>
+            <a class="nav-item nav-link active font-weight-bolder" href="admin-config-congresso">Congresso</a>
 
-      <a class="nav-item nav-link " href="admin-inscrito">Inscritos</a>
+            <a class="nav-item nav-link" href="#">Inscritos</a>
 
-      <a class="nav-item nav-link active" href="admin-trabalho">Trabalhos</a>
+            <a class="nav-item nav-link" href="#">Trabalhos</a>
 
-      <a class="nav-item nav-link " href="admin-parecerista">Pareceristas</a>
-    </div>
-  </nav>
-  <!-- fim do menu das tabs -->
-  <!-- fim da divona container -->
+            <a class="nav-item nav-link" href="#">Pareceristas</a>
+        </div>
+    </nav>
+    <!-- fim do menu das pills -->
+    <!-- fim da div container -->
 </div>
 {{-- fim da pills do ADMIN --}}
 
 
-<!-- início divona container -->
+{{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
+
+<div class="container">
+
+    <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link " href="/admin-config-congresso">Configurar congresso</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/admin-config-inscrito">Configurar modalidades de inscrição</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/admin-config-trabalho">Configurar trabalhos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-config-parecerista">Adicionar pareceristas</a>
+        </li>
+    </ul>
+  
+  </div>
+  {{-- fim da tabs do ADMIN CONFIG CONGRESSO --}}
+
+<!-- início div container -->
 <div class="container">
 
   <!-- início Cabeçalho -->
@@ -147,6 +166,6 @@
   <!-- fim div row -->
 
 </div>
-<!-- fim divona container -->
+<!-- fim div container -->
 
 @endsection

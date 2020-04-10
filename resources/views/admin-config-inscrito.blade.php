@@ -4,33 +4,56 @@
     
 
 {{-- início da pills do ADMIN --}}
-<!-- início divona container -->
+<!-- início div container -->
 <div class="container">
-  <!-- Início do menu das tabs -->
+  <!-- Início do menu das pills -->
   <nav>
-    <div class="nav nav-pills" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link " href="/admin-home">Início</a>
-      
-      <a class="nav-item nav-link font-weight-bolder" href="admin-congresso">Congresso</a>
-      
-      <a class="nav-item nav-link active" href="admin-inscrito">Inscritos</a>
-      
-      <a class="nav-item nav-link" href="admin-trabalho">Trabalhos</a>
-      
-      <a class="nav-item nav-link" href="admin-parecerista">Pareceristas</a>
-    </div>
+      <div class="nav nav-pills" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link " href="/admin-home">Início</a>
+
+          <a class="nav-item nav-link active font-weight-bolder" href="admin-config-congresso">Congresso</a>
+
+          <a class="nav-item nav-link" href="#">Inscritos</a>
+
+          <a class="nav-item nav-link" href="#">Trabalhos</a>
+
+          <a class="nav-item nav-link" href="#">Pareceristas</a>
+      </div>
   </nav>
-  <!-- fim do menu das tabs -->
-  <!-- fim da divona container -->
+  <!-- fim do menu das pills -->
+  <!-- fim da div container -->
 </div>
 {{-- fim da pills do ADMIN --}}
 
 
-<!-- início divona container -->
+{{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
+
+<div class="container">
+
+  <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+          <a class="nav-link " href="/admin-config-congresso">Configurar congresso</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link active" href="/admin-config-inscrito">Configurar modalidades de inscrição</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/admin-config-trabalho">Configurar trabalhos</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/admin-config-parecerista">Adicionar pareceristas</a>
+      </li>
+  </ul>
+
+</div>
+{{-- fim da tabs do ADMIN CONFIG CONGRESSO --}}
+
+
+<!-- início div container -->
 <div class="container">
   
   <!-- início Cabeçalho1 -->
-  <div class="mb-1 pt-1">
+  <div>
     <h1 class="display-3">Inscritos</h1>
     <p class="lead font-italic"> Gerenciar modalidades de inscrição</p>
   </div>
@@ -76,11 +99,11 @@
               
               <!-- Anexar comprovante? -->
               <div class="col-md-12 mt-3 ">
-                <div class="custom-control custom-radio">
+                <div class="form-check custom-control custom-radio">
                 <input type="radio" id="attach_receipt_yes" name="attach_receipt" class="custom-control-input" value="1">
                 <label class="custom-control-label" for="attach_receipt_yes">Sim</label>
               </div>
-              <div class="custom-control custom-radio">
+              <div class=" form-check custom-control custom-radio">
                 <input type="radio" id="attach_receipt_no" name="attach_receipt" class="custom-control-input" value="0">
                 <label class="custom-control-label" for="attach_receipt_no">Não</label>
               </div>

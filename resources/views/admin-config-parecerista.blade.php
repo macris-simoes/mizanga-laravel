@@ -1,29 +1,51 @@
 @extends('template')
 
 @section('content')
-    
 
 {{-- início da pills do ADMIN --}}
-<!-- início divona container -->
+<!-- início div container -->
 <div class="container">
-    <!-- Início do menu das tabs -->
+    <!-- Início do menu das pills -->
     <nav>
         <div class="nav nav-pills" id="nav-tab" role="tablist">
             <a class="nav-item nav-link " href="/admin-home">Início</a>
-            
-            <a class="nav-item nav-link font-weight-bolder" href="admin-congresso">Congresso</a>
-            
-            <a class="nav-item nav-link " href="admin-inscrito">Inscritos</a>
-            
-            <a class="nav-item nav-link" href="admin-trabalho">Trabalhos</a>
-            
-            <a class="nav-item nav-link active" href="admin-parecerista">Pareceristas</a>
+
+            <a class="nav-item nav-link active font-weight-bolder" href="admin-config-congresso">Congresso</a>
+
+            <a class="nav-item nav-link" href="#">Inscritos</a>
+
+            <a class="nav-item nav-link" href="#">Trabalhos</a>
+
+            <a class="nav-item nav-link" href="#">Pareceristas</a>
         </div>
     </nav>
-    <!-- fim do menu das tabs -->
-    <!-- fim da divona container -->
+    <!-- fim do menu das pills -->
+    <!-- fim da div container -->
 </div>
 {{-- fim da pills do ADMIN --}}
+
+
+{{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
+
+<div class="container">
+
+    <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link " href="/admin-config-congresso">Configurar congresso</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/admin-config-inscrito">Configurar modalidades de inscrição</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="/admin-config-trabalho">Configurar trabalhos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/admin-config-parecerista">Adicionar pareceristas</a>
+        </li>
+    </ul>
+  
+  </div>
+  {{-- fim da tabs do ADMIN CONFIG CONGRESSO --}}
 
 <div class="container">
     <div class="mb-1 pt-1">
@@ -69,7 +91,7 @@
                     <div class="form-group col-md-6">
                         Eixo 02 - Lorem ipsum dolor sit amet consectetur
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-che ck form-check-inline">
                         <input class="form-check-input" type="radio" id="eixoDoisSim" value="true" name="axis_02">
                         <label class="form-check-label" for="eixoDoisSim">Sim</label>
                     </div>
