@@ -50,7 +50,7 @@
 
 
 <!-- início div container -->
-<div class="container">
+<div class="container shadow">
   
   <!-- início Cabeçalho1 -->
   <div>
@@ -60,10 +60,10 @@
   <!-- fim Cabeçalho1 -->
   
   <!-- início div row -->
-  <div class= "row">
+  <div class= "row ">
     
     <!-- Início lista de modalidades -->
-    <div class=" list-group-flush col-md-3 border rounded">
+    <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
       <li class="list-group-item"> <a href="#">Estudante</a></li>
       <li class="list-group-item"> <a href="#">Profissional</a></li>

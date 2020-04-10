@@ -4,7 +4,7 @@
 
 {{-- início da pills do ADMIN --}}
 <!-- início div container -->
-<div class="container">
+<div class="container ">
     <!-- Início do menu das pills -->
     <nav>
       <div class="nav nav-pills" id="nav-tab" role="tablist">
@@ -48,7 +48,7 @@
   {{-- fim da tabs do ADMIN CONFIG CONGRESSO --}}
 
 <!-- início div container -->
-<div class="container">
+<div class="container shadow">
 
   <!-- início Cabeçalho -->
   <div class="mb-1 pt-1">
@@ -61,7 +61,7 @@
   <div class="row">
 
     <!-- Início lista de modalidades -->
-    <div class=" list-group-flush col-md-3 border rounded">
+    <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
       <li class="list-group-item"> <a href="#">Pôster</a></li>
       <li class="list-group-item"> <a href="#">Comunicação Oral</a></li>

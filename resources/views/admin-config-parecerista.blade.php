@@ -47,7 +47,7 @@
   </div>
   {{-- fim da tabs do ADMIN CONFIG CONGRESSO --}}
 
-<div class="container">
+<div class="container shadow">
     <div class="mb-1 pt-1">
         <h1 class="display-3">Incluir Parecerista</h1>
         <p class="lead font-italic"></p>

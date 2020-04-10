@@ -50,7 +50,7 @@
 
 
 <!-- início div container CONFIG CONGRESSO -->
-<div class="container">
+<div class="container shadow">
 
 
     <!-- início Cabeçalho1 -->
