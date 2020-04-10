@@ -24,22 +24,25 @@ Route::get('/login','LoginController@loginIndex')->name('login');
 //------------INSCRITO------------
 Route::get('/inscrito','InscritoController@inscritoIndex');
 
-//----------ADMIN-------------
-// Route::get('/admin','AdminController@adminIndex');
+//----------ADMIN GET-------------
+Route::get('/admin-home','AdminController@adminHome');
+Route::get('/admin-congresso','AdminController@adminCongresso');
+Route::get('/admin-parecerista','AdminController@adminParecerista');
+Route::get('/admin-inscrito','AdminController@adminInscrito');
+Route::get('/admin-trabalho','AdminController@adminTrabalho');
+
+
+//----------ADMIN POST-------------
 Route::post('/admin','AdminController@adminInscritoSubmitPost');
 
 
-// cris
-Route::get('/admin','AdminController@adminIndex');
 
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
-
-Route::resource ('crud','CrudController');
-
 Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
 
 
+Route::resource ('crud','CrudController');
 //middleware group - habilitar no final, para acesso somente com login.
 
 // route::middleware('auth')->group(function() {

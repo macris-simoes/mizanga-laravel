@@ -7,11 +7,26 @@ use App\AttendeeConfig;
 
 class adminController extends Controller
 {
-    public function adminIndex()
+    public function adminHome()
     {
-        return view('admin-home',[
-            'admin' => request('admin')
-        ]);
+        return view('admin-home');
+    }
+
+    public function adminCongresso()
+    {
+        return view('admin-config-congresso');
+    }
+    public function adminInscrito()
+    {
+        return view('admin-config-inscrito');
+    }
+    public function adminTrabalho()
+    {
+        return view('admin-config-trabalho');
+    }
+    public function adminParecerista()
+    {
+        return view('admin-config-Parecerista');
     }
 
 

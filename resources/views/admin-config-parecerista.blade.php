@@ -1,31 +1,56 @@
 @extends('template')
-    
-    <div class="container">
-        <div class="mb-1 pt-1">
-            <h1 class="display-3">Incluir Parecerista</h1>
-            <p class="lead font-italic"></p>
-        </div>
 
-        <form action="" method="post">
-            @csrf
-            <div class="my-3">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="cpf">CPF*</label>
-                        <input type="text" class="form-control" id="cpf" placeholder="CPF" name="appraiser_cpf">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="nome">Nome*</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="appraiser_name">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="email">E-mail*</label>
-                        <input type="text" class="form-control" id="email" placeholder="E-mail" name="appraiser_email">
-                    </div>
+@section('content')
+    
+
+{{-- início da pills do ADMIN --}}
+<!-- início divona container -->
+<div class="container">
+    <!-- Início do menu das tabs -->
+    <nav>
+        <div class="nav nav-pills" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link " href="/admin-home">Início</a>
+            
+            <a class="nav-item nav-link font-weight-bolder" href="admin-congresso">Congresso</a>
+            
+            <a class="nav-item nav-link " href="admin-inscrito">Inscritos</a>
+            
+            <a class="nav-item nav-link" href="admin-trabalho">Trabalhos</a>
+            
+            <a class="nav-item nav-link active" href="admin-parecerista">Pareceristas</a>
+        </div>
+    </nav>
+    <!-- fim do menu das tabs -->
+    <!-- fim da divona container -->
+</div>
+{{-- fim da pills do ADMIN --}}
+
+<div class="container">
+    <div class="mb-1 pt-1">
+        <h1 class="display-3">Incluir Parecerista</h1>
+        <p class="lead font-italic"></p>
+    </div>
+    
+    <form action="" method="post">
+        @csrf
+        <div class="my-3">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="cpf">CPF*</label>
+                    <input type="text" class="form-control" id="cpf" placeholder="CPF" name="appraiser_cpf">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Nome*</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Nome" name="appraiser_name">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">E-mail*</label>
+                    <input type="text" class="form-control" id="email" placeholder="E-mail" name="appraiser_email">
                 </div>
             </div>
-
-            <div class="my-3">
+        </div>
+        
+        <div class="my-3">
                 <h5>Eixos temáticos</h5>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -80,7 +105,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </form>
 
         <div class="my-4">
@@ -88,4 +113,6 @@
             <a href="/admin" class="btn btn-primary" style="width:120px">Voltar</a>
         </div>
     </div>
-
+    
+    
+    @endsection
