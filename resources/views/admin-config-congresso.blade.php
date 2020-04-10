@@ -101,6 +101,26 @@
                         <!-- aqui tem que por o php conforme a config no admin -->
                     </div>
 
+{{-- eixos temáticos --}}
+                    <!-- Início lista de modalidades -->
+                    <div class="  col-md-12 border p-3 rounded bg-light">
+                        <div class="col-md-12 ">
+                            <h4 class="my-1 font-weight-bold">Eixos temáticos</h4>
+                            {{-- <label class="font-weight-bold" for="eixo">Cadastrar eixo</label> --}}
+                            <div class=" d-flex  form-inline form-group">
+                                <input type="text" class="form-control col-md-11" placeholder="Insira um eixo" name="axis" required>
+                                <button type="submit" class="btn btn-primary col-md-1"> Adicionar </button>
+                            </div>
+
+                            <ul class="list-group rounded">
+                                <li class="list-group-item "> Psicologia social, políticas públicas e direitos sociais: práticas de resistência e emancipação em contextos neoliberais</li>
+                                <li class="list-group-item "> Psicologia social, gênero e sexualidades </li>
+                                <li class="list-group-item "> Psicologia social, comunicação e mídias </li>
+                                <li class="list-group-item "> Insurgências ético-estético-políticas: contribuições da psicologia social</li>
+                            </ul>
+                        </div>
+                        <!-- fim lista de lista de eixos -->
+
                     <!-- botão -->
                     <div class=" mt-4 col-md-12">
                         <button class="btn btn-primary" type="submit" style="width:120px">Criar</button>
