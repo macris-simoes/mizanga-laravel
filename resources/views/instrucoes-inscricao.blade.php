@@ -18,7 +18,7 @@
           Commodi maxime, consectetur eligendi, facere consequatur non hic eum recusandae tempora beatae aliquam eveniet ducimus ab necessitatibus corporis quos ipsam ut quibusdam praesentium quae molestiae impedit voluptas, totam reprehenderit. Pariatur?
         </p>
         <div class="d-block">
-          <p class="font-weight-bold d-inline">Critérios para inscrições de trabalhos:</p> <a target="_blank" href="./link-criterios-trabalho.php"> clique aqui.</a>
+          <p class="font-weight-bold d-inline">Critérios para inscrições de trabalhos:</p> <a target="_blank" href="/criterios-trabalho"> clique aqui.</a>
           <!-- add JS para abrir nova pagina pop-up -->
         </div>
         <p class="font-weight-bold d-inline"> Dúvidas? </p> <a href="contato">Mande uma mensagem.</a>

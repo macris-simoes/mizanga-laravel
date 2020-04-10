@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    @include('includes.head')
-<body>
-    <div class="sticky-top">
-        @include('includes.navbar')
-    </div>
+@extends('template')
 
-
+@section('content')
     <div class="container">
         <div class="mb-1 pt-1">
             <h4 class="display-3">Ficha de Inscrição</h4>
@@ -328,12 +322,7 @@
 
     </div>
 
-    <div>
-        @include('includes.footer')
-        @include('includes.script')
-    </div>
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 <script src="/js/inscricao-usuario-mascara.js"></script>
-</body>
-
-</html>
+@endsection
