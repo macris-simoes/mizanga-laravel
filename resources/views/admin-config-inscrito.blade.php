@@ -8,17 +8,17 @@
 <div class="container">
   <!-- Início do menu das pills -->
   <nav>
-      <div class="nav nav-pills" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link " href="/admin-home">Início</a>
+    <div class="nav nav-pills" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link" href="/admin-home">Início</a>
 
-          <a class="nav-item nav-link active font-weight-bolder" href="admin-config-congresso">Congresso</a>
+      <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
 
-          <a class="nav-item nav-link" href="#">Inscritos</a>
+      <a class="nav-item nav-link active" href="/admin-inscrito">Inscritos</a>
 
-          <a class="nav-item nav-link" href="#">Trabalhos</a>
+      <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
 
-          <a class="nav-item nav-link" href="#">Pareceristas</a>
-      </div>
+      <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
+    </div>
   </nav>
   <!-- fim do menu das pills -->
   <!-- fim da div container -->
@@ -26,7 +26,7 @@
 {{-- fim da pills do ADMIN --}}
 
 
-{{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
+{{-- início da tabs do ADMIN CONFIG INSCRITO --}}
 
 <div class="container">
 

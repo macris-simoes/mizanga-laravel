@@ -39,6 +39,8 @@ Route::get('/admin-parecerista','AdminController@adminParecerista');
 //----------ADMIN INSCRITO GET-------------
 Route::get('/admin-config-inscrito','AdminController@adminConfigInscrito');
 Route::get('/admin-inscrito','AdminController@adminInscrito');
+Route::get('/admin-inscrito-showa','AdminController@adminInscritoShowA');
+Route::get('/admin-inscrito-showb','AdminController@adminInscritoShowB');
 
 
 

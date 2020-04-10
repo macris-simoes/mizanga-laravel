@@ -29,6 +29,16 @@ class adminController extends Controller
         return view('admin-inscrito');
     }
 
+    public function adminInscritoShowA()
+    {
+        return view('admin-inscrito-showa');
+    }
+    
+    public function adminInscritoShowB()
+    {
+        return view('admin-inscrito-showb');
+    }
+
 
     //TRABALHOS
     public function adminConfigTrabalho()

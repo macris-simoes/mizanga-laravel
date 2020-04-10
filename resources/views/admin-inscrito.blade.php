@@ -6,37 +6,46 @@
 {{-- início da pills do ADMIN --}}
 <!-- início div container -->
 <div class="container">
-    <!-- Início do menu das tabs -->
+    <!-- Início do menu das pills -->
     <nav>
-        <div class="nav nav-pills" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link" href="/admin-home">Início</a>
-            <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
-            <a class="nav-item nav-link active" href="/admin-inscrito">Inscritos</a>
-            <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
-            <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
-        </div>
+      <div class="nav nav-pills" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link" href="/admin-home">Início</a>
+  
+        <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
+  
+        <a class="nav-item nav-link active" href="/admin-inscrito">Inscritos</a>
+  
+        <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
+  
+        <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
+      </div>
     </nav>
-    <!-- fim do menu das tabs -->
+    <!-- fim do menu das pills -->
     <!-- fim da div container -->
-</div>
-{{-- fim da pills do ADMIN --}}
+  </div>
+  {{-- fim da pills do ADMIN --}}
+  
 
 {{-- ---------------------------------------------------------------------------- --}}
 
 <!-- Início lista cRud index inscrito -->
 <div class="container mt-3 col-md-10 bg-light rounded shadow">
+
     {{-- início do campo de busca --}}
     <div class="d-flex w-100 my-3 justify-content-between">  
         <div>
             <h4 class="mt-3 font-weight-bold">Pesquisar Inscritos</h4>
+            <p>Inscrições até o momento: 1234</p>
+            <small>Clique sobre o nome do inscrito para acessar as informações</small>
         </div>
+        
         <div class="d-flex justify-content-end">
             <div class="d-flex flex-column">
                 <span class="badge badge-success badge-pill">$</span>
                 <span class="badge badge-info badge-pill">T</span>
                 <span class="badge badge-warning badge-pill">A</span>
             </div>
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column ml-1">
                 <small>Pagamento realizado</small>
                 <small>Submissão de trabalho</small>
                 <small>Trabalho aprovado</small>
@@ -49,14 +58,13 @@
         <div class="input-group-append">
           <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
         </div>
-      </div>
-        {{-- fim do campo de busca --}}
-
-        {{-- início dos cards de resultado da busca --}}
+    </div>
+    {{-- fim do campo de busca --}}
 
 
+    {{-- início dos cards de resultado da busca --}}
     <div class="list-group my-3">
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="/admin-inscrito-showa" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
                 <small>há 15 dia(s)</small>

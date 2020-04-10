@@ -4,7 +4,7 @@
 
 {{-- início da pills do ADMIN --}}
 <!-- início divona container -->
-<div class="container">
+<div class="container sticky-top">
   <!-- Início do menu das tabs -->
   <nav>
     <div class="nav nav-pills" id="nav-tab" role="tablist">

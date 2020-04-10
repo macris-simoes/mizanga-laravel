@@ -8,9 +8,9 @@
     <!-- Início do menu das pills -->
     <nav>
         <div class="nav nav-pills" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" href="/admin-home">Início</a>
+          <a class="nav-item nav-link" href="/admin-home">Início</a>
     
-          <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
+          <a class="nav-item nav-link active font-weight-bolder" href="/admin-config-congresso">Congresso</a>
     
           <a class="nav-item nav-link" href="/admin-inscrito">Inscritos</a>
     
