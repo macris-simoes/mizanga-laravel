@@ -1,14 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    @include('includes.head')
+@extends('template')
 
-<body>
-    
+@section('content')
+
+    <div class="container">
+        <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link " href="/inscrito-home">Informações</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/inscrito-certificados">Certificados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/inscrito-enviar-trabalho">Enviar trabalho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/inscrito-trabalhos-cadastrados">Trabalhos cadastrados</a>
+            </li>
+        </ul>
+    </div>
     <!-- início envio de trabalho -->
     <div class="container">
 
         <div class="mb-1 pt-1 pb-2">
-            <h4 class="display-3">Inserir novo trabalho</h4>
+            <h4 class="display-3">Enviar novo trabalho</h4>
             <p class="lead font-italic"></p>
         </div>
 
@@ -127,13 +141,13 @@
             <div class="accordion mb-2" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        Adicionar co-autor
-                    </button>
-                    </h5>
-                  </div>
-                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Adicionar co-autor
+                        </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
 
 
@@ -259,6 +273,4 @@
 
     </div>
 
-</body>
-
-</html>
+@endsection
