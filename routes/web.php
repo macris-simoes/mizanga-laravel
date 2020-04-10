@@ -27,9 +27,21 @@ Route::get('/inscrito','InscritoController@inscritoIndex');
 //----------ADMIN GET-------------
 Route::get('/admin-home','AdminController@adminHome');
 Route::get('/admin-config-congresso','AdminController@adminCongresso');
-Route::get('/admin-config-parecerista','AdminController@adminParecerista');
-Route::get('/admin-config-inscrito','AdminController@adminInscrito');
-Route::get('/admin-config-trabalho','AdminController@adminTrabalho');
+
+
+//----------ADMIN PARECERISTA GET-------------
+Route::get('/admin-config-parecerista','AdminController@adminConfigParecerista');
+Route::get('/admin-parecerista','AdminController@adminParecerista');
+
+//----------ADMIN INSCRITO GET-------------
+Route::get('/admin-config-inscrito','AdminController@adminConfigInscrito');
+Route::get('/admin-inscrito','AdminController@adminInscrito');
+
+
+
+//----------ADMIN TRABALHO GET-------------
+Route::get('/admin-config-trabalho','AdminController@adminConfigTrabalho');
+Route::get('/admin-trabalho','AdminController@adminTrabalho');
 
 
 //----------ADMIN POST-------------

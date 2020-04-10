@@ -7,17 +7,17 @@
 <div class="container">
     <!-- Início do menu das pills -->
     <nav>
-        <div class="nav nav-pills" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link " href="/admin-home">Início</a>
-
-            <a class="nav-item nav-link active font-weight-bolder" href="admin-config-congresso">Congresso</a>
-
-            <a class="nav-item nav-link" href="#">Inscritos</a>
-
-            <a class="nav-item nav-link" href="#">Trabalhos</a>
-
-            <a class="nav-item nav-link" href="#">Pareceristas</a>
-        </div>
+      <div class="nav nav-pills" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" href="/admin-home">Início</a>
+  
+        <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
+  
+        <a class="nav-item nav-link" href="/admin-inscrito">Inscritos</a>
+  
+        <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
+  
+        <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
+      </div>
     </nav>
     <!-- fim do menu das pills -->
     <!-- fim da div container -->
@@ -99,7 +99,19 @@
           <div for="coauthor_quantity" class="form-group col-md-2" data-toggle="tooltip" data-placement="right"
             title="Sem limite? Deixe em branco">
             <label>Coautores</label>
-            <input type="number" class="form-control" id="coauthor_quantity" name="coauthor_quantity">
+            <select type="number" class="form-control" id="coauthor_quantity" name="coauthor_quantity">
+              <option selected disabled> Escolher</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
           </div>
 
         </div>
@@ -153,7 +165,7 @@
           </div>
 
           <div class="col-md-12">
-            <button class="mt-3 btn btn-outline-primary" type="submit" style="width:120px">OK</button>
+            <button class="mt-3 btn btn-primary" type="submit" style="width:120px">OK</button>
           </div>
         </div>
 

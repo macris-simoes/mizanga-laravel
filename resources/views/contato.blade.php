@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+@extends('template')
 
-    @include('includes.head')
-<body>
-
-    <div class="sticky-top">
-        @include('includes.navbar')
-    </div>
+@section('content')
 
     <div class="container">
         <div class="mb-1 pt-1">
@@ -44,9 +38,4 @@
             </form>
         </div>
     </div>
-    <div>
-        {{-- @include('includes.footer')
-        @include('includes.script') --}}
-    </div>
-</body>
-</html>
+@endsection

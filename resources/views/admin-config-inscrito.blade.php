@@ -111,7 +111,7 @@
             
             <!-- botão -->
             <div class=" mt-4 col-md-12">
-              <button class="btn btn-outline-primary" type="submit" style="width:120px">OK</button>
+              <button class="btn btn-primary" type="submit" style="width:120px">OK</button>
             </div>
 
           </div>
