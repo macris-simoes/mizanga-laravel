@@ -33,7 +33,7 @@
         <a class="nav-link" href="/instrucoes-inscricao"> Faça sua inscrição</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin"> Área do admin </a>
+        <a class="nav-link" href="/admin-home"> Área do admin </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/inscrito"> Área do inscrito </a>
