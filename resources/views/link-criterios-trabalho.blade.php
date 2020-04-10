@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    @include('includes.head')
+@extends('template')
 
-
-<body>
-
-    <div class="sticky-top">
-        @include('includes.navbar')
-    </div>
+@section('content')
 
     <main>
         <div class="container">
@@ -43,10 +36,4 @@
 
 
     </main>
-    <div>
-        {{-- @include('includes.footer')
-        @include('includes.script') --}}
-    </div>
-</body>
-
-</html>
+@endsection

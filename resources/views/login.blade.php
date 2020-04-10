@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    @include('includes.head')
+@extends('template')
+
+@section('content')
+
 
 <style>
 	html,
@@ -58,10 +59,4 @@
 		</div>
 	</main>
 
-	<div>
-		{{-- @include('includes.footer')
-		@include('includes.script') --}}
-	</div>
-</body>
-
-</html>
+@endsection
