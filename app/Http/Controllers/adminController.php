@@ -18,6 +18,11 @@ class adminController extends Controller
         return view('admin-config-congresso');
     }
 
+    public function adminEixo()
+    {
+        return view('admin-config-eixos');
+    }
+
 
     // INSCRITOS
     public function adminConfigInscrito()
