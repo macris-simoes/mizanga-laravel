@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  @include('includes.head')
+@extends('template')
+
+@section('content')
 
 <body>
   
@@ -72,7 +72,4 @@
       <a href="/parecerista" class="btn btn-primary" style="width: 10%">Voltar</a>
     </div>
   </div>
-  
-</body>
-
-</html>
+@endsection

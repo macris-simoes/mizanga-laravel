@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    @include('includes.head')
+@extends('template')
+
+@section('content')
+
 
 <body>
 
@@ -56,6 +57,4 @@
         <hr class="my-3">
     </div>
 
-</body>
-
-</html>
+@endsection

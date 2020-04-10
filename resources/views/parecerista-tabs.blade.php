@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    @include('includes.head')
-<body>
-<!-- navbar -->
-  <div class="sticky-top">
-    <div>
-        @include('includes.navbar')
-    </div>
-  </div>
+@extends('template')
+
+@section('content')
+
    
 <!-- início divona container -->
   <div class="container">
@@ -36,11 +30,4 @@
   </div>
   
 <!-- scripts e footer -->
-  <div>
-    
-    @include('includes.footer')
-    @include('includes.script')
-  </div>
-
-</body>
-</html>
+@endsection
