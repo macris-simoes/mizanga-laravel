@@ -45,8 +45,8 @@
         </div>
     </div>
     <div>
-        @include('includes.footer')
-        @include('includes.script')
+        {{-- @include('includes.footer')
+        @include('includes.script') --}}
     </div>
 </body>
 </html>
