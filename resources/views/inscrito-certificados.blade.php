@@ -1,8 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    @include('includes.head')
-    <body>
-        
+@extends('template')
+
+@section('content')
+
+    <div class="container">
+        <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link " href="/inscrito-home">Informações</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active " href="/inscrito-certificados">Certificados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/inscrito-enviar-trabalho">Enviar trabalho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/inscrito-trabalhos-cadastrados">Trabalhos cadastrados</a>
+            </li>
+        </ul>
+    </div>
         <div class="container">
             <div class="mb-1 pt-1">
                 <h4 class="display-3">Certificados</h4>
@@ -23,6 +38,4 @@
             </div>
     
         </div>
-    </body>
-    
-    </html>
+@endsection

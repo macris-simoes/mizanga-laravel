@@ -22,7 +22,10 @@ Route::get('/login','LoginController@loginIndex')->name('login');
 //envio de form// Route::post('/login', 'ContatoController@loginSubmitPost');
 
 //------------INSCRITO------------
-Route::get('/inscrito','InscritoController@inscritoIndex');
+Route::get('/inscrito-home','InscritoController@inscritoInfo');
+Route::get('/inscrito-certificados','InscritoController@certificados');
+Route::get('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
+Route::get('/inscrito-trabalhos-cadastrados','InscritoController@trabalhosCadastrados');
 
 //----------ADMIN GET-------------
 Route::get('/admin-home','AdminController@adminHome');
