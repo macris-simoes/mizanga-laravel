@@ -4,7 +4,7 @@
 
 {{-- início da pills do ADMIN --}}
 <!-- início divona container -->
-<div class="container sticky-top">
+<div class="container">
   <!-- Início do menu das tabs -->
   <nav>
     <div class="nav nav-pills" id="nav-tab" role="tablist">
@@ -29,55 +29,62 @@
 <div class="container">
 
   <!-- Cabeçalho -->
-  <div class="row">
-    <aside class="col-md-4 col-sm-12 m-2 px-0">
-      <img class="mx-auto d-block" style="width:80%" src="./img/mizangueras.gif" alt="">
+  <div class="row p-3">
+
+    <aside class="col-md-4 col-sm-12 px-0 bg-white rounded shadow-sm">
+      <img class="m-auto d-block" style="width:80%" src="./img/mizangueras.gif" alt="">
       <h1 class="text-center">1º Encontro das mizangueiras</h1>
       <p class="lead text-center">de 28/10/2019 a 28/04/2020 <br> Veja como estão as coisas!</p>
     </aside>
 
-    <!-- início card deck -->
-    <section class="card-group col-md-8 row mt-2 flex-wrap">
+    <!-- início cards menores -->
+    <section class="card-group col-md-8">
 
       <!-- início card Inscritos -->
-      <div class="card col-md-4 pt-2">
+      <div class="card col-md-4 border-0 pt-2 rounded shadow-sm">
         <h5 class="card-title font-weight-bold text-primary">Inscritos</h5>
         <!-- aqui tem php hein -->
-        <p class="card-text">Inscritos: 1000 </p>
+        <div class="list-group-flush">
+          <p class="list-item">Inscritos: 1000 </p>
+        </div>
       </div>
       <!-- fim card Inscritos -->
 
       <!-- início card trabalhos -->
-      <div class="card col-md-4 pt-2 ">
+      <div class="card col-md-4 border-0 pt-2 rounded shadow-sm">
         <h5 class="card-title font-weight-bold  text-primary">Trabalhos</h5>
         <!-- aqui tem php hein -->
-        <p class="card-text">Trabalhos inscritos: 1234 </p>
-        <p class="card-text">Trabalhos avaliados: 0123 </p>
-        <p class="card-text">Trabalhos aguardando avaliação: 0123 </p>
+        <div class="list-group-flush">
+          <div class="list-group-item">Trabalhos inscritos: 1234 </div>
+          <div class="list-group-item">Trabalhos avaliados: 0123 </div>
+          <div class="list-group-item">Trabalhos aguardando avaliação: 0123 </div>
+        </div>
       </div>
       <!-- fim card trabalhos -->
 
       <!-- início card pareceristas -->
-      <div class="card col-md-4 pt-2 rounded-right">
+      <div class="card col-md-4 border-0 pt-2 rounded shadow-sm">
         <h5 class="card-title font-weight-bold text-primary">Pareceristas</h5>
         <!-- aqui tem php hein -->
-        <p class="card-text">Pareceristas convidados: 1234 </p>
-        <p class="card-text">Pareceristas cadastrados: 0123 </p>
+        <div class="list-group-flush">
+        <div class="list-group-item">Pareceristas convidados: 1234 </div>
+        <div class="list-group-item">Pareceristas cadastrados: 0123 </div>
+        </div>
       </div>
       <!-- fim card pareceristas -->
 
       <!-- início card maior (prazos) -->
-      <div class="col-md-12 pt-2 border rounded mt-2">
+      <div class="col-md-12 pt-2 mt-2 rounded shadow-sm">
         <h5 class="card-title font-weight-bold text-primary">Prazos</h5>
         <!-- aqui tem php hein -->
-        <p class="card-text">Abertura de inscrições: 25/01/2020 </p>
-        <p class="card-text">Abertura para trabalhos: 25/01/2020 </p>
-        <p class="card-text">Dilatação de prazo (<strong>Não divulgar</strong> esta informação): 25/01/2020 </p>
+        <div class="card-text">Abertura de inscrições: 25/01/2020 </div>
+        <div class="card-text">Abertura para trabalhos: 25/01/2020 </div>
+        <div class="card-text">Dilatação de prazo (<strong>Não divulgar</strong> esta informação): 25/01/2020 </div>
       </div>
       <!-- fim card maior (prazos) -->
 
     </section>
-    <!-- fim card deck -->
+    <!-- fim cards menores -->
 
   </div>
   <!-- fim div row -->
