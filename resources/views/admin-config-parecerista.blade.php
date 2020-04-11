@@ -135,7 +135,7 @@
 
         <div class="my-4">
             <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
-            <a href="/admin" class="btn btn-primary" style="width:120px">Voltar</a>
+            <a href="/admin-home" class="btn btn-primary" style="width:120px">Voltar</a>
         </div>
     </div>
     

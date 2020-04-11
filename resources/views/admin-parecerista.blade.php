@@ -46,48 +46,91 @@
     {{-- início dos cards de resultado da busca --}}
     <div class="list-group my-3">
         <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
-                <small>há 15 dia(s)</small>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
+                    <small>Parecerista || macris.simoes@gmail.com</small>
+                    <small>Trabalhos designados: 1234</small>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between align-items-end">                    
+                    <small>há 15 dia(s)</small>
+                    <button type="submit" class="btn btn-outline-primary"> Remover parecerista </button>
+                </div>
             </div>
-            <div class="d-flex flex-row align-items-start">
-                <small class="col-md-10">Parecerista || macris.simoes@gmail.com</small>
-                <small class="col-md-10">Trabalhos designados: 1234</small>
+        </a>
+        <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
+                    <small>Parecerista || macris.simoes@gmail.com</small>
+                    <small>Trabalhos designados: 1234</small>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between align-items-end">                    
+                    <small>há 15 dia(s)</small>
+                    <button type="submit" class="btn btn-outline-primary"> Remover parecerista </button>
+                </div>
+            </div>
+        </a>
+        <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
+                    <small>Parecerista || macris.simoes@gmail.com</small>
+                    <small>Trabalhos designados: 1234</small>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between align-items-end">                    
+                    <small>há 15 dia(s)</small>
+                    <button type="submit" class="btn btn-outline-primary"> Remover parecerista </button>
+                </div>
+            </div>
+        </a>
+        <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
+                    <small>Parecerista || macris.simoes@gmail.com</small>
+                    <small>Trabalhos designados: 1234</small>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between align-items-end">                    
+                    <small>há 15 dia(s)</small>
+                    <button type="submit" class="btn btn-outline-primary"> Remover parecerista </button>
+                </div>
+            </div>
+        </a>
+        <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
+                    <small>Parecerista || macris.simoes@gmail.com</small>
+                    <small>Trabalhos designados: 1234</small>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between align-items-end">                    
+                    <small>há 15 dia(s)</small>
+                    <button type="submit" class="btn btn-outline-primary"> Remover parecerista </button>
+                </div>
+            </div>
+        </a>
+        <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column align-items-start">
+                    <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
+                    <small>Parecerista || macris.simoes@gmail.com</small>
+                    <small>Trabalhos designados: 1234</small>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between align-items-end">                    
+                    <small>há 15 dia(s)</small>
+                    <button type="submit" class="btn btn-outline-primary"> Remover parecerista </button>
+                </div>
             </div>
         </a>
 
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                <small class="col-md-10">Trabalhos designados: 1234</small>
-            </div>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-                <small class="col-md-10">Donec id elit non mi porta.</small>     
-                <small class="col-md-10">Trabalhos designados: 1234</small>
-            </div>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                <small class="col-md-10">Trabalhos designados: 1234</small>
-            </div>
-        </a>       
+      
 </div>
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->

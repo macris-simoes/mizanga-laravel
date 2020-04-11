@@ -27,6 +27,7 @@ Route::get('/inscrito-certificados','InscritoController@certificados');
 Route::get('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
 Route::get('/inscrito-trabalhos-cadastrados','InscritoController@trabalhosCadastrados');
 
+
 //----------ADMIN GET-------------
 Route::get('/admin-home','AdminController@adminHome');
 Route::get('/admin-config-congresso','AdminController@adminCongresso');
@@ -38,7 +39,6 @@ Route::get('/admin-parecerista','AdminController@adminParecerista');
 Route::get('/admin-parecerista-showa','AdminController@adminPareceristaShowA');
 Route::get('/admin-parecerista-showb','AdminController@adminPareceristaShowB');
 
-
 Route::get('/admin-parecerista-substituir','AdminController@adminPareceristaSubstituir');
 
 
@@ -48,17 +48,13 @@ Route::get('/admin-inscrito','AdminController@adminInscrito');
 Route::get('/admin-inscrito-showa','AdminController@adminInscritoShowA');
 Route::get('/admin-inscrito-showb','AdminController@adminInscritoShowB');
 
-
-
 //----------ADMIN TRABALHO GET-------------
 Route::get('/admin-config-trabalho','AdminController@adminConfigTrabalho');
 Route::get('/admin-trabalho','AdminController@adminTrabalho');
 Route::get('/admin-trabalho-showa','AdminController@adminTrabalhoShowA');
 
-
 //----------ADMIN POST-------------
 Route::post('/admin','AdminController@adminInscritoSubmitPost');
-
 
 
 //--------Parecerista----------
