@@ -34,6 +34,9 @@
             <a class="nav-link active " href="/admin-config-congresso">Configurar congresso</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/admin-config-eixos">Inserir Eixos</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link " href="/admin-config-inscrito">Configurar modalidades de inscrição</a>
         </li>
         <li class="nav-item">

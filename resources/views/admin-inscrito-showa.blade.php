@@ -8,45 +8,44 @@
 <div class="container">
     <!-- Início do menu das pills -->
     <nav>
-      <div class="nav nav-pills" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link" href="/admin-home">Início</a>
-  
-        <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
-  
-        <a class="nav-item nav-link active" href="/admin-inscrito">Inscritos</a>
-  
-        <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
-  
-        <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
-      </div>
+        <div class="nav nav-pills" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link" href="/admin-home">Início</a>
+
+            <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
+
+            <a class="nav-item nav-link active" href="/admin-inscrito">Inscritos</a>
+
+            <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
+
+            <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
+        </div>
     </nav>
     <!-- fim do menu das pills -->
     <!-- fim da div container -->
-  </div>
-  {{-- fim da pills do ADMIN --}}
-  
+</div>
+{{-- fim da pills do ADMIN --}}
+
 
 
 {{-- ---------------------------div container fundo colorido------------------------------------- --}}
-<div class="container mt-3 col-md-10 bg-light rounded shadow-sm">
-
-    <div class="card m-3 shadow">
-        
+<div class="container mt-3 col-md-10 shadow">
+    <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-inscrito" class="font-weigth-bold" style="width:120px"><<< Voltar</a> 
-            <h4 class="card-title mt-3">Maria Cristina Dancham Simões</h4>
+            <a href="/admin-inscrito" class="font-weigth-bold" style="width:120px"> <<< Voltar </a>
+
+            <h5 class="card-title">Maria Cristina Dancham Simões</h5>
             <h6 class="card-subtitle mb-2 text-muted">Estudante associado (1ª faixa) </h6>
 
 
             {{-- início da tabs do ADMIN READ INSCRITO --}}
 
-            <div class="container">
+            <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" href="/admin-inscrito-showa">Detalhes da inscrição</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="/admin-inscrito-showb">Trabalhos inscritos</a>
+                        <a class="nav-link " href="/admin-inscrito-showb">Trabalhos inscritos</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +57,7 @@
 
                 {{-- UPDATE ADMIN-INSCRITO --}}
                 <form id="inscricao-usuario" name="inscricao-usuario" method="post">
-{{-- início modalidade --}}
+                    {{-- início modalidade --}}
                     @csrf
                     <div class="my-3">
                         <div class="form-row">
@@ -66,10 +65,10 @@
                             <div class="form-group col-md-6">
                                 <label for="register_modality">Modalidade*</label>
                                 <select class="form-control" name="modality" id="register_modality">
-                                        <option selected disabled>Escolher</option>
-                                        <option>Estudante</option>
-                                        <option>Profissional</option>
-                                        <option>Outros</option>
+                                    <option selected disabled>Escolher</option>
+                                    <option>Estudante</option>
+                                    <option>Profissional</option>
+                                    <option>Outros</option>
                                 </select>
 
                                 @error('register_modality')
@@ -78,8 +77,8 @@
                             </div>
                         </div>
                     </div>
-                    
-{{-- dados pessoais --}}
+
+                    {{-- dados pessoais --}}
                     <div class="my-3">
                         <h5>Dados pessoais</h5>
                         <div class="form-row">
@@ -113,7 +112,8 @@
                                 <label for="name">Nome*</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Nome"
                                     value="{{ old('name') }}">
-                                <small id="passwordHelpBlock" class="form-text text-muted">*Atenção: Confira se seu
+                                <small id="passwordHelpBlock" class="form-text text-muted">*Atenção: Confira se
+                                    seu
                                     nome foi digitado corretamente!</small>
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
@@ -133,7 +133,8 @@
                                 <label for="social_name">Nome Social*</label>
                                 <input type="text" class="form-control" id="social_name" name="social_name"
                                     placeholder="Nome Social" value="{{ old('social_name') }}">
-                                <small id="passwordHelpBlock" class="form-text text-muted">Se desejar, inclua neste
+                                <small id="passwordHelpBlock" class="form-text text-muted">Se desejar, inclua
+                                    neste
                                     campo seu nome de uso habitual.</small>
                                 @error('social_name')
                                 <div class="text-danger">{{ $message }}</div>
@@ -146,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-{{-- formação --}}
+                    {{-- formação --}}
                     <div class="my-3">
                         <h5>Formação</h5>
                         <div class="form-row">
@@ -174,7 +175,7 @@
                             </div>
                         </div>
                     </div>
-{{-- atuaççao profissional --}}
+                    {{-- atuaççao profissional --}}
                     <div class="my-3">
                         <h5>Atuação Profissional</h5>
                         <div class="form-row">
@@ -199,14 +200,15 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label for="expertise">Áreas de atuação (informe as áreas de atuação separadas por
+                                <label for="expertise">Áreas de atuação (informe as áreas de atuação separadas
+                                    por
                                     ponto e vírgula)</label>
                                 <input type="text" class="form-control" id="expertise" name="expertise"
                                     placeholder="Áreas de atuação" value="{{ old('expertise') }}">
                             </div>
                         </div>
                     </div>
-{{-- Endereço --}}
+                    {{-- Endereço --}}
                     <div class="my-3">
                         <h5>Endereço</h5>
                         <div class="form-row">
@@ -221,7 +223,8 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="location" id="inlineRadio2"
                                     value="exterior">
-                                <label class="form-check-label" for="inlineRadio2">Residência no Exterior</label>
+                                <label class="form-check-label" for="inlineRadio2">Residência no
+                                    Exterior</label>
                             </div>
                         </div>
                         @error('location')
@@ -286,7 +289,7 @@
                             </div>
                         </div>
                     </div>
-{{-- Dados de contato --}}
+                    {{-- Dados de contato --}}
                     <div class="my-3">
                         <h5>Dados de contato</h5>
                         <div class="form-row">
@@ -327,7 +330,7 @@
                             </div>
                         </div>
                     </div>
-{{-- acessibilidade --}}
+                    {{-- acessibilidade --}}
                     <div class="my-3">
                         <h5>Acessibilidade</h5>
                         <div class="form-row">
@@ -351,14 +354,15 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label for="accessibility_info">Utilize este espaço para indicar quais recursos de
+                                <label for="accessibility_info">Utilize este espaço para indicar quais recursos
+                                    de
                                     acessibilidade você necessita</label>
                                 <input type="text" class="form-control" id="accessibility_info"
                                     name="accessibility_info" placeholder="" value="{{ old('accessibility_info') }}">
                             </div>
                         </div>
                     </div>
-{{-- dados complementares --}}
+                    {{-- dados complementares --}}
                     <div class="my-3">
                         <h5>Dados complementares</h5>
                         <div class="form-row">
@@ -383,7 +387,8 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-8">
-                                <label for="use_social_name">Prefere que o nome social seja utilizado na emissão do
+                                <label for="use_social_name">Prefere que o nome social seja utilizado na emissão
+                                    do
                                     certificado?*</label>
                                 <select class="form-control" name="use_social_name" id="use_social_name">
                                     <option selected disabled>Escolha...</option>
@@ -396,13 +401,13 @@
                             </div>
                         </div>
                     </div>
-{{-- buttons --}}
+                    {{-- buttons --}}
                     <div class="my-4 d-flex flex-row justify-content-between">
                         <div>
                             <input type="submit" class="btn btn-primary" style="width:120px" value="Atualizar">
-                            <a href="/admin-inscrito" class="btn btn-primary" style="width:120px">Voltar</a>    
+                            <a href="/admin-inscrito" class="btn btn-primary" style="width:120px">Voltar</a>
                         </div>
-                        
+
                         <input type="submit" class="btn btn-warning" value="Apagar registro">
                     </div>
                 </form>

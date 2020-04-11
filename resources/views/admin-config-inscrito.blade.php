@@ -11,9 +11,9 @@
     <div class="nav nav-pills" id="nav-tab" role="tablist">
       <a class="nav-item nav-link" href="/admin-home">Início</a>
 
-      <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
+      <a class="nav-item nav-link font-weight-bolder active" href="/admin-config-congresso">Congresso</a>
 
-      <a class="nav-item nav-link active" href="/admin-inscrito">Inscritos</a>
+      <a class="nav-item nav-link " href="/admin-inscrito">Inscritos</a>
 
       <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
 
@@ -33,6 +33,9 @@
   <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
       <li class="nav-item">
           <a class="nav-link " href="/admin-config-congresso">Configurar congresso</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin-config-eixos">Inserir Eixos</a>
       </li>
       <li class="nav-item">
           <a class="nav-link active" href="/admin-config-inscrito">Configurar modalidades de inscrição</a>

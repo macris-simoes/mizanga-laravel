@@ -29,7 +29,7 @@
 {{-- ---------------------------------------------------------------------------- --}}
 
 <!-- Início lista cRud index inscrito -->
-<div class="container mt-3 col-md-10 bg-light rounded shadow">
+<div class="container mt-3 col-md-10 shadow">
 
     {{-- início do campo de busca --}}
     <div class="d-flex w-100 my-3 justify-content-between">  

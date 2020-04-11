@@ -27,26 +27,28 @@
   
   {{-- ---------------------------------------------------------------------------- --}}
 
-<div class="container mt-3 col-md-10 bg-light rounded shadow-sm">
-    <div class="card m-3 shadow">
+  <div class="container mt-3 col-md-10 shadow">
+    <div class="card m-3 border-0">
         <div class="card-body">
+            <a href="/admin-inscrito" class="font-weigth-bold" style="width:120px"> <<< Voltar </a>
+
             <h5 class="card-title">Maria Cristina Dancham Simões</h5>
             <h6 class="card-subtitle mb-2 text-muted">Estudante associado (1ª faixa) </h6>
 
 
-{{-- início da tabs do ADMIN READ INSCRITO --}}
+            {{-- início da tabs do ADMIN READ INSCRITO --}}
 
-            <div class="container">
+            <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin-inscrito-showa">Detalhes da inscrição</a>
+                        <a class="nav-link " href="/admin-inscrito-showa">Detalhes da inscrição</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="/admin-inscrito-showb">Trabalhos inscritos</a>
+                        <a class="nav-link active " href="/admin-inscrito-showb">Trabalhos inscritos</a>
                     </li>
                 </ul>
             </div>
-{{-- fim da tabs do ADMIN READ INSCRITO --}}
+            {{-- fim da tabs do ADMIN READ INSCRITO --}}
 
 {{-- ------------------------------------------------------------------------------ --}}
 
