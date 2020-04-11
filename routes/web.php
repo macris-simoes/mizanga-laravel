@@ -47,6 +47,7 @@ Route::get('/admin-inscrito-showb','AdminController@adminInscritoShowB');
 //----------ADMIN TRABALHO GET-------------
 Route::get('/admin-config-trabalho','AdminController@adminConfigTrabalho');
 Route::get('/admin-trabalho','AdminController@adminTrabalho');
+Route::get('/admin-trabalho-showa','AdminController@adminTrabalhoShowA');
 
 
 //----------ADMIN POST-------------

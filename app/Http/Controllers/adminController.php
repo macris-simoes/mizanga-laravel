@@ -55,6 +55,13 @@ class adminController extends Controller
         return view('admin-trabalho');
     }
 
+    public function adminTrabalhoShowA()
+    {
+        return view('admin-trabalho-showa');
+    }
+    
+
+
     //PARECERISTA
     public function adminConfigParecerista()
     {
