@@ -34,7 +34,7 @@
     {{-- início do campo de busca --}}
     <div class="d-flex w-100 my-3 justify-content-between">  
         <div>
-            <h4 class="mt-3 font-weight-bold">Pesquisar Inscritos</h4>
+            <h1 class="display-4">Pesquisar Inscritos</h1>
             <p>Inscrições até o momento: 1234</p>
             <small>Clique sobre o nome do inscrito para acessar as informações</small>
         </div>

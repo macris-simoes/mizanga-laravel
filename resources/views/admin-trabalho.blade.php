@@ -27,7 +27,7 @@
     {{-- início do campo de busca --}}
     <div class="d-flex w-100 my-3 justify-content-between">  
         <div>
-            <h4 class="mt-3 font-weight-bold">Pesquisar Trabalhos</h4>
+            <h1 class="display-4">Pesquisar Trabalhos</h1>
             <p>Trabalhos até o momento: 1234</p>
             <small>Clique sobre o nome do trabalho para acessar as informações</small>
         </div>

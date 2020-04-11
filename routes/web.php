@@ -34,7 +34,13 @@ Route::get('/admin-config-eixos','AdminController@adminEixo');
 
 //----------ADMIN PARECERISTA GET-------------
 Route::get('/admin-config-parecerista','AdminController@adminConfigParecerista');
-Route::get('/admin-parecerista','AdminController@adminParecerista');
+Route::get('/admin-parecerista','AdminController@adminParecerista'); 
+Route::get('/admin-parecerista-showa','AdminController@adminPareceristaShowA');
+Route::get('/admin-parecerista-showb','AdminController@adminPareceristaShowB');
+
+
+Route::get('/admin-parecerista-substituir','AdminController@adminPareceristaSubstituir');
+
 
 //----------ADMIN INSCRITO GET-------------
 Route::get('/admin-config-inscrito','AdminController@adminConfigInscrito');

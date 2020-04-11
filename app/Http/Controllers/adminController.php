@@ -71,6 +71,20 @@ class adminController extends Controller
     {
         return view('admin-parecerista');
     }
+    public function adminPareceristaShowA()
+    {
+        return view('admin-parecerista-showa');
+    }
+    public function adminPareceristaShowB()
+    {
+        return view('admin-parecerista-showb');
+    }
+
+
+    public function adminPareceristaSubstituir()
+    {
+        return view('admin-parecerista-substituir');
+    }
 
 
 
