@@ -3,7 +3,7 @@
 @section('content')
 
    
-<!-- início divona container -->
+<!-- início div container -->
   <div class="container">
     <!-- Início do menu das tabs ATENÇÃO: os IDs do menu e do conteúdo tem que ser iguais-->
     <nav>
@@ -26,7 +26,7 @@
     </div>
     <!-- fim do conteúdo das tabs -->
 
-  <!-- fim da divona container -->
+  <!-- fim da div container -->
   </div>
   
 <!-- scripts e footer -->

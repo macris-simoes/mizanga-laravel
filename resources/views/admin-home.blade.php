@@ -3,7 +3,7 @@
 @section('content')
 
 {{-- início da pills do ADMIN --}}
-<!-- início divona container -->
+<!-- início div container -->
 <div class="container">
   <!-- Início do menu das tabs -->
   <nav>
@@ -20,7 +20,7 @@
     </div>
   </nav>
   <!-- fim do menu das tabs -->
-  <!-- fim da divona container -->
+  <!-- fim da div container -->
 </div>
 {{-- fim da pills do ADMIN --}}
 

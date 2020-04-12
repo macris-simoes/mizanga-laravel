@@ -30,7 +30,7 @@
   <div class="container mt-3 col-md-10 shadow">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-inscrito" class="font-weigth-bold" style="width:120px"> <<< Voltar </a>
+            <a href="/admin-inscrito" class="font-weigth-bold" style="width:120px">  Voltar </a>
 
             <h5 class="card-title">Maria Cristina Dancham Simões</h5>
             <h6 class="card-subtitle mb-2 text-muted">Estudante associado (1ª faixa) </h6>

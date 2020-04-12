@@ -8,7 +8,10 @@ use App\AbstractEvaluations;
 class pareceristaController extends Controller
 {
     public function pareceristaIndex() {
-        return view('parecerista-tabs');
+        return view('parecerista-home');
+    }
+    public function pareceristaAvaliar() {
+        return view('parecerista-avaliar-trabalho');
     }
 
     public function pareceristaSubmitPost(Request $request) {
