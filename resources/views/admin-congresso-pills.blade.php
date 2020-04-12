@@ -1,27 +1,53 @@
-<ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-            aria-controls="pills-home" aria-selected="true">Configurar congresso</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-            aria-controls="pills-profile" aria-selected="false">Configurar modalidades de inscrição</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-            aria-controls="pills-contact" aria-selected="false">Configurar trabalhos</a>
-    </li>
-</ul>
+{{-- -------------------------------------------------------------------------------------- --}}
 
+{{-- definição da pill com active --}}
 
-<div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        @include('admin-config-congresso')
+<?php $congresso = $inscrito = $trabalho = $parecerista = ""; 
 
+if(Request::path() === 'admin-config-congresso' || Request::path() === 'admin-config-eixos' || Request::path() === 'admin-config-inscrito' || Request::path() === 'admin-config-trabalho' || Request::path() === 'admin-config-parecerista'){
+    $congresso = "active";
+}elseif (Request::path() === 'admin-inscrito' || Request::path() === 'admin-inscrito-showa' || Request::path() === 'admin-inscrito-showb' ){ 
+    $inscrito = "active";
+}elseif(Request::path() === 'admin-trabalho' || Request::path() === 'admin-trabalho-showa'){
+    $trabalho = "active";
+}elseif(Request::path() === 'admin-parecerista' || Request::path() === 'admin-parecerista-showa' || Request::path() === 'admin-parecerista-showb' || Request::path() === 'admin-parecerista-substituir'){
+    $parecerista = "active";
+} ?>
+{{-- fim pill active --}}
 
-    </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        @include('admin-config-inscrito')
-    </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+<div class="container">
+    <!-- Início do menu das pills -->
+    <nav>
+        <div class="nav nav-pills" id="nav-tab" role="tablist">
+            <a class="{{Request::path() === 'admin-home' ? 'active' : '' }} nav-item nav-link" href="/admin-home">Início</a>
+            <a class="<?php echo ("$congresso") ?> nav-item nav-link font-weight-bolder" href="admin-config-congresso">Congresso</a>
+            <a class="<?php echo ("$inscrito") ?> nav-item nav-link " href="admin-inscrito">Inscritos</a>
+            <a class="<?php echo ("$trabalho") ?> nav-item nav-link" href="admin-trabalho">Trabalhos</a>
+            <a class="<?php echo ("$parecerista") ?> nav-item nav-link" href="admin-parecerista">Pareceristas</a>
+        </div>
+    </nav>
+    <!-- fim do menu das pills -->
+    <!-- fim da div container -->
 </div>
+{{-- fim da pills do ADMIN --}}
+
+{{-- ---------------------------------------------------------------------------- --}}
+
+<?php 
+
+
+if (Request::path() === 'admin-config-congresso' || Request::path() === 'admin-config-eixos' || Request::path() === 'admin-config-inscrito' || Request::path() === 'admin-config-trabalho' || Request::path() === 'admin-config-parecerista'){ ?>
+{{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
+<div class="container">
+    
+    <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
+        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin-config-congresso' ? 'active' : '' }}" href="/admin-config-congresso">Configurar congresso</a></li>
+        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin-config-eixos' ? 'active' : '' }}" href="/admin-config-eixos">Inserir Eixos</a></li>
+        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin-config-inscrito' ? 'active' : '' }}" href="/admin-config-inscrito">Configurar modalidades de inscrição</a></li>
+        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin-config-trabalho' ? 'active' : '' }}" href="/admin-config-trabalho">Configurar trabalhos</a></li>
+        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin-config-parecerista' ? 'active' : '' }}" href="/admin-config-parecerista">Incluir pareceristas</a></li>
+    </ul>
+    
+</div>
+{{-- fim da tabs do ADMIN CONFIG CONGRESSO --}}
+<?php } ?>
