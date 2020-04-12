@@ -117,7 +117,7 @@
 
     <footer>
         <div class="p-0 mt-4 bg-primary text-white text-center">
-            <p class="mb-0">Mizanga 2020</p>
+            <p class="mb-0">Mizanga 2021</p>
         </div>
     </footer>
 
