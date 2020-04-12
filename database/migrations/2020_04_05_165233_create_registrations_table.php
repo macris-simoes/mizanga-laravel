@@ -16,7 +16,6 @@ class CreateRegistrationsTable extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('register_modality');
             $table->string('file')->nullable();
             $table->char('cpf',11)->unique();
@@ -45,6 +44,8 @@ class CreateRegistrationsTable extends Migration
             $table->string('gender')->nullable();
             $table->string('color');
             $table->boolean('use_social_name');
+            $table->integer('user_id')->unsigned();
+            $table->timestamps();
         });
         
         $prefix = DB::getTablePrefix();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttendeeConfigsTable extends Migration
+class CreateAxisRefereesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateAttendeeConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendee_configs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('register_modality');
-            $table->date('register_start_date');
-            $table->date('register_end_date');
-            $table->boolean('attach_receipt');
+        Schema::create('axis_referees', function (Blueprint $table) {
+            $table->integer('referee_id');
+            $table->integer('axis_id');
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +27,6 @@ class CreateAttendeeConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendee_configs');
+        Schema::dropIfExists('axis_referees');
     }
 }

@@ -14,9 +14,11 @@ class CreateAbstractEvaluationsTable extends Migration
     public function up()
     {
         Schema::create('abstract_evaluations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('rate_work', 255);
             $table->string('include_evaluation', 255);
+            $table->integer('registration_id');
+            $table->integer('submission_id');
             $table->timestamps();
         });
     }
