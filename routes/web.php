@@ -59,6 +59,9 @@ Route::post('/admin','AdminController@adminInscritoSubmitPost');
 
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
+Route::get('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliar');
+
+
 Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
 
 

@@ -2,11 +2,12 @@
 
 @section('content')
 
-<body>
-  
+
+<div class="container shadow mt-4">
+
   <!-- Titulo -->
   <div>
-    <div class="mb-1 pt-1">
+    <div class="mb-3">
       <h4 class="display-3">Avaliar Trabalho</h4>
       <p class="lead font-italic"></p>
     </div>
@@ -14,15 +15,10 @@
     <!-- Inicio-->
     <div>
       <div>
-        <p><strong>Psicologia da saúde e psicologia positiva: perspectivas e desafios</strong></p>
-      </div>
-      <div>
+        <p><strong>Psicologia da saúde e psicologia positiva: perspectivas e desafios</strong></p> 
         <p>Código do trabalho: 12301</p>
-      </div>
-      <div>
         <p>Data de submissão: 26/02/2020 - 17:22</p>
       </div>
-      <div></div>
     </div>
     <!-- Resumo -->
 
@@ -30,7 +26,8 @@
       @csrf
       <div class="form-group mt-4">
         <label for="exampleFormControlTextarea1">Resumo</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">O presente artigo visa a discutir a interface entre Psicologia da saúde e Psicologia positiva, destacando a relevância dos aspectos positivos do desenvolvimento humano como foco de pesquisas e intervenções. Salienta-se a necessidade de avanços nos estudos relacionados aos fatores protetores e de manutenção do desenvolvimento humano saudável. Na discussão em foco neste artigo, a Psicologia da saúde e a Psicologia positiva têm importante papel na compreensão dos aspectos envolvidos no enfrentamento da doença bem como na manutenção da saúde da pessoa, e apontam a relevância do investimento científico na investigação dos fatores de proteção da saúde.&#13;&#10;Referências&#13;&#10;ASPINWALL, L.; STAUDINGER, U. A psychology of human strengths: some central issues of an emerging field. In: A psychology of human strengths: fundamental questions and future directions for a Positive Psychology. Washington: American Psychological Association, 2003. p. 9-22.&#13;&#10;BRANNON, L.; FEIST, J. Psicología de la Salud. Madrid: Thomson Learning, 2001.&#13;&#10;CASTRO, E., BORNHORD, E. Psicologia da saúde x Psicologia hospitalar: definições e possibilidades de inserção profissional. Psicologia: Ciência e Profissão, Brasília, v. 24, n. 3, p. 48-57, 2004.&#13;&#10;CULLOFORD, L. Spirituality and clinical care. British Medical Journal, London, v. 325, p. 1434-1436, 2002.</textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1"
+          rows="4">O presente artigo visa a discutir a interface entre Psicologia da saúde e Psicologia positiva, destacando a relevância dos aspectos positivos do desenvolvimento humano como foco de pesquisas e intervenções. Salienta-se a necessidade de avanços nos estudos relacionados aos fatores protetores e de manutenção do desenvolvimento humano saudável. Na discussão em foco neste artigo, a Psicologia da saúde e a Psicologia positiva têm importante papel na compreensão dos aspectos envolvidos no enfrentamento da doença bem como na manutenção da saúde da pessoa, e apontam a relevância do investimento científico na investigação dos fatores de proteção da saúde.&#13;&#10;Referências&#13;&#10;ASPINWALL, L.; STAUDINGER, U. A psychology of human strengths: some central issues of an emerging field. In: A psychology of human strengths: fundamental questions and future directions for a Positive Psychology. Washington: American Psychological Association, 2003. p. 9-22.&#13;&#10;BRANNON, L.; FEIST, J. Psicología de la Salud. Madrid: Thomson Learning, 2001.&#13;&#10;CASTRO, E., BORNHORD, E. Psicologia da saúde x Psicologia hospitalar: definições e possibilidades de inserção profissional. Psicologia: Ciência e Profissão, Brasília, v. 24, n. 3, p. 48-57, 2004.&#13;&#10;CULLOFORD, L. Spirituality and clinical care. British Medical Journal, London, v. 325, p. 1434-1436, 2002.</textarea>
       </div>
     </form>
     <div>
@@ -72,4 +69,7 @@
       <a href="/parecerista" class="btn btn-primary" style="width: 10%">Voltar</a>
     </div>
   </div>
+
+</div>
+
 @endsection

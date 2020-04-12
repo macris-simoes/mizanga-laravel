@@ -31,7 +31,7 @@
 <div class="container mt-3 col-md-10 shadow">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-trabalho" class="font-weigth-bold" style="width:120px"> <<< Voltar </a>
+            <a href="/admin-inscrito" class="mt-5">  Voltar </a>
 
             <h5 class="card-title">Maria Cristina Dancham Simões</h5>
             <h6 class="card-subtitle mb-2 text-muted">Estudante associado (1ª faixa) </h6>
@@ -80,11 +80,7 @@
                 
                     {{-- buttons --}}
                     <div class="my-4 d-flex flex-row justify-content-between">
-                        <div>
-                            
-                            <a href="/admin-trabalho" class="btn btn-primary" style="width:120px">Voltar</a>
-                        </div>
-
+                        <a href="/admin-inscrito">  Voltar </a>
                         <input type="submit" class="btn btn-warning" value="Apagar trabalho">
                     </div>
                 

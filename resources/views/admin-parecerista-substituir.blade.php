@@ -1,125 +1,57 @@
 @extends('template')
-
-  <div class="sticky-top">
-
-  </div>
-  <div>
-    <form class="form-inline flex-row-reverse mr-4">
-      <select class="custom-select my-3 mr-sm-2" id="inlineFormCustomSelectPref">
-        <option selected>Escolher</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Perfil</label>
-    </form>
-  </div>
+@section('content')
 
 
-  <div class="mb-1 pt-1 container">
-    <h4 class="display-3">Enviar trabalho para outro avaliador</h4>
-  </div>
+{{-- início da pills do ADMIN --}}
+<!-- início div container -->
+<div class="container">
+  <!-- Início do menu das pills -->
+  <nav>
+    <div class="nav nav-pills" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link" href="/admin-home">Início</a>
 
-  <div class="container">
-    <p class="mt-5">Avaliador de destino</p>
-    <div class="w-25 input-group mb-4">
-      <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Submeter</button>
+      <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
+
+      <a class="nav-item nav-link " href="/admin-inscrito">Inscritos</a>
+
+      <a class="nav-item nav-link " href="/admin-trabalho">Trabalhos</a>
+
+      <a class="nav-item nav-link active" href="/admin-parecerista">Pareceristas</a>
     </div>
+  </nav>
+  <!-- fim do menu das pills -->
+  <!-- fim da div container -->
+</div>
+{{-- fim da pills do ADMIN --}}
 
+{{-- ---------------------------------------------------------------------------- --}}
 
+<div class="container shadow rounded mt-3 p-4">
+  <a href="/admin-parecerista-showa"> Voltar </a>
+  <h4 class="display-4">Enviar trabalho para outro avaliador</h4>
 
-    <p class="text-center"> TRABALHOS QUE SERÃO ENVIADOS</p>
-    <hr>
-    <div>
-      <table class="table table-borderless">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"></th>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
-            <td>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline1">Sim</label>
-              </div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline2">Não</label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-            <td>
-              <div class="custom-control custom-radio custom-control-inline">
-
-                <input type="radio" id="customRadioInline3" name="customRadioInline3" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline3">Sim</label>
-              </div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline4" name="customRadioInline3" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline4">Não</label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-            <td colspan="2">
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline6" name="customRadioInline5" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline6">Sim</label>
-              </div>
-              <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="customRadioInline7" name="customRadioInline5" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline7">Não</label>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="container">
-      <p class="text-center mt-5"> TRABALHOS JÁ AVALIADOS (NÃO PODEM SER REENVIADOS)</p>
-    </div>
-    <hr>
-
-    <table class="table table-borderless">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row"></th>
-          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
-        </tr>
-        <tr>
-          <th scope="row"></th>
-          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-        </tr>
-        <tr>
-          <th scope="row"></th>
-          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="container">
-      <button type="submit" class="btn btn-primary btn-lg mb-5 mt-3">Enviar</button>
-      <button type="submit" class="btn btn-primary btn-lg mb-5 mt-3">Voltar</button>
+  <h6 class="mt-3">Avaliador de destino</h6>
+  <div class="input-group  mb-4">
+    <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Inserir nome"
+      aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="button" id="button-addon2">Inserir</button>
     </div>
   </div>
+
+  <h6 class="mt-3"> Trabalho que será enviado</h6>
+
+  <div class="d-flex flex-column py-2 px-3 border rounded">
+    <p class="">Some quick example text to build on the card title and make up the bulk of
+      the card's content. </p>
+    <small>Autor: John Doe</small>
+    <small>Parecer: aprovado </small>
+  </div>
+
+  <div class="d-flex flex-column col-1 p-0">
+    <button type="submit" class="btn btn-primary my-2">Enviar</button>
+    <a href="/admin-parecerista-showa" class="font-weigth-bold">Voltar </a>
+  </div>
+</div>
+
+@endsection

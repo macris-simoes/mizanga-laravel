@@ -31,8 +31,7 @@
 <div class="container mt-3 col-md-10 shadow">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-inscrito" class="font-weigth-bold" style="width:120px"> <<< Voltar </a>
-
+            <a href="/admin-inscrito">  Voltar </a>
             <h5 class="card-title">Maria Cristina Dancham Simões</h5>
             <h6 class="card-subtitle mb-2 text-muted">Estudante associado (1ª faixa) </h6>
 
@@ -402,15 +401,12 @@
                         </div>
                     </div>
                     {{-- buttons --}}
-                    <div class="my-4 d-flex flex-row justify-content-between">
-                        <div>
+                    <div class="mt-4 mb-1 d-flex flex-row justify-content-between">
                             <input type="submit" class="btn btn-primary" style="width:120px" value="Atualizar">
-                            <a href="/admin-inscrito" class="btn btn-primary" style="width:120px">Voltar</a>
-                        </div>
-
                         <input type="submit" class="btn btn-warning" value="Apagar registro">
                     </div>
                 </form>
+                <a href="/admin-inscrito">  Voltar </a>
 
             </div>
             {{-- FIM DIV DETALHES DA INSCRIÇÃO --}}

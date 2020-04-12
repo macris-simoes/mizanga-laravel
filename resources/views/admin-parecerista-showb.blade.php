@@ -30,8 +30,7 @@
 <div class="container mt-3 col-md-10 shadow">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-parecerista" class="font-weigth-bold" style="width:120px"> <<< Voltar </a>
-
+            <a href="/admin-inscrito">  Voltar </a>
             <h5 class="card-title">Maria Cristina Dancham Simões</h5>
             <h6 class="card-subtitle mb-2 text-muted">Eixos definidos para este parecerista</h6>
             <div>
@@ -61,13 +60,13 @@
             <div class="list-group-flush">
 
                 <div class="list-group-item d-flex justify-content-between">
-                    <h6 class="font-weight-bold d-flex align-items-end">Trabalhos designados</h6>
-                    <h6 class="col-md-2 text-center">Ver parecer</h6>
+                    <h6 class="font-weight-bold">Trabalhos designados</h6>
+                    <h6 class="col-md-2 text-center font-weight-bold">Pareceres entregues</h6>
                 </div>
 
                 <div class="d-flex flex-column list-group-item">
 
-                    <div class="d-flex flex-row align-items-between ">
+                    <div class="d-flex flex-row align-items-between">
 
                         <div class="d-flex flex-column col-md-10">
                             <p class="">Some quick example text to build on the card title and make up the bulk of
@@ -76,8 +75,11 @@
                             <small>Autor: John Doe</small>
                             <small>Parecer: aprovado </small>
                         </div>
-                        <div class="d-flex flex-row col-md-2 justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-primary"> ver </button>
+                        <div class="d-flex col-md-2 justify-content-center ">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="submit" class="btn btn-outline-primary"> ver </button>
+                                <button type="submit" class="btn btn-outline-primary"> apagar </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,8 +95,11 @@
                             <small>Autor: John Doe</small>
                             <small>Parecer: aprovado </small>
                         </div>
-                        <div class="d-flex flex-row col-md-2 justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-primary"> ver </button>
+                        <div class="d-flex col-md-2 justify-content-center ">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="submit" class="btn btn-outline-primary"> ver </button>
+                                <button type="submit" class="btn btn-outline-primary"> apagar </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,15 +115,18 @@
                             <small>Autor: John Doe</small>
                             <small>Parecer: reprovado </small>
                         </div>
-                        <div class="d-flex flex-row col-md-2 justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-primary"> ver </button>
+                        <div class="d-flex col-md-2 justify-content-center ">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="submit" class="btn btn-outline-primary"> ver </button>
+                                <button type="submit" class="btn btn-outline-primary"> apagar </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
                 {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
+            <a href="/admin-inscrito" class="mt-5">  Voltar </a>
             {{-- fim card-body (abaixo) --}}
         </div>
         {{-- fim da div card (abaixo) --}}
