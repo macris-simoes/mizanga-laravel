@@ -130,7 +130,7 @@
             <div class="col-md-2 col-lg-2 mt-3" >
                 <h6 class="text-uppercase mb-2 font-weight-bold text-white"> O CONGRESSO</h6>
                 <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 110px;">
-                <p class="text-white"> O MAIOR congresso gratuito de Pscicologia do Brasil, organizado por estudantes da DH de São Paulo.
+                <p class="text-white"> O MAIOR congresso de Pscicologia do Brasil, organizado por estudantes da Digital House.
                 </p>
                 
             </div>
