@@ -123,7 +123,7 @@
     @yield('content')
 
         <!-- Footer -->
-<footer class="page-footer bg-primary pt-4">
+<footer class="footer bg-primary pt-4">
     
     <div class="container mt-3 pb-3 text-center text-md-left">
         <div class="row mt-3 pb-3 text-md-left">
@@ -209,11 +209,11 @@
                   </ul>
                 </div>
         
-              </div>
+            </div>
               <!-- Grid column -->
         
-            </div>
-    </footer>
+    </div>
+</footer>
 
 
 
