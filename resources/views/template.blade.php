@@ -129,14 +129,14 @@
         <div class="row mt-3 pb-3 text-md-left">
             <div class="col-md-2 col-lg-2 mt-3" >
                 <h6 class="text-uppercase mb-2 font-weight-bold text-white"> O CONGRESSO</h6>
-                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 110px;">
                 <p class="text-white"> O MAIOR congresso gratuito de Pscicologia do Brasil, organizado por estudantes da DH de São Paulo.
                 </p>
                 
             </div>
             <div class="col-md-3 col-lg-3 mx-auto mt-3 text-md-left text-center">
                 <h6 class="text-uppercase mb-2 font-weight-bold text-white">Apoiadores</h6>
-                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 100px;">
                 <div class="sponsor">
                 <img src="{{ asset('img/logopscmed.png') }}" alt="" srcset="" class="apoiadores">
                 <img src="{{ asset('img/lablogo.png') }}" alt="" srcset="" class="apoiadores">
@@ -145,10 +145,10 @@
                 </div>
             </div>
             <div class="col-md-2 col-lg-2 mt-3" >
-                <h6 class="text-uppercase mb-2 font-weight-bold text-white"> Link</h6>
-                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <h6 class="text-uppercase mb-2 font-weight-bold text-white"> Links</h6>
+                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 40px;">
                 <p> 
-                    <a href="/inscricao-usuario" class="text-decoration-none text-white">Incrição</a>
+                    <a href="/inscricao-usuario" class="text-decoration-none text-white">Inscrição</a>
                 </p>
                 <p> 
                     <a href="#" class="text-decoration-none text-white text-left">Sobre o Congresso</a>
@@ -165,7 +165,7 @@
             </div>
             <div class="googlemaps col-md-3 col-lg-3 mt-3 text-center">
                 <h6 class="text-uppercase mb-2 font-weight-bold text-white"> Como chegar</h6>
-                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 120px;">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.5103780930226!2d-46.68562155018018!3d-23.58602218459539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57425081498f%3A0xab7ec25488d224a0!2sFaria%20Lima%20Financial%20Center!5e0!3m2!1spt-PT!2sbr!4v1586795298528!5m2!1spt-PT!2sbr" width="200" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
            
@@ -176,8 +176,8 @@
             <div class="col-md-7 col-lg-8">
       
               <!--Copyright-->
-              <p class="text-center text-md-left text-white">© 2020 Copyright:
-                <a href="#" class="text-decoration-none text-white"> Mizanga</a>
+              <p class="text-center text-md-left text-white">© 2020 Copyright Congresso XXXXXX:
+                <a href="#" class="text-decoration-none text-white"> Desenvolvido por Mizanga</a>
               </p>
       
             </div>
