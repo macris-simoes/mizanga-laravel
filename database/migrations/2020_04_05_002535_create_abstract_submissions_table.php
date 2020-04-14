@@ -14,11 +14,9 @@ class CreateAbstractSubmissionsTable extends Migration
     public function up()
     {
         Schema::create('abstract_submissions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('category');
-            $table->string('first_axis');
-            $table->string('second_axis');
-            $table->string('third_axis');
+            $table->string('axis_id');
             $table->string('abstract_title');
             $table->text('abstract_body');
             $table->string('first_keyword');
@@ -47,6 +45,7 @@ class CreateAbstractSubmissionsTable extends Migration
             $table->string('tenth_coauthor')->nullable();
             $table->string('tenth_coauthor_afiliation')->nullable();
             $table->string('financial_support')->nullable();
+            $table->integer('registration_id');
             $table->timestamps();
         });
     }

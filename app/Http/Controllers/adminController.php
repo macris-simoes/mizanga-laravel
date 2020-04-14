@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\AttendeeConfig;
+use App\AxisConfig;
+use App\AxisReferee;
+
 
 class adminController extends Controller
 {
@@ -67,6 +70,16 @@ class adminController extends Controller
     {
         return view('admin-config-parecerista');
     }
+
+    public function configPareceristaSubmitPost(Request $request){
+        $dados = $request->all();
+
+        // $novaRelacao = new AxisReferee();
+        // $novaRelacao -> fill($dados);
+        // $novaRelacao ->save();
+        dd($dados);
+    }
+
     public function adminParecerista()
     {
         return view('admin-parecerista');

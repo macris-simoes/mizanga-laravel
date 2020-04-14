@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
-class CreateAxisConfigsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,17 @@ class CreateAxisConfigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('axis_configs', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('axis',255);
-            $table->integer('admin_id')->unsigned();
+            $table->string('cpf', 11)->unique();
+            $table->string('name', 255);
+            $table->string('email', 255);
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
 
         $prefix = DB::getTablePrefix();
-        DB::update("ALTER TABLE ".$prefix."axis_configs AUTO_INCREMENT = 1;");
+        DB::update("ALTER TABLE ".$prefix."referee_configs AUTO_INCREMENT = 90000;");
     }
 
     /**
@@ -32,6 +34,6 @@ class CreateAxisConfigsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('axis_configs');
+        Schema::dropIfExists('admins');
     }
 }

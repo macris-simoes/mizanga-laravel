@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAbstractEvaluationsTable extends Migration
+class CreateAxisRefereesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,7 @@ class CreateAbstractEvaluationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('abstract_evaluations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('rate_work', 255);
-            $table->string('include_evaluation', 255);
-            $table->integer('registration_id');
-            $table->integer('submission_id');
+        Schema::create('axis_referees', function (Blueprint $table) {
             $table->integer('referee_id');
             $table->integer('axis_id');
             $table->timestamps();
@@ -32,6 +27,6 @@ class CreateAbstractEvaluationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abstract_evaluations');
+        Schema::dropIfExists('axis_referees');
     }
 }

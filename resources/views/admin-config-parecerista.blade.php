@@ -8,7 +8,7 @@
         <p class="lead font-italic"></p>
     </div>
     
-    <form action="" method="post">
+    <form method="post">
         @csrf
         <div class="my-3">
             <div class="form-row">
@@ -34,12 +34,13 @@
                         Eixo 01 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoUmSim" value="true" name="axis_01">
-                        <label class="form-check-label" for="eixoUmSim">Sim</label>
+                        {{-- O value da opção sim tem que ser o id do eixo! --}}
+                        <input class="form-check-input" type="radio" value="1" name="axis_01">
+                        <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoUmNao" value="false" name="axis_01">
-                        <label class="form-check-label" for="eixoUmNao">Não</label>
+                        <input class="form-check-input" type="radio" value="0" name="axis_01" checked>
+                        <label class="form-check-label">Não</label>
                     </div>
                 </div>
                 <div class="form-row">
@@ -47,12 +48,12 @@
                         Eixo 02 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-che ck form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoDoisSim" value="true" name="axis_02">
-                        <label class="form-check-label" for="eixoDoisSim">Sim</label>
+                        <input class="form-check-input" type="radio" value="1" name="axis_02">
+                        <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoDoisNao" value="false" name="axis_02">
-                        <label class="form-check-label" for="eixoDoisNao">Não</label>
+                        <input class="form-check-input" type="radio" value="0" name="axis_02" checked>
+                        <label class="form-check-label">Não</label>
                     </div>
                 </div>
                 <div class="form-row">
@@ -60,35 +61,36 @@
                         Eixo 03 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoTresSim" value="true" name="axis_03">
-                        <label class="form-check-label" for="eixoTresSim">Sim</label>
+                        <input class="form-check-input" type="radio" value="1" name="axis_03">
+                        <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoTresNao" value="false" name="axis_03">
-                        <label class="form-check-label" for="eixoTresNao">Não</label>
+                        <input class="form-check-input" type="radio" value="0" name="axis_03" checked>
+                        <label class="form-check-label">Não</label>
                     </div>
                 </div>
+                ...
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        Eixo 04 - Lorem ipsum dolor sit amet consectetur
+                        Eixo 20 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoQuatroSim" value="true" name="axis_04">
-                        <label class="form-check-label" for="eixoQuatroSim">Sim</label>
+                        <input class="form-check-input" type="radio" value="1" name="axis_20">
+                        <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="eixoQuatroNao" value="false" name="axis_04">
-                        <label class="form-check-label" for="eixoQuatroNao">Não</label>
+                        <input class="form-check-input" type="radio" value="0" name="axis_20" checked>
+                        <label class="form-check-label">Não</label>
                     </div>
                 </div>
             </div>
             
+            <div class="my-4">
+                <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
+                <a href="/admin-home" class="btn btn-primary" style="width:120px">Voltar</a>
+            </div>
         </form>
 
-        <div class="my-4">
-            <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
-            <a href="/admin-home" class="btn btn-primary" style="width:120px">Voltar</a>
-        </div>
     </div>
     
     

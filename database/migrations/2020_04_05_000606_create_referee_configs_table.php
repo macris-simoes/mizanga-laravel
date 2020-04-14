@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+
 
 class CreateRefereeConfigsTable extends Migration
 {
@@ -14,17 +16,17 @@ class CreateRefereeConfigsTable extends Migration
     public function up()
     {
         Schema::create('referee_configs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('appraiser_cpf', 11)->unique();
-            $table->string('appraiser_name', 255);
-            $table->string('appraiser_email', 255);
-            $table->boolean('axis_01','confirmed');
-            $table->boolean('axis_02','confirmed');
-            $table->boolean('axis_03','confirmed');
-            $table->boolean('axis_04','confirmed');
-            $table->boolean('acceptance_letter','confirmed');
+            $table->string('appraiser_name');
+            $table->string('appraiser_email');
+            $table->integer('user_id')->unsigned();
+            $table->integer('admin_id')->unsigned();
             $table->timestamps();
         });
+
+        $prefix = DB::getTablePrefix();
+        DB::update("ALTER TABLE ".$prefix."referee_configs AUTO_INCREMENT = 45000;");
     }
 
     /**

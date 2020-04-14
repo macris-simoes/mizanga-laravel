@@ -14,8 +14,7 @@ class CreateAbstractConfigsTable extends Migration
     public function up()
     {
         Schema::create('abstract_configs', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->timestamps();
+            $table->increments('id');
             $table->string('work_modality');
             $table->date('work_start_date');
             $table->date('work_end_date');
@@ -26,8 +25,8 @@ class CreateAbstractConfigsTable extends Migration
             $table->integer('abstract_min_char');
             $table->integer('abstract_max_char');
             $table->text('author_instructions');
-
-
+            $table->integer('admin_id')->unsigned();
+            $table->timestamps(); 
         });
     }
 
