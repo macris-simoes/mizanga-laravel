@@ -6,7 +6,7 @@
     <div class="alert alert-success container">{{session('mensagem')}}</div>
 @endif
 
-<div class="container shadow">
+<div class="container shadow mb-4">
     <div class="mb-1 pt-1">
         <h1 class="display-3">Incluir Parecerista</h1>
         <p class="lead font-italic"></p>
