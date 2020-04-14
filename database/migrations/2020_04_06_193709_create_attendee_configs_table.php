@@ -20,6 +20,7 @@ class CreateAttendeeConfigsTable extends Migration
             $table->date('register_end_date');
             $table->boolean('attach_receipt');
             $table->integer('admin_id')->unsigned();
+            $table->decimal('register_fee', 8, 2);
             $table->timestamps();
 
         });
