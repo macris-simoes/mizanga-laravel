@@ -3,7 +3,7 @@
 @include('admin-congresso-pills')
 
 <!-- início div container -->
-<div class="container shadow">
+<div class="container shadow mb-3 pb-4">
   
   <!-- início Cabeçalho1 -->
   <div>
@@ -49,9 +49,14 @@
                 <label class="font-weight-bold" for="register_end_date">Fim das inscrições</label>
                 <input type="date" class="form-control" id="register_end_date" placeholder="dd/mm/aaaa" name="register_end_date" required>
               </div>
-              
+
+              <div class="col-md-4">
+                <label class="font-weight-bold" for="register_fee">Taxa de inscrição</label>
+                <input type="number" class="form-control" id="register_fee" name="register_fee" step="0.01" required>
+              </div>
               <!-- Anexar comprovante? -->
               <div class="col-md-12 mt-3 ">
+                <label class="font-weight-bold">Anexar comprovante?</label>
                 <div class="form-check custom-control custom-radio">
                 <input type="radio" id="attach_receipt_yes" name="attach_receipt" class="custom-control-input" value="1">
                 <label class="custom-control-label" for="attach_receipt_yes">Sim</label>
