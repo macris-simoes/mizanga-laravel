@@ -10,7 +10,7 @@ use App\AxisConfig;
 use App\AxisReferee;
 
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     //HOME
     public function adminHome()
@@ -25,7 +25,19 @@ class adminController extends Controller
 
     public function adminEixo()
     {
-        return view('admin-config-eixos');
+        $eixos = AxisConfig::query()->paginate();
+        return view("admin-config-eixos", ["eixos"=>$eixos]);
+    }
+
+    public function adminEixoSubmitPost(Request $request){
+        $eixo = $request->all();
+        $novoEixo = new AxisConfig();
+        $novoEixo->fill($eixo);
+        $novoEixo->admin_id = 1;
+        //INSERIR LOGICA PARA PEGAR ADMIN_ID
+        $novoEixo->save();
+
+        return redirect('/admin-config-eixos')->with('mensagem','Novo eixo salvo com sucesso.');
     }
 
 

@@ -32,6 +32,7 @@ Route::get('/inscrito-trabalhos-cadastrados','InscritoController@trabalhosCadast
 Route::get('/admin-home','AdminController@adminHome');
 Route::get('/admin-config-congresso','AdminController@adminCongresso');
 Route::get('/admin-config-eixos','AdminController@adminEixo');
+Route::post('/admin-config-eixos','AdminController@adminEixoSubmitPost');
 
 //----------ADMIN PARECERISTA GET-------------
 Route::get('/admin-config-parecerista','AdminController@adminConfigParecerista');
