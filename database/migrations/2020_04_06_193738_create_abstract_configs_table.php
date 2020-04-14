@@ -25,6 +25,7 @@ class CreateAbstractConfigsTable extends Migration
             $table->integer('abstract_min_char');
             $table->integer('abstract_max_char');
             $table->text('author_instructions');
+            $table->integer('admin_id')->unsigned();
             $table->timestamps(); 
         });
     }

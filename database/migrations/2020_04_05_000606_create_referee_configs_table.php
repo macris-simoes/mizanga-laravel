@@ -21,6 +21,7 @@ class CreateRefereeConfigsTable extends Migration
             $table->string('appraiser_name');
             $table->string('appraiser_email');
             $table->integer('user_id')->unsigned();
+            $table->integer('admin_id')->unsigned();
             $table->timestamps();
         });
 

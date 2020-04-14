@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateAdminsTable extends Migration
 {
@@ -21,6 +22,9 @@ class CreateAdminsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
+
+        $prefix = DB::getTablePrefix();
+        DB::update("ALTER TABLE ".$prefix."referee_configs AUTO_INCREMENT = 90000;");
     }
 
     /**

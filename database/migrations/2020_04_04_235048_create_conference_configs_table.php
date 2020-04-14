@@ -22,6 +22,7 @@ class CreateConferenceConfigsTable extends Migration
             $table->date('event_end_date');
             $table->longText('how_to_subscribe');
             $table->longText('referee_instructions');
+            $table->integer('admin_id')->unsigned();
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@ class CreateAxisConfigsTable extends Migration
         Schema::create('axis_configs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('axis',255);
+            $table->integer('admin_id')->unsigned();
             $table->timestamps();
         });
 

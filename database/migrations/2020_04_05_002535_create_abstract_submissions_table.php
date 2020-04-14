@@ -16,9 +16,7 @@ class CreateAbstractSubmissionsTable extends Migration
         Schema::create('abstract_submissions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category');
-            $table->string('first_axis');
-            $table->string('second_axis');
-            $table->string('third_axis');
+            $table->string('axis_id');
             $table->string('abstract_title');
             $table->text('abstract_body');
             $table->string('first_keyword');
