@@ -48,7 +48,7 @@
                         Eixo 02 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-che ck form-check-inline">
-                        <input class="form-check-input" type="radio" value="1" name="axis_02">
+                        <input class="form-check-input" type="radio" value="2" name="axis_02">
                         <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -61,7 +61,7 @@
                         Eixo 03 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="1" name="axis_03">
+                        <input class="form-check-input" type="radio" value="3" name="axis_03">
                         <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -75,7 +75,7 @@
                         Eixo 20 - Lorem ipsum dolor sit amet consectetur
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="1" name="axis_20">
+                        <input class="form-check-input" type="radio" value="20" name="axis_20">
                         <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
