@@ -2,6 +2,10 @@
 @section('content')
 @include('admin-congresso-pills')
 
+@if(session('mensagem'))
+    <div class="alert alert-success container">{{session('mensagem')}}</div>
+@endif
+
 <div class="container shadow">
     <div class="mb-1 pt-1">
         <h1 class="display-3">Incluir Parecerista</h1>
@@ -29,60 +33,24 @@
         
         <div class="my-3">
                 <h5>Eixos temáticos</h5>
+                @foreach($eixos as $eixo)
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        Eixo 01 - Lorem ipsum dolor sit amet consectetur
+                        Eixo {{$eixo['id']}} - {{ $eixo['axis'] }}
                     </div>
                     <div class="form-check form-check-inline">
                         {{-- O value da opção sim tem que ser o id do eixo! --}}
-                        <input class="form-check-input" type="radio" value="1" name="axis_01">
+                    <input class="form-check-input" type="radio" value="{{ $eixo['id'] }}" name="axis_{{$eixo['id']}}">
                         <label class="form-check-label">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="0" name="axis_01" checked>
+                        <input class="form-check-input" type="radio" value="0" name="axis_{{$eixo['id']}}" checked>
                         <label class="form-check-label">Não</label>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        Eixo 02 - Lorem ipsum dolor sit amet consectetur
-                    </div>
-                    <div class="form-che ck form-check-inline">
-                        <input class="form-check-input" type="radio" value="2" name="axis_02">
-                        <label class="form-check-label">Sim</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="0" name="axis_02" checked>
-                        <label class="form-check-label">Não</label>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        Eixo 03 - Lorem ipsum dolor sit amet consectetur
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="3" name="axis_03">
-                        <label class="form-check-label">Sim</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="0" name="axis_03" checked>
-                        <label class="form-check-label">Não</label>
-                    </div>
-                </div>
-                ...
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        Eixo 20 - Lorem ipsum dolor sit amet consectetur
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="20" name="axis_20">
-                        <label class="form-check-label">Sim</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" value="0" name="axis_20" checked>
-                        <label class="form-check-label">Não</label>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
             
             <div class="my-4">

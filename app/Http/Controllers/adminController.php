@@ -82,7 +82,9 @@ class AdminController extends Controller
     //PARECERISTA
     public function adminConfigParecerista()
     {
-        return view('admin-config-parecerista');
+        $eixos = AxisConfig::all();
+        return view("admin-config-parecerista", ["eixos"=>$eixos]);
+        //return view('admin-config-parecerista');
     }
 
     public function configPareceristaSubmitPost(Request $request){
@@ -114,6 +116,8 @@ class AdminController extends Controller
                 }
             }
         }
+        return redirect('/admin-config-parecerista')->with('mensagem','Novo parecerista salvo com sucesso.');
+
 
     }
 
