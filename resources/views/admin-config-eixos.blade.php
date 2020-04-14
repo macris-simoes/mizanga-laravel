@@ -3,7 +3,7 @@
 @include('admin-congresso-pills')
 
 @if(session('mensagem'))
-    <div class="alert alert-success">{{session('mensagem')}}</div>
+    <div class="alert alert-success container">{{session('mensagem')}}</div>
 @endif
 
 <!-- início div container CONFIG CONGRESSO -->
