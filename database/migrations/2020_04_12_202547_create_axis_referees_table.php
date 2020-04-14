@@ -14,6 +14,7 @@ class CreateAxisRefereesTable extends Migration
     public function up()
     {
         Schema::create('axis_referees', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('referee_id');
             $table->integer('axis_id');
             $table->timestamps();

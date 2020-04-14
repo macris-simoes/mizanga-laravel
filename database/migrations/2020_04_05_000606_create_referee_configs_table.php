@@ -25,8 +25,6 @@ class CreateRefereeConfigsTable extends Migration
             $table->timestamps();
         });
 
-        $prefix = DB::getTablePrefix();
-        DB::update("ALTER TABLE ".$prefix."referee_configs AUTO_INCREMENT = 45000;");
     }
 
     /**

@@ -48,8 +48,6 @@ class CreateRegistrationsTable extends Migration
             $table->timestamps();
         });
         
-        $prefix = DB::getTablePrefix();
-        DB::update("ALTER TABLE ".$prefix."registrations AUTO_INCREMENT = 15000;");
     }
 
     /**
