@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\AttendeeConfig;
+use App\RefereeConfig;
 use App\AxisConfig;
 use App\AxisReferee;
 
@@ -72,12 +74,35 @@ class adminController extends Controller
     }
 
     public function configPareceristaSubmitPost(Request $request){
-        $dados = $request->all();
+        //Inserindo o parecerista na tabela users
+        $novoUser = new User();
+        $novoUser->name = $request->appraiser_name;
+        $novoUser->email = $request->appraiser_email;
+        $novoUser->password = bcrypt($request->appraiser_cpf);
+        $novoUser->type = 'parecerista';
+        $novoUser->save();
 
-        // $novaRelacao = new AxisReferee();
-        // $novaRelacao -> fill($dados);
-        // $novaRelacao ->save();
-        dd($dados);
+        //Inserindo os dados do parecerista na tabela referee_configs
+        $camposParecerista=$request->only('appraiser_cpf', 'appraiser_name','appraiser_email');
+        $novoParecerista = new RefereeConfig();
+        $novoParecerista->fill($camposParecerista);
+        $novoParecerista->user_id = $novoUser->id;
+        $novoParecerista->admin_id = 1;
+        $novoParecerista->save();
+        //COLOCAR LOGICA PARA O CAMPO ADMIN_ID!!!
+        
+        $campos=$request->all();
+        foreach($campos as $key=>$value){
+            if(strpos($key,'axis_')!== FALSE){
+                if($value!=0){
+                    $novoPareceristaEixo = new AxisReferee();
+                    $novoPareceristaEixo->referee_id = $novoParecerista->id;
+                    $novoPareceristaEixo->axis_id = $value;
+                    $novoPareceristaEixo->save();
+                }
+            }
+        }
+
     }
 
     public function adminParecerista()
