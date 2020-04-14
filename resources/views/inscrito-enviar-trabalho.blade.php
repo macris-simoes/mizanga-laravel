@@ -19,14 +19,14 @@
         </ul>
     </div>
     <!-- início envio de trabalho -->
-    <div class="container">
+    <div class="container pb-3">
 
         <div class="mb-1 pt-1 pb-2">
             <h4 class="display-3">Enviar novo trabalho</h4>
             <p class="lead font-italic"></p>
         </div>
 
-        <form action="">
+        <form method="post">
 
             <div class="form-row">
                 <div class="form-group col-md-12 pb-2">
@@ -41,10 +41,10 @@
 
             <div class="form-row">
 
-                <div class="form-group col-md-4 pb-2">
-                    <label for="">1º Eixo temático</label>
-                    <select class="form-group form-control" name="first_axis">
-                        <option selected disabled>Primeira opção de eixo temático</option>
+                <div class="form-group col-md-12">
+                    <label for="">Eixo temático</label>
+                    <select class="form-group form-control" name="axis_id">
+                        <option selected disabled>Selecione o eixo temático</option>
                         <option value="1">Eixo 1. lorem ipsum</option>
                         <option value="1">Eixo 2. lorem ipsum</option>
                         <option value="1">Eixo 3. lorem ipsum</option>
@@ -53,29 +53,6 @@
                     </select>
                 </div>
 
-                <div class="form-group col-md-4 pb-2">
-                    <label for=""> 2º Eixo temático</label>
-                    <select class="form-group form-control" name="second_axis">
-                        <option selected disabled>Segunda opção de eixo temático</option>
-                        <option value="1">Eixo 1. lorem ipsum</option>
-                        <option value="1">Eixo 2. lorem ipsum</option>
-                        <option value="1">Eixo 3. lorem ipsum</option>
-                        <option value="1">Eixo 4. lorem ipsum</option>
-                        <!-- aqui vai ter que por php -->
-                    </select>
-                </div>
-
-                <div class="form-group col-md-4 pb-2">
-                    <label for="">3º Eixo temático</label>
-                    <select class="form-group form-control" name="third_axis">
-                        <option selected disabled>Terceira opção de eixo temático</option>
-                        <option value="1">Eixo 1. lorem ipsum</option>
-                        <option value="1">Eixo 2. lorem ipsum</option>
-                        <option value="1">Eixo 3. lorem ipsum</option>
-                        <option value="1">Eixo 4. lorem ipsum</option>
-                        <!-- aqui vai ter que por php -->
-                    </select>
-                </div>
             </div>
 
             <div class="form-row">
@@ -120,36 +97,31 @@
                     <input type="text" name="author_affiliation" id="author_affiliation" class="form-control">
                 </div>
             </div>
-            
-            <div class="form-row d-flex">
-                <div class="form-group col-6">
-                    <label for="first_coauthor">Co-autor 1</label>
-                    <input type="text" name="first_coauthor" id="first_coauthor" class="form-control">
-                </div>
-
-                <div class="form-group col-6">
-                    <label for="first_coauthor_affiliation">Filiação Institucional</label>
-                    <input type="text" name="first_coauthor_affiliation" id="first_coauthor_affiliation" class="form-control">
-                </div>
-                {{-- <div class="form-group d-flex align-items-end col-1">
-                    <button class="btn btn-outline-primary ml-auto">Excluir</button>
-                </div> --}}
-            </div>
-            
-            {{-- <button class="btn btn-outline-primary mb-2">Adicionar co-autor</button> --}}
 
             <div class="accordion mb-2" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Adicionar co-autor
+                            Adicionar co-autores
                         </button>
                         </h5>
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
 
+                        
+                        <div class="form-row d-flex">
+                            <div class="form-group col-6">
+                                <label for="first_coauthor">Co-autor 1</label>
+                                <input type="text" name="first_coauthor" id="first_coauthor" class="form-control">
+                            </div>
+
+                            <div class="form-group col-6">
+                                <label for="first_coauthor_affiliation">Filiação Institucional</label>
+                                <input type="text" name="first_coauthor_affiliation" id="first_coauthor_affiliation" class="form-control">
+                            </div>
+                        </div>
 
                         <div class="form-row d-flex">
                             <div class="form-group col-6">
@@ -264,12 +236,13 @@
                 </div>
             </div>
 
+            <div class="my-4">
+                <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
+                <a href="/inscrito" class="btn btn-primary" style="width:120px">Voltar</a>
+            </div>
+
         </form>
 
-        <div class="my-4">
-            <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
-            <a href="/inscrito" class="btn btn-primary" style="width:120px">Voltar</a>
-        </div>
 
     </div>
 
