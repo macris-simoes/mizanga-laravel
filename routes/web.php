@@ -19,7 +19,7 @@ Route::get('/instrucao-avaliadores','LinksController@instrucaoAvaliadores');
 
 //----------LOGIN--------------
 Route::get('/login','LoginController@loginIndex')->name('login');
-//envio de form// Route::post('/login', 'ContatoController@loginSubmitPost');
+Route::post('/login', 'LoginController@authenticate');
 
 //------------INSCRITO------------
 Route::get('/inscrito-home','InscritoController@inscritoInfo');
