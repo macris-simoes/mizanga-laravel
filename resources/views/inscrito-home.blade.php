@@ -64,8 +64,7 @@
             
             </div>
             <div class="row">
-                <p class="col-4">E-mail: email@email.com.br</p>
-                <p class="col-4">Confirmação do e-mail: email@email.com.br</p>    
+                <p class="col-4">E-mail: email@email.com.br</p>   
             </div>
             <div class="editar">
 

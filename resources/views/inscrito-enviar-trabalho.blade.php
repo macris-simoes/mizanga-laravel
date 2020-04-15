@@ -33,7 +33,9 @@
                     <label for="">Modalidade</label>
                     <select class="form-control" name="category">
                         <option selected disabled>Selecione a modalidade</option>
-                        <option value="1">Pôster</option>
+                        @foreach ($modals as $modal)
+                    <option value="1">{{ $modal['work_modality']}}</option>
+                        @endforeach
                         <!-- aqui vai ter que por php -->
                     </select>
                 </div>
@@ -45,10 +47,10 @@
                     <label for="">Eixo temático</label>
                     <select class="form-group form-control" name="axis_id">
                         <option selected disabled>Selecione o eixo temático</option>
-                        <option value="1">Eixo 1. lorem ipsum</option>
-                        <option value="1">Eixo 2. lorem ipsum</option>
-                        <option value="1">Eixo 3. lorem ipsum</option>
-                        <option value="1">Eixo 4. lorem ipsum</option>
+                        @foreach ($eixos as $eixo)
+                    <option value="1">{{ $eixo['axis'] }}</option>
+                        @endforeach
+                        
                         <!-- aqui vai ter que por php -->
                     </select>
                 </div>

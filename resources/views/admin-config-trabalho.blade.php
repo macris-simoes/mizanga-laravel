@@ -21,9 +21,11 @@
     <!-- Início lista de modalidades -->
     <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
-      <li class="list-group-item"> <a href="#">Pôster</a></li>
-      <li class="list-group-item"> <a href="#">Comunicação Oral</a></li>
-      <li class="list-group-item"> <a href="#"> + Nova</a></li>
+    @foreach ($modals as $modal)
+    <li class="list-group-item"> <a href="#">{{ $modal['work_modality']}}</a></li>
+          
+      @endforeach
+  
     </div>
     <!-- fim lista de modalidades -->
 
@@ -31,7 +33,7 @@
     <div class="col-md-9 my-1">
 
       <!-- início do form de modalidades -->
-      <form>
+      <form method="POST">
         @csrf
         <!-- início da div form-row -->
         <div class="form-row">
@@ -70,7 +72,7 @@
               <option value="8">8</option>
               <option value="9">9</option>
               <option value="10">10</option>
-            </select>
+            </select> 
           </div>
 
         </div>

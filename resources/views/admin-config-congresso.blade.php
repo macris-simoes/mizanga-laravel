@@ -74,10 +74,10 @@
 
                     {{-- instruções aos pareceristas --}}
                     <div class="col-md-6 mb-4">
-                        <label class="font-weight-bold" for="appraiser_instructions">Instruções aos
+                        <label class="font-weight-bold" for="referee_instructions">Instruções aos
                             pareceristas</label>
-                        <textarea class="form-control" id="appraiser_instructions" rows="10"
-                            name="appraiser_instructions"></textarea>
+                        <textarea class="form-control" id="referee_instructions" rows="10"
+                            name="referee_instructions"></textarea>
                         <small>As informações inseridas neste campo aparecerão na tela "Instruções aos pareceristas"
                         </small>
                         <!-- aqui tem que por o php conforme a config no admin -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AbstractConfig;
 use Illuminate\Http\Request;
 use App\User;
 use App\AttendeeConfig;
@@ -63,12 +64,24 @@ class AdminController extends Controller
 
 
     //TRABALHOS
-    public function adminConfigTrabalho()
-    {
-        return view('admin-config-trabalho');
+
+    public function adminConfigTrabalho() {
+
+        $modals = AbstractConfig::query()->paginate();
+        return view('admin-config-trabalho', ["modals" => $modals]);
     }
-    public function adminTrabalho()
-    {
+    public function adminConfigTrabalhoPost(Request $request) {
+
+        $modal = $request->all();
+        $newModal = new AbstractConfig();
+        $newModal->fill($modal);
+        $newModal->queue = 8; 
+        $newModal->admin_id = 1;
+        $newModal->save();        
+
+        return redirect('admin-config-trabalho');
+    }
+    public function adminTrabalho(){   
         return view('admin-trabalho');
     }
 
