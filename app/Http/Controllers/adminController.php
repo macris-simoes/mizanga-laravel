@@ -9,7 +9,6 @@ use App\AttendeeConfig;
 use App\RefereeConfig;
 use App\AxisConfig;
 use App\AxisReferee;
-use App\AtendeeConfig;
 
 
 class AdminController extends Controller
