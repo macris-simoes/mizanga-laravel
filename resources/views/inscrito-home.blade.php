@@ -19,7 +19,7 @@
         </ul>
     </div>
     
-    <div class="container">
+    <div class="container shadow">
         <div class="mb-1 pt-1">
             <h4 class="display-3">Informações pessoais</h4>
             <p class="lead font-italic"></p>

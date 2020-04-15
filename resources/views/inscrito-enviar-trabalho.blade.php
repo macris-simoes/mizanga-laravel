@@ -19,7 +19,7 @@
         </ul>
     </div>
     <!-- início envio de trabalho -->
-    <div class="container pb-3">
+    <div class="container shadow pb-3">
 
         <div class="mb-1 pt-1 pb-2">
             <h4 class="display-3">Enviar novo trabalho</h4>
