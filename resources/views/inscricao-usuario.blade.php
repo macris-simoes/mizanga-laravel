@@ -1,12 +1,15 @@
 @extends('template')
 
 @section('content')
-    <div class="container">
+    <div class="container">        
+        @if(session('mensagem'))
+            <div class="alert alert-success container">{{session('mensagem')}}</div>
+        @endif
         <div class="mb-1 pt-1">
             <h4 class="display-3">Ficha de Inscrição</h4>
             <p class="lead font-italic"></p>
         </div>
-        <form id="inscricao-usuario" name="inscricao-usuario" method="post">
+        <form id="inscricao-usuario" name="inscricao-usuario" method="post" enctype="multipart/form-data">
             @csrf
             <div class="my-3">
                 <div class="form-row">
