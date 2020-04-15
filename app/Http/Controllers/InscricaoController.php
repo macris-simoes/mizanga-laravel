@@ -29,7 +29,7 @@ class InscricaoController extends Controller
             if ( !$path ){
 
                 return redirect('/inscricao-usuario')->with('erro','Falha ao salvar o arquivo.');
-                
+
             } else{
                 
                 $novoUser = new User();
@@ -50,28 +50,7 @@ class InscricaoController extends Controller
                 return redirect('/inscricao-usuario')->with('mensagem','Cadastro realizado com sucesso.');
             }
 
-     
         }
 
-
-        // $novoUser = new User();
-        // $novoUser->name = $request->name;
-        // $novoUser->email = $request->email;
-        // $novoUser->password = bcrypt($request->cpf);
-        // $novoUser->type = 'inscrito';
-        // $novoUser->save();
-
-        // $dados = $request->all();
-        // $novoInscrito = new Registration();
-        // $novoInscrito->fill($dados);
-        // $novoInscrito->user_id = $novoUser->id;
-        
-        // $path = $request->file('file')->store('comprovantes', 'public');
-        // $novoInscrito->file = $path;
-        
-        // $novoInscrito->save();
-
-        // return redirect('/inscricao-usuario')->with('mensagem','Cadastro realizado com sucesso.');
-        
     }
 }
