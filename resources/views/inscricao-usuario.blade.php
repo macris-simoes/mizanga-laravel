@@ -5,6 +5,9 @@
         @if(session('mensagem'))
             <div class="alert alert-success container">{{session('mensagem')}}</div>
         @endif
+        @if(session('erro'))
+            <div class="alert alert-danger container">{{session('erro')}}</div>
+        @endif
         <div class="mb-1 pt-1">
             <h4 class="display-3">Ficha de Inscrição</h4>
             <p class="lead font-italic"></p>
@@ -15,7 +18,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="register_modality">Modalidade*</label>
-                        <input type="text" class="form-control" id="register_modality" name="register_modality" placeholder="Modalidade" value="{{ old('register_modality') }}">
+                        <select class="form-control" name="register_modality" id="register_modality">
+                            <option selected disabled>Escolha...</option>
+                            @foreach ($modalidades as $modalidade)                                
+                            <option value="{{$modalidade->id}}">{{$modalidade->register_modality}}</option>
+                            @endforeach
+                        </select>
                         @error('register_modality')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -325,7 +333,4 @@
 
     </div>
 
- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-<script src="/js/inscricao-usuario-mascara.js"></script>
 @endsection
