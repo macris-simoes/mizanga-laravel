@@ -75,7 +75,7 @@ class AdminController extends Controller
         $modal = $request->all();
         $newModal = new AbstractConfig();
         $newModal->fill($modal);
-        $newModal->queue = 8;
+        $newModal->queue = 8; 
         $newModal->admin_id = 1;
         $newModal->save();        
 
