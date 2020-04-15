@@ -6,7 +6,7 @@
             <h4 class="display-3">Ficha de Inscrição</h4>
             <p class="lead font-italic"></p>
         </div>
-        <form id="inscricao-usuario" name="inscricao-usuario" method="post">
+        <form id="inscricao-usuario" method="post">
             @csrf
             <div class="my-3">
                 <div class="form-row">

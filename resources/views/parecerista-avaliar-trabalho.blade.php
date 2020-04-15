@@ -22,7 +22,7 @@
     </div>
     <!-- Resumo -->
 
-    <form method="POST" name="">
+    <form method="POST">
       @csrf
       <div class="form-group mt-4">
         <label for="exampleFormControlTextarea1">Resumo</label>
