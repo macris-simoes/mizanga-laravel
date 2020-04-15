@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AxisConfig;
+use App\AbstractConfig;
 
 class inscritoController extends Controller
 {
@@ -13,8 +15,15 @@ class inscritoController extends Controller
         return view('inscrito-certificados');
     }
     public function enviarTrabalho() {
-        return view('inscrito-enviar-trabalho');
+        $eixos = AxisConfig::query()->paginate();
+        $modals = AbstractConfig::query()->paginate();
+        return view('inscrito-enviar-trabalho', ["eixos" => $eixos, "modals" => $modals]);
     }
+
+    public function enviarTrabalhoSubmitPost() {
+    
+    }
+
     public function trabalhosCadastrados() {
         return view('inscrito-trabalhos-cadastrados');
     }
