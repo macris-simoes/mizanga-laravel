@@ -18,6 +18,8 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('inscrito-home');
+        } else{
+            return redirect('/login')->with('mensagem','Email ou senha incorretos!');
         }
     }
 }

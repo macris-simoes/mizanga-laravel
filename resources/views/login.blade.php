@@ -34,6 +34,9 @@
 				<img class="mx-auto d-block mb-5" src="img/logoMZ.png" alt="icone usuario" style="height: 80px;">
 				<form method="post">
 					@csrf
+					@if(session('mensagem'))
+						<div class="alert alert-danger">{{session('mensagem')}}</div>
+					@endif
 					<div class="form-group">
 						<label for="email">Email</label>
 						<input type="email" class="form-control" id="email" name="email" required>
@@ -55,7 +58,7 @@
 					{{-- <a href="/inscrito-home" class="btn btn-primary btn-block" type="submit">Login</a> --}}
 					<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 				</form>
-				<small>Ainda não tem cadastro? <a href="instrucoes-inscricao.php">Clique aqui e faça a sua inscrição.</a></small>
+				<small>Ainda não tem cadastro? <a href="/instrucoes-inscricao">Clique aqui e faça a sua inscrição.</a></small>
 			</div>
 		</div>
 	</main>
