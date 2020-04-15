@@ -18,9 +18,9 @@
     <!-- Início lista de modalidades -->
     <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
-      <li class="list-group-item"> <a href="#">Estudante</a></li>
-      <li class="list-group-item"> <a href="#">Profissional</a></li>
-      <li class="list-group-item"> <a href="#"> + Nova</a></li>
+      @foreach ($modals as $modal)
+      <li class="list-group-item"> <a href="#">{{$modal['register_modality']}}</a></li>
+      @endforeach
     </div>
     <!-- fim lista de modalidades -->
     

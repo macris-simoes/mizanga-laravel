@@ -9,6 +9,7 @@ use App\AttendeeConfig;
 use App\RefereeConfig;
 use App\AxisConfig;
 use App\AxisReferee;
+use App\AtendeeConfig;
 
 
 class AdminController extends Controller
@@ -43,10 +44,23 @@ class AdminController extends Controller
 
 
     // INSCRITOS
-    public function adminConfigInscrito()
-    {
-        return view('admin-config-inscrito');
+    public function adminConfigInscrito() {
+
+        $modals = AttendeeConfig::query()->paginate();
+        return view('admin-config-inscrito', ["modals" => $modals]);
     }
+
+    public function adminConfigInscritoPost(Request $request) {
+
+        $postModal = $request->all();
+        $newModal = new AttendeeConfig();
+        $newModal->fill($postModal);
+        $newModal->admin_id = 1;
+        $newModal->save();
+
+        return redirect('admin-config-inscrito');
+    }
+
     public function adminInscrito()
     {
         return view('admin-inscrito');
@@ -75,7 +89,6 @@ class AdminController extends Controller
         $modal = $request->all();
         $newModal = new AbstractConfig();
         $newModal->fill($modal);
-        $newModal->queue = 8; 
         $newModal->admin_id = 1;
         $newModal->save();        
 
