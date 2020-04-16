@@ -49,7 +49,7 @@ Route::get('/admin-config-inscrito','AdminController@adminConfigInscrito');
 Route::post('/admin-config-inscrito','AdminController@adminConfigInscritoPost');
 Route::get('/admin-inscrito','AdminController@adminInscrito');
 Route::get('/admin-inscrito-showa/{id}','AdminController@adminInscritoShowA');
-Route::get('/admin-inscrito-showb','AdminController@adminInscritoShowB');
+Route::get('/admin-inscrito-showb/{id}','AdminController@adminInscritoShowB');
 
 //----------ADMIN TRABALHO GET-------------
 Route::get('/admin-config-trabalho','AdminController@adminConfigTrabalho');

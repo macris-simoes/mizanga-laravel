@@ -11,6 +11,7 @@ use App\AxisConfig;
 use App\AxisReferee;
 use App\Admin;
 use App\Registration;
+use App\AbstractSubmission;
 
 use Illuminate\Support\Facades\DB;
 
@@ -106,9 +107,16 @@ class AdminController extends Controller
         return view('admin-inscrito-showa', ["inscrito" => $inscrito]);
     }
     
-    public function adminInscritoShowB()
+    public function adminInscritoShowB($id)
     {
-        return view('admin-inscrito-showb');
+        $trabalhos = AbstractSubmission::leftJoin('registrations', 'abstract_submissions.registration_id', '=', 'registrations.id')
+                    ->leftJoin('axis_configs', 'abstract_submissions.axis_id', '=', 'axis_configs.id')
+                    ->leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
+                    ->leftJoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
+                    ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
+                    ->where('registrations.id', '=', $id)->simplePaginate(1);
+
+        return view('admin-inscrito-showb', ["trabalhos" => $trabalhos]);
     }
 
 

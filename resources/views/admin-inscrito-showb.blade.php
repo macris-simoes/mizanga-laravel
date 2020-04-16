@@ -8,9 +8,9 @@
   <div class="container mt-3 col-md-10 shadow">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-inscrito" class="mt-5">  Voltar </a>
-            <h5 class="card-title">Maria Cristina Dancham Simões</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Estudante associado (1ª faixa) </h6>
+            <a href="/admin-inscrito" class="mt-5"> Voltar </a>
+            <h5 class="card-title">{{$trabalhos[0]->name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{$trabalhos[0]->register_modality}}</h6>
 
             {{-- início da tabs do ADMIN READ INSCRITO --}}
 
@@ -30,75 +30,30 @@
 
             {{-- div lista de trabalhos --}}
             <div class="list-group-flush">
-                <h6 class="font-weight-bold list-group-item">Trabalhos inscritos</h6>
-
+                @foreach($trabalhos as $trabalho)
                 <div class="d-flex flex-column list-group-item">
-
                     <div class="d-flex flex-row align-items-start ">
-
                         <div class="d-flex flex-column">
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
+                            <p class="font-weight-bold">{{$trabalho->abstract_title}}</p>
+                            <p>{{$trabalho->abstract_body}}</p>
 
-                            <small>Parecerista: Fulana da Silva</small>
-                            <small>Parecer: sim </small>
+                            <small>Eixo temático: {{$trabalho->axis}}</small>
+                            <small>Parecer:
+                            @if(!is_null($trabalho->rate_work))    
+                            Sim
+                            @else
+                            Não
+                            @endif
+                            </small>
                         </div>
-
-                        <button class="btn btn-primary ml-2"><svg class="bi bi-trash-fill" width="1em" height="1em"
-                                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z"
-                                    clip-rule="evenodd" />
-                            </svg></button>
                     </div>
-
-                </div>
-
-                <div class="d-flex flex-column list-group-item ">
-                    <div class="d-flex flex-row align-items-start ">
-
-                        <div class="d-flex flex-column">
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-
-                            <small>Parecerista: Fulana da Silva</small>
-                            <small>Parecer: sim </small>
-                        </div>
-
-                        <button class="btn btn-primary ml-2"><svg class="bi bi-trash-fill" width="1em" height="1em"
-                                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z"
-                                    clip-rule="evenodd" />
-                            </svg></button>
-                    </div>
-
-                </div>
-
-                <div class="d-flex flex-column list-group-item ">
-                    <div class="d-flex flex-row align-items-start ">
-
-                        <div class="d-flex flex-column">
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-
-                            <small>Parecerista: Fulana da Silva</small>
-                            <small>Parecer: sim </small>
-                        </div>
-
-                        <button class="btn btn-primary ml-2"><svg class="bi bi-trash-fill" width="1em" height="1em"
-                                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z"
-                                    clip-rule="evenodd" />
-                            </svg></button>
+                    <div class="d-flex flex-row justify-content-end">
+                        <button class="btn btn-warning">
+                            Deletar trabalho
+                        </button>
                     </div>
                 </div>
-                
-                <a href="/admin-inscrito" class="mt-5">  Voltar </a>
+                @endforeach
                 
                 {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
