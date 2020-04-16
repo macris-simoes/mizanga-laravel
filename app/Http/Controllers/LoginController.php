@@ -16,8 +16,13 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('inscrito-home');
+            if (Auth::user()->type == "admin"){
+                return redirect()->intended('admin-home');
+            } else if(Auth::user()->type == "parecerista"){
+                return redirect()->intended('parecerista');
+            } else if(Auth::user()->type == "inscrito"){
+                return redirect()->intended('inscrito-home');
+            }
         } else{
             return redirect('/login')->with('mensagem','Email ou senha incorretos!');
         }
