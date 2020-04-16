@@ -15,8 +15,12 @@ $(document).ready(function(){
         $('.cpf').unmask();
         $('.mobile_with_ddd').unmask();
     });
-    
+
     $('#admin-cadastro').submit(function(form){
+        $('.cpf').unmask();
+    });
+
+    $('#cadastro-parecerista').submit(function(form){
         $('.cpf').unmask();
     });
 });

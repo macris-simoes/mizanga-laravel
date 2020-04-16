@@ -12,13 +12,13 @@
         <p class="lead font-italic"></p>
     </div>
     
-    <form method="post">
+    <form method="post" id="cadastro-parecerista">
         @csrf
         <div class="my-3">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cpf">CPF*</label>
-                    <input type="text" class="form-control" id="cpf" placeholder="CPF" name="appraiser_cpf">
+                    <input type="text" class="form-control cpf" id="cpf" placeholder="CPF" name="appraiser_cpf">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="nome">Nome*</label>
