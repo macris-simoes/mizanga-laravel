@@ -11,7 +11,7 @@
     <div class="d-flex w-100 my-3 justify-content-between">  
         <div>
             <h1 class="display-4">Pesquisar Inscritos</h1>
-            <p>Inscrições até o momento: 1234</p>
+        <p>Inscrições até o momento: {{$totalInscritos}}</p>
             <small>Clique sobre o nome do inscrito para acessar as informações</small>
         </div>
         
@@ -40,75 +40,26 @@
 
     {{-- início dos cards de resultado da busca --}}
     <div class="list-group my-3">
-        <a href="/admin-inscrito-showa" class="list-group-item list-group-item-action">
+        @foreach($inscritos as $inscrito)
+        <a href="/admin-inscrito-showa/{{$inscrito->id}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Maria Cristina Dancham Simões</h5>
-                <small>há 15 dia(s)</small>
+                <h5 class="mb-1">{{$inscrito->name}}</h5>
             </div>
             <div class="d-flex flex-row align-items-start">
 
-                <small class="col-md-10">Profissional associado || macris.simoes@gmail.com</small>
-                
-                <div class="d-flex w-100 justify-content-end">
+                <small class="col-md-10">{{$inscrito->register_modality}} || {{$inscrito->email}}</small>
+
+                {{-- <div class="d-flex w-100 justify-content-end">
                     <span class="badge badge-success badge-pill">$</span>
                     <span class="badge badge-info badge-pill">T</span>
                     <span class="badge badge-warning badge-pill">A</span>
-                </div>
+                </div> --}}
             </div>
         </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                
-                <div class="d-flex w-100 justify-content-end">
-                    <span class="badge badge-info badge-pill">T</span>
-                    <span class="badge badge-warning badge-pill">A</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                
-                <div class="d-flex w-100 justify-content-end">
-                    <span class="badge badge-success badge-pill">$</span>
-                    {{-- <span class="badge badge-warning badge-pill">A</span> --}}
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                
-                <div class="d-flex w-100 justify-content-end">
-                    {{-- <span class="badge badge-success badge-pill">$</span>
-                    <span class="badge badge-info badge-pill">T</span>
-                    <span class="badge badge-warning badge-pill">A</span> --}}
-                </div>
-            </div>
-        </a>
-
-       
+        @endforeach       
+        {{ $inscritos->links()}}
         
-</div>
+    </div>
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->
 </div>

@@ -10,7 +10,9 @@ use App\RefereeConfig;
 use App\AxisConfig;
 use App\AxisReferee;
 use App\Admin;
+use App\Registration;
 
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -89,7 +91,11 @@ class AdminController extends Controller
 
     public function adminInscrito()
     {
-        return view('admin-inscrito');
+        $totalInscritos = Registration::count();
+        $inscritos = DB::table('registrations')
+                    ->leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
+                    ->select('registrations.*', 'attendee_configs.register_modality')->simplePaginate(10);
+        return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
     }
 
     public function adminInscritoShowA()
