@@ -68,6 +68,8 @@ Route::get('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAva
 
 Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
 
+Route::post('/admin-cadastro','AdminController@cadastroAdminSubmitPost');
+Route::get('/admin-cadastro','AdminController@cadastroAdmin');
 
 Route::resource ('crud','CrudController');
 //middleware group - habilitar no final, para acesso somente com login.

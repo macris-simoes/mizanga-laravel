@@ -9,10 +9,37 @@ use App\AttendeeConfig;
 use App\RefereeConfig;
 use App\AxisConfig;
 use App\AxisReferee;
+use App\Admin;
 
 
 class AdminController extends Controller
 {
+
+    public function cadastroAdmin(){
+        return view('admin-cadastro');
+    }
+
+    public function cadastroAdminSubmitPost(Request $request){
+        //Inserindo o admin na tabela users
+        $novoUser = new User();
+        $novoUser->name = $request->name;
+        $novoUser->email = $request->email;
+        $novoUser->password = bcrypt($request->cpf);
+        $novoUser->type = 'admin';
+        $novoUser->save();
+
+        //Inserindo os dados do admin na tabela admins
+        $camposAdmin=$request->all();
+        $novoAdmin = new Admin();
+        $novoAdmin->fill($camposAdmin);
+        $novoAdmin->user_id = $novoUser->id;
+        $novoAdmin->save();
+
+        return redirect('/admin-cadastro')->with('mensagem','Novo Admin com sucesso.');
+
+    }
+
+
     //HOME
     public function adminHome()
     {
