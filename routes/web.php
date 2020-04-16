@@ -48,7 +48,7 @@ Route::get('/admin-parecerista-substituir','AdminController@adminPareceristaSubs
 Route::get('/admin-config-inscrito','AdminController@adminConfigInscrito');
 Route::post('/admin-config-inscrito','AdminController@adminConfigInscritoPost');
 Route::get('/admin-inscrito','AdminController@adminInscrito');
-Route::get('/admin-inscrito-showa','AdminController@adminInscritoShowA');
+Route::get('/admin-inscrito-showa/{id}','AdminController@adminInscritoShowA');
 Route::get('/admin-inscrito-showb','AdminController@adminInscritoShowB');
 
 //----------ADMIN TRABALHO GET-------------

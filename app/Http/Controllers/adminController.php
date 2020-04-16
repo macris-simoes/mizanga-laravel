@@ -98,9 +98,12 @@ class AdminController extends Controller
         return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
     }
 
-    public function adminInscritoShowA()
+    public function adminInscritoShowA($id)
     {
-        return view('admin-inscrito-showa');
+        $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
+                    ->select('registrations.*', 'attendee_configs.register_modality')
+                    ->where('registrations.id', '=', $id)->first();
+        return view('admin-inscrito-showa', ["inscrito" => $inscrito]);
     }
     
     public function adminInscritoShowB()
