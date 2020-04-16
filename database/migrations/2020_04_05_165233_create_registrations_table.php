@@ -32,8 +32,8 @@ class CreateRegistrationsTable extends Migration
             $table->string('job_title')->nullable();
             $table->string('expertise')->nullable();
             $table->string('location');
-            $table->string('city');
-            $table->string('uf');
+            $table->string('city')->nullable();
+            $table->string('uf')->nullable();
             $table->string('country')->nullable();
             $table->string('home_phone',11)->nullable();
             $table->string('work_phone',11)->nullable();
