@@ -11,6 +11,11 @@ use App\AxisConfig;
 use App\AxisReferee;
 use App\Admin;
 use App\Registration;
+use App\Http\Requests\ConferenceConfigRequest;
+use App\Http\Requests\AxisConfigRequest;
+use App\Http\Requests\AttendeeConfigRequest;
+use App\Http\Requests\AbstractConfigRequest;
+use App\Http\Requests\RefereeConfigRequest;
 
 use Illuminate\Support\Facades\DB;
 
@@ -59,7 +64,7 @@ class AdminController extends Controller
         return view("admin-config-eixos", ["eixos"=>$eixos]);
     }
 
-    public function adminEixoSubmitPost(Request $request){
+    public function adminEixoSubmitPost(AxisConfigRequest $request){
         $eixo = $request->all();
         $novoEixo = new AxisConfig();
         $novoEixo->fill($eixo);
@@ -78,7 +83,7 @@ class AdminController extends Controller
         return view('admin-config-inscrito', ["modals" => $modals]);
     }
 
-    public function adminConfigInscritoPost(Request $request) {
+    public function adminConfigInscritoPost(AttendeeConfigRequest $request) {
 
         $postModal = $request->all();
         $newModal = new AttendeeConfig();
@@ -111,6 +116,15 @@ class AdminController extends Controller
         return view('admin-inscrito-showb');
     }
 
+    //Congresso
+    public function adminCongressoPost(ConferenceConfigRequest $request)
+    {
+        // $congresso = $request->all();
+        // $newCongresso = new ConferenceConfig();
+        // $newCongresso->fill($congresso);
+        // $newCongresso->save();  
+        return "Congresso cadastrado com sucesso";      
+    }
 
     //TRABALHOS
 
@@ -119,7 +133,7 @@ class AdminController extends Controller
         $modals = AbstractConfig::query()->paginate();
         return view('admin-config-trabalho', ["modals" => $modals]);
     }
-    public function adminConfigTrabalhoPost(Request $request) {
+    public function adminConfigTrabalhoPost(AbstractConfigRequest $request) {
 
         $modal = $request->all();
         $newModal = new AbstractConfig();
@@ -127,7 +141,7 @@ class AdminController extends Controller
         $newModal->admin_id = 1;
         $newModal->save();        
 
-        return redirect('admin-config-trabalho');
+        return view('admin-config-trabalho');
     }
     public function adminTrabalho(){   
         return view('admin-trabalho');
@@ -148,7 +162,7 @@ class AdminController extends Controller
         //return view('admin-config-parecerista');
     }
 
-    public function configPareceristaSubmitPost(Request $request){
+    public function configPareceristaSubmitPost(RefereeConfigRequest $request){
         //Inserindo o parecerista na tabela users
         $novoUser = new User();
         $novoUser->name = $request->appraiser_name;

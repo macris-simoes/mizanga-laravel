@@ -25,12 +25,14 @@ Route::post('/login', 'LoginController@authenticate');
 Route::get('/inscrito-home','InscritoController@inscritoInfo');
 Route::get('/inscrito-certificados','InscritoController@certificados');
 Route::get('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
+Route::post('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
 Route::get('/inscrito-trabalhos-cadastrados','InscritoController@trabalhosCadastrados');
 
 
 //----------ADMIN GET-------------
 Route::get('/admin-home','AdminController@adminHome');
 Route::get('/admin-config-congresso','AdminController@adminCongresso');
+Route::post('/admin-config-congresso','AdminController@adminCongressoPost');
 Route::get('/admin-config-eixos','AdminController@adminEixo');
 Route::post('/admin-config-eixos','AdminController@adminEixoSubmitPost');
 
@@ -64,6 +66,7 @@ Route::post('/admin','AdminController@adminInscritoSubmitPost');
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
 Route::get('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliar');
+Route::post('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliar');
 
 
 Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
