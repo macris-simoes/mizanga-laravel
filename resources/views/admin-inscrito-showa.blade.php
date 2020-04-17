@@ -115,7 +115,7 @@
                         <p class="col-lg-3"> <span class="font-weight-bold">Gênero: </span>{{$inscrito->gender}}</p>
                         <p class="col-lg-3"> <span class="font-weight-bold">Raça/Cor: </span>{{$inscrito->color}}</p>
                         <p class="col-lg-6"> 
-                            <span class="font-weight-bold">Nome social na emissão do certificado?: </span>
+                            <span class="font-weight-bold">Nome social na emissão do certificado: </span>
                             @if($inscrito->use_social_name==0)
                                 Sim
                             @else
