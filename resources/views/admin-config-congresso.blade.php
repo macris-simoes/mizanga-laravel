@@ -33,6 +33,10 @@
                         <label class="font-weight-bold" for="name_conference">Nome do congresso</label>
                         <input type="text" class="form-control" id="name_conference" placeholder="Escolha um nome"
                             name="name_conference" required>
+                            @error('name_conference')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+
                     </div>
 
                     <!-- Entidade Promotora -->
@@ -40,12 +44,18 @@
                         <label class="font-weight-bold" for="promoting_entity">Entidade Promotora</label>
                         <input type="text" class="form-control" id="promoting_entity" placeholder="Escolha um nome"
                             name="promoting_entity" required>
+                            @error('promoting_entity')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                     </div>
 
                     <!-- E-mail principal de contato -->
                     <div class="col-md-12 mb-4">
                         <label class="font-weight-bold" for="primary_email">E-mail principal de contato</label>
                         <input type="email" class="form-control" id="primary_email" placeholder="Insira um e-mail" name="primary_email" required>
+                            @error('primary_email')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                     </div>
 
                     <!-- Prazo de início -->
@@ -53,6 +63,9 @@
                         <label class="font-weight-bold" for="event_start_date">Início do evento</label>
                         <input type="date" class="form-control" id="event_start_date" placeholder="dd/mm/aaaa"
                             name="event_start_date" required>
+                            @error('event_start_date')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                     </div>
 
                     <!-- Prazo de término -->
@@ -60,6 +73,9 @@
                         <label class="font-weight-bold" for="event_end_date">Término do evento</label>
                         <input type="date" class="form-control" id="event_end_date" placeholder="dd/mm/aaaa"
                             name="event_end_date" required>
+                            @error('event_end_date')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                     </div>
 
                     {{-- instruções de inscrição --}}
@@ -69,6 +85,9 @@
                         <textarea class="form-control" id="how_to_subscribe" rows="10"
                             name="how_to_subscribe"></textarea>
                         <small>As informações inseridas neste campo aparecerão na tela "Faça sua inscrição" </small>
+                        @error('how_to_subscribe')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         <!-- aqui tem que por o php conforme a config no admin -->
                     </div>
 
@@ -80,6 +99,9 @@
                             name="referee_instructions"></textarea>
                         <small>As informações inseridas neste campo aparecerão na tela "Instruções aos pareceristas"
                         </small>
+                        @error('referee_instructions')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         <!-- aqui tem que por o php conforme a config no admin -->
                     </div>
                             <!-- botão -->

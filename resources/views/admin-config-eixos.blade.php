@@ -29,6 +29,11 @@
                     <button class="btn btn-primary" type="submit">Inserir</button>
                 </div>
             </div>
+            <div class=" d-flex justify-content-center">
+                    @error('axis')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+            </div>
         </form>
 
         {{-- lista de eixos inseridos --}}

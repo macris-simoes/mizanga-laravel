@@ -27,6 +27,7 @@
         </div>
 
         <form method="post">
+            @csrf
 
             <div class="form-row">
                 <div class="form-group col-md-12 pb-2">
@@ -36,6 +37,10 @@
                         @foreach ($modals as $modal)
                     <option value="1">{{ $modal['work_modality']}}</option>
                         @endforeach
+                        @error('category')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
                         <!-- aqui vai ter que por php -->
                     </select>
                 </div>
@@ -50,7 +55,9 @@
                         @foreach ($eixos as $eixo)
                     <option value="1">{{ $eixo['axis'] }}</option>
                         @endforeach
-                        
+                        @error('axis_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                         <!-- aqui vai ter que por php -->
                     </select>
                 </div>
@@ -61,6 +68,9 @@
                 <div class="form-group col-12">
                     <label for="abstract_title">Título</label>
                     <input type="text" class="form-control" id="abstract_title" name="abstract_title" placeholder="Insira um título com, no máximo, 80 caracteres com espaço">
+                    @error('abstract_title')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 
@@ -69,6 +79,9 @@
                     <label for="abstract_body">Resumo</label>
                     <textarea class="form-control" id="abstract_body" rows="10" name="abstract_body"></textarea>
                     <small class="form-text text-muted">O resumo deverá conter no mínimo 800 e no máximo 1200 caracteres com espaço.</small>
+                    @error('abstract_body')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                     <!-- aqui tem que por o php conforme a config no admin -->
                 </div>
             </div>
@@ -77,14 +90,23 @@
                 <div class="form-group col-4">
                     <label for="first_keyword">Palavra-chave 1</label>
                     <input type="text" class="form-control" id="first_keyword" placeholder="Insira uma palavra-chave" name="first_keyword">
+                    @error('first_keyword')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group col-4">
                     <label for="second_keyword">Palavra-chave 2</label>
                     <input type="text" class="form-control" id="second_keyword" placeholder="Insira uma palavra-chave" name="second_keyword">
+                    @error('second_keyword')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group col-4">
                     <label for="third_keyword">Palavra-chave 3</label>
                     <input type="text" class="form-control" id="third_keyword" placeholder="Insira uma palavra-chave" name="third_keyword">
+                    @error('third_keyword')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 
@@ -92,11 +114,17 @@
                 <div class="form-group col-6">
                     <label for="author">Autor</label>
                     <input type="text" name="author" id="author" class="form-control">
+                    @error('author')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group col-6">
                     <label for="author_affiliation">Filiação Institucional</label>
                     <input type="text" name="author_affiliation" id="author_affiliation" class="form-control">
+                    @error('author_affiliation')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 

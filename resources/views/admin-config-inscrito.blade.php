@@ -35,24 +35,36 @@
           <!-- identificação -->
               <div class="col-md-12 mb-4">
                 <label class="font-weight-bold" for="modality">Identificação</label>
-                <input type="text" class="form-control" id="modality" placeholder="Escolha um nome" name="register_modality" required>
+                <input type="text" class="form-control" id="modality" placeholder="Escolha um nome" name="register_modality">
+                @error('register_modality')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
 
             <!-- Prazo de início -->
               <div class="col-md-4">
                 <label class="font-weight-bold" for="register_start_date">Início das inscrições</label>
-                <input type="date" class="form-control" id="register_start_date" placeholder="dd/mm/aaaa" name="register_start_date" required>
+                <input type="date" class="form-control" id="register_start_date" placeholder="dd/mm/aaaa" name="register_start_date">
+                @error('register_start_date')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
               
               <!-- Prazo de término -->
               <div class="col-md-4">
                 <label class="font-weight-bold" for="register_end_date">Fim das inscrições</label>
-                <input type="date" class="form-control" id="register_end_date" placeholder="dd/mm/aaaa" name="register_end_date" required>
+                <input type="date" class="form-control" id="register_end_date" placeholder="dd/mm/aaaa" name="register_end_date">
+                @error('register_end_date')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
 
               <div class="col-md-4">
                 <label class="font-weight-bold" for="register_fee">Taxa de inscrição</label>
-                <input type="number" class="form-control" id="register_fee" name="register_fee" step="0.01" required>
+                <input type="number" class="form-control" id="register_fee" name="register_fee" step="0.01">
+                @error('register_fee')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
               <!-- Anexar comprovante? -->
               <div class="col-md-12 mt-3 ">
@@ -65,6 +77,9 @@
                 <input type="radio" id="attach_receipt_no" name="attach_receipt" class="custom-control-input" value="0">
                 <label class="custom-control-label" for="attach_receipt_no">Não</label>
               </div>
+              @error('attach_receipt')
+              <div class="text-danger">{{ $message }}</div>
+              @enderror
             </div>
             
             <!-- botão -->

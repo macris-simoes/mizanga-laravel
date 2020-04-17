@@ -41,19 +41,28 @@
           <div class="font-weight-bold form-group col-md-12">
             <label for="work_modality">Identificação</label>
             <input type="text" class="form-control" id="work_modality" placeholder="Escolha um nome"
-              name="work_modality" required>
+              name="work_modality">
+              @error('work_modality')
+              <div class="text-danger">{{ $message }}</div>
+              @enderror
           </div>
 
           <div class="form-group col-md-5">
             <label for="work_start_date">Início das inscrições</label>
             <input type="datetime-local" class="form-control" id="work_start_date" placeholder="dd/mm/aaaa"
-              name="work_start_date" required>
+              name="work_start_date">
+              @error('work_start_date')
+              <div class="text-danger">{{ $message }}</div>
+              @enderror
           </div>
 
           <div class="form-group col-md-5">
             <label for="work_end_date">Fim das inscrições</label>
             <input type="datetime-local" class="form-control" id="work_end_date" placeholder="dd/mm/aaaa"
-              name="work_end_date" required>
+              name="work_end_date">
+              @error('work_end_date')
+              <div class="text-danger">{{ $message }}</div>
+              @enderror
           </div>
 
           <div for="coauthor_quantity" class="form-group col-md-2" data-toggle="tooltip" data-placement="right"
@@ -73,6 +82,9 @@
               <option value="9">9</option>
               <option value="10">10</option>
             </select> 
+            @error('coauthor_quantity')
+            <div class="text-danger">{{ $message }}</div>
+            @enderror
           </div>
 
         </div>
@@ -90,12 +102,18 @@
               <label for="abstract_title_min_char">Mínimo de caracteres</label>
               <input class="form-control" type="number" id="abstract_title_min_char" placeholder="inserir número"
                 name="abstract_title_min_char">
+                @error('abstract_title_min_char')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="col-md-6">
               <label for="abstract_title_max_char">Máximo de caracteres</label>
               <input class="form-control" type="number" id="abstract_title_max_char" placeholder="inserir número"
                 name="abstract_title_max_char">
+                @error('abstract_title_max_char')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
           </div>
 
@@ -107,12 +125,18 @@
               <label for="abstract_min_char">Mínimo de caracteres</label>
               <input class="form-control" type="number" id="abstract_min_char" placeholder="inserir número"
                 name="abstract_min_char">
+                @error('abstract_min_char')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div div class="col-md-6">
               <label for="abstract_max_char">Máximo de caracteres</label>
               <input class="form-control" type="number" id="abstract_max_char" placeholder="inserir número"
                 name="abstract_max_char">
+                @error('abstract_max_char')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
           </div>
@@ -123,6 +147,9 @@
           <div class="col-md-12">
             <label for="author_instructions">Texto de instrução aos autores</label>
             <textarea class="form-control" id="author_instructions" rows="3" name="author_instructions"></textarea>
+            @error('author_instructions')
+            <div class="text-danger">{{ $message }}</div>
+            @enderror
           </div>
 
           <div class="col-md-12">

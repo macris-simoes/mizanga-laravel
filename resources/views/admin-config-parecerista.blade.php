@@ -18,15 +18,25 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cpf">CPF*</label>
-                    <input type="text" class="form-control cpf" id="cpf" placeholder="CPF" name="appraiser_cpf">
+                    <input type="text" class="form-control cpf" id="cpf" placeholder="CPF" name="appraiser_cpf" value="{{ old('appraiser_cpf') }}">
+                    @error('appraiser_cpf')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group col-md-4">
                     <label for="nome">Nome*</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome" name="appraiser_name">
+                    <input type="text" class="form-control" id="nome" placeholder="Nome" name="appraiser_name" value="{{ old('appraiser_name') }}">
+                    @error('appraiser_name')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group col-md-4">
                     <label for="email">E-mail*</label>
                     <input type="text" class="form-control" id="email" placeholder="E-mail" name="appraiser_email">
+                    @error('appraiser_email')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+
                 </div>
             </div>
         </div>
