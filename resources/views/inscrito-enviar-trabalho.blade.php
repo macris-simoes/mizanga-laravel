@@ -37,12 +37,12 @@
                         @foreach ($modals as $modal)
                     <option value="1">{{ $modal['work_modality']}}</option>
                         @endforeach
-                        @error('category')
+                        <!-- aqui vai ter que por php -->
+                    </select>
+                    @error('category')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
 
-                        <!-- aqui vai ter que por php -->
-                    </select>
                 </div>
             </div>
 
@@ -55,11 +55,11 @@
                         @foreach ($eixos as $eixo)
                     <option value="1">{{ $eixo['axis'] }}</option>
                         @endforeach
-                        @error('axis_id')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
                         <!-- aqui vai ter que por php -->
                     </select>
+                    @error('axis_id')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                 </div>
 
             </div>

@@ -25,7 +25,7 @@ Route::post('/login', 'LoginController@authenticate');
 Route::get('/inscrito-home','InscritoController@inscritoInfo');
 Route::get('/inscrito-certificados','InscritoController@certificados');
 Route::get('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
-Route::post('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
+Route::post('/inscrito-enviar-trabalho','InscritoController@enviarTrabalhoSubmitPost');
 Route::get('/inscrito-trabalhos-cadastrados','InscritoController@trabalhosCadastrados');
 
 
@@ -66,7 +66,7 @@ Route::post('/admin','AdminController@adminInscritoSubmitPost');
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
 Route::get('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliar');
-Route::post('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliar');
+Route::post('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliarSubmitPost');
 
 
 Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');

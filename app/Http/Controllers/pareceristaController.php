@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\AbstractEvaluations;
+use App\Http\Requests\AbstractEvaluationsRequest;
 
 class pareceristaController extends Controller
 {
@@ -14,11 +15,11 @@ class pareceristaController extends Controller
         return view('parecerista-avaliar-trabalho');
     }
 
-    public function pareceristaSubmitPost(Request $request) {
+    public function pareceristaAvaliarSubmitPost(AbstractEvaluationsRequest $request) {
         $dados=$request->all();
         $newParecer=new AbstractEvaluations();
         $newParecer-> fill($dados);
         $newParecer-> save();
-        return "Dados salvo com sucesso";
+        return view('parecerista-avaliar-trabalho');
     }
 }

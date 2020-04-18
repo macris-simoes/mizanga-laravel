@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AxisConfig;
 use App\AbstractConfig;
+use App\AbstractSubmission;
+use App\Http\Requests\AbstractSubmissionsRequest;
 
 class inscritoController extends Controller
 {
@@ -20,8 +22,12 @@ class inscritoController extends Controller
         return view('inscrito-enviar-trabalho', ["eixos" => $eixos, "modals" => $modals]);
     }
 
-    public function enviarTrabalhoSubmitPost() {
-    
+    public function enviarTrabalhoSubmitPost(AbstractSubmissionsRequest $request) {
+        $dados = $request->all();
+        $novoTrabalho = new AbstractSubmission();
+        $novoTrabalho -> fill($dados);
+        $novoTrabalho ->save();
+        return view('inscrito-enviar-trabalho');
     }
 
     public function trabalhosCadastrados() {

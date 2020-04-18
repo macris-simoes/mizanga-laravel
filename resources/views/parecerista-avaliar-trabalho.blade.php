@@ -52,11 +52,10 @@
         <option value="recusado">Recusado</option>
         <option value="aprovado com poster">Aprovado com pôster</option>
         <option value="encaminhado para outra opção de GT">Encaminhado para Opção 2° ou 3° de GT</option>
-        @error('rate_work')
+        </select>
+      @error('rate_work')
         <div class="text-danger">{{ $message }}</div>
         @enderror
-
-      </select>
     </form>
     <div></div>
     <!--Add arquivo -->
@@ -66,15 +65,15 @@
       <div class="custom-file mb-4">
         <input type="file" class="custom-file-input" id="customFile" name="include_evaluation">
         <label class="custom-file-label" for="customFile"></label>
-        @error('include_evaluation')
+      </div>
+      @error('include_evaluation')
         <div class="text-danger">{{ $message }}</div>
         @enderror
-      </div>
-    </form>
     <div class="my-4">
       <button type="submit" class="btn btn-primary" style="width: 10%">Enviar</button>
       <a href="/parecerista" class="btn btn-primary" style="width: 10%">Voltar</a>
     </div>
+  </form>
   </div>
 
 </div>
