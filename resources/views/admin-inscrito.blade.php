@@ -8,26 +8,29 @@
 <div class="container mt-3 col-md-10 shadow">
 
     {{-- início do campo de busca --}}
-    <div class="d-flex w-100 my-3 justify-content-between">  
-        <div>
+    <div class="row my-3">  
+        <div class="col-lg-9 my-1">
             <h1 class="display-4">Pesquisar Inscritos</h1>
-        <p>Inscrições até o momento: {{$totalInscritos}}</p>
+            <p>Inscrições até o momento: {{$totalInscritos}}</p>
             <small>Clique sobre o nome do inscrito para acessar as informações</small>
         </div>
         
-        <div class="d-flex justify-content-end">
-            <div class="d-flex flex-column">
+        <div class="col-lg-3 my-1">
+            <div>
                 <span class="badge badge-success badge-pill">$</span>
-                <span class="badge badge-info badge-pill">T</span>
-                <span class="badge badge-warning badge-pill">A</span>
-            </div>
-            <div class="d-flex flex-column ml-1">
                 <small>Pagamento realizado</small>
-                <small>Submissão de trabalho</small>
-                <small>Trabalho aprovado</small>
             </div>
+            <div>
+                <span class="badge badge-info badge-pill">T</span>
+                <small>Submissão de trabalho</small>
+            </div>
+            <div>
+                <span class="badge badge-warning badge-pill">A</span>
+                <small>Trabalho aprovado</small>
+            </div>      
         </div>
     </div>
+    
 
     <div class="input-group  mb-3">
         <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome" aria-describedby="button-addon2">
