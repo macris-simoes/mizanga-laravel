@@ -70,8 +70,8 @@
         <div class="text-danger">{{ $message }}</div>
         @enderror
     <div class="my-4">
-      <button type="submit" class="btn btn-primary" style="width: 10%">Enviar</button>
-      <a href="/parecerista" class="btn btn-primary" style="width: 10%">Voltar</a>
+      <button type="submit" class="btn btn-primary" style="width: 120px">Enviar</button>
+      <a href="/parecerista" class="btn btn-primary" style="width: 120px">Voltar</a>
     </div>
   </form>
   </div>
