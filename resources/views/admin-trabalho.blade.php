@@ -8,24 +8,26 @@
 <div class="container mt-3 col-md-10 shadow">
 
     {{-- início do campo de busca --}}
-    <div class="d-flex w-100 my-3 justify-content-between">  
-        <div>
+    <div class="row my-3">  
+        <div class="col-lg-9 my-1">
             <h1 class="display-4">Pesquisar Trabalhos</h1>
             <p>Trabalhos até o momento: 1234</p>
             <small>Clique sobre o nome do trabalho para acessar as informações</small>
         </div>
         
-        <div class="d-flex justify-content-end">
-            <div class="d-flex flex-column">
+        <div class="col-lg-3 my-1">
+            <div>
                 <span class="badge badge-warning badge-pill">A</span>
-                <span class="badge badge-light badge-pill">...</span>
-                <span class="badge badge-dark badge-pill">X</span>
-            </div>
-            <div class="d-flex flex-column ml-1">
                 <small>Trabalho aprovado</small>
-                <small>Enviado para parecer</small>
-                <small>Trabalho recusado</small>
             </div>
+            <div>
+                <span class="badge badge-light badge-pill">...</span>
+                <small>Enviado para parecer</small>
+            </div>
+            <div>
+                <span class="badge badge-dark badge-pill">X</span>
+                <small>Trabalho recusado</small>
+            </div>      
         </div>
     </div>
 
