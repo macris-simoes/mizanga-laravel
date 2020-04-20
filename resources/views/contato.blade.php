@@ -7,7 +7,7 @@
             <h4 class="display-3">Contato</h4>
             <p class="lead font-italic"></p>
         </div>
-        <div class="col-6 offset-3">
+        <div class="col-md-6 offset-md-3">
             <form class="card card-sm mb-4">
                 @csrf
                 <div class="card-body">
