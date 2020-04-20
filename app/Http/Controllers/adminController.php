@@ -149,7 +149,7 @@ class AdminController extends Controller
         $newModal->admin_id = 1;
         $newModal->save();        
 
-        return view('admin-config-trabalho');
+        return redirect('admin-config-trabalho')->with('mensagem', 'Configurações de trabalho salvas com sucesso.');
     }
     public function adminTrabalho(){   
         return view('admin-trabalho');

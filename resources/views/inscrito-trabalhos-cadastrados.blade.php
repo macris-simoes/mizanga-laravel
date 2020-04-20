@@ -5,16 +5,16 @@
     <div class="container">
         <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito-home">Informações</a>
+                <a class="nav-link " href="/inscrito">Informações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito-certificados">Certificados</a>
+                <a class="nav-link " href="/inscrito/certificados">Certificados</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/inscrito-enviar-trabalho">Enviar trabalho</a>
+                <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/inscrito-trabalhos-cadastrados">Trabalhos cadastrados</a>
+                <a class="nav-link active" href="/inscrito/trabalho/cadastrados">Trabalhos cadastrados</a>
             </li>
         </ul>
     </div>

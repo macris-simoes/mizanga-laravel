@@ -86,7 +86,7 @@
                             <a class="nav-link" href="/admin-home"> Área do admin </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/inscrito-home"> Área do inscrito </a>
+                            <a class="nav-link" href="/inscrito"> Área do inscrito </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/parecerista"> Área do parecerista </a>

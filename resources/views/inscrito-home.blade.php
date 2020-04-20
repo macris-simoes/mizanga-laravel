@@ -5,16 +5,16 @@
     <div class="container">
         <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active " href="/inscrito-home">Informações</a>
+                <a class="nav-link active " href="/inscrito">Informações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito-certificados">Certificados</a>
+                <a class="nav-link " href="/inscrito/certificados">Certificados</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/inscrito-enviar-trabalho">Enviar trabalho</a>
+                <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito-trabalhos-cadastrados">Trabalhos cadastrados</a>
+                <a class="nav-link " href="/inscrito/trabalho/cadastrados">Trabalhos cadastrados</a>
             </li>
         </ul>
     </div>
@@ -29,26 +29,27 @@
 
         <div class="my-3">
             <h5>Dados da inscrição</h5>
-            <p>Código da Inscrição: XXXXXX <br>
-                Modalidade: Estudante não associado <br>
-                Data de inscrição: 20/11/2019 - 10:20 <br>
+            @if($reg)
+            <p>Código da Inscrição: {{ $reg['id']}} <br>
+                Modalidade: {{ $reg['register_modality']}} <br>
+                Data de inscrição: {{ $reg['created_at']}} <br>
                 Pedido XXXXXX - R$200,00</p>
         </div>
         <hr>
-
         <div class="my-3">
             <h5>Dados pessoais</h5>
             <div class="row">
-            <p class="col-7">Nome: </p>
-            <p class="col-5">Data de nascimento: </p>  
+            <p class="col-7">Nome: {{ $reg['name']}} </p>
+            @endif
+            <p class="col-5">Data de nascimento: {{ $reg['birth_date']}} </p>  
             </div>
             <div class="row">
-            <p class="col-7">CPF: </p>
-            <p class="col-5">RG: </p>  
+            <p class="col-7">CPF: {{ $reg['cpf']}}</p>
+            <p class="col-5">RG: {{ $reg['rg']}}</p>  
             </div>
             <div class="row">
-            <p class="col-7">Nome social: </p>
-            <p class="col-5">Instituição para crachá: </p>  
+            <p class="col-7">Nome social: {{ $reg['social_name']}}</p>
+            <p class="col-5">Instituição para crachá: {{ $reg['institution']}} </p>  
             </div>
         </div>
 
@@ -58,13 +59,13 @@
         <div class="my-3">
             <h5>Dados de contato</h5>
             <div class="row">
-                <p class="col-4">Telefone residencial: (11) 5555-8978</p>
-                <p class="col-4">Telefone profissional: (11) 5555-8978</p>
-                <p class="col-4">Telefone celular: (11) 99999-8978</p>
+                <p class="col-4">Telefone residencial: {{ $reg['home_phone']}}</p>
+                <p class="col-4">Telefone profissional: {{ $reg['work_phone']}}</p>
+                <p class="col-4">Telefone celular: {{ $reg['mobile_phone']}}</p>
             
             </div>
             <div class="row">
-                <p class="col-4">E-mail: email@email.com.br</p>   
+                <p class="col-4">E-mail: {{ $reg['email']}}</p>   
             </div>
             <div class="editar">
 
@@ -86,13 +87,13 @@
                 <p class="col-4">Função institucional/Cargo: </p>  
             </div>
             <div class="row">
-                <p class="col-4">...................</p>
-                <p class="col-4">...................</p>  
-                <p class="col-4">...................</p>  
+                <p class="col-4"> {{ $reg['profession']}} </p>
+                <p class="col-4"> {{ $reg['filiation']}} </p>  
+                <p class="col-4"> {{ $reg['job_title']}} </p>  
             </div>
             <div>
                 <p> Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</p>
-                <p>...........................</p>
+                <p> {{ $reg['expertise']}} </p>
             </div>
         </div>
         <hr>
@@ -100,8 +101,8 @@
         <div class="my-3">
             <h5>Endereço</h5>
             <div class="row">
-                <p class="col-6">País: </p>
-                <p class="col-6">UF: </p>
+                <p class="col-6">País: {{ $reg['country']}} </p>
+                <p class="col-6">UF: {{ $reg['uf']}} </p>
             </div>
 
         </div>
@@ -110,9 +111,9 @@
         <div class="my-3">
             <h5>Dados complementares</h5>
             <div class="row">
-                <p class="col-4">Gênero:</p>
-                <p class="col-4">Raça/Cor:</p>  
-                <p class="col-4">Prefere usar nome social?:</p>  
+                <p class="col-4">Gênero: {{ $reg['gender']}}</p>
+                <p class="col-4">Raça/Cor: {{ $reg['color']}}</p>  
+                <p class="col-4">Prefere usar nome social?: {{ $reg['use_social_name']}}</p>  
             </div>
         </div>
         <hr>
@@ -126,7 +127,7 @@
 
     function editar() {
         editarDados.innerHTML = `
-    <form action="" method="POST">
+    <form method="POST">
         <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="telResid">Telefone residencial</label>

@@ -7,7 +7,6 @@ Route::get('/home','HomeController@index');
 Route::get('/inscricao-usuario','InscricaoController@inscricaoIndex');
 Route::post('/inscricao-usuario','InscricaoController@inscricaoSubmitPost');
 Route::get('/instrucoes-inscricao','InscricaoController@inscricaoInstrucao');
-//envio de form//  Route::post('/inscricao-usuario','InscricaoController@inscricaoSubmitPost');
 
 //-----------CONTATO------------
 Route::get('/contato','ContatoController@contatoIndex');
@@ -22,12 +21,23 @@ Route::get('/login','LoginController@loginIndex')->name('login');
 Route::post('/login', 'LoginController@authenticate');
 
 //------------INSCRITO------------
-Route::get('/inscrito-home','InscritoController@inscritoInfo');
-Route::get('/inscrito-certificados','InscritoController@certificados');
-Route::get('/inscrito-enviar-trabalho','InscritoController@enviarTrabalho');
-Route::post('/inscrito-enviar-trabalho','InscritoController@enviarTrabalhoSubmitPost');
-Route::get('/inscrito-trabalhos-cadastrados','InscritoController@trabalhosCadastrados');
 
+
+
+Route::get('/inscrito/{reg?}','InscritoController@inscritoInfo');
+
+Route::middleware([])->group(function() {
+    Route::prefix('inscrito/{id}')->group((function() {
+        
+        Route::get('/certificados','InscritoController@certificados');
+        Route::prefix('trabalho')->group(function() {
+            Route::get('/enviar','InscritoController@enviarTrabalho');
+            Route::post('/enviar','InscritoController@enviarTrabalhoSubmitPost');
+            Route::get('/cadastrados','InscritoController@trabalhosCadastrados');
+        });
+    }));
+    
+});
 
 //----------ADMIN GET-------------
 Route::get('/admin-home','AdminController@adminHome');
@@ -75,10 +85,6 @@ Route::post('/admin-cadastro','AdminController@cadastroAdminSubmitPost');
 Route::get('/admin-cadastro','AdminController@cadastroAdmin');
 
 Route::resource ('crud','CrudController');
-//middleware group - habilitar no final, para acesso somente com login.
 
-// route::middleware('auth')->group(function() {
-//     Route::get('/parecerista','PareceristaController@pareceristaIndex');
-//     Route::get('/admin','AdminController@adminIndex');
-//     Route::get('/inscrito','InscritoController@inscritoIndex');
-// });
+
+

@@ -8,6 +8,9 @@
 <!-- início div container -->
 <div class="container shadow">
 
+  @if(session('mensagem'))
+    <div class="alert alert-success container">{{session('mensagem')}}</div>
+@endif
   <!-- início Cabeçalho -->
   <div class="mb-1 pt-1">
     <h1 class="display-3">Trabalhos</h1>

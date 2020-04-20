@@ -7,11 +7,13 @@ use App\AxisConfig;
 use App\AbstractConfig;
 use App\AbstractSubmission;
 use App\Http\Requests\AbstractSubmissionsRequest;
+use App\Registration;
 
 class inscritoController extends Controller
 {
-    public function inscritoInfo() {
-        return view('inscrito-home');
+    public function inscritoInfo(Registration $reg = null) {
+    
+        return view('inscrito-home', ['reg' => $reg]);
     }
     public function certificados() {
         return view('inscrito-certificados');

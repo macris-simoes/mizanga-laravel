@@ -32,7 +32,7 @@
   <div class="row p-3">
 
     <aside class="col-md-4 col-sm-12 px-0 bg-white rounded shadow-sm">
-      <img class="m-auto d-block" style="width:80%" src="./img/mizangueras.gif" alt="">
+      <img class="m-auto d-block" style="width:80%" src="/img/mizangueras.gif" alt="">
       <h1 class="text-center">1º Encontro das mizangueiras</h1>
       <p class="lead text-center">de 28/10/2019 a 28/04/2020 <br> Veja como estão as coisas!</p>
     </aside>
