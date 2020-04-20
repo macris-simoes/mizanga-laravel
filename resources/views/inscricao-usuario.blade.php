@@ -21,7 +21,7 @@
                         <select class="form-control" name="register_modality" id="register_modality">
                             <option selected disabled>Escolha...</option>
                             @foreach ($modalidades as $modalidade)                                
-                            <option value="{{$modalidade->id}}">{{$modalidade->register_modality}}</option>
+                            <option value="{{$modalidade->register_modality}}">{{$modalidade->register_modality}}</option>
                             @endforeach
                         </select>
                         @error('register_modality')
