@@ -42,6 +42,7 @@
             </div>
         </a>
         @endforeach
+        {{ $parecerista->links()}}
 
       
         </div>
