@@ -97,17 +97,13 @@
                                 <a class="nav-link" href="/admin"> Área do admin </a>
                             </li>
                             @endif
-                        @endif
 
-                        @if (Auth::check())
                             @if(Auth::user()->type == "inscrito")
                             <li class="nav-item">
                                 <a class="nav-link" href="/inscrito"> Área do inscrito </a>
                             </li>
                             @endif
-                        @endif
 
-                        @if (Auth::check())
                             @if(Auth::user()->type == "parecerista")
                             <li class="nav-item">
                                 <a class="nav-link" href="/parecerista"> Área do parecerista </a>
