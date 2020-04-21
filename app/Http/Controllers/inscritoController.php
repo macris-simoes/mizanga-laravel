@@ -11,20 +11,20 @@ use App\Registration;
 
 class inscritoController extends Controller
 {
-    public function inscritoInfo(Registration $reg = null) {
+    public function home(Registration $inscrito) {
     
-        return view('inscrito-home', ['reg' => $reg]);
+        return view('inscrito-home', ['inscrito' => $inscrito]);
     }
     public function certificados() {
         return view('inscrito-certificados');
     }
-    public function enviarTrabalho() {
+    public function enviar() {
         $eixos = AxisConfig::query()->paginate();
         $modals = AbstractConfig::query()->paginate();
         return view('inscrito-enviar-trabalho', ["eixos" => $eixos, "modals" => $modals]);
     }
 
-    public function enviarTrabalhoSubmitPost(AbstractSubmissionsRequest $request) {
+    public function enviarPost(AbstractSubmissionsRequest $request) {
         $dados = $request->all();
         $novoTrabalho = new AbstractSubmission();
         $novoTrabalho -> fill($dados);
@@ -32,7 +32,7 @@ class inscritoController extends Controller
         return view('inscrito-enviar-trabalho');
     }
 
-    public function trabalhosCadastrados() {
+    public function enviados() {
         return view('inscrito-trabalhos-cadastrados');
     }
 }

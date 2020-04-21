@@ -44,8 +44,10 @@
         <p>3° Opção de Grupo de Trabalho: <em> n.a. </em></p>
       </div>
     </div>
-    <form>
+    
       <p>Avaliar Trabalho</p>
+      <form method="POST" name="" enctype="multipart/form-data">
+        @csrf
       <select class="form-control mb-4" name="rate_work">
         <option selected disabled>Escolha...</option>
         <option value="aprovado">Aprovado</option>
@@ -56,11 +58,8 @@
       @error('rate_work')
         <div class="text-danger">{{ $message }}</div>
         @enderror
-    </form>
-    <div></div>
+    
     <!--Add arquivo -->
-    <form method="POST" name="" enctype="multipart/form-data">
-      @csrf
       <p>Incluir Parecer</p>
       <div class="custom-file mb-4">
         <input type="file" class="custom-file-input" id="customFile" name="include_evaluation">

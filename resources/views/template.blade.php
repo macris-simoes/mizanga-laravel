@@ -45,8 +45,12 @@
                 <a class="navbar-brand mr-auto" href="/home">
                     <h2 class="text-primary"> Mizanga</h2>
                 </a>
+                @if(!Auth::check())
                 <a class="btn btn-primary rounded-right d-lg-none d-xl-none mr-1" href="/login"
                     style="font-family: Segoe UI, Roboto;">LOGIN</a>
+                @endif
+
+                @if(Auth::check())
                 <div class="dropdown d-lg-none d-xl-none mr-1">
                     <!-- parte de fora -->
                     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
@@ -68,6 +72,8 @@
                         </div>
                     </div>
                 </div>
+                @endif
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -79,24 +85,41 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/home">Início</a>
                         </li>
+
+                        @if(!Auth::check())
                         <li class="nav-item">
                             <a class="nav-link" href="/instrucoes-inscricao"> Faça sua inscrição</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin-home"> Área do admin </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/inscrito"> Área do inscrito </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/parecerista"> Área do parecerista </a>
-                        </li>
+                        @endif
+                        @if (Auth::check())
+                            @if(Auth::user()->type == "admin")
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin"> Área do admin </a>
+                            </li>
+                            @endif
+
+                            @if(Auth::user()->type == "inscrito")
+                            <li class="nav-item">
+                                <a class="nav-link" href="/inscrito"> Área do inscrito </a>
+                            </li>
+                            @endif
+
+                            @if(Auth::user()->type == "parecerista")
+                            <li class="nav-item">
+                                <a class="nav-link" href="/parecerista"> Área do parecerista </a>
+                            </li>
+                            @endif
+                        @endif
+
                         <li class="nav-item">
                             <a class="nav-link" href="/contato">Contato</a>
                         </li>
                     </ul>
+                    @if (!Auth::check())
                     <a class="btn btn-primary nav-link rounded-right d-none d-lg-block d-xl-block" href="/login">LOGIN</a>
+                    @endif
                 </div>
+                @if (Auth::check())
                 <div class="dropdown d-none d-lg-block d-xl-block">
                     <!-- parte de fora -->
                     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
@@ -108,16 +131,13 @@
                     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
                         <div>
                             <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-                                width="70px" height="70px" class="card-img-center" alt="...">
-                            <div class="card-body ">
-                                <h5 class="card-title">Seus Dados</h5>
-                                <p class="card-text">Nome Sobrenome</p>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/inscrito">Editar dados</a>
+                                width="70px" height="70px" class="mx-auto d-block" alt="...">
+        
+                                <p class="text-center m-0 mt-2">{{Auth::user()->name}}</p>
                         </div>
                     </div>
                 </div>
+                @endif
             </nav>
         </div>
     </div>
