@@ -57,6 +57,7 @@
                 
                 {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
+            {{ $trabalhos->links() }}  
             {{-- fim card-body (abaixo) --}}
         </div>
         {{-- fim da div card (abaixo) --}}
