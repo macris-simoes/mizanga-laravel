@@ -35,23 +35,23 @@ class LoginController extends Controller
                 return redirect()->intended('parecerista/');
             } else if(Auth::user()->type == "inscrito"){
 
-                // $id_inscrito = Auth::user()
-                //             ->leftJoin('registrations', 'registrations.user_id', '=', 'users.id')
-                //             ->select('registrations.id')->first();
-                // return redirect()->intended('inscrito/'.$id_inscrito['id']);
+                $id_inscrito = Auth::user()
+                            ->leftJoin('registrations', 'registrations.user_id', '=', 'users.id')
+                            ->select('registrations.id')->first();
+                return redirect()->intended('inscrito/'.$id_inscrito['id']);
 
-                return redirect()->intended('inscrito/');
+                // return redirect()->intended('inscrito/');
             }
         } else{
             return redirect('/login')->with('mensagem','Email ou senha incorretos!');
         }
     }
 
-    // public function logout(Request $request) {
+    public function logout() {
 
-    //     Auth::logout();
+        Auth::logout();
 
-    //     return redirect('/login');
+        return redirect('/login');
 
-    // }
+    }
 }

@@ -18,8 +18,8 @@ Route::get('/instrucao-avaliadores', 'LinksController@instrucaoAvaliadores');
 
 //----------LOGIN--------------
 Route::get('/login', 'LoginController@login')->name('login');
-Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::post('/login', 'LoginController@authenticate');
+Route::get('/logout', 'LoginController@logout')->name('logout');
 
 //------------INSCRITO------------
 Route::middleware([])->group(function () {
