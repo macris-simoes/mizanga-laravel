@@ -60,6 +60,7 @@ Route::post('/admin-config-eixos', 'AdminController@adminEixoSubmitPost');
 Route::get('/admin-config-parecerista', 'AdminController@adminConfigParecerista');
 Route::post('/admin-config-parecerista', 'AdminController@configPareceristaSubmitPost');
 Route::get('/admin-parecerista', 'AdminController@adminParecerista');
+Route::post('/admin-parecerista', 'AdminController@adminPareceristaPost');
 Route::get('/admin-parecerista-showa', 'AdminController@adminPareceristaShowA');
 Route::get('/admin-parecerista-showb', 'AdminController@adminPareceristaShowB');
 
