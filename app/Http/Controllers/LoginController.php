@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function loginIndex() {
+    public function login() {
         return view('login');
     }
 
@@ -46,4 +46,12 @@ class LoginController extends Controller
             return redirect('/login')->with('mensagem','Email ou senha incorretos!');
         }
     }
+
+    // public function logout(Request $request) {
+
+    //     Auth::logout();
+
+    //     return redirect('/login');
+
+    // }
 }

@@ -17,14 +17,15 @@ Route::get('/criterios-trabalho', 'LinksController@criteriosTrabalho');
 Route::get('/instrucao-avaliadores', 'LinksController@instrucaoAvaliadores');
 
 //----------LOGIN--------------
-Route::get('/login', 'LoginController@loginIndex')->name('login');
+Route::get('/login', 'LoginController@login')->name('login');
+Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::post('/login', 'LoginController@authenticate');
 
 //------------INSCRITO------------
 Route::middleware([])->group(function () {
 
     //Route::prefix('inscrito/{inscrito?}')
-    Route::prefix('inscrito')->group((function () {
+    Route::prefix('inscrito/{inscrito?}')->group((function () {
         Route::get('/', 'InscritoController@home')->name('inscrito.home');
         Route::get('/certificados', 'InscritoController@certificados')->name('inscrito.certificados');
         Route::prefix('trabalho')->group(function () {
