@@ -24,23 +24,24 @@ Route::post('/login', 'LoginController@authenticate');
 
 
 
-Route::get('/inscrito/{reg?}','InscritoController@inscritoInfo');
 
 Route::middleware([])->group(function() {
-    Route::prefix('inscrito/{id}')->group((function() {
-        
-        Route::get('/certificados','InscritoController@certificados');
+
+    //Route::prefix('inscrito/{inscrito?}')
+    Route::prefix('inscrito')->group((function() {
+        Route::get('/','InscritoController@home')->name('inscrito.home');
+        Route::get('/certificados','InscritoController@certificados')->name('inscrito.certificados');
         Route::prefix('trabalho')->group(function() {
-            Route::get('/enviar','InscritoController@enviarTrabalho');
-            Route::post('/enviar','InscritoController@enviarTrabalhoSubmitPost');
-            Route::get('/cadastrados','InscritoController@trabalhosCadastrados');
+            Route::get('/enviar','InscritoController@enviar')->name('trabalho.enviar');
+            Route::post('/enviar','InscritoController@enviarPost')->name('trabalho.enviarpost');
+            Route::get('/cadastrados','InscritoController@enviados')->name('trabalho.enviados');
         });
     }));
     
 });
 
 //----------ADMIN GET-------------
-Route::get('/admin-home','AdminController@adminHome');
+Route::get('/admin','AdminController@adminHome');
 Route::get('/admin-config-congresso','AdminController@adminCongresso');
 Route::post('/admin-config-congresso','AdminController@adminCongressoPost');
 Route::get('/admin-config-eixos','AdminController@adminEixo');
@@ -75,11 +76,11 @@ Route::post('/admin','AdminController@adminInscritoSubmitPost');
 
 //--------Parecerista----------
 Route::get('/parecerista','PareceristaController@pareceristaIndex');
+Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
 Route::get('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliar');
 Route::post('/parecerista-avaliar-trabalho','PareceristaController@pareceristaAvaliarSubmitPost');
 
 
-Route::post('/parecerista','PareceristaController@pareceristaSubmitPost');
 
 Route::post('/admin-cadastro','AdminController@cadastroAdminSubmitPost');
 Route::get('/admin-cadastro','AdminController@cadastroAdmin');

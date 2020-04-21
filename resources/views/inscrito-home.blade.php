@@ -8,7 +8,7 @@
                 <a class="nav-link active " href="/inscrito">Informações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito/certificados">Certificados</a>
+                <a class="nav-link " href="/inscrito/certificados" {{--href="{{route('inscrito.certificados', $inscrito->id) }}"--}}>Certificados</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
@@ -29,27 +29,25 @@
 
         <div class="my-3">
             <h5>Dados da inscrição</h5>
-            @if($reg)
-            <p>Código da Inscrição: {{ $reg['id']}} <br>
-                Modalidade: {{ $reg['register_modality']}} <br>
-                Data de inscrição: {{ $reg['created_at']}} <br>
+            <p>Código da Inscrição: {{ $inscrito['id']}} <br>
+                Modalidade: {{ $inscrito['register_modality']}} <br>
+                Data de inscrição: {{ $inscrito['created_at']}} <br>
                 Pedido XXXXXX - R$200,00</p>
         </div>
         <hr>
         <div class="my-3">
             <h5>Dados pessoais</h5>
             <div class="row">
-            <p class="col-7">Nome: {{ $reg['name']}} </p>
-            @endif
-            <p class="col-5">Data de nascimento: {{ $reg['birth_date']}} </p>  
+            <p class="col-7">Nome: {{ $inscrito['name']}} </p>
+            <p class="col-5">Data de nascimento: {{ $inscrito['birth_date']}} </p>  
             </div>
             <div class="row">
-            <p class="col-7">CPF: {{ $reg['cpf']}}</p>
-            <p class="col-5">RG: {{ $reg['rg']}}</p>  
+            <p class="col-7">CPF: {{ $inscrito['cpf']}}</p>
+            <p class="col-5">RG: {{ $inscrito['rg']}}</p>  
             </div>
             <div class="row">
-            <p class="col-7">Nome social: {{ $reg['social_name']}}</p>
-            <p class="col-5">Instituição para crachá: {{ $reg['institution']}} </p>  
+            <p class="col-7">Nome social: {{ $inscrito['social_name']}}</p>
+            <p class="col-5">Instituição para crachá: {{ $inscrito['institution']}} </p>  
             </div>
         </div>
 
@@ -59,13 +57,13 @@
         <div class="my-3">
             <h5>Dados de contato</h5>
             <div class="row">
-                <p class="col-4">Telefone residencial: {{ $reg['home_phone']}}</p>
-                <p class="col-4">Telefone profissional: {{ $reg['work_phone']}}</p>
-                <p class="col-4">Telefone celular: {{ $reg['mobile_phone']}}</p>
+                <p class="col-4">Telefone residencial: {{ $inscrito['home_phone']}}</p>
+                <p class="col-4">Telefone profissional: {{ $inscrito['work_phone']}}</p>
+                <p class="col-4">Telefone celular: {{ $inscrito['mobile_phone']}}</p>
             
             </div>
             <div class="row">
-                <p class="col-4">E-mail: {{ $reg['email']}}</p>   
+                <p class="col-4">E-mail: {{ $inscrito['email']}}</p>   
             </div>
             <div class="editar">
 
@@ -87,13 +85,13 @@
                 <p class="col-4">Função institucional/Cargo: </p>  
             </div>
             <div class="row">
-                <p class="col-4"> {{ $reg['profession']}} </p>
-                <p class="col-4"> {{ $reg['filiation']}} </p>  
-                <p class="col-4"> {{ $reg['job_title']}} </p>  
+                <p class="col-4"> {{ $inscrito['profession']}} </p>
+                <p class="col-4"> {{ $inscrito['filiation']}} </p>  
+                <p class="col-4"> {{ $inscrito['job_title']}} </p>  
             </div>
             <div>
                 <p> Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</p>
-                <p> {{ $reg['expertise']}} </p>
+                <p> {{ $inscrito['expertise']}} </p>
             </div>
         </div>
         <hr>
@@ -101,8 +99,8 @@
         <div class="my-3">
             <h5>Endereço</h5>
             <div class="row">
-                <p class="col-6">País: {{ $reg['country']}} </p>
-                <p class="col-6">UF: {{ $reg['uf']}} </p>
+                <p class="col-6">País: {{ $inscrito['country']}} </p>
+                <p class="col-6">UF: {{ $inscrito['uf']}} </p>
             </div>
 
         </div>
@@ -111,9 +109,9 @@
         <div class="my-3">
             <h5>Dados complementares</h5>
             <div class="row">
-                <p class="col-4">Gênero: {{ $reg['gender']}}</p>
-                <p class="col-4">Raça/Cor: {{ $reg['color']}}</p>  
-                <p class="col-4">Prefere usar nome social?: {{ $reg['use_social_name']}}</p>  
+                <p class="col-4">Gênero: {{ $inscrito['gender']}}</p>
+                <p class="col-4">Raça/Cor: {{ $inscrito['color']}}</p>  
+                <p class="col-4">Prefere usar nome social?: {{ $inscrito['use_social_name']}}</p>  
             </div>
         </div>
         <hr>
