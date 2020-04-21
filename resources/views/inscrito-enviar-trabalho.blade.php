@@ -31,7 +31,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-12 pb-2">
-                    <label for="">Modalidade</label>
+                    <label for="">Modalidade*</label>
                     <select class="form-control" name="category">
                         <option selected disabled>Selecione a modalidade</option>
                         @foreach ($modals as $modal)
@@ -49,7 +49,7 @@
             <div class="form-row">
 
                 <div class="form-group col-md-12">
-                    <label for="">Eixo temático</label>
+                    <label for="">Eixo temático*</label>
                     <select class="form-group form-control" name="axis_id">
                         <option selected disabled>Selecione o eixo temático</option>
                         @foreach ($eixos as $eixo)
@@ -66,7 +66,7 @@
 
             <div class="form-row">
                 <div class="form-group col-12">
-                    <label for="abstract_title">Título</label>
+                    <label for="abstract_title">Título*</label>
                     <input type="text" class="form-control" id="abstract_title" name="abstract_title" placeholder="Insira um título com, no máximo, 80 caracteres com espaço">
                     @error('abstract_title')
                     <div class="text-danger">{{ $message }}</div>
@@ -76,7 +76,7 @@
 
             <div class="form-row">
                 <div class="form-group col-12 row-5">
-                    <label for="abstract_body">Resumo</label>
+                    <label for="abstract_body">Resumo*</label>
                     <textarea class="form-control" id="abstract_body" rows="10" name="abstract_body"></textarea>
                     <small class="form-text text-muted">O resumo deverá conter no mínimo 800 e no máximo 1200 caracteres com espaço.</small>
                     @error('abstract_body')
@@ -88,21 +88,21 @@
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="first_keyword">Palavra-chave 1</label>
+                    <label for="first_keyword">Palavra-chave 1*</label>
                     <input type="text" class="form-control" id="first_keyword" placeholder="Insira uma palavra-chave" name="first_keyword">
                     @error('first_keyword')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="second_keyword">Palavra-chave 2</label>
+                    <label for="second_keyword">Palavra-chave 2*</label>
                     <input type="text" class="form-control" id="second_keyword" placeholder="Insira uma palavra-chave" name="second_keyword">
                     @error('second_keyword')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="third_keyword">Palavra-chave 3</label>
+                    <label for="third_keyword">Palavra-chave 3*</label>
                     <input type="text" class="form-control" id="third_keyword" placeholder="Insira uma palavra-chave" name="third_keyword">
                     @error('third_keyword')
                     <div class="text-danger">{{ $message }}</div>
@@ -112,7 +112,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="author">Autor</label>
+                    <label for="author">Autor*</label>
                     <input type="text" name="author" id="author" class="form-control">
                     @error('author')
                     <div class="text-danger">{{ $message }}</div>
@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="author_affiliation">Filiação Institucional</label>
+                    <label for="author_affiliation">Filiação Institucional*</label>
                     <input type="text" name="author_affiliation" id="author_affiliation" class="form-control">
                     @error('author_affiliation')
                     <div class="text-danger">{{ $message }}</div>

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function loginIndex() {
+    public function login() {
         return view('login');
     }
 
@@ -21,10 +21,18 @@ class LoginController extends Controller
             } else if(Auth::user()->type == "parecerista"){
                 return redirect()->intended('parecerista');
             } else if(Auth::user()->type == "inscrito"){
-                return redirect()->intended('inscrito-home');
+                return redirect()->intended('inscrito');
             }
         } else{
             return redirect('/login')->with('mensagem','Email ou senha incorretos!');
         }
     }
+
+    // public function logout(Request $request) {
+
+    //     Auth::logout();
+
+    //     return redirect('/login');
+
+    // }
 }
