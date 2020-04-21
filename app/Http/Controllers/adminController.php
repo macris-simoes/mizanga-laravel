@@ -130,8 +130,12 @@ class AdminController extends Controller
                     ->leftJoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
                     ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
                     ->where('registrations.id', '=', $id)->simplePaginate(1);
+        $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
+                    ->select('registrations.*', 'attendee_configs.register_modality')
+                    ->where('registrations.id', '=', $id)->first();
+        
 
-        return view('admin-inscrito-showb', ["trabalhos" => $trabalhos]);
+        return view('admin-inscrito-showb', ["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
     }
 
     //Congresso
