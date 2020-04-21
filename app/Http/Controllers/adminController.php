@@ -226,6 +226,12 @@ class AdminController extends Controller
 
     public function adminParecerista()
     {
+        $totalPareceristas = Registration::count();
+        $pareceristas = DB::table('referee_configs')->simplePaginate(10);
+        return view('admin-parecerista')->with('totalPareceristas', $totalPareceristas)->with('pareceristas', $pareceristas);
+    }
+    public function adminPareceristaPost()
+    {
         return view('admin-parecerista');
     }
     public function adminPareceristaShowA()
