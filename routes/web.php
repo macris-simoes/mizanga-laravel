@@ -81,6 +81,9 @@ Route::get('/admin-trabalho-showa', 'AdminController@adminTrabalhoShowA');
 
 //----------ADMIN POST-------------
 Route::post('/admin', 'AdminController@adminInscritoSubmitPost');
+Route::post('/admin-config-eixos/{id}','AdminController@adminConfigEixoDelete');
+Route::post('/admin-config-inscrito/{id}','AdminController@adminConfigInscritoDelete');
+Route::post('/admin-config-trabalho/{id}','AdminController@adminConfigTrabalhoDelete');
 
 
 
