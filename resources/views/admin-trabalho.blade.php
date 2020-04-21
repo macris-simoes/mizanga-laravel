@@ -41,6 +41,7 @@
 
 
     {{-- início dos cards de resultado da busca --}}
+    @if(isset($trabalhos))
     <div class="list-group my-3">
         @foreach($trabalhos as $trabalho)
         <a href="/admin-trabalho-showa" class="list-group-item list-group-item-action">
@@ -62,7 +63,10 @@
         @endforeach
         {{$trabalhos->links()}}
         
-</div>
+    </div>
+    @else
+    <p class="font-italic">Não há trabalhos submetidos</p>
+    @endif
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->
 </div>

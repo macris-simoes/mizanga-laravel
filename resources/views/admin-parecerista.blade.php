@@ -26,6 +26,7 @@
 
 
     {{-- início dos cards de resultado da busca --}}
+    @if(isset($pareceristas))
     <div class="list-group my-3">
         @foreach($pareceristas as $parecerista)
         <a href="/admin-parecerista-showa" class="list-group-item list-group-item-action">
@@ -45,7 +46,10 @@
         {{ $pareceristas->links()}}
 
       
-        </div>
+    </div>
+    @else
+    <p class="font-italic">Não há pareceristas cadastrados</p>
+    @endif
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->
 </div>
