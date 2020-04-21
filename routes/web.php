@@ -58,19 +58,22 @@ Route::get('/admin-parecerista-substituir','AdminController@adminPareceristaSubs
 
 //----------ADMIN INSCRITO GET-------------
 Route::get('/admin-config-inscrito','AdminController@adminConfigInscrito');
-Route::post('/admin-config-inscrito','AdminController@adminConfigInscritoPost');
 Route::get('/admin-inscrito','AdminController@adminInscrito');
 Route::get('/admin-inscrito-showa/{id}','AdminController@adminInscritoShowA');
 Route::get('/admin-inscrito-showb/{id}','AdminController@adminInscritoShowB');
 
 //----------ADMIN TRABALHO GET-------------
 Route::get('/admin-config-trabalho','AdminController@adminConfigTrabalho');
-Route::post('/admin-config-trabalho','AdminController@adminConfigTrabalhoPost');
 Route::get('/admin-trabalho','AdminController@adminTrabalho');
 Route::get('/admin-trabalho-showa','AdminController@adminTrabalhoShowA');
 
 //----------ADMIN POST-------------
 Route::post('/admin','AdminController@adminInscritoSubmitPost');
+Route::post('/admin-config-inscrito','AdminController@adminConfigInscritoPost');
+Route::post('/admin-config-trabalho','AdminController@adminConfigTrabalhoPost');
+Route::post('/admin-config-eixos/{id}','AdminController@adminConfigEixoDelete');
+Route::post('/admin-config-inscrito/{id}','AdminController@adminConfigInscritoDelete');
+Route::post('/admin-config-trabalho/{id}','AdminController@adminConfigTrabalhoDelete');
 
 
 //--------Parecerista----------

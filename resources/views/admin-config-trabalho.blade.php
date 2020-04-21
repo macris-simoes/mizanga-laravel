@@ -25,7 +25,23 @@
     <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
     @foreach ($modals as $modal)
-    <li class="list-group-item"> <a href="#">{{ $modal['work_modality']}}</a></li>
+    <li class="list-group-item "> 
+      <div class="d-flex flex-row  align-items-center">
+        <div>
+          {{$modal['work_modality']}}
+        </div>
+        <div>
+          <form action="/admin-config-trabalho/{{ $modal['id']}}" method="post">
+            @csrf
+            <input hidden value="{{ $modal }}" >
+            <button class="btn btn-sm btn-primary ml-2 " type="submit" >
+              <span class="material-icons text-white"> delete </span>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+    </li>
           
       @endforeach
   
@@ -52,7 +68,7 @@
 
           <div class="form-group col-md-5">
             <label for="work_start_date">Início das inscrições</label>
-            <input type="datetime-local" class="form-control" id="work_start_date" placeholder="dd/mm/aaaa"
+            <input type="date" class="form-control" id="work_start_date" placeholder="dd/mm/aaaa"
               name="work_start_date">
               @error('work_start_date')
               <div class="text-danger">{{ $message }}</div>
@@ -61,7 +77,7 @@
 
           <div class="form-group col-md-5">
             <label for="work_end_date">Fim das inscrições</label>
-            <input type="datetime-local" class="form-control" id="work_end_date" placeholder="dd/mm/aaaa"
+            <input type="date" class="form-control" id="work_end_date" placeholder="dd/mm/aaaa"
               name="work_end_date">
               @error('work_end_date')
               <div class="text-danger">{{ $message }}</div>

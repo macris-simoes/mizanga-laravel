@@ -76,6 +76,11 @@ class AdminController extends Controller
         return redirect('/admin-config-eixos')->with('mensagem','Novo eixo salvo com sucesso.');
     }
 
+    public function adminConfigEixoDelete(AxisConfig $id){
+        $id -> delete();
+       return redirect('/admin-config-eixos')->with('mensagem','Eixo apagado!');        
+    }
+
 
     // INSCRITOS
     public function adminConfigInscrito() {
@@ -93,6 +98,11 @@ class AdminController extends Controller
         $newModal->save();
 
         return redirect('admin-config-inscrito');
+    }
+
+    public function adminConfigInscritoDelete(AttendeeConfig $id){
+        $id -> delete();
+       return redirect('/admin-config-inscrito')->with('mensagem','Apagado!');        
     }
 
     public function adminInscrito()
@@ -151,6 +161,12 @@ class AdminController extends Controller
 
         return redirect('admin-config-trabalho')->with('mensagem', 'Configurações de trabalho salvas com sucesso.');
     }
+
+    public function adminConfigTrabalhoDelete(AbstractConfig $id){
+        $id -> delete();
+       return redirect('/admin-config-trabalho')->with('mensagem','Apagado!');        
+    }
+
     public function adminTrabalho(){   
         return view('admin-trabalho');
     }

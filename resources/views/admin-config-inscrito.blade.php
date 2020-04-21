@@ -19,7 +19,23 @@
     <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
       @foreach ($modals as $modal)
-      <li class="list-group-item"> <a href="#">{{$modal['register_modality']}}</a></li>
+      <li class="list-group-item "> 
+        <div class="d-flex flex-row  align-items-center">
+          <div>
+            {{$modal['register_modality']}}
+          </div>
+          <div>
+            <form action="/admin-config-inscrito/{{ $modal['id']}}" method="post">
+              @csrf
+              <input hidden value="{{ $modal }}" >
+              <button class="btn btn-sm btn-primary ml-2 " type="submit" >
+                <span class="material-icons text-white"> delete </span>
+              </button>
+            </form>
+          </div>
+        </div>
+        
+      </li>
       @endforeach
     </div>
     <!-- fim lista de modalidades -->
