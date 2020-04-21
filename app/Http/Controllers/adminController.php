@@ -172,7 +172,9 @@ class AdminController extends Controller
     }
 
     public function adminTrabalho(){   
-        return view('admin-trabalho');
+        $totalTrabalhos = AbstractSubmission::count();
+        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
+        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
     }
 
     public function adminTrabalhoShowA()

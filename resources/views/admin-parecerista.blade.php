@@ -42,7 +42,7 @@
             </div>
         </a>
         @endforeach
-        {{ $parecerista->links()}}
+        {{ $pareceristas->links()}}
 
       
         </div>
