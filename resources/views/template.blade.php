@@ -117,6 +117,8 @@
                     </ul>
                     @if (!Auth::check())
                     <a class="btn btn-primary nav-link rounded-right d-none d-lg-block d-xl-block" href="/login">LOGIN</a>
+                    @else
+                    <a class="btn btn-primary nav-link rounded-right d-none d-lg-block d-xl-block" href="/logout">LOGOUT</a>
                     @endif
                 </div>
                 @if (Auth::check())
