@@ -18,18 +18,20 @@ class inscritoController extends Controller
     public function certificados() {
         return view('inscrito-certificados');
     }
-    public function enviar() {
-        $eixos = AxisConfig::query()->paginate();
-        $modals = AbstractConfig::query()->paginate();
-        return view('inscrito-enviar-trabalho', ["eixos" => $eixos, "modals" => $modals]);
+    public function enviar(Registration $inscrito) {
+        $eixos = AxisConfig::all();
+        $modals = AbstractConfig::all();
+        return view('inscrito-enviar-trabalho')->with('eixos', $eixos)->with('modals', $modals);
     }
 
-    public function enviarPost(AbstractSubmissionsRequest $request) {
+    public function enviarPost(AbstractSubmissionsRequest $request, Registration $inscrito) {
         $dados = $request->all();
         $novoTrabalho = new AbstractSubmission();
+        $novoTrabalho->registration_id = $inscrito->id;
         $novoTrabalho -> fill($dados);
         $novoTrabalho ->save();
-        return view('inscrito-enviar-trabalho');
+        
+        return redirect()->route('trabalho.enviar',['inscrito' => $inscrito])->with('mensagem','Trabalho enviado com sucesso.');
     }
 
     public function enviados() {

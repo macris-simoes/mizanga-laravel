@@ -20,12 +20,13 @@
     </div>
     <!-- início envio de trabalho -->
     <div class="container shadow pb-3">
-
+        @if(session('mensagem'))
+            <div class="alert alert-success container">{{session('mensagem')}}</div>
+        @endif
         <div class="mb-1 pt-1 pb-2">
             <h4 class="display-3">Enviar novo trabalho</h4>
             <p class="lead font-italic"></p>
         </div>
-
         <form method="post">
             @csrf
 
@@ -35,7 +36,7 @@
                     <select class="form-control" name="category">
                         <option selected disabled>Selecione a modalidade</option>
                         @foreach ($modals as $modal)
-                    <option value="1">{{ $modal['work_modality']}}</option>
+                            <option value="{{ $modal->work_modality }}">{{ $modal->work_modality }}</option>
                         @endforeach
                         <!-- aqui vai ter que por php -->
                     </select>
@@ -53,7 +54,7 @@
                     <select class="form-group form-control" name="axis_id">
                         <option selected disabled>Selecione o eixo temático</option>
                         @foreach ($eixos as $eixo)
-                    <option value="1">{{ $eixo['axis'] }}</option>
+                    <option value="{{$eixo->id}}">{{ $eixo->axis }}</option>
                         @endforeach
                         <!-- aqui vai ter que por php -->
                     </select>
