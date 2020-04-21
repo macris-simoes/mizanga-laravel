@@ -18,17 +18,17 @@
             <tr>
                 <td class="">Marxismo e psicologia: aportes para uma reflexão materialista sobre o indivíduo
                 </td>
-                <td class=""><a href="parecerista-avaliar-trabalho">Avaliar</a></td>
+                <td class=""><a href="parecerista/trabalho/avaliar">Avaliar</a></td>
             </tr>
             <tr>
                 <td class="">Quando a ciência é ídolo: um comentário crítico sobre a psicologia moral
                     nietzschiana de Leiter</td>
-                <td class=""><a href="parecerista-avaliar-trabalho">Avaliar</a></td>
+                <td class=""><a href="parecerista/trabalho/avaliar">Avaliar</a></td>
             </tr>
             <tr class="border-bottom">
                 <td>Conhecimentos especializados sobre os problemas de rendimento escolar: um estudo
                     de manuais de psicologia e da Revista de Educação</td>
-                <td class=""><a href="parecerista-avaliar-trabalho">Avaliar</a></td>
+                <td class=""><a href="parecerista/trabalho/avaliar">Avaliar</a></td>
             </tr>
         </tbody>
     </table>
