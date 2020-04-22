@@ -16,18 +16,21 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->type == "admin"){
+
+            $perfil = Auth::user()->type;
+
+            if ($perfil == '100' || $perfil == '101' || $perfil == '110' || $perfil == '111'){
                 
                 return redirect()->intended('admin/');
 
-            } else if(Auth::user()->type == "parecerista"){
+            } else if($perfil == '010' || $perfil == '110' || $perfil == '011'){
 
                 return redirect()->intended('parecerista/');
 
-            } else if(Auth::user()->type == "inscrito"){
+            } else if($perfil == '001'){
 
                 return redirect()->intended('inscrito/');
-                
+
             }
         } else{
             return redirect('/login')->with('mensagem','Email ou senha incorretos!');
