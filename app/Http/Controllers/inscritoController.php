@@ -18,10 +18,10 @@ class inscritoController extends Controller
     public function certificados() {
         return view('inscrito-certificados');
     }
-    public function enviar(Registration $inscrito) {
+    public function enviar() {
         $eixos = AxisConfig::all();
         $modals = AbstractConfig::all();
-        return view('inscrito-enviar-trabalho')->with('eixos', $eixos)->with('modals', $modals);
+        return view('inscrito-enviar-trabalho', ['eixos' => $eixos, 'modals' => $modals]);
     }
 
     public function enviarPost(AbstractSubmissionsRequest $request, Registration $inscrito) {

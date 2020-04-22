@@ -45,10 +45,9 @@
                 <a class="navbar-brand mr-auto" href="/home">
                     <h2 class="text-primary"> Mizanga</h2>
                 </a>
-                @if(!Auth::check())
-                <a class="btn btn-primary rounded-right d-lg-none d-xl-none mr-1" href="/login"
-                    style="font-family: Segoe UI, Roboto;">LOGIN</a>
-                @endif
+                {{-- @if(!Auth::check())
+                <a class="btn btn-primary rounded-right d-lg-none d-xl-none mr-1" href="/login">LOGIN</a>
+                @endif --}}
 
                 @if(Auth::check())
                 <div class="dropdown d-lg-none d-xl-none mr-1">

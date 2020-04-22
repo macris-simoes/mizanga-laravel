@@ -10,7 +10,6 @@ Route::get('/instrucoes-inscricao', 'InscricaoController@inscricaoInstrucao');
 
 //-----------CONTATO------------
 Route::get('/contato', 'ContatoController@contatoIndex');
-//envio de form// Route::post('/contato', 'ContatoController@contatoSubmitPost');
 
 //-----------LINKS------------
 Route::get('/criterios-trabalho', 'LinksController@criteriosTrabalho');
@@ -24,8 +23,8 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 //------------INSCRITO------------
 Route::middleware([])->group(function () {
 
-    //Route::prefix('inscrito/{inscrito?}')
-    Route::prefix('inscrito/{inscrito?}')->group((function () {
+   
+    Route::prefix('inscrito')->group((function () {
         Route::get('/', 'InscritoController@home')->name('inscrito.home');
         Route::get('/certificados', 'InscritoController@certificados')->name('inscrito.certificados');
         Route::prefix('trabalho')->group(function () {
@@ -38,7 +37,7 @@ Route::middleware([])->group(function () {
 
 
 //--------Parecerista----------
-//Route::prefix('parecerista/{parecerista?}')
+
 route::prefix('parecerista')->group(function () {
     Route::get('/', 'PareceristaController@home')->name('parecerista.home');
     Route::prefix('trabalho')->group(function () {
