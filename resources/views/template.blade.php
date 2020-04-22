@@ -52,7 +52,7 @@
                 @if(Auth::check())
                 <div class="dropdown d-lg-none d-xl-none mr-1">
                     <!-- parte de fora -->
-                    <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
+                    <button type="button" class="dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" data-offset="10,20">
                         <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" width="40px"
                             height="40px">
@@ -133,8 +133,12 @@
                         <div>
                             <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
                                 width="70px" height="70px" class="mx-auto d-block" alt="...">
-        
-                                <p class="text-center m-0 mt-2">{{Auth::user()->name}}</p>
+                                <div class="card-body ">
+                                    <h5 class="card-title text-center">Seus Dados</h5>
+                                    <p class="text-center m-0 mt-2">{{Auth::user()->name}}</p>
+                                    <p class="text-center m-0 mt-2">{{Auth::user()->email}}</p>
+                                    
+                                </div>
                         </div>
                     </div>
                 </div>
