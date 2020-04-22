@@ -52,8 +52,6 @@
         <option selected disabled>Escolha...</option>
         <option value="aprovado">Aprovado</option>
         <option value="recusado">Recusado</option>
-        <option value="aprovado com poster">Aprovado com pôster</option>
-        <option value="encaminhado para outra opção de GT">Encaminhado para Opção 2° ou 3° de GT</option>
         </select>
       @error('rate_work')
         <div class="text-danger">{{ $message }}</div>
