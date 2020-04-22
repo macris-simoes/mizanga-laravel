@@ -147,28 +147,29 @@ class AdminController extends Controller
         return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
     }
 
-    public function adminInscritoShowA($id)
+    public function adminInscritoShowA($user_id)
     {
         $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
                     ->select('registrations.*', 'attendee_configs.register_modality')
-                    ->where('registrations.id', '=', $id)->first();
-        return view('admin-inscrito-showa', ["inscrito" => $inscrito]);
+                    ->where('registrations.user_id', '=', $user_id)->first();
+        return view('admin-inscrito-showa',['user_id' => $user_id])->with(["inscrito" => $inscrito]);
     }
     
-    public function adminInscritoShowB($id)
+    public function adminInscritoShowB($user_id)
     {
-        $trabalhos = AbstractSubmission::leftJoin('registrations', 'abstract_submissions.registration_id', '=', 'registrations.id')
+        $trabalhos = AbstractSubmission::leftJoin('registrations', 'abstract_submissions.registration_id', '=', 'registrations.user_id')
                     ->leftJoin('axis_configs', 'abstract_submissions.axis_id', '=', 'axis_configs.id')
                     ->leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
                     ->leftJoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
                     ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
-                    ->where('registrations.id', '=', $id)->simplePaginate(1);
+                    ->where('registrations.user_id', '=', $user_id)->simplePaginate(1);
+        
         $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
                     ->select('registrations.*', 'attendee_configs.register_modality')
-                    ->where('registrations.id', '=', $id)->first();
+                    ->where('registrations.user_id', '=', $user_id)->first();
         
 
-        return view('admin-inscrito-showb', ["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
+        return view('admin-inscrito-showb',['user_id' => $user_id])->with(["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
     }
 
     //Congresso

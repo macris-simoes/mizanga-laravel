@@ -60,8 +60,8 @@ Route::get('/admin-config-parecerista', 'AdminController@adminConfigParecerista'
 Route::post('/admin-config-parecerista', 'AdminController@configPareceristaSubmitPost');
 Route::get('/admin-parecerista', 'AdminController@adminParecerista');
 Route::post('/admin-parecerista', 'AdminController@adminPareceristaPost');
-Route::get('/admin-parecerista-showa', 'AdminController@adminPareceristaShowA');
-Route::get('/admin-parecerista-showb', 'AdminController@adminPareceristaShowB');
+Route::get('/admin-parecerista-showa/{user_id}', 'AdminController@adminPareceristaShowA');
+Route::get('/admin-parecerista-showb/{user_id}', 'AdminController@adminPareceristaShowB');
 
 Route::get('/admin-parecerista-substituir', 'AdminController@adminPareceristaSubstituir');
 
