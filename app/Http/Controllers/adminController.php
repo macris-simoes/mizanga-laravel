@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use App\AbstractConfig;
 use Illuminate\Http\Request;
 use App\User;
@@ -18,6 +19,7 @@ use App\Http\Requests\AbstractConfigRequest;
 use App\Http\Requests\RefereeConfigRequest;
 use App\AbstractSubmission;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -28,19 +30,51 @@ class AdminController extends Controller
     }
 
     public function cadastroAdminSubmitPost(Request $request){
-        //Inserindo o admin na tabela users
-        $novoUser = new User();
-        $novoUser->name = $request->name;
-        $novoUser->email = $request->email;
-        $novoUser->password = bcrypt($request->cpf);
-        $novoUser->type = 'admin';
-        $novoUser->save();
+
+        $jaInscrito = Registration::where('cpf', '=', $request->cpf)->first();
+        $jaParecerista = RefereeConfig::where('appraiser_cpf', '=', $request->cpf)->first();
+
+        //se o admin ainda não existe no sistema
+        if(!isset($jaInscrito) && !isset($jaParecerista)){
+
+            //Inserindo novo admin na tabela users
+            $novoUser = new User();
+            $novoUser->name = $request->name;
+            $novoUser->email = $request->email;
+            $novoUser->password = bcrypt($request->cpf);
+            $novoUser->type = '100';
+            $novoUser->save();
+
+        } else if(isset($jaInscrito) && isset($jaParecerista)){
+            
+            //se o admin já for inscrito e parecerista, dá um update na coluna type
+            $id = $jaInscrito->user_id;
+            $update = User::where('id', $id) -> update(['type' => '111']);
+
+        } else if(isset($jaInscrito)){
+
+            //se o admin já for um inscrito
+            $id = $jaInscrito->user_id;
+            $update = User::where('id', $id) -> update(['type' => '101']);
+
+        }else if(isset($jaParecerista)){
+
+            //se o admin já for um parecerista
+            $id = $jaParecerista->user_id;
+            $update = User::where('id', $id) -> update(['type' => '110']);
+        }
 
         //Inserindo os dados do admin na tabela admins
         $camposAdmin=$request->all();
         $novoAdmin = new Admin();
         $novoAdmin->fill($camposAdmin);
-        $novoAdmin->user_id = $novoUser->id;
+
+        if(isset($id)){
+            $novoAdmin->user_id = $id;
+        } else{
+            $novoAdmin->user_id = $novoUser->id;
+        }
+
         $novoAdmin->save();
 
         return redirect('/admin-cadastro')->with('mensagem','Novo Admin com sucesso.');
@@ -69,8 +103,7 @@ class AdminController extends Controller
         $eixo = $request->all();
         $novoEixo = new AxisConfig();
         $novoEixo->fill($eixo);
-        $novoEixo->admin_id = 1;
-        //INSERIR LOGICA PARA PEGAR ADMIN_ID
+        $novoEixo->admin_id = Auth::user()->id;
         $novoEixo->save();
 
         return redirect('/admin-config-eixos')->with('mensagem','Novo eixo salvo com sucesso.');
@@ -94,7 +127,7 @@ class AdminController extends Controller
         $postModal = $request->all();
         $newModal = new AttendeeConfig();
         $newModal->fill($postModal);
-        $newModal->admin_id = 1;
+        $newModal->admin_id = Auth::user()->id;
         $newModal->save();
 
         return redirect('admin-config-inscrito');
@@ -160,7 +193,7 @@ class AdminController extends Controller
         $modal = $request->all();
         $newModal = new AbstractConfig();
         $newModal->fill($modal);
-        $newModal->admin_id = 1;
+        $newModal->admin_id = Auth::user()->id;
         $newModal->save();        
 
         return redirect('admin-config-trabalho')->with('mensagem', 'Configurações de trabalho salvas com sucesso.');
@@ -193,22 +226,54 @@ class AdminController extends Controller
     }
 
     public function configPareceristaSubmitPost(RefereeConfigRequest $request){
-        //Inserindo o parecerista na tabela users
-        $novoUser = new User();
-        $novoUser->name = $request->appraiser_name;
-        $novoUser->email = $request->appraiser_email;
-        $novoUser->password = bcrypt($request->appraiser_cpf);
-        $novoUser->type = 'parecerista';
-        $novoUser->save();
+        
+        $jaInscrito = Registration::where('cpf', '=', $request->appraiser_cpf)->first();
+        $jaAdmin = Admin::where('cpf', '=', $request->appraiser_cpf)->first();
+        
+        //se o parecerista ainda não existe no sistema
+        if(!isset($jaInscrito) && !isset($jaAdmin)){
+
+            //Inserindo o parecerista na tabela users
+            $novoUser = new User();
+            $novoUser->name = $request->appraiser_name;
+            $novoUser->email = $request->appraiser_email;
+            $novoUser->password = bcrypt($request->appraiser_cpf);
+            $novoUser->type = '010';
+            $novoUser->save();
+
+        }else if(isset($jaInscrito) && isset($jaAdmin)){
+            
+            //se o parecerista já for inscrito e admin, dá um update na coluna type
+            $id = $jaInscrito->user_id;
+            $update = User::where('id', $id) -> update(['type' => '111']);
+
+        } else if(isset($jaInscrito)){
+
+            //se o parecerista já for um inscrito
+            $id = $jaInscrito->user_id;
+            $update = User::where('id', $id) -> update(['type' => '011']);
+
+        }else if(isset($jaAdmin)){
+
+            //se o parecerista já for um admin
+            $id = $jaAdmin->user_id;
+            $update = User::where('id', $id) -> update(['type' => '110']);
+        }
 
         //Inserindo os dados do parecerista na tabela referee_configs
         $camposParecerista=$request->only('appraiser_cpf', 'appraiser_name','appraiser_email');
         $novoParecerista = new RefereeConfig();
         $novoParecerista->fill($camposParecerista);
-        $novoParecerista->user_id = $novoUser->id;
-        $novoParecerista->admin_id = 1;
+
+        if(isset($id)){
+            $novoParecerista->user_id = $id;
+        } else{
+            $novoParecerista->user_id = $novoUser->id;
+        }
+        // o admin_id vai receber o valor do user_id do admin logado
+        $novoParecerista->admin_id = Auth::user()->id;
+
         $novoParecerista->save();
-        //COLOCAR LOGICA PARA O CAMPO ADMIN_ID!!!
         
         $campos=$request->all();
         foreach($campos as $key=>$value){

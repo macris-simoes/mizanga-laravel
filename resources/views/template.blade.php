@@ -91,19 +91,19 @@
                         </li>
                         @endif
                         @if (Auth::check())
-                            @if(Auth::user()->type == "admin")
+                            @if(Auth::user()->type == "100" || Auth::user()->type == "101" || Auth::user()->type == "110" || Auth::user()->type == "111")
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin"> Área do admin </a>
                             </li>
                             @endif
 
-                            @if(Auth::user()->type == "inscrito")
+                            @if(Auth::user()->type == "001" || Auth::user()->type == "011" || Auth::user()->type == "101" || Auth::user()->type == "111")
                             <li class="nav-item">
                                 <a class="nav-link" href="/inscrito"> Área do inscrito </a>
                             </li>
                             @endif
 
-                            @if(Auth::user()->type == "parecerista")
+                            @if(Auth::user()->type == "010" || Auth::user()->type == "110" || Auth::user()->type == "011" || Auth::user()->type == "111")
                             <li class="nav-item">
                                 <a class="nav-link" href="/parecerista"> Área do parecerista </a>
                             </li>
