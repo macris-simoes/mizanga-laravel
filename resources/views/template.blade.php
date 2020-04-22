@@ -45,14 +45,16 @@
                 <a class="navbar-brand mr-auto" href="/home">
                     <h2 class="text-primary"> Mizanga</h2>
                 </a>
-                {{-- @if(!Auth::check())
+                @if(!Auth::check())
                 <a class="btn btn-primary rounded-right d-lg-none d-xl-none mr-1" href="/login">LOGIN</a>
-                @endif --}}
+                @else
+                <a class="btn btn-primary rounded-right d-lg-none d-xl-none mr-1" href="/logout">LOGOUT</a>
+                @endif
 
                 @if(Auth::check())
                 <div class="dropdown d-lg-none d-xl-none mr-1">
                     <!-- parte de fora -->
-                    <button type="button" class="dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
+                    <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" data-offset="10,20">
                         <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" width="40px"
                             height="40px">
@@ -61,13 +63,13 @@
                     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
                         <div>
                             <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-                                width="70px" height="70px" class="card-img-center" alt="...">
-                            <div class="card-body ">
-                                <h5 class="card-title">Seus Dados</h5>
-                                <p class="card-text">Nome Sobrenome</p>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/inscrito">Editar dados</a>
+                                width="70px" height="70px" class="mx-auto d-block" alt="...">
+                                <div class="card-body ">
+                                    <h5 class="card-title text-center">Seus Dados</h5>
+                                    <p class="text-center m-0 mt-2">{{Auth::user()->name}}</p>
+                                    <p class="text-center m-0 mt-2">{{Auth::user()->email}}</p>
+                                    
+                                </div>
                         </div>
                     </div>
                 </div>
