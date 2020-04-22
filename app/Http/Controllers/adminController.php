@@ -130,8 +130,12 @@ class AdminController extends Controller
                     ->leftJoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
                     ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
                     ->where('registrations.id', '=', $id)->simplePaginate(1);
+        $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
+                    ->select('registrations.*', 'attendee_configs.register_modality')
+                    ->where('registrations.id', '=', $id)->first();
+        
 
-        return view('admin-inscrito-showb', ["trabalhos" => $trabalhos]);
+        return view('admin-inscrito-showb', ["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
     }
 
     //Congresso
@@ -168,7 +172,9 @@ class AdminController extends Controller
     }
 
     public function adminTrabalho(){   
-        return view('admin-trabalho');
+        $totalTrabalhos = AbstractSubmission::count();
+        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
+        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
     }
 
     public function adminTrabalhoShowA()
@@ -221,6 +227,12 @@ class AdminController extends Controller
     }
 
     public function adminParecerista()
+    {
+        $totalPareceristas = Registration::count();
+        $pareceristas = DB::table('referee_configs')->simplePaginate(10);
+        return view('admin-parecerista')->with('totalPareceristas', $totalPareceristas)->with('pareceristas', $pareceristas);
+    }
+    public function adminPareceristaPost()
     {
         return view('admin-parecerista');
     }

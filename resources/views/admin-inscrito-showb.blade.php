@@ -9,8 +9,8 @@
     <div class="card m-3 border-0">
         <div class="card-body">
             <a href="/admin-inscrito" class="mt-5"> Voltar </a>
-            <h5 class="card-title">{{$trabalhos[0]->name}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{$trabalhos[0]->register_modality}}</h6>
+            <h5 class="card-title">{{$inscrito->name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{$inscrito->register_modality}}</h6>
 
             {{-- início da tabs do ADMIN READ INSCRITO --}}
 
@@ -27,7 +27,7 @@
             {{-- fim da tabs do ADMIN READ INSCRITO --}}
 
 {{-- ------------------------------------------------------------------------------ --}}
-
+            @if(isset($trabalho))
             {{-- div lista de trabalhos --}}
             <div class="list-group-flush">
                 @foreach($trabalhos as $trabalho)
@@ -57,6 +57,10 @@
                 
                 {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
+            {{ $trabalhos->links() }}  
+            @else
+                <p class="font-italic">Não há trabalhos cadastrados</p>
+            @endif
             {{-- fim card-body (abaixo) --}}
         </div>
         {{-- fim da div card (abaixo) --}}

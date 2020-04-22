@@ -11,7 +11,7 @@
     <div class="row my-3">  
         <div class="col-lg-9 my-1">
             <h1 class="display-4">Pesquisar Trabalhos</h1>
-            <p>Trabalhos até o momento: 1234</p>
+            <p>Trabalhos até o momento: {{$totalTrabalhos}}</p>
             <small>Clique sobre o nome do trabalho para acessar as informações</small>
         </div>
         
@@ -41,15 +41,17 @@
 
 
     {{-- início dos cards de resultado da busca --}}
+    @if(isset($trabalhos))
     <div class="list-group my-3">
+        @foreach($trabalhos as $trabalho)
         <a href="/admin-trabalho-showa" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Título do trabalho</h5>
+                <h5 class="mb-1">{{$trabalho->abstract_title}}</h5>
                 <small>há 15 dia(s)</small>
             </div>
             <div class="d-flex flex-row align-items-start">
 
-                <small class="col-md-10">Comunicação Oral || Maria Cristina Dancham Simões</small>
+                <small class="col-md-10">{{$trabalho->category}} || {{$trabalho->author}}</small>
                 
                 <div class="d-flex w-100 justify-content-end">
                     <span class="badge badge-warning badge-pill">A</span>
@@ -58,61 +60,13 @@
                 </div>
             </div>
         </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                
-                <div class="d-flex w-100 justify-content-end">
-                    {{-- <span class="badge badge-warning badge-pill">A</span> --}}
-                <span class="badge badge-light badge-pill">...</span>
-                {{-- <span class="badge badge-dark badge-pill">X</span> --}}
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                
-                <div class="d-flex w-100 justify-content-end">
-                    {{-- <span class="badge badge-warning badge-pill">A</span>
-                    <span class="badge badge-light badge-pill">...</span> --}}
-                    <span class="badge badge-dark badge-pill">X</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
-            </div>
-            <div class="d-flex flex-row align-items-start">
-
-                <small class="col-md-10">Donec id elit non mi porta.</small>
-                
-                <div class="d-flex w-100 justify-content-end">
-                    {{-- <span class="badge badge-warning badge-pill">A</span>
-                    <span class="badge badge-light badge-pill">...</span> --}}
-                    <span class="badge badge-dark badge-pill">X</span>
-                </div>
-            </div>
-        </a>
-
-       
+        @endforeach
+        {{$trabalhos->links()}}
         
-</div>
+    </div>
+    @else
+    <p class="font-italic">Não há trabalhos submetidos</p>
+    @endif
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->
 </div>
