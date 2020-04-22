@@ -40,8 +40,8 @@
 
 <body>
     <div class="sticky-top">
-        <div>    
-            <nav class="navbar navbar-expand-lg navbar-light bg-white container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white container-flex">
+        <div class="container">    
                 <a class="navbar-brand mr-auto" href="/home">
                     <h2 class="text-primary"> Mizanga</h2>
                 </a>
