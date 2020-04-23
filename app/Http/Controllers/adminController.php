@@ -95,7 +95,7 @@ class AdminController extends Controller
 
     public function adminEixo()
     {
-        $eixos = AxisConfig::query()->paginate();
+        $eixos = AxisConfig::all();
         return view("admin-config-eixos", ["eixos"=>$eixos]);
     }
 

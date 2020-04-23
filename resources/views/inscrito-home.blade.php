@@ -8,7 +8,7 @@
                 <a class="nav-link active " href="/inscrito">Informações</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito/certificados" {{--href="{{route('inscrito.certificados', $inscrito->id) }}"--}}>Certificados</a>
+                <a class="nav-link " href="/inscrito/certificados">Certificados</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
@@ -26,28 +26,28 @@
         </div>
 
         
-
+        <div class="card-text list-group-item border-0">
         <div class="my-3">
             <h5>Dados da inscrição</h5>
-            <p>Código da Inscrição: {{ $inscrito['id']}} <br>
-                Modalidade: {{ $inscrito['register_modality']}} <br>
-                Data de inscrição: {{ $inscrito['created_at']}} <br>
-                Pedido XXXXXX - R$200,00</p>
+            <p><strong>Código da Inscrição:</strong> {{ $inscrito['id']}} <br>
+                <strong>Modalidade:</strong> {{ $inscrito['register_modality']}} <br>
+                <strong>Data de inscrição:</strong> {{ $inscrito['created_at']}} <br>
+                <strong>Pedido XXXXXX</strong> - R$200,00</p>
         </div>
         <hr>
         <div class="my-3">
             <h5>Dados pessoais</h5>
             <div class="row">
-            <p class="col-7">Nome: {{ $inscrito['name']}} </p>
-            <p class="col-5">Data de nascimento: {{ $inscrito['birth_date']}} </p>  
+            <p class="col-lg-7"><strong>Nome:</strong> {{ $inscrito['name']}} </p>
+            <p class="col-lg-5"><strong>Data de nascimento:</strong> {{ $inscrito['birth_date']}} </p>  
             </div>
             <div class="row">
-            <p class="col-7">CPF: {{ $inscrito['cpf']}}</p>
-            <p class="col-5">RG: {{ $inscrito['rg']}}</p>  
+            <p class="col-lg-7"><strong>CPF:</strong> {{ $inscrito['cpf']}}</p>
+            <p class="col-lg-5"><strong>RG:</strong> {{ $inscrito['rg']}}</p>  
             </div>
             <div class="row">
-            <p class="col-7">Nome social: {{ $inscrito['social_name']}}</p>
-            <p class="col-5">Instituição para crachá: {{ $inscrito['institution']}} </p>  
+            <p class="col-lg-7"><strong>Nome social:</strong> {{ $inscrito['social_name']}}</p>
+            <p class="col-lg-5"><strong>Instituição para crachá:</strong> {{ $inscrito['institution']}} </p>  
             </div>
         </div>
 
@@ -57,13 +57,13 @@
         <div class="my-3">
             <h5>Dados de contato</h5>
             <div class="row">
-                <p class="col-4">Telefone residencial: {{ $inscrito['home_phone']}}</p>
-                <p class="col-4">Telefone profissional: {{ $inscrito['work_phone']}}</p>
-                <p class="col-4">Telefone celular: {{ $inscrito['mobile_phone']}}</p>
+                <p class="col-lg-4"><strong>Telefone residencial:</strong> {{ $inscrito['home_phone']}}</p>
+                <p class="col-lg-4"><strong>Telefone profissional:</strong> {{ $inscrito['work_phone']}}</p>
+                <p class="col-lg-4"><strong>Telefone celular:</strong> {{ $inscrito['mobile_phone']}}</p>
             
             </div>
             <div class="row">
-                <p class="col-4">E-mail: {{ $inscrito['email']}}</p>   
+                <p class="col-lg-4"><strong>E-mail:</strong> {{ $inscrito['email']}}</p>   
             </div>
             <div class="editar">
 
@@ -80,17 +80,17 @@
             <h5>Atuação profissional</h5>
 
             <div class="row">
-                <p class="col-4">Situação profissional: </p>
-                <p class="col-4">Filiação institucional: </p>  
-                <p class="col-4">Função institucional/Cargo: </p>  
+                <p class="col-lg-4"><strong>Situação profissional:</strong> </p>
+                <p class="col-lg-4"><strong>Filiação institucional:</strong> </p>  
+                <p class="col-lg-4"><strong>Função institucional/Cargo:</strong> </p>  
             </div>
             <div class="row">
-                <p class="col-4"> {{ $inscrito['profession']}} </p>
-                <p class="col-4"> {{ $inscrito['filiation']}} </p>  
-                <p class="col-4"> {{ $inscrito['job_title']}} </p>  
+                <p class="col-lg-4"> {{ $inscrito['profession']}} </p>
+                <p class="col-lg-4"> {{ $inscrito['filiation']}} </p>  
+                <p class="col-lg-4"> {{ $inscrito['job_title']}} </p>  
             </div>
             <div>
-                <p> Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</p>
+                <p><strong> Áreas de atuação (informe as áreas de atuação separadas por ponto e vírgula)</strong></p>
                 <p> {{ $inscrito['expertise']}} </p>
             </div>
         </div>
@@ -99,8 +99,8 @@
         <div class="my-3">
             <h5>Endereço</h5>
             <div class="row">
-                <p class="col-6">País: {{ $inscrito['country']}} </p>
-                <p class="col-6">UF: {{ $inscrito['uf']}} </p>
+                <p class="col-lg-6"><strong>País:</strong> {{ $inscrito['country']}} </p>
+                <p class="col-lg-6"><strong>UF:</strong> {{ $inscrito['uf']}} </p>
             </div>
 
         </div>
@@ -109,14 +109,19 @@
         <div class="my-3">
             <h5>Dados complementares</h5>
             <div class="row">
-                <p class="col-4">Gênero: {{ $inscrito['gender']}}</p>
-                <p class="col-4">Raça/Cor: {{ $inscrito['color']}}</p>  
-                <p class="col-4">Prefere usar nome social?: {{ $inscrito['use_social_name']}}</p>  
+                <p class="col-lg-4"><strong>Gênero:</strong> {{ $inscrito['gender']}}</p>
+                <p class="col-lg-4"><strong>Raça/Cor: </strong> {{ $inscrito['color']}}</p>  
+                <p class="col-lg-4"><strong>Prefere usar nome social?:</strong>  @if($inscrito->use_social_name==0)
+                    Sim
+                @else
+                    Não
+                @endif</p>  
+                
             </div>
         </div>
         <hr>
         
-
+        </div>
     </div>
 
     <script>

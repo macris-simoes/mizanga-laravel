@@ -21,9 +21,7 @@ Route::post('/login', 'LoginController@authenticate');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
 //------------INSCRITO------------
-Route::middleware([])->group(function () {
-
-   
+Route::middleware(['auth'])->group(function () {
     Route::prefix('inscrito')->group((function () {
         Route::get('/', 'InscritoController@home')->name('inscrito.home');
         Route::get('/certificados', 'InscritoController@certificados')->name('inscrito.certificados');

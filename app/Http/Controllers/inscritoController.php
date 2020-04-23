@@ -40,6 +40,10 @@ class inscritoController extends Controller
     }
 
     public function enviados() {
-        return view('inscrito-trabalhos-cadastrados');
+        $user_id = Auth::user()->id;
+        $trabalhos = AbstractSubmission::leftjoin('registrations', 'registrations.id', '=', 'abstract_submissions.registration_id')
+        ->where('abstract_submissions.registration_id', '=', $user_id)->get();
+        $eixos = AxisConfig::all();
+        return view('inscrito-trabalhos-cadastrados', ['trabalhos' => $trabalhos, 'eixos' => $eixos]);
     }
 }
