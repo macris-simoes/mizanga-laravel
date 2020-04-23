@@ -29,44 +29,7 @@ class InscricaoController extends Controller
         $jaAdmin = Admin::where('cpf', '=', $request->cpf)->first();
         $jaParecerista = RefereeConfig::where('appraiser_cpf', '=', $request->cpf)->first();
 
-        //se o inscrito ainda nao existe no sistema
-        if(!isset($jaAdmin) && !isset($jaParecerista)){
-
-            $novoUser = new User();
-            $novoUser->name = $request->name;
-            $novoUser->email = $request->email;
-            $novoUser->password = bcrypt($request->cpf);
-            $novoUser->type = '001';
-
-        } else if(isset($jaAdmin) && isset($jaParecerista)){
-
-            //se o inscrito ja for admin e parecerista
-            $id = $jaAdmin->user_id;
-            $update = User::where('id', $id) -> update(['type' => '111']);
-
-        } else if(isset($jaAdmin)){
-
-            //se o inscrito ja for admin
-            $id = $jaAdmin->user_id;
-            $update = User::where('id', $id) -> update(['type' => '101']);
-
-        } else if(isset($jaParecerista)){
-
-            //se o inscrito ja for parecerista
-            $id = $jaParecerista->user_id;
-            $update = User::where('id', $id) -> update(['type' => '011']);
-
-        }
         
-        $dados = $request->all();
-        $novoInscrito = new Registration();
-        $novoInscrito->fill($dados);
-
-        if(isset($id)){
-            $novoInscrito->user_id = $id;
-        } else{
-            $novoInscrito->user_id = $novoUser->id;
-        }
 
         //se existe um arquivo sendo submetido no form e o arquivo for valido
         if ($request->hasFile('file') && $request->file('file')->isValid()) {
@@ -74,10 +37,49 @@ class InscricaoController extends Controller
             $path = $request->file('file')->store('comprovantes', 'public');
 
             if ( !$path ){
-                return redirect('/inscricao-usuario')->with('erro','Falha ao salvar o arquivo.');
+               return redirect('/inscricao-usuario')->with('erro','Falha ao salvar o arquivo.');
             } else{
                  
-                $novoUser->save();                
+                //se o inscrito ainda nao existe no sistema
+                if(!isset($jaAdmin) && !isset($jaParecerista)){
+
+                    $novoUser = new User();
+                    $novoUser->name = $request->name;
+                    $novoUser->email = $request->email;
+                    $novoUser->password = bcrypt($request->cpf);
+                    $novoUser->type = '001';
+                    $novoUser->save();
+
+                } else if(isset($jaAdmin) && isset($jaParecerista)){
+
+                    //se o inscrito ja for admin e parecerista
+                    $id = $jaAdmin->user_id;
+                    $update = User::where('id', $id) -> update(['type' => '111']);
+
+                } else if(isset($jaAdmin)){
+
+                    //se o inscrito ja for admin
+                    $id = $jaAdmin->user_id;
+                    $update = User::where('id', $id) -> update(['type' => '101']);
+
+                } else if(isset($jaParecerista)){
+
+                    //se o inscrito ja for parecerista
+                    $id = $jaParecerista->user_id;
+                    $update = User::where('id', $id) -> update(['type' => '011']);
+
+                }
+                
+                $dados = $request->all();
+                $novoInscrito = new Registration();
+                $novoInscrito->fill($dados);
+
+                if(isset($id)){
+                    $novoInscrito->user_id = $id;
+                } else{
+                    $novoInscrito->user_id = $novoUser->id;
+                }
+                                
                 $novoInscrito->file = $path;                
                 $novoInscrito->save();
 
@@ -87,7 +89,46 @@ class InscricaoController extends Controller
           //se nao esta sendo submetido um arquivo no form
         } else if(!($request->hasFile('file'))){
             
-            $novoUser->save();            
+            //se o inscrito ainda nao existe no sistema
+            if(!isset($jaAdmin) && !isset($jaParecerista)){
+
+                $novoUser = new User();
+                $novoUser->name = $request->name;
+                $novoUser->email = $request->email;
+                $novoUser->password = bcrypt($request->cpf);
+                $novoUser->type = '001';
+                $novoUser->save();
+
+            } else if(isset($jaAdmin) && isset($jaParecerista)){
+
+                //se o inscrito ja for admin e parecerista
+                $id = $jaAdmin->user_id;
+                $update = User::where('id', $id) -> update(['type' => '111']);
+
+            } else if(isset($jaAdmin)){
+
+                //se o inscrito ja for admin
+                $id = $jaAdmin->user_id;
+                $update = User::where('id', $id) -> update(['type' => '101']);
+
+            } else if(isset($jaParecerista)){
+
+                //se o inscrito ja for parecerista
+                $id = $jaParecerista->user_id;
+                $update = User::where('id', $id) -> update(['type' => '011']);
+
+            }
+            
+            $dados = $request->all();
+            $novoInscrito = new Registration();
+            $novoInscrito->fill($dados);
+
+            if(isset($id)){
+                $novoInscrito->user_id = $id;
+            } else{
+                $novoInscrito->user_id = $novoUser->id;
+            }
+                                         
             $novoInscrito->save();
 
             return redirect('/inscricao-usuario')->with('mensagem','Cadastro realizado com sucesso.');
