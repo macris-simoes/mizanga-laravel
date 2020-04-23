@@ -27,7 +27,7 @@
             {{-- fim da tabs do ADMIN READ INSCRITO --}}
 
 {{-- ------------------------------------------------------------------------------ --}}
-            @if(isset($trabalho))
+            @if(isset($trabalhos))
             {{-- div lista de trabalhos --}}
             <div class="list-group-flush">
                 @foreach($trabalhos as $trabalho)

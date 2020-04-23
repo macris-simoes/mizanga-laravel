@@ -44,7 +44,7 @@
     {{-- início dos cards de resultado da busca --}}
     <div class="list-group my-3">
         @foreach($inscritos as $inscrito)
-        <a href="/admin-inscrito-showa/{{$inscrito->id}}" class="list-group-item list-group-item-action">
+        <a href="/admin-inscrito-showa/{{$inscrito->user_id}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{$inscrito->name}}</h5>
             </div>
