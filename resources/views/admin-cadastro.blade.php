@@ -61,19 +61,27 @@
                             
                             <label for="cpf">CPF*</label>
                             <input type="text" class="form-control cpf" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
-                       
+                            @error('cpf')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-lg-4">
                             <label for="nome">Nome*</label>
                             <input type="text" class="form-control" id="nome" placeholder="Nome" name="name">
+                            @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-lg-4">
                             <label for="email">E-mail*</label>
                             <input type="text" class="form-control" id="email" placeholder="E-mail" name="email">
+                            @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
