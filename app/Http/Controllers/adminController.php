@@ -18,6 +18,7 @@ use App\Http\Requests\AxisConfigRequest;
 use App\Http\Requests\AttendeeConfigRequest;
 use App\Http\Requests\AbstractConfigRequest;
 use App\Http\Requests\RefereeConfigRequest;
+use App\Http\Requests\AdminCadastroRequest;
 use App\AbstractSubmission;
 
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +31,7 @@ class AdminController extends Controller
         return view('admin-cadastro');
     }
 
-    public function cadastroAdminSubmitPost(Request $request){
+    public function cadastroAdminSubmitPost(AdminCadastroRequest $request){
 
         $jaInscrito = Registration::where('cpf', '=', $request->cpf)->first();
         $jaParecerista = RefereeConfig::where('appraiser_cpf', '=', $request->cpf)->first();

@@ -35,6 +35,7 @@ class AdminCadastroRequest extends FormRequest
             'cpf.required' => 'O campo CPF é obrigatório',
             'name.required' => 'O campo Nome é obrigatório',
             'email.required' => 'O campo E-mail é obrigatório.',
+            'email.email' => 'Este campo precisa ser preenchido com um email.',
         ];
     }
 }
