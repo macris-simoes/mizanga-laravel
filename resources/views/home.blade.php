@@ -25,15 +25,14 @@
   <main class="container">
     
     <div class="bg-primary py-4" style="height:50%">
-      <p class="text-white display-3 ml-3 font-weight-bold">XXI CONGRESSO</p>
-      <p class="text-white display-3 ml-3 font-weight-bold">NACIONAL XXXXX</p>
+      <p class="text-white display-3 ml-3 font-weight-bold">{{$infosCongresso->name_conference}}</p>
       
       <div>
         <div class="ml-3">
           <i class="material-icons text-white"> room </i>
           <p style="display:inline-block;vertical-align: middle;" class="text-white"> PUC-SP </p>
           <i class="material-icons text-white"> today </i>
-          <p style="display:inline-block;vertical-align: middle;" class="text-white">16 a 19 de novembro 2020 </p>
+          <p style="display:inline-block;vertical-align: middle;" class="text-white">{{date('d/m/Y', strtotime($infosCongresso->event_start_date))}} a {{date('d/m/Y', strtotime($infosCongresso->event_end_date))}}</p>
         </div>
       </div>
     </div>
@@ -51,7 +50,7 @@
     
     <!-- Sobre o Congresso -->
     <div>
-      <h2 class="text-center my-3 display-4">Sobre o Congresso Nacional XXXXXX</h2>
+      <h2 class="text-center my-3 display-4">Sobre o {{$infosCongresso->name_conference}}</h2>
       <p class="text-justify mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hicLorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hic.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, nam! Rem perferendis vitae ex nihil, distinctio magnam cum alias amet maiores consequatur deserunt neque, possimus, dolore a nam unde hic.</p>
     </div>
     
