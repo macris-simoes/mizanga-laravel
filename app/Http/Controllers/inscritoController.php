@@ -42,8 +42,11 @@ class inscritoController extends Controller
     public function enviados() {
         $user_id = Auth::user()->id;
         $trabalhos = AbstractSubmission::leftjoin('registrations', 'registrations.id', '=', 'abstract_submissions.registration_id')
+        ->leftjoin('axis_configs', 'axis_configs.id', '=', 'abstract_submissions.axis_id')
+        ->leftjoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
+        ->select('abstract_submissions.*','axis_configs.axis','abstract_evaluations.rate_work')
         ->where('abstract_submissions.registration_id', '=', $user_id)->get();
-        $eixos = AxisConfig::all();
-        return view('inscrito-trabalhos-cadastrados', ['trabalhos' => $trabalhos, 'eixos' => $eixos]);
+
+        return view('inscrito-trabalhos-cadastrados', ['trabalhos' => $trabalhos]);
     }
 }

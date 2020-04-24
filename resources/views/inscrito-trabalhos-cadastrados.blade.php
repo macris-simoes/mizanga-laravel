@@ -30,18 +30,18 @@
             @foreach ($trabalhos as $trabalho)
             <div class="my-5">
                 <p> <strong>Nome do trabalho:</strong> {{ $trabalho->abstract_title}}</p>
-                <p> <strong>Código do trabalho:</strong>  XXXXXX </p>
+                <p> <strong>Código do trabalho:</strong>  {{$trabalho->id}} </p>
                 <p> <strong>Resumo:</strong> {{ $trabalho->abstract_body}}</p>
-                <p> <strong>Eixo temático:</strong> Eixo 01 - Lorem ipsum dolor sit amet, consectetur <br>
+                <p> <strong>Eixo temático:</strong> {{ $trabalho->axis}} <br>
                 <p> <strong>Nome dos participantes e Filiação institucional:</strong></p>
                 <p> {{ $trabalho->author}} - {{ $trabalho->author_affiliation}}
-                <p><strong>Resultado da avaliação:</strong> Aprovado </p>
+                <p><strong>Resultado da avaliação:</strong> {{}} </p>
             </div>
-            @endforeach
-            
             <div class="my-2">
                 <button type="button" class="btn btn-outline-primary" style="width: 250px">Carta de aceite</button>
             </div>
+            @endforeach
+            
         </div>
         <hr>
 
