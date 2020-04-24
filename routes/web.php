@@ -75,7 +75,7 @@ Route::get('/admin-inscrito-showb/{id}', 'AdminController@adminInscritoShowB');
 Route::get('/admin-config-trabalho', 'AdminController@adminConfigTrabalho');
 Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost');
 Route::get('/admin-trabalho', 'AdminController@adminTrabalho');
-Route::get('/admin-trabalho-showa', 'AdminController@adminTrabalhoShowA');
+Route::get('/admin-trabalho-showa/{id}', 'AdminController@adminTrabalhoShowA');
 
 //----------ADMIN POST-------------
 Route::post('/admin', 'AdminController@adminInscritoSubmitPost');

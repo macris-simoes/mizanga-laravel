@@ -208,9 +208,12 @@ class AdminController extends Controller
         return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
     }
 
-    public function adminTrabalhoShowA()
+    public function adminTrabalhoShowA($trabalho_id)
     {
-        return view('admin-trabalho-showa');
+        $trabalho = AbstractSubmission::leftJoin('registrations','registrations.user_id','=','abstract_submissions.registration_id')
+        ->select('abstract_submissions.*','registrations.name AS author','registrations.register_modality')
+        ->where('abstract_submissions.id','=',$trabalho_id)->first();
+        return view('admin-trabalho-showa')->with('trabalho', $trabalho)->with('trabalho_id', $trabalho_id);
     }
     
 
