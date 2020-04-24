@@ -302,13 +302,23 @@ class AdminController extends Controller
     {
         return view('admin-parecerista');
     }
-    public function adminPareceristaShowA()
+    public function adminPareceristaShowA($parecerista_id)
     {
-        return view('admin-parecerista-showa');
+        $parecerista = RefereeConfig::where('user_id','=',$parecerista_id)->first();
+
+        $eixosParecerista = AxisReferee::leftJoin('axis_configs','axis_configs.id','=','axis_referees.axis_id')
+        ->where('axis_referees.referee_id','=',$parecerista_id)->get();
+
+        return view('admin-parecerista-showa')->with(['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
     }
-    public function adminPareceristaShowB()
+    public function adminPareceristaShowB($parecerista_id)
     {
-        return view('admin-parecerista-showb');
+        $parecerista = RefereeConfig::where('user_id','=',$parecerista_id)->first();
+        
+        $eixosParecerista = AxisReferee::leftJoin('axis_configs','axis_configs.id','=','axis_referees.axis_id')
+        ->where('axis_referees.referee_id','=',$parecerista_id)->get();
+
+        return view('admin-parecerista-showb')->with(['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
     }
 
 
