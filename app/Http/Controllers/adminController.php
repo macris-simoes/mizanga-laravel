@@ -143,9 +143,7 @@ class AdminController extends Controller
     public function adminInscrito()
     {
         $totalInscritos = Registration::count();
-        $inscritos = DB::table('registrations')
-                    ->leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
-                    ->select('registrations.*', 'attendee_configs.register_modality')->simplePaginate(10);
+        $inscritos = DB::table('registrations')->simplePaginate(10);
         return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
     }
 
