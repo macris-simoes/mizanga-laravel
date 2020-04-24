@@ -17,10 +17,10 @@
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link " href="/admin-inscrito-showa">Detalhes da inscrição</a>
+                        <a class="nav-link " href="/admin-inscrito-showa/{{$user_id}}">Detalhes da inscrição</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active " href="/admin-inscrito-showb">Trabalhos inscritos</a>
+                        <a class="nav-link active " href="/admin-inscrito-showb/{{$user_id}}">Trabalhos inscritos</a>
                     </li>
                 </ul>
             </div>

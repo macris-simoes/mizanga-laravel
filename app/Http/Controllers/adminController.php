@@ -149,9 +149,7 @@ class AdminController extends Controller
 
     public function adminInscritoShowA($user_id)
     {
-        $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
-                    ->select('registrations.*', 'attendee_configs.register_modality')
-                    ->where('registrations.user_id', '=', $user_id)->first();
+        $inscrito = Registration::first();
         return view('admin-inscrito-showa',['user_id' => $user_id])->with(["inscrito" => $inscrito]);
     }
     
@@ -164,9 +162,7 @@ class AdminController extends Controller
                     ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
                     ->where('registrations.user_id', '=', $user_id)->simplePaginate(1);
         
-        $inscrito = Registration::leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
-                    ->select('registrations.*', 'attendee_configs.register_modality')
-                    ->where('registrations.user_id', '=', $user_id)->first();
+        $inscrito = Registration::first();
         
 
         return view('admin-inscrito-showb',['user_id' => $user_id])->with(["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
