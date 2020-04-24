@@ -26,7 +26,7 @@ class ConferenceConfigRequest extends FormRequest
         return [
             'name_conference' => 'required',
             'promoting_entity' => 'required',
-            'primary_email' => 'requiredemail:rfc,dns',
+            'primary_email' => 'required|email:rfc,dns',
             'event_start_date' => 'required|date',
             'event_end_date' => 'required|date',
             'how_to_subscribe' => 'required',
@@ -39,6 +39,7 @@ class ConferenceConfigRequest extends FormRequest
             'name_conference.required' => 'O campo nome do Congresso é obrigatório.',
             'promoting_entity.required' => 'O campo nome Entidade Promotora é obrigatório.',
             'primary_email.required' => 'O campo E-mail é obrigatório.',
+            'primary_email.email' => 'Este campo preenchido com um email.',
             'event_start_date.required' => 'O campo data do início do evento é obrigatório.',
             'event_end_date.required' => 'O campo data do término do evento é obrigatório.',
             'how_to_subscribe.required' => 'O campo Instruções sobre como se inscrever é obrigatório.',
