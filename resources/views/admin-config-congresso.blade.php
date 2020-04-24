@@ -5,6 +5,9 @@
 @include('admin-congresso-pills')
 
 
+@if(session('mensagem'))
+    <div class="alert alert-success container">{{session('mensagem')}}</div>
+@endif
 
 <!-- início div container CONFIG CONGRESSO -->
 <div class="container shadow">
@@ -24,7 +27,7 @@
         <!-- início div config -->
         <div class="col-md-12 my-1">
             <!-- início do form de modalidades -->
-            <form action="" method="POST">
+            <form method="POST">
                 @csrf
                 <!-- início da div form-row -->
                 <div class="form-row">
@@ -104,10 +107,10 @@
                             @enderror
                         <!-- aqui tem que por o php conforme a config no admin -->
                     </div>
-                            <!-- botão -->
-                            <div class=" my-4 col-md-12">
-                                <button class="btn btn-primary" type="submit" style="width:120px">Criar</button>
-                            </div>
+                    <!-- botão -->
+                    <div class=" my-4 col-md-12">
+                        <button class="btn btn-primary" type="submit" style="width:120px">Criar</button>
+                    </div>
 
 
                 <!-- fim da div form-row (abaixo)-->

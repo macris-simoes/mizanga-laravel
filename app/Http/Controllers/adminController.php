@@ -12,6 +12,7 @@ use App\AxisConfig;
 use App\AxisReferee;
 use App\Admin;
 use App\Registration;
+use App\ConferenceConfig;
 use App\Http\Requests\ConferenceConfigRequest;
 use App\Http\Requests\AxisConfigRequest;
 use App\Http\Requests\AttendeeConfigRequest;
@@ -175,11 +176,12 @@ class AdminController extends Controller
     //Congresso
     public function adminCongressoPost(ConferenceConfigRequest $request)
     {
-        // $congresso = $request->all();
-        // $newCongresso = new ConferenceConfig();
-        // $newCongresso->fill($congresso);
-        // $newCongresso->save();  
-        return "Congresso cadastrado com sucesso";      
+        $congresso = $request->all();
+        $newCongresso = new ConferenceConfig();
+        $newCongresso->fill($congresso);
+        $newCongresso->admin_id = Auth::user()->id;
+        $newCongresso->save();  
+        return redirect('admin-config-congresso')->with('mensagem','Informações salvas com sucesso.');   
     }
 
     //TRABALHOS
