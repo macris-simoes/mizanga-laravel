@@ -34,8 +34,19 @@
                 <p> <strong>Resumo:</strong> {{ $trabalho->abstract_body}}</p>
                 <p> <strong>Eixo temático:</strong> {{ $trabalho->axis}} <br>
                 <p> <strong>Nome dos participantes e Filiação institucional:</strong></p>
-                <p> {{ $trabalho->author}} - {{ $trabalho->author_affiliation}}
-                <p><strong>Resultado da avaliação:</strong> {{}} </p>
+                <p> {{ $trabalho->author}} <strong> {{ $trabalho->author_affiliation}} </strong>
+                <p> {{ $trabalho->first_coauthor}} <strong> {{ $trabalho->first_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->second_coauthor}} <strong> {{ $trabalho->second_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->third_coauthor}} <strong> {{ $trabalho->third_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->fourth_coauthor}} <strong> {{ $trabalho->fourth_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->fifth_coauthor}} <strong> {{ $trabalho->fifth_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->sixth_coauthor}} <strong> {{ $trabalho->sixth_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->eighth_coauthor}} <strong> {{ $trabalho->seventh_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->eighth_coauthor}} <strong> {{ $trabalho->eighth_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->nineth_coauthor}} <strong> {{ $trabalho->nineth_coauthor_afiliation}} </strong>
+                <p> {{ $trabalho->tenth_coauthor}} <strong> {{ $trabalho->tenth_coauthor_afiliation}} </strong>
+
+                <p><strong>Resultado da avaliação:</strong> {{$trabalho->rate_work}} </p>
             </div>
             <div class="my-2">
                 <button type="button" class="btn btn-outline-primary" style="width: 250px">Carta de aceite</button>
