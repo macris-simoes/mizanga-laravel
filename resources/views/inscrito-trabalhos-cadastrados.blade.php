@@ -46,11 +46,22 @@
                 <p> {{ $trabalho->nineth_coauthor}} <strong> {{ $trabalho->nineth_coauthor_afiliation}} </strong>
                 <p> {{ $trabalho->tenth_coauthor}} <strong> {{ $trabalho->tenth_coauthor_afiliation}} </strong>
 
-                <p><strong>Resultado da avaliação:</strong> {{$trabalho->rate_work}} </p>
+                <p><strong>Resultado da avaliação:</strong> 
+                    @if(is_null($trabalho->rate_work))
+                    <p class="font-italic">Não avaliado</p>
+                    @else
+                    {{$trabalho->rate_work}} 
+                    @endif
+                </p>
             </div>
             <div class="my-2">
+                @if($trabalho->rate_work == 'Aprovado')
                 <button type="button" class="btn btn-outline-primary" style="width: 250px">Carta de aceite</button>
+                @elseif($trabalho->rate_work == 'Reprovado')
+                <button type="button" class="btn btn-outline-primary" style="width: 250px">Carta de avaliação</button>
+                @endif
             </div>
+            <hr>
             @endforeach
             
         </div>
