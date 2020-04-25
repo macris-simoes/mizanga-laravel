@@ -289,7 +289,7 @@ class AdminController extends Controller
             if(strpos($key,'axis_')!== FALSE){
                 if($value!=0){
                     $novoPareceristaEixo = new AxisReferee();
-                    $novoPareceristaEixo->referee_id = $novoParecerista->id;
+                    $novoPareceristaEixo->referee_id = $novoParecerista->user_id;
                     $novoPareceristaEixo->axis_id = $value;
                     $novoPareceristaEixo->save();
                 }
