@@ -9,54 +9,56 @@
         
         <hr class="mb-4">
     </div>
-
-
     <h5 class="mt-4"> Trabalhos pendentes </h5>
     <!-- add PHP para popular campos de trabalhos -->
-    <table class="table table-hover">
-        <tbody>
-            <tr>
-                <td class="">Marxismo e psicologia: aportes para uma reflexão materialista sobre o indivíduo
-                </td>
-                <td class=""><a href="parecerista/trabalho/avaliar">Avaliar</a></td>
-            </tr>
-            <tr>
-                <td class="">Quando a ciência é ídolo: um comentário crítico sobre a psicologia moral
-                    nietzschiana de Leiter</td>
-                <td class=""><a href="parecerista/trabalho/avaliar">Avaliar</a></td>
-            </tr>
-            <tr class="border-bottom">
-                <td>Conhecimentos especializados sobre os problemas de rendimento escolar: um estudo
-                    de manuais de psicologia e da Revista de Educação</td>
-                <td class=""><a href="parecerista/trabalho/avaliar">Avaliar</a></td>
-            </tr>
-        </tbody>
-    </table>
+    @if(isset($trabalhosPendentes))
+        <table class="table table-hover">
+            <tbody>
+                @foreach($trabalhosPendentes as $trabalhoPendente)
+                <tr>
+                    <td class="">{{$trabalhoPendente->abstract_title}}</td>
+                    <td class=""><a href="parecerista/trabalho/avaliar/{{$trabalhoPendente->submission_id}}">Avaliar</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        @else
+        <p class="font-italic">Não há trabalhos pendentes.</p>
+        @endif
+
     
 
     <h5 class="mt-4"> Trabalhos aprovados </h5>
     <table class="table table-hover">
+        @if(!empty($trabalhosAprovados->toArray()))
         <tbody>
+            @foreach($trabalhosAprovados as $trabalhoAprovado)
             <tr>
-                <td class="">Marxismo e psicologia: aportes para uma reflexão materialista sobre o indivíduo
-                </td>
-                <td class=""><a href="parecerista-avaliar-trabalho/12350">Parecer</a></td>
+                <td class="">{{$trabalhoAprovado->abstract_title}}</td>
+                <td class=""><a href="parecerista/trabalho/avaliar/{{$trabalhoAprovado->submission_id}}">Parecer</a></td>
             </tr>
-            <tr>
-                <td class="">Quando a ciência é ídolo: um comentário crítico sobre a psicologia moral
-                    nietzschiana de Leiter</td>
-                <td class=""><a href="parecerista-avaliar-trabalho/12320">Parecer</a></td>
-            </tr>
-            <tr class="border-bottom">
-                <td class="">Conhecimentos especializados sobre os problemas de rendimento escolar: um estudo
-                    de manuais de psicologia e da Revista de Educação</td>
-                <td class=""><a href="parecerista-avaliar-trabalho/12305">Parecer</a></td>
-            </tr>
+            @endforeach
         </tbody>
+        @else
+        <p class="font-italic">Não há trabalhos aprovados.</p>
+        @endif
     </table>
 
     <h5 class="mt-5"> Trabalhos reprovados </h5>
-    <p class="font-italic my-3">Não há trabalhos nesta lista.</p>
+    <table class="table table-hover">
+        @if(!empty($trabalhosReprovados->toArray()))
+        <tbody>
+            @foreach($trabalhosReprovados as $trabalhoReprovado)
+            <tr>
+                <td class="">{{$trabalhoReprovado->abstract_title}}</td>
+                <td class=""><a href="parecerista/trabalho/avaliar/{{$trabalhoReprovado->submission_id}}">Ver avaliação</a></td>
+            </tr>
+            @endforeach
+        </tbody>
+        @else
+        <p class="font-italic">Não há trabalhos reprovados.</p>
+        @endif
+    </table>
     <hr class="mt-2">
 </div>
 
