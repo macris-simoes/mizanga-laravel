@@ -175,9 +175,7 @@
                     <div class="form-group col-md-6">
                         <label for="city">Município*</label>
                         <input type="text" class="form-control" id="city" name="city" placeholder="Município" value="{{ old('city') }}">
-                        @error('city')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                        
                     </div>
                     <div class="form-group col-md-6">
                         <label for="uf">UF*</label>
@@ -211,9 +209,7 @@
                             <option value="SE">SE</option>
                             <option value="TO">TO</option>
                         </select>
-                        @error('uf')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                        
                     </div>
                 </div>
 
