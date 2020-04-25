@@ -33,8 +33,8 @@
 
     <aside class="col-md-4 col-sm-12 px-0 bg-white rounded shadow-sm">
       <img class="m-auto d-block" style="width:80%" src="/img/mizangueras.gif" alt="">
-      <h1 class="text-center">1º Encontro das mizangueiras</h1>
-      <p class="lead text-center">de 28/10/2019 a 28/04/2020 <br> Veja como estão as coisas!</p>
+      <h1 class="text-center">{{$congresso->name_conference}}</h1>
+      <p class="lead text-center">de {{date('d/m/Y', strtotime($congresso->event_start_date))}} a {{date('d/m/Y', strtotime($congresso->event_end_date))}} <br> Veja como estão as coisas!</p>
     </aside>
 
     <!-- início cards menores -->
@@ -45,7 +45,14 @@
         <h5 class="card-title font-weight-bold text-primary">Inscritos</h5>
         <!-- aqui tem php hein -->
         <div class="list-group-flush">
-          <p class="list-item">Inscritos: 1000 </p>
+          <p class="list-item">
+            Inscritos:
+            @if(isset($totalInscritos))
+            {{$totalInscritos}}
+            @else
+            0
+            @endif
+             </p>
         </div>
       </div>
       <!-- fim card Inscritos -->
@@ -55,9 +62,22 @@
         <h5 class="card-title font-weight-bold  text-primary">Trabalhos</h5>
         <!-- aqui tem php hein -->
         <div class="list-group-flush">
-          <div class="list-group-item">Trabalhos inscritos: 1234 </div>
-          <div class="list-group-item">Trabalhos avaliados: 0123 </div>
-          <div class="list-group-item">Trabalhos aguardando avaliação: 0123 </div>
+          <div class="list-group-item">
+            Trabalhos submetidos:
+            @if(isset($trabalhosSubmetidos)) 
+            {{$trabalhosSubmetidos}}
+            @else
+            0
+            @endif
+          </div>
+          <div class="list-group-item">
+            Trabalhos avaliados:
+            @if(isset($trabalhosAvaliados))
+            {{$trabalhosAvaliados}}
+            @else
+            0
+            @endif 
+          </div>
         </div>
       </div>
       <!-- fim card trabalhos -->
@@ -67,8 +87,14 @@
         <h5 class="card-title font-weight-bold text-primary">Pareceristas</h5>
         <!-- aqui tem php hein -->
         <div class="list-group-flush">
-        <div class="list-group-item">Pareceristas convidados: 1234 </div>
-        <div class="list-group-item">Pareceristas cadastrados: 0123 </div>
+        <div class="list-group-item">
+          Pareceristas cadastrados: 
+          @if(isset($totalPareceristas))
+          {{$totalPareceristas}}
+          @else
+          0
+          @endif 
+        </div>
         </div>
       </div>
       <!-- fim card pareceristas -->
@@ -77,9 +103,9 @@
       <div class="col-md-12 pt-2 mt-2 rounded shadow-sm">
         <h5 class="card-title font-weight-bold text-primary">Prazos</h5>
         <!-- aqui tem php hein -->
-        <div class="card-text">Abertura de inscrições: 25/01/2020 </div>
-        <div class="card-text">Abertura para trabalhos: 25/01/2020 </div>
-        <div class="card-text">Dilatação de prazo (<strong>Não divulgar</strong> esta informação): 25/01/2020 </div>
+        <div class="card-text">Abertura de inscrições: </div>
+        <div class="card-text">Abertura para trabalhos: {{date('d/m/Y', strtotime($inscricoesTrabalho->work_start_date))}} </div>
+        <div class="card-text">Dilatação de prazo (<strong>Não divulgar</strong> esta informação):  </div>
       </div>
       <!-- fim card maior (prazos) -->
 

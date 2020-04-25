@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
 use App\AbstractConfig;
+use App\AbstractEvaluation;
 use Illuminate\Http\Request;
 use App\User;
 use App\AttendeeConfig;
@@ -87,7 +88,14 @@ class AdminController extends Controller
     //HOME
     public function adminHome()
     {
-        return view('admin-home');
+        $totalInscritos = Registration::count();
+        $totalPareceristas = RefereeConfig::count();
+        $trabalhosSubmetidos = AbstractSubmission::count();
+        $trabalhosAvaliados = AbstractEvaluation::whereNotNull('rate_work')->count();
+        $congresso = ConferenceConfig::select('name_conference','event_start_date','event_end_date')->first();
+        $inscricoesTrabalho = AbstractConfig::orderBy('work_start_date','asc')->select('work_start_date')->first();
+
+        return view('admin-home')->with(['totalInscritos'=>$totalInscritos,'totalPareceristas'=>$totalPareceristas,'trabalhosSubmetidos'=>$trabalhosSubmetidos,'trabalhosAvaliados'=>$trabalhosAvaliados, 'congresso' => $congresso, 'inscricoesTrabalho'=> $inscricoesTrabalho]);
     }
 
     public function adminCongresso()
