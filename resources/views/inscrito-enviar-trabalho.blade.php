@@ -149,8 +149,8 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="first_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="first_coauthor_affiliation" id="first_coauthor_affiliation" class="form-control">
+                                <label for="first_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="first_coauthor_afiliation" id="first_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
 
@@ -161,8 +161,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="second_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="second_coauthor_affiliation" id="second_coauthor_affiliation" class="form-control">
+                                <label for="second_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="second_coauthor_afiliation" id="second_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -172,8 +172,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="third_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="third_coauthor_affiliation" id="third_coauthor_affiliation" class="form-control">
+                                <label for="third_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="third_coauthor_afiliation" id="third_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -183,8 +183,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="fourth_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="fourth_coauthor_affiliation" id="fourth_coauthor_affiliation" class="form-control">
+                                <label for="fourth_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="fourth_coauthor_afiliation" id="fourth_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -194,8 +194,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="fifth_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="fifth_coauthor_affiliation" id="fifth_coauthor_affiliation" class="form-control">
+                                <label for="fifth_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="fifth_coauthor_afiliation" id="fifth_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -205,8 +205,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="sixth_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="sixth_coauthor_affiliation" id="sixth_coauthor_affiliation" class="form-control">
+                                <label for="sixth_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="sixth_coauthor_afiliation" id="sixth_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -216,8 +216,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="seventh_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="seventh_coauthor_affiliation" id="seventh_coauthor_affiliation" class="form-control">
+                                <label for="seventh_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="seventh_coauthor_afiliation" id="seventh_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -227,8 +227,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="eighth_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="eighth_coauthor_affiliation" id="eighth_coauthor_affiliation" class="form-control">
+                                <label for="eighth_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="eighth_coauthor_afiliation" id="eighth_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -238,8 +238,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="nineth_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="nineth_coauthor_affiliation" id="nineth_coauthor_affiliation" class="form-control">
+                                <label for="nineth_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="nineth_coauthor_afiliation" id="nineth_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
                         <div class="form-row d-flex">
@@ -249,8 +249,8 @@
                             </div>
             
                             <div class="form-group col-md-6">
-                                <label for="tenth_coauthor_affiliation">Filiação Institucional</label>
-                                <input type="text" name="tenth_coauthor_affiliation" id="tenth_coauthor_affiliation" class="form-control">
+                                <label for="tenth_coauthor_afiliation">Filiação Institucional</label>
+                                <input type="text" name="tenth_coauthor_afiliation" id="tenth_coauthor_afiliation" class="form-control">
                             </div>
                         </div>
 
