@@ -2,6 +2,10 @@
 
 @section('content')
 
+@if(session('mensagem'))
+    <div class="alert alert-success container">{{session('mensagem')}}</div>
+@endif
+
 <div class="container shadow mt-4">
     <div class="my-3 ">
         <h4 class="display-3">Área do parecerista</h4>

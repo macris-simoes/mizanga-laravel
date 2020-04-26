@@ -52,6 +52,6 @@ class pareceristaController extends Controller
         } else{
             return redirect()->route('parecerista.avaliar')->with('erro','Falha ao salvar o arquivo.');
         }
-        return redirect()->route('parecerista.avaliar')->with(['submission_id'=>$submission_id]);
+        return redirect()->route('parecerista.home',['submission_id'=>$submission_id])->with('mensagem','Avaliação efetuada com sucesso.');
     }
 }
