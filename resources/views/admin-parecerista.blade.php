@@ -29,7 +29,7 @@
     @if(isset($pareceristas))
     <div class="list-group my-3">
         @foreach($pareceristas as $parecerista)
-        <a href="/admin-parecerista-showa/{{$parecerista->user_id}}" class="list-group-item list-group-item-action">
+        <a href="/admin-parecerista-visualizar/{{$parecerista->user_id}}" class="list-group-item list-group-item-action">
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column align-items-start">
                     <h5 class="mb-1">{{$parecerista->appraiser_name}}</h5>

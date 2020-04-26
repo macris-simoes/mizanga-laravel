@@ -6,11 +6,11 @@
 
 if(Request::path() === 'admin-config-congresso' || Request::path() === 'admin-config-eixos' || Request::path() === 'admin-config-inscrito' || Request::path() === 'admin-config-trabalho' || Request::path() === 'admin-config-parecerista'){
     $congresso = "active";
-}elseif (Request::path() === 'admin-inscrito' || Request::path() === 'admin-inscrito-showa' || Request::path() === 'admin-inscrito-showb' ){ 
+}elseif (Request::path() === 'admin-inscrito' || Request::path() === 'admin-inscrito-visualizar' || Request::path() === 'admin-inscrito-visualizar-detalhe' ){ 
     $inscrito = "active";
-}elseif(Request::path() === 'admin-trabalho' || Request::path() === 'admin-trabalho-showa'){
+}elseif(Request::path() === 'admin-trabalho' || Request::path() === 'admin-trabalho-visualizar'){
     $trabalho = "active";
-}elseif(Request::path() === 'admin-parecerista' || Request::path() === 'admin-parecerista-showa' || Request::path() === 'admin-parecerista-showb' || Request::path() === 'admin-parecerista-substituir'){
+}elseif(Request::path() === 'admin-parecerista' || Request::path() === 'admin-parecerista-visualizar' || Request::path() === 'admin-parecerista-visualizar-detalhe' || Request::path() === 'admin-parecerista-substituir'){
     $parecerista = "active";
 } ?>
 {{-- fim pill active --}}

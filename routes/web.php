@@ -58,8 +58,8 @@ Route::get('/admin-config-parecerista', 'AdminController@adminConfigParecerista'
 Route::post('/admin-config-parecerista', 'AdminController@configPareceristaSubmitPost');
 Route::get('/admin-parecerista', 'AdminController@adminParecerista');
 Route::post('/admin-parecerista', 'AdminController@adminPareceristaPost');
-Route::get('/admin-parecerista-showa/{user_id}', 'AdminController@adminPareceristaShowA');
-Route::get('/admin-parecerista-showb/{user_id}', 'AdminController@adminPareceristaShowB');
+Route::get('/admin-parecerista-visualizar/{user_id}', 'AdminController@adminPareceristaShowA');
+Route::get('/admin-parecerista-visualizar-detalhe/{user_id}', 'AdminController@adminPareceristaShowB');
 
 Route::get('/admin-parecerista-substituir', 'AdminController@adminPareceristaSubstituir');
 
@@ -68,15 +68,15 @@ Route::get('/admin-parecerista-substituir', 'AdminController@adminPareceristaSub
 Route::get('/admin-config-inscrito', 'AdminController@adminConfigInscrito');
 Route::post('/admin-config-inscrito', 'AdminController@adminConfigInscritoPost');
 Route::get('/admin-inscrito', 'AdminController@adminInscrito');
-Route::get('/admin-inscrito-showa/{id}', 'AdminController@adminInscritoShowA');
-Route::get('/admin-inscrito-showb/{id}', 'AdminController@adminInscritoShowB');
+Route::get('/admin-inscrito-visualizar/{id}', 'AdminController@adminInscritoShowA');
+Route::get('/admin-inscrito-visualizar-detalhe/{id}', 'AdminController@adminInscritoShowB');
 Route::post('/admin-inscrito', 'AdminController@InscritoSearch');
 
 //----------ADMIN TRABALHO GET-------------
 Route::get('/admin-config-trabalho', 'AdminController@adminConfigTrabalho');
 Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost');
 Route::get('/admin-trabalho', 'AdminController@adminTrabalho');
-Route::get('/admin-trabalho-showa/{id}', 'AdminController@adminTrabalhoShowA');
+Route::get('/admin-trabalho-visualizar/{id}', 'AdminController@adminTrabalhoShowA');
 
 //----------ADMIN POST-------------
 Route::post('/admin', 'AdminController@adminInscritoSubmitPost');

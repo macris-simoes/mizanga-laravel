@@ -23,10 +23,10 @@
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin-parecerista-showa/{{$parecerista_id}}">Trabalhos para avaliar</a>
+                        <a class="nav-link active" href="/admin-parecerista-visualizar/{{$parecerista_id}}">Trabalhos para avaliar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin-parecerista-showb/{{$parecerista_id}}">Trabalhos já avaliados</a>
+                        <a class="nav-link" href="/admin-parecerista-visualizar-detalhe/{{$parecerista_id}}">Trabalhos já avaliados</a>
                     </li>
                 </ul>
             </div>

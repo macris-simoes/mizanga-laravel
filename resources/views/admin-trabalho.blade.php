@@ -44,7 +44,7 @@
     @if(isset($trabalhos))
     <div class="list-group my-3">
         @foreach($trabalhos as $trabalho)
-        <a href="/admin-trabalho-showa/{{$trabalho->id}}" class="list-group-item list-group-item-action">
+        <a href="/admin-trabalho-visualizar/{{$trabalho->id}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{$trabalho->abstract_title}}</h5>
                 <small>há 15 dia(s)</small>

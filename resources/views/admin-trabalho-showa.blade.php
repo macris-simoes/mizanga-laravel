@@ -18,7 +18,7 @@
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin-trabalho-showa/{{$trabalho_id}}">Detalhes do Trabalho</a>
+                        <a class="nav-link active" href="/admin-trabalho-visualizar/{{$trabalho_id}}">Detalhes do Trabalho</a>
                     </li>
                 </ul>
             </div>
