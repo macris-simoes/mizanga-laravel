@@ -39,7 +39,7 @@
 
                             <small>Eixo temático: {{$trabalho->axis}}</small>
                             <small>Parecer:
-                            @if(!is_null($trabalho->rate_work))    
+                            @if(($trabalho->rate_work)=='')    
                             Sim
                             @else
                             Não
