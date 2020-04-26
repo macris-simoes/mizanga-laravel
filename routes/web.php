@@ -39,8 +39,8 @@ Route::middleware(['auth'])->group(function () {
 route::prefix('parecerista')->group(function () {
     Route::get('/', 'PareceristaController@home')->name('parecerista.home');
     Route::prefix('trabalho')->group(function () {
-        Route::get('/avaliar', 'PareceristaController@avaliar')->name('parecerista.avaliar');
-        Route::post('/avaliar', 'PareceristaController@avaliarPost')->name('parecerista.avaliarpost');
+        Route::get('/avaliar/{submission_id}', 'PareceristaController@avaliar')->name('parecerista.avaliar');
+        Route::post('/avaliar/{submission_id}', 'PareceristaController@avaliarPost')->name('parecerista.avaliarpost');
     });
 });
 

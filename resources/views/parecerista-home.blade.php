@@ -11,7 +11,7 @@
     </div>
     <h5 class="mt-4"> Trabalhos pendentes </h5>
     <!-- add PHP para popular campos de trabalhos -->
-    @if(isset($trabalhosPendentes))
+    @if(!empty($trabalhosPendentes->toArray()))
         <table class="table table-hover">
             <tbody>
                 @foreach($trabalhosPendentes as $trabalhoPendente)
