@@ -7,16 +7,13 @@
 {{-- ---------------------------div container fundo colorido------------------------------------- --}}
 <div class="container my-3 col-md-10 shadow bg-light">
     <div class="card m-3 border-0">
-
         <div class="card-body">
-
             <div class="container d-flex flex-row justify-content-between">
                 <div>
                     <h5 class="card-title">{{$trabalho->author}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$trabalho->register_modality}}</h6>
                 </div>
                 <a href="/admin-trabalho" class="">  <span class="material-icons"> close </span> </a>
-                
             </div>
 
             {{-- início da tabs do ADMIN READ Trabalhos --}}

@@ -70,6 +70,7 @@ Route::get('/admin-inscrito-visualizar/{id}', 'AdminController@adminInscritoShow
 Route::get('/admin-inscrito-visualizar-detalhe/{id}', 'AdminController@adminInscritoShowB');
 Route::post('/admin-inscrito', 'AdminController@InscritoSearch');
 
+
 //----------ADMIN CONFIG TRABALHO GET-------------
 Route::get('/admin-config-trabalho', 'AdminController@adminConfigTrabalho');
 Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost');

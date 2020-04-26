@@ -2,7 +2,7 @@
 {{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
 
 <div class="container">
-    {{-- <div class="container">
+    <div class="container">
         <!-- Início do menu das pills -->
         <nav>
             <div class="nav nav-pills" id="nav-tab" role="tablist">
@@ -15,7 +15,7 @@
         </nav>
         <!-- fim do menu das pills -->
         <!-- fim da div container -->
-    </div> --}}
+    </div>
     {{-- fim da pills do ADMIN --}}
     
     <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">

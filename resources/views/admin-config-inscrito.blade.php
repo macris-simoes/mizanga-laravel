@@ -1,6 +1,5 @@
 @extends('template')
 @section('content')
-@include('includes/admin-congresso-pills')
 @include('includes/admin-config-congresso-tabs')
 
 <!-- início div container -->
