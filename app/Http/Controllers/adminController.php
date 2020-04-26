@@ -91,7 +91,7 @@ class AdminController extends Controller
         $totalInscritos = Registration::count();
         $totalPareceristas = RefereeConfig::count();
         $trabalhosSubmetidos = AbstractSubmission::count();
-        $trabalhosAvaliados = AbstractEvaluation::whereNotNull('rate_work')->count();
+        $trabalhosAvaliados = AbstractEvaluation::where('rate_work','<>','')->count();
         $congresso = ConferenceConfig::select('name_conference','event_start_date','event_end_date')->first();
         $inscricoesTrabalho = AbstractConfig::orderBy('work_start_date','asc')->select('work_start_date')->first();
 
