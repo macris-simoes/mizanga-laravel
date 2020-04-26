@@ -175,6 +175,25 @@ class AdminController extends Controller
         return view('admin-inscrito-showb',['user_id' => $user_id])->with(["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
     }
 
+    public function InscritoSearch(Request $request){
+        $totalInscritos = Registration::count();
+            $inscritos = DB::table('registrations')->simplePaginate(10);
+            
+    
+        $q = $request->input('q');
+        if($q != ""){
+            $registration = Registration::where('name', 'LIKE', '%' .$q. '%')
+                                            -> orWhere('email', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('register_modality', 'LIKE', '%' .$q. '%')
+                                            -> get();
+            if(count($registration) > 0);
+                return view ('admin-inscrito') -> withDetails($registration)->withQuery($q)->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);;
+        }else{
+            return view('admin-inscrito-search')->withMessage('Not found');
+        };
+        return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
+    }
+
     //Congresso
     public function adminCongressoPost(ConferenceConfigRequest $request)
     {

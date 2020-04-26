@@ -32,12 +32,24 @@
     </div>
     
 
-    <div class="input-group  mb-3">
-        <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+    <form action="/admin-inscrito" method="POST">
+        @csrf
+        <div class="input-group  mb-3">
+            <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome"
+                aria-describedby="button-addon2" name="q">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+            </div>
         </div>
-    </div>
+    </form>
+
+    @if (isset($details))
+    @include('admin-inscrito-search')
+    @endif
+
+
+
+    <hr>
     {{-- fim do campo de busca --}}
 
 
