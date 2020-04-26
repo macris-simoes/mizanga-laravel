@@ -45,26 +45,24 @@ route::prefix('parecerista')->group(function () {
 });
 
 
-
-//----------ADMIN GET-------------
+//----------ADMIN CONFIG CONGRESSO-------------
 Route::get('/admin', 'AdminController@adminHome');
 Route::get('/admin-config-congresso', 'AdminController@adminCongresso');
 Route::post('/admin-config-congresso', 'AdminController@adminCongressoPost');
 Route::get('/admin-config-eixos', 'AdminController@adminEixo');
 Route::post('/admin-config-eixos', 'AdminController@adminEixoSubmitPost');
 
-//----------ADMIN PARECERISTA GET-------------
+//----------ADMIN CONFIG PARECERISTA -------------
 Route::get('/admin-config-parecerista', 'AdminController@adminConfigParecerista');
 Route::post('/admin-config-parecerista', 'AdminController@configPareceristaSubmitPost');
 Route::get('/admin-parecerista', 'AdminController@adminParecerista');
 Route::post('/admin-parecerista', 'AdminController@adminPareceristaPost');
 Route::get('/admin-parecerista-visualizar/{user_id}', 'AdminController@adminPareceristaShowA');
 Route::get('/admin-parecerista-visualizar-detalhe/{user_id}', 'AdminController@adminPareceristaShowB');
-
 Route::get('/admin-parecerista-substituir', 'AdminController@adminPareceristaSubstituir');
 
 
-//----------ADMIN INSCRITO GET-------------
+//----------ADMIN CONFIG INSCRITO-------------
 Route::get('/admin-config-inscrito', 'AdminController@adminConfigInscrito');
 Route::post('/admin-config-inscrito', 'AdminController@adminConfigInscritoPost');
 Route::get('/admin-inscrito', 'AdminController@adminInscrito');
@@ -72,7 +70,7 @@ Route::get('/admin-inscrito-visualizar/{id}', 'AdminController@adminInscritoShow
 Route::get('/admin-inscrito-visualizar-detalhe/{id}', 'AdminController@adminInscritoShowB');
 Route::post('/admin-inscrito', 'AdminController@InscritoSearch');
 
-//----------ADMIN TRABALHO GET-------------
+//----------ADMIN CONFIG TRABALHO GET-------------
 Route::get('/admin-config-trabalho', 'AdminController@adminConfigTrabalho');
 Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost');
 Route::get('/admin-trabalho', 'AdminController@adminTrabalho');
@@ -92,4 +90,3 @@ Route::post('/admin-config-trabalho/{id}','AdminController@adminConfigTrabalhoDe
 Route::post('/admin-cadastro', 'AdminController@cadastroAdminSubmitPost');
 Route::get('/admin-cadastro', 'AdminController@cadastroAdmin');
 
-Route::resource('crud', 'CrudController');
