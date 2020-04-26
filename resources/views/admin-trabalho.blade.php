@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
+@include('includes/admin-congresso-pills')
 
 {{-- --------------------------------------------------------------------------------------------- --}}
 
@@ -31,18 +31,31 @@
         </div>
     </div>
 
-    <div class="input-group  mb-3">
-        <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+    <form action="/admin-trabalho" method="POST">
+        @csrf
+        <div class="input-group  mb-3">
+            <input type="text" class="form-control" placeholder="Insira uma palavra ou trecho" aria-label="Buscar nome"
+                aria-describedby="button-addon2" name="q">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+            </div>
         </div>
-    </div>
+    </form>
+
+    @if (isset($details))
+    @include('admin-trabalho-search')
+    @endif
+
+    <hr>
+
     {{-- fim do campo de busca --}}
 
 
     {{-- início dos cards de resultado da busca --}}
     @if(isset($trabalhos))
     <div class="list-group my-3">
+        
+
         @foreach($trabalhos as $trabalho)
         <a href="/admin-trabalho-visualizar/{{$trabalho->id}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
@@ -61,7 +74,6 @@
             </div>
         </a>
         @endforeach
-        {{$trabalhos->links()}}
         
     </div>
     @else

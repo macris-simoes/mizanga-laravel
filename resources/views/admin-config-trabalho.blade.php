@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
+@include('includes/admin-congresso-pills')
+@include('includes/admin-config-congresso-tabs')
 
 
 {{-- fim da tabs do ADMIN CONFIG TRABALHO --}}

@@ -1,9 +1,7 @@
 @extends('template')
-
 @section('content')
-
-@include('admin-congresso-pills')
-
+@include('includes/admin-congresso-pills')
+@include('includes/admin-config-congresso-tabs')
 
 @if(session('mensagem'))
     <div class="alert alert-success container">{{session('mensagem')}}</div>

@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
+@include('includes/admin-congresso-pills')
+@include('includes/admin-config-congresso-tabs')
 
 <!-- início div container -->
 <div class="container shadow mb-3 pb-4">

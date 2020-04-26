@@ -1,17 +1,21 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
+{{-- @include('includes/admin-congresso-pills') --}}
 
 
 
 {{-- ---------------------------div container fundo colorido------------------------------------- --}}
-<div class="container mt-3 col-md-10 shadow">
+<div class="container mt-3 col-md-10 shadow bg-light">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-inscrito"> Voltar </a>
-            <h5 class="card-title">{{$inscrito->name}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{$inscrito->register_modality}}</h6>
 
+            <div class="container d-flex flex-row justify-content-between">
+                <div>
+                    <h5 class="card-title">{{$inscrito->name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{$inscrito->register_modality}}</h6>
+                </div>
+                    <a href="/admin-inscrito"> <span class="material-icons"> close </span> </a>
+            </div>
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">

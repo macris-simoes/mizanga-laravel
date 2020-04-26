@@ -1,11 +1,9 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
-
   
   {{-- ---------------------------------------------------------------------------- --}}
 
-  <div class="container mt-3 col-md-10 shadow">
+  <div class="container mt-3 col-md-10 shadow bg-light">
     <div class="card m-3 border-0">
         <div class="card-body">
             <a href="/admin-inscrito" class="mt-5"> Voltar </a>

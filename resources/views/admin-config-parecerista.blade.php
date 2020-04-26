@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
+@include('includes/admin-congresso-pills')
+@include('includes/admin-config-congresso-tabs')
 
 @if(session('mensagem'))
     <div class="alert alert-success container">{{session('mensagem')}}</div>
@@ -65,7 +66,7 @@
             
             <div class="my-4">
                 <button type="submit" class="btn btn-primary" style="width:120px">Enviar</button>
-                <a href="/admin-home" class="btn btn-primary" style="width:120px">Voltar</a>
+                <a href="/admin" class="btn btn-primary" style="width:120px">Voltar</a>
             </div>
         </form>
 

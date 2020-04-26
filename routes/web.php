@@ -75,6 +75,7 @@ Route::get('/admin-config-trabalho', 'AdminController@adminConfigTrabalho');
 Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost');
 Route::get('/admin-trabalho', 'AdminController@adminTrabalho');
 Route::get('/admin-trabalho-visualizar/{id}', 'AdminController@adminTrabalhoShowA');
+Route::post('/admin-trabalho', 'AdminController@TrabalhoSearch');
 
 //----------ADMIN POST-------------
 Route::post('/admin', 'AdminController@adminInscritoSubmitPost');

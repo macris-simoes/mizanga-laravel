@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-@include('admin-congresso-pills')
+@include('includes/admin-congresso-pills')
 
 {{-- ---------------------------------------------------------------------------- --}}
 
