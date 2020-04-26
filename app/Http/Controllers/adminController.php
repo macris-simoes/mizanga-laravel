@@ -172,7 +172,7 @@ class AdminController extends Controller
         
         $inscrito = Registration::where('user_id','=',$user_id)->first();
 
-        return view('admin-inscrito-visualizar-detalhe',['user_id' => $user_id])->with(["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
+        return view('admin-inscrito-visualizar-trabalho',['user_id' => $user_id])->with(["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
     }
 
     public function InscritoSearch(Request $request){
@@ -265,6 +265,11 @@ class AdminController extends Controller
         ->select('abstract_submissions.*','registrations.name AS author','registrations.register_modality','referee_configs.appraiser_name','abstract_evaluations.rate_work')
         ->where('abstract_submissions.id','=',$trabalho_id)->first();
         return view('admin-trabalho-visualizar')->with('trabalho', $trabalho)->with('trabalho_id', $trabalho_id);
+    }
+
+    public function adminTrabalhoDelete(AbstractSubmission $id){
+        $id -> delete();
+       return redirect('/admin-trabalho')->withMessage("trabalho apagado!");        
     }
     
 

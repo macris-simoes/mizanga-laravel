@@ -67,7 +67,7 @@ Route::get('/admin-config-inscrito', 'AdminController@adminConfigInscrito');
 Route::post('/admin-config-inscrito', 'AdminController@adminConfigInscritoPost');
 Route::get('/admin-inscrito', 'AdminController@adminInscrito');
 Route::get('/admin-inscrito-visualizar/{id}', 'AdminController@adminInscritoShowA');
-Route::get('/admin-inscrito-visualizar-detalhe/{id}', 'AdminController@adminInscritoShowB');
+Route::get('/admin-inscrito-visualizar-trabalho/{id}', 'AdminController@adminInscritoShowB');
 Route::post('/admin-inscrito', 'AdminController@InscritoSearch');
 
 
@@ -77,6 +77,7 @@ Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost')
 Route::get('/admin-trabalho', 'AdminController@adminTrabalho');
 Route::get('/admin-trabalho-visualizar/{id}', 'AdminController@adminTrabalhoShowA');
 Route::post('/admin-trabalho', 'AdminController@TrabalhoSearch');
+Route::post('/admin-trabalho-visualizar/{id}','AdminController@adminTrabalhoDelete');
 
 //----------ADMIN POST-------------
 Route::post('/admin', 'AdminController@adminInscritoSubmitPost');

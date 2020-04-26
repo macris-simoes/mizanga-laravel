@@ -61,11 +61,21 @@
 
             {{-- fim div lista de trabalhos (abaixo)--}}
         </div>
+
+
+        
                 
                     {{-- buttons --}}
                     <div class="my-4 d-flex flex-row justify-content-between">
-                        <a href="/admin-trabalho">  Voltar </a>
-                        <input type="submit" class="btn btn-warning" value="Apagar trabalho">
+                        <a href="/admin-trabalho" class=""> Voltar </a>
+                        <form action="/admin-trabalho-visualizar/{{ $trabalho['id']}}" method="post">
+                            @csrf
+                            <input hidden value="{{$trabalho}} " >
+                            <button class="btn btn-warning ml-2 " type="submit">
+                                Apagar trabalho
+                            </button>
+                        </form>
+
                     </div>
                 
 
