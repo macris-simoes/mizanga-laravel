@@ -219,7 +219,9 @@ class AdminController extends Controller
     public function adminTrabalhoShowA($trabalho_id)
     {
         $trabalho = AbstractSubmission::leftJoin('registrations','registrations.user_id','=','abstract_submissions.registration_id')
-        ->select('abstract_submissions.*','registrations.name AS author','registrations.register_modality')
+        ->leftJoin('abstract_evaluations','abstract_evaluations.submission_id','=','abstract_submissions.id')
+        ->leftJoin('referee_configs','referee_configs.user_id','=','abstract_evaluations.referee_id')
+        ->select('abstract_submissions.*','registrations.name AS author','registrations.register_modality','referee_configs.appraiser_name','abstract_evaluations.rate_work')
         ->where('abstract_submissions.id','=',$trabalho_id)->first();
         return view('admin-trabalho-showa')->with('trabalho', $trabalho)->with('trabalho_id', $trabalho_id);
     }

@@ -36,8 +36,21 @@
                     <div class="d-flex flex-column">
                         <p class="text-justify">{{$trabalho->abstract_body}}</p>
 
-                        <small>Parecerista: Fulana da Silva</small>
-                        <small>Parecer: Aprovado </small>
+                        <small>Parecerista: 
+                            @if(($trabalho->appraiser_name)=='')
+                            Ainda não foi atribuído
+                            @else
+                            {{$trabalho->appraiser_name}}
+                            @endif
+                        </small>
+
+                        <small>Parecer: 
+                            @if(($trabalho->rate_work)=='')
+                            Ainda não foi avaliado
+                            @else
+                            {{$trabalho->rate_work}}
+                            @endif
+                        </small>
                     </div>
                 </div>
             </div>
@@ -48,7 +61,7 @@
                 
                     {{-- buttons --}}
                     <div class="my-4 d-flex flex-row justify-content-between">
-                        <a href="/admin-inscrito">  Voltar </a>
+                        <a href="/admin-trabalho">  Voltar </a>
                         <input type="submit" class="btn btn-warning" value="Apagar trabalho">
                     </div>
                 
