@@ -27,12 +27,26 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    //HOME
+    public function home()
+    {
+        $totalInscritos = Registration::count();
+        $totalPareceristas = RefereeConfig::count();
+        $trabalhosSubmetidos = AbstractSubmission::count();
+        $trabalhosAvaliados = AbstractEvaluation::where('rate_work','<>','')->count();
+        $congresso = ConferenceConfig::select('name_conference','event_start_date','event_end_date')->first();
+        $inscricoesTrabalho = AbstractConfig::orderBy('work_start_date','asc')->select('work_start_date')->first();
+    
+        return view('admin-home', ['totalInscritos'=> $totalInscritos,'totalPareceristas'=> $totalPareceristas,'trabalhosSubmetidos'=>$trabalhosSubmetidos,'trabalhosAvaliados'=>$trabalhosAvaliados, 'congresso' => $congresso, 'inscricoesTrabalho'=> $inscricoesTrabalho]);
+    }
 
-    public function cadastroAdmin(){
+
+    //CADASTRO ADMIN
+    public function cadastro(){
         return view('admin-cadastro');
     }
 
-    public function cadastroAdminSubmitPost(AdminCadastroRequest $request){
+    public function cadastroPost(AdminCadastroRequest $request){
 
         $jaInscrito = Registration::where('cpf', '=', $request->cpf)->first();
         $jaParecerista = RefereeConfig::where('appraiser_cpf', '=', $request->cpf)->first();
@@ -80,59 +94,60 @@ class AdminController extends Controller
 
         $novoAdmin->save();
 
-        return redirect('/admin-cadastro')->with('mensagem','Novo Admin com sucesso.');
+        return redirect('/admin/cadastro')->with('mensagem','Novo cadastro de ADMIN feito com sucesso.');
 
     }
 
 
-    //HOME
-    public function adminHome()
-    {
-        $totalInscritos = Registration::count();
-        $totalPareceristas = RefereeConfig::count();
-        $trabalhosSubmetidos = AbstractSubmission::count();
-        $trabalhosAvaliados = AbstractEvaluation::where('rate_work','<>','')->count();
-        $congresso = ConferenceConfig::select('name_conference','event_start_date','event_end_date')->first();
-        $inscricoesTrabalho = AbstractConfig::orderBy('work_start_date','asc')->select('work_start_date')->first();
 
-        return view('admin-home')->with(['totalInscritos'=>$totalInscritos,'totalPareceristas'=>$totalPareceristas,'trabalhosSubmetidos'=>$trabalhosSubmetidos,'trabalhosAvaliados'=>$trabalhosAvaliados, 'congresso' => $congresso, 'inscricoesTrabalho'=> $inscricoesTrabalho]);
-    }
-
-    public function adminCongresso()
+    //CONFIG CONGRESSO
+    public function configCongresso()
     {
         return view('admin-config-congresso');
     }
 
-    public function adminEixo()
+    public function configCongressoPost(ConferenceConfigRequest $request)
+    {
+        $congresso = $request->all();
+        $newCongresso = new ConferenceConfig();
+        $newCongresso->fill($congresso);
+        $newCongresso->admin_id = Auth::user()->id;
+        $newCongresso->save();  
+        return redirect('/admin/config/congresso')->with('mensagem','Informações salvas com sucesso.');   
+    }
+
+
+    //CONFIG EIXO
+    public function configEixo()
     {
         $eixos = AxisConfig::all();
         return view("admin-config-eixos", ["eixos"=>$eixos]);
     }
 
-    public function adminEixoSubmitPost(AxisConfigRequest $request){
+    public function configEixoPost(AxisConfigRequest $request){
         $eixo = $request->all();
         $novoEixo = new AxisConfig();
         $novoEixo->fill($eixo);
         $novoEixo->admin_id = Auth::user()->id;
         $novoEixo->save();
 
-        return redirect('/admin-config-eixos')->with('mensagem','Novo eixo salvo com sucesso.');
+        return redirect('/admin/config/eixos')->with('mensagem','Novo eixo salvo com sucesso.');
     }
 
-    public function adminConfigEixoDelete(AxisConfig $id){
+    public function eixoDelete(AxisConfig $id){
         $id -> delete();
-       return redirect('/admin-config-eixos')->with('mensagem','Eixo apagado!');        
+       return redirect('/admin/config/eixos')->with('mensagem','Eixo apagado!');        
     }
 
 
-    // INSCRITOS
-    public function adminConfigInscrito() {
+    //CONFIG INSCRITO
+    public function configInscrito() {
 
         $modals = AttendeeConfig::query()->paginate();
         return view('admin-config-inscrito', ["modals" => $modals]);
     }
 
-    public function adminConfigInscritoPost(AttendeeConfigRequest $request) {
+    public function configInscritoPost(AttendeeConfigRequest $request) {
 
         $postModal = $request->all();
         $newModal = new AttendeeConfig();
@@ -140,79 +155,21 @@ class AdminController extends Controller
         $newModal->admin_id = Auth::user()->id;
         $newModal->save();
 
-        return redirect('admin-config-inscrito');
+        return redirect('/admin/config/inscrito');
     }
 
-    public function adminConfigInscritoDelete(AttendeeConfig $id){
+    public function inscritoDelete(AttendeeConfig $id){
         $id -> delete();
-       return redirect('/admin-config-inscrito')->with('mensagem','Apagado!');        
+       return redirect('/admin/config/inscrito')->with('mensagem','Apagado!');        
     }
 
-    public function adminInscrito()
-    {
-        $totalInscritos = Registration::count();
-        $inscritos = DB::table('registrations')->simplePaginate(10);
-        return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
-    }
-
-    public function adminInscritoShowA($user_id)
-    {
-        $inscrito = Registration::where('user_id','=',$user_id)->first();
-        return view('admin-inscrito-visualizar',['user_id' => $user_id])->with(["inscrito" => $inscrito]);
-    }
-    
-    public function adminInscritoShowB($user_id)
-    {
-        $trabalhos = AbstractSubmission::leftJoin('registrations', 'abstract_submissions.registration_id', '=', 'registrations.user_id')
-                    ->leftJoin('axis_configs', 'abstract_submissions.axis_id', '=', 'axis_configs.id')
-                    ->leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
-                    ->leftJoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
-                    ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
-                    ->where('registrations.user_id', '=', $user_id)->simplePaginate(1);
-        
-        $inscrito = Registration::where('user_id','=',$user_id)->first();
-
-        return view('admin-inscrito-visualizar-trabalho',['user_id' => $user_id])->with(["trabalhos" => $trabalhos, "inscrito" => $inscrito]);
-    }
-
-    public function InscritoSearch(Request $request){
-        $totalInscritos = Registration::count();
-            $inscritos = DB::table('registrations')->simplePaginate(10);
-            
-    
-        $q = $request->input('q');
-        if($q != ""){
-            $registration = Registration::where('name', 'LIKE', '%' .$q. '%')
-                                            -> orWhere('email', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('register_modality', 'LIKE', '%' .$q. '%')
-                                            -> get();
-            if(count($registration) > 0);
-                return view ('admin-inscrito') -> withDetails($registration)->withQuery($q)->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);;
-        }else{
-            return view('admin-inscrito-search')->withMessage('Não encontrado');
-            // return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
-        };
-    }
-
-    //Congresso
-    public function adminCongressoPost(ConferenceConfigRequest $request)
-    {
-        $congresso = $request->all();
-        $newCongresso = new ConferenceConfig();
-        $newCongresso->fill($congresso);
-        $newCongresso->admin_id = Auth::user()->id;
-        $newCongresso->save();  
-        return redirect('admin-config-congresso')->with('mensagem','Informações salvas com sucesso.');   
-    }
-
-    //TRABALHOS
-
-    public function adminConfigTrabalho() {
+    //CONFIG TRABALHO
+    public function configModalidadeTrabalho() {
 
         $modals = AbstractConfig::query()->paginate();
         return view('admin-config-trabalho', ["modals" => $modals]);
     }
-    public function adminConfigTrabalhoPost(AbstractConfigRequest $request) {
+    public function configModalidadeTrabalhoPost(AbstractConfigRequest $request) {
 
         $modal = $request->all();
         $newModal = new AbstractConfig();
@@ -220,69 +177,23 @@ class AdminController extends Controller
         $newModal->admin_id = Auth::user()->id;
         $newModal->save();        
 
-        return redirect('admin-config-trabalho')->with('mensagem', 'Configurações de trabalho salvas com sucesso.');
+        return redirect('/admin/config/trabalho')->with('mensagem', 'Configurações de trabalho salvas com sucesso.');
     }
 
-    public function adminConfigTrabalhoDelete(AbstractConfig $id){
+    public function modalidadeTrabalhoDelete(AbstractConfig $id){
         $id -> delete();
-       return redirect('/admin-config-trabalho')->with('mensagem','Apagado!');        
-    }
-
-    public function adminTrabalho(){   
-        $totalTrabalhos = AbstractSubmission::count();
-        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
-        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
-    }
-
-    public function TrabalhoSearch(Request $request){
-        $totalTrabalhos = AbstractSubmission::count();
-        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
-        
-            
-        $q = $request->input('q');
-        if($q != ""){
-            $abstract = AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')
-                                            -> orWhere('abstract_body', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('first_keyword', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('second_keyword', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('third_keyword', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('author', 'LIKE', '%' .$q. '%')
-                                            -> get();
-            if(count($abstract) > 0);
-                return view ('admin-trabalho') -> withDetails($abstract)->withQuery($q)->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);;
-        }else{
-            return view('admin-trabalho-search')->withMessage('Não encontrado');
-        };
-        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
+       return redirect('/admin/config/trabalho')->with('mensagem','Modalidade de trabalho apagado.');        
     }
 
 
-    public function adminTrabalhoShowA($trabalho_id)
-    {
-        $trabalho = AbstractSubmission::leftJoin('registrations','registrations.user_id','=','abstract_submissions.registration_id')
-        ->leftJoin('abstract_evaluations','abstract_evaluations.submission_id','=','abstract_submissions.id')
-        ->leftJoin('referee_configs','referee_configs.user_id','=','abstract_evaluations.referee_id')
-        ->select('abstract_submissions.*','registrations.name AS author','registrations.register_modality','referee_configs.appraiser_name','abstract_evaluations.rate_work')
-        ->where('abstract_submissions.id','=',$trabalho_id)->first();
-        return view('admin-trabalho-visualizar')->with('trabalho', $trabalho)->with('trabalho_id', $trabalho_id);
-    }
-
-    public function adminTrabalhoDelete(AbstractSubmission $id){
-        $id -> delete();
-       return redirect('/admin-trabalho')->withMessage("trabalho apagado!");        
-    }
-    
-
-
-    //PARECERISTA
-    public function adminConfigParecerista()
+    //CONFIG PARECERISTA
+    public function configParecerista()
     {
         $eixos = AxisConfig::all();
         return view("admin-config-parecerista", ["eixos"=>$eixos]);
-        //return view('admin-config-parecerista');
     }
 
-    public function configPareceristaSubmitPost(RefereeConfigRequest $request){
+    public function configPareceristaPost(RefereeConfigRequest $request){
         
         $jaInscrito = Registration::where('cpf', '=', $request->appraiser_cpf)->first();
         $jaAdmin = Admin::where('cpf', '=', $request->appraiser_cpf)->first();
@@ -343,59 +254,145 @@ class AdminController extends Controller
                 }
             }
         }
-        return redirect('/admin-config-parecerista')->with('mensagem','Novo parecerista salvo com sucesso.');
+        return redirect('/admin/config/parecerista')->with('mensagem','Novo parecerista salvo com sucesso.');
 
 
     }
 
-    public function adminParecerista()
+    
+
+    //VER INSCRITOS
+    public function listarInscrito()
+    {
+        $totalInscritos = Registration::count();
+        $inscritos = DB::table('registrations')->simplePaginate(10);
+        return view('admin-inscrito', ['totalInscritos' => $totalInscritos, 'inscritos' => $inscritos]);
+    }
+
+    public function listarInscritoInfo($user_id)
+    {
+        $inscrito = Registration::where('user_id','=',$user_id)->first();
+        return view('admin-inscrito-visualizar',['user_id' => $user_id, "inscrito" => $inscrito]);
+    }
+    
+    public function listarInscritoTrabalho($user_id)
+    {
+        $trabalhos = AbstractSubmission::leftJoin('registrations', 'abstract_submissions.registration_id', '=', 'registrations.user_id')
+                    ->leftJoin('axis_configs', 'abstract_submissions.axis_id', '=', 'axis_configs.id')
+                    ->leftJoin('attendee_configs', 'registrations.register_modality', '=', 'attendee_configs.id')
+                    ->leftJoin('abstract_evaluations', 'abstract_evaluations.submission_id', '=', 'abstract_submissions.id')
+                    ->select('abstract_submissions.*','registrations.name','registrations.register_modality', 'axis_configs.axis', 'attendee_configs.register_modality','abstract_evaluations.rate_work')
+                    ->where('registrations.user_id', '=', $user_id)->simplePaginate(1);
+        
+        $inscrito = Registration::where('user_id','=',$user_id)->first();
+
+        return view('admin-inscrito-visualizar-trabalho',['user_id' => $user_id, "trabalhos" => $trabalhos, "inscrito" => $inscrito]);
+    }
+
+    public function InscritoSearch(Request $request){
+        $totalInscritos = Registration::count();
+            $inscritos = DB::table('registrations')->simplePaginate(10);
+            
+    
+        $q = $request->input('q');
+        if($q != ""){
+            $registration = Registration::where('name', 'LIKE', '%' .$q. '%')
+                                            -> orWhere('email', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('register_modality', 'LIKE', '%' .$q. '%')
+                                            -> get();
+            if(count($registration) > 0);
+                return view ('admin-inscrito') -> withDetails($registration)->withQuery($q)->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
+        }else{
+            return view('admin-inscrito-search')->withMessage('Não encontrado');
+            // return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
+        };
+    }
+
+
+
+    //VER TRABALHOS
+
+    public function listarTrabalho(){   
+        $totalTrabalhos = AbstractSubmission::count();
+        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
+        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
+    }
+
+    public function trabalhoSearch(Request $request){
+        $totalTrabalhos = AbstractSubmission::count();
+        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
+        
+            
+        $q = $request->input('q');
+        if($q != ""){
+            $abstract = AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')
+                                            -> orWhere('abstract_body', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('first_keyword', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('second_keyword', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('third_keyword', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('author', 'LIKE', '%' .$q. '%')
+                                            -> get();
+            if(count($abstract) > 0);
+                return view ('admin-trabalho') -> withDetails($abstract)->withQuery($q)->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);;
+        }else{
+            return view('admin-trabalho-search')->withMessage('Não encontrado');
+        };
+        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
+    }
+
+
+    public function visualizarTrabalho($trabalho_id)
+    {
+        $trabalho = AbstractSubmission::leftJoin('registrations','registrations.user_id','=','abstract_submissions.registration_id')
+        ->leftJoin('abstract_evaluations','abstract_evaluations.submission_id','=','abstract_submissions.id')
+        ->leftJoin('referee_configs','referee_configs.user_id','=','abstract_evaluations.referee_id')
+        ->select('abstract_submissions.*','registrations.name AS author','registrations.register_modality','referee_configs.appraiser_name','abstract_evaluations.rate_work')
+        ->where('abstract_submissions.id','=',$trabalho_id)->first();
+        return view('admin-trabalho-visualizar')->with('trabalho', $trabalho)->with('trabalho_id', $trabalho_id);
+    }
+
+    public function trabalhoDelete(AbstractSubmission $id){
+        $id -> delete();
+       return redirect('/admin/trabalho')->withMessage("trabalho apagado!");        
+    }
+    
+
+
+
+    // VER PARECERISTA
+ 
+    public function listarParecerista()
     {
         $totalPareceristas = Registration::count();
         $pareceristas = DB::table('referee_configs')->simplePaginate(10);
-        return view('admin-parecerista')->with('totalPareceristas', $totalPareceristas)->with('pareceristas', $pareceristas);
+        return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'pareceristas' => $pareceristas]);
     }
     public function adminPareceristaPost()
     {
         return view('admin-parecerista');
     }
-    public function adminPareceristaShowA($parecerista_id)
+    public function pareceristaTrabalhosPendentes($parecerista_id)
     {
         $parecerista = RefereeConfig::where('user_id','=',$parecerista_id)->first();
 
         $eixosParecerista = AxisReferee::leftJoin('axis_configs','axis_configs.id','=','axis_referees.axis_id')
         ->where('axis_referees.referee_id','=',$parecerista_id)->get();
 
-        return view('admin-parecerista-visualizar')->with(['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
+        return view('admin-parecerista-visualizar', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
     }
-    public function adminPareceristaShowB($parecerista_id)
+    public function pareceristaTrabalhosAvaliados($parecerista_id)
     {
         $parecerista = RefereeConfig::where('user_id','=',$parecerista_id)->first();
         
         $eixosParecerista = AxisReferee::leftJoin('axis_configs','axis_configs.id','=','axis_referees.axis_id')
         ->where('axis_referees.referee_id','=',$parecerista_id)->get();
 
-        return view('admin-parecerista-visualizar-detalhe')->with(['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
+        return view('admin-parecerista-visualizar-detalhe', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
     }
 
 
-    public function adminPareceristaSubstituir()
+    public function pareceristaSubstituir()
     {
         return view('admin-parecerista-substituir');
-    }
-
-
-
-
-
-
-
-
-    public function adminInscritoSubmitPost(Request $request)
-    {
-        $dados = $request->all();
-        $novaModalidade = new AttendeeConfig();
-        $novaModalidade->fill($dados);
-        $novaModalidade->save();
-        return "Dados salvo com sucesso";
     }
 }

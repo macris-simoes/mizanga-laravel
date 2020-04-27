@@ -1,95 +1,109 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/home', 'HomeController@index');
 Route::get('/inscricao-usuario', 'InscricaoController@inscricaoIndex');
 Route::post('/inscricao-usuario', 'InscricaoController@inscricaoSubmitPost');
-Route::get('/instrucoes-inscricao', 'InscricaoController@inscricaoInstrucao');
+
 
 //-----------CONTATO------------
 Route::get('/contato', 'ContatoController@contatoIndex');
 
-//-----------LINKS------------
+//-----------INFO-LINKS------------
 Route::get('/criterios-trabalho', 'LinksController@criteriosTrabalho');
 Route::get('/instrucao-avaliadores', 'LinksController@instrucaoAvaliadores');
+Route::get('/instrucoes-inscricao', 'InscricaoController@inscricaoInstrucao');
 
 //----------LOGIN--------------
 Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/login', 'LoginController@authenticate');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
-//------------INSCRITO------------
 Route::middleware(['auth'])->group(function () {
+
+    //------------INSCRITO------------
     Route::prefix('inscrito')->group((function () {
         Route::get('/', 'InscritoController@home')->name('inscrito.home');
         Route::get('/certificados', 'InscritoController@certificados')->name('inscrito.certificados');
-        Route::prefix('trabalho')->group(function () {
-            Route::get('/enviar', 'InscritoController@enviar')->name('trabalho.enviar');
-            Route::post('/enviar', 'InscritoController@enviarPost')->name('trabalho.enviarpost');
-            Route::get('/cadastrados', 'InscritoController@enviados')->name('trabalho.enviados');
-        });
+            Route::prefix('trabalho')->group(function () {
+                Route::get('/enviar', 'InscritoController@enviar')->name('trabalho.enviar');
+                Route::post('/enviar', 'InscritoController@enviarPost')->name('trabalho.enviarpost');
+                Route::get('/cadastrados', 'InscritoController@enviados')->name('trabalho.enviados');
+            });
     }));
-});
 
 
-//--------Parecerista----------
-
-route::prefix('parecerista')->group(function () {
-    Route::get('/', 'PareceristaController@home')->name('parecerista.home');
-    Route::prefix('trabalho')->group(function () {
-        Route::get('/avaliar/{submission_id}', 'PareceristaController@avaliar')->name('parecerista.avaliar');
-        Route::post('/avaliar/{submission_id}', 'PareceristaController@avaliarPost')->name('parecerista.avaliarpost');
+    //--------PARECERISTA----------
+    Route::prefix('parecerista')->group(function () {
+        Route::get('/', 'PareceristaController@home')->name('parecerista.home');
+            Route::prefix('trabalho')->group(function () {
+                Route::get('/avaliar/{submission_id}', 'PareceristaController@avaliar')->name('parecerista.avaliar');
+                Route::post('/avaliar/{submission_id}', 'PareceristaController@avaliarPost')->name('parecerista.avaliarpost');
+            });
     });
+
+    //--------ADMINISTRADOR----------
+    Route::prefix('admin')->group(function() {
+        Route::get('/', 'AdminController@home');
+        Route::get('/cadastro', 'AdminController@cadastro');
+        Route::post('/cadastro', 'AdminController@cadastroPost');
+
+        //--------CONGRESSO CONFIG----------
+        Route::prefix('config')->group(function(){
+            Route::get('/congresso', 'AdminController@configCongresso');
+            Route::post('/congresso', 'AdminController@configCongressoPost');
+            Route::get('/eixos', 'AdminController@configEixo');
+            Route::post('/eixos', 'AdminController@configEixoPost');
+            Route::post('/eixos/{id}','AdminController@eixoDelete');
+            Route::get('/inscrito', 'AdminController@configInscrito');
+            Route::post('/inscrito', 'AdminController@configInscritoPost');
+            Route::post('/inscrito/{id}','AdminController@inscritoDelete');
+            Route::get('/trabalho', 'AdminController@configModalidadeTrabalho');
+            Route::post('/trabalho', 'AdminController@configModalidadeTrabalhoPostt');
+            Route::post('/trabalho/{id}','AdminController@modalidadeTrabalhoDelete');
+            Route::get('/parecerista', 'AdminController@configParecerista');
+            Route::post('/parecerista', 'AdminController@configPareceristaPost');
+
+        });
+
+        //--------ADMIN-INSCRITO----------
+        Route::prefix('inscrito')->group(function() {
+            Route::get('/', 'AdminController@listarInscrito');
+            Route::post('/', 'AdminController@InscritoSearch');
+            Route::get('/visualizar/{id}', 'AdminController@listarInscritoInfo');
+            Route::get('/visualizar-trabalho/{id}', 'AdminController@listarInscritoTrabalho');
+        });
+
+
+        //--------ADMIN-TRABALHOS----------
+        Route::prefix('trabalho')->group(function(){
+            Route::get('/', 'AdminController@listarTrabalho');
+            Route::post('/', 'AdminController@trabalhoSearch');
+            Route::get('/visualizar/{id}', 'AdminController@visualizarTrabalho');
+            Route::post('/visualizar/{id}','AdminController@trabalhoDelete');
+        });
+
+
+        //--------ADMIN-PARECERISTA----------
+        Route::prefix('parecerista')->group(function(){
+            Route::get('/', 'AdminController@listarParecerista');
+            Route::post('/', 'AdminController@adminPareceristaPost'); //SEARCH?
+            Route::get('/visualizar/{user_id}', 'AdminController@pareceristaTrabalhosPendentes');
+            Route::get('/visualizar-detalhe/{user_id}', 'AdminController@pareceristaTrabalhosAvaliados');
+            Route::get('/substituir', 'AdminController@pareceristaSubstituir');
+        });
+
+    
+    });
+
 });
 
 
-//----------ADMIN CONFIG CONGRESSO-------------
-Route::get('/admin', 'AdminController@adminHome');
-Route::get('/admin-config-congresso', 'AdminController@adminCongresso');
-Route::post('/admin-config-congresso', 'AdminController@adminCongressoPost');
-Route::get('/admin-config-eixos', 'AdminController@adminEixo');
-Route::post('/admin-config-eixos', 'AdminController@adminEixoSubmitPost');
-
-//----------ADMIN CONFIG PARECERISTA -------------
-Route::get('/admin-config-parecerista', 'AdminController@adminConfigParecerista');
-Route::post('/admin-config-parecerista', 'AdminController@configPareceristaSubmitPost');
-Route::get('/admin-parecerista', 'AdminController@adminParecerista');
-Route::post('/admin-parecerista', 'AdminController@adminPareceristaPost');
-Route::get('/admin-parecerista-visualizar/{user_id}', 'AdminController@adminPareceristaShowA');
-Route::get('/admin-parecerista-visualizar-detalhe/{user_id}', 'AdminController@adminPareceristaShowB');
-Route::get('/admin-parecerista-substituir', 'AdminController@adminPareceristaSubstituir');
-
-
-//----------ADMIN CONFIG INSCRITO-------------
-Route::get('/admin-config-inscrito', 'AdminController@adminConfigInscrito');
-Route::post('/admin-config-inscrito', 'AdminController@adminConfigInscritoPost');
-Route::get('/admin-inscrito', 'AdminController@adminInscrito');
-Route::get('/admin-inscrito-visualizar/{id}', 'AdminController@adminInscritoShowA');
-Route::get('/admin-inscrito-visualizar-trabalho/{id}', 'AdminController@adminInscritoShowB');
-Route::post('/admin-inscrito', 'AdminController@InscritoSearch');
-
-
-//----------ADMIN CONFIG TRABALHO GET-------------
-Route::get('/admin-config-trabalho', 'AdminController@adminConfigTrabalho');
-Route::post('/admin-config-trabalho', 'AdminController@adminConfigTrabalhoPost');
-Route::get('/admin-trabalho', 'AdminController@adminTrabalho');
-Route::get('/admin-trabalho-visualizar/{id}', 'AdminController@adminTrabalhoShowA');
-Route::post('/admin-trabalho', 'AdminController@TrabalhoSearch');
-Route::post('/admin-trabalho-visualizar/{id}','AdminController@adminTrabalhoDelete');
-
-//----------ADMIN POST-------------
-Route::post('/admin', 'AdminController@adminInscritoSubmitPost');
-Route::post('/admin-config-eixos/{id}','AdminController@adminConfigEixoDelete');
-Route::post('/admin-config-inscrito/{id}','AdminController@adminConfigInscritoDelete');
-Route::post('/admin-config-trabalho/{id}','AdminController@adminConfigTrabalhoDelete');
 
 
 
 
-
-
-Route::post('/admin-cadastro', 'AdminController@cadastroAdminSubmitPost');
-Route::get('/admin-cadastro', 'AdminController@cadastroAdmin');
 
