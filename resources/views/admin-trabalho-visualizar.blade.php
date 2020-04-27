@@ -13,7 +13,7 @@
                     <h5 class="card-title">{{$trabalho->author}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$trabalho->register_modality}}</h6>
                 </div>
-                <a href="/admin-trabalho" class="">  <span class="material-icons"> close </span> </a>
+                <a href="/admin/trabalho" class="">  <span class="material-icons"> close </span> </a>
             </div>
 
             {{-- início da tabs do ADMIN READ Trabalhos --}}
@@ -21,7 +21,7 @@
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin-trabalho-visualizar/{{$trabalho_id}}">Detalhes do Trabalho</a>
+                        <a class="nav-link active" href="/admin/trabalho/visualizar/{{$trabalho_id}}">Detalhes do Trabalho</a>
                     </li>
                 </ul>
             </div>
@@ -67,8 +67,8 @@
                 
                     {{-- buttons --}}
                     <div class="my-4 d-flex flex-row justify-content-between">
-                        <a href="/admin-trabalho" class=""> Voltar </a>
-                        <form action="/admin-trabalho-visualizar/{{ $trabalho['id']}}" method="post">
+                        <a href="/admin/trabalho" class=""> Voltar </a>
+                        <form action="/admin/trabalho/visualizar/{{ $trabalho['id']}}" method="post">
                             @csrf
                             <input hidden value="{{$trabalho}} " >
                             <button class="btn btn-warning ml-2 " type="submit">

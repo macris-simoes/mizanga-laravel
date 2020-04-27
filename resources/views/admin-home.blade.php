@@ -6,19 +6,7 @@
 <!-- início div container -->
 <div class="container">
   <!-- Início do menu das tabs -->
-  <nav>
-    <div class="nav nav-pills" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link active" href="/admin">Início</a>
-
-      <a class="nav-item nav-link font-weight-bolder" href="/admin-config-congresso">Congresso</a>
-
-      <a class="nav-item nav-link" href="/admin-inscrito">Inscritos</a>
-
-      <a class="nav-item nav-link" href="/admin-trabalho">Trabalhos</a>
-
-      <a class="nav-item nav-link" href="/admin-parecerista">Pareceristas</a>
-    </div>
-  </nav>
+ @include('includes.admin-congresso-pills')
   <!-- fim do menu das tabs -->
   <!-- fim da div container -->
 </div>

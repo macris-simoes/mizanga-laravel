@@ -14,15 +14,15 @@
                     <h5 class="card-title">{{$inscrito->name}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$inscrito->register_modality}}</h6>
                 </div>
-                    <a href="/admin-inscrito"> <span class="material-icons"> close </span> </a>
+                    <a href="/admin/inscrito"> <span class="material-icons"> close </span> </a>
             </div>
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin-inscrito-visualizar/{{$user_id}}">Detalhes da inscrição</a>
+                        <a class="nav-link active" href="/admin/inscrito/visualizar/{{$user_id}}">Detalhes da inscrição</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/admin-inscrito-visualizar-trabalho/{{$user_id}}">Trabalhos inscritos</a>
+                        <a class="nav-link " href="/admin/inscrito/visualizar-trabalho/{{$user_id}}">Trabalhos inscritos</a>
                     </li>
                 </ul>
             </div>

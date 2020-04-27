@@ -39,7 +39,7 @@
             <h5>Dados pessoais</h5>
             <div class="row">
             <p class="col-lg-7"><strong>Nome:</strong> {{ $inscrito['name']}} </p>
-            <p class="col-lg-5"><strong>Data de nascimento:</strong> {{ $inscrito['birth_date']}} </p>  
+            <p class="col-lg-5"><strong>Data de nascimento:</strong> {{date('d/m/Y', strtotime($inscrito->birth_date))}} </p>  
             </div>
             <div class="row">
             <p class="col-lg-7"><strong>CPF:</strong> {{ $inscrito['cpf']}}</p>
