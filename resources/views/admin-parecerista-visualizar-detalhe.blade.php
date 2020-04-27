@@ -7,7 +7,7 @@
 <div class="container mt-3 col-md-10 shadow">
     <div class="card m-3 border-0">
         <div class="card-body">
-            <a href="/admin-parecerista">Voltar</a>
+            <a href="/admin/parecerista">Voltar</a>
             <h5 class="card-title">{{$parecerista->appraiser_name}}</h5>
             <h6 class="card-subtitle mt-4 mb-2">Eixos definidos para este parecerista</h6>
             <div>
@@ -23,10 +23,10 @@
             <div>
                 <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link " href="/admin-parecerista-visualizar/{{$parecerista_id}}">Trabalhos para avaliar</a>
+                        <a class="nav-link " href="/admin/parecerista/visualizar/{{$parecerista_id}}">Trabalhos para avaliar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin-parecerista-visualizar-detalhe/{{$parecerista_id}}">Trabalhos já avaliados</a>
+                        <a class="nav-link active" href="/admin/parecerista/visualizar-detalhe/{{$parecerista_id}}">Trabalhos já avaliados</a>
                     </li>
                 </ul>
             </div>

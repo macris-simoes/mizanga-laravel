@@ -5,7 +5,7 @@
 
     <div class="list-group col-md-10 my-3">
         @foreach($details as $trabalho)
-        <a href="/admin-trabalho-visualizar/{{$trabalho->id}}" class="list-group-item list-group-item-action">
+        <a href="/admin/trabalho/visualizar/{{$trabalho->id}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{$trabalho->abstract_title}}</h5>
                 <small>há 15 dia(s)</small>
@@ -36,7 +36,7 @@
         <div class="col-lg-9 m-5">
             <h1 class="display-6">Sua busca não retornou resultados</h1>
             <p> Não encontrado </p>
-            <a href="/admin-trabalho">Voltar para a busca</a>
+            <a href="/admin/trabalho">Voltar para a busca</a>
         </div>
 
 

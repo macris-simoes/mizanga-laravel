@@ -5,7 +5,7 @@
 
     <div class="list-group col-md-10 my-3">
         @foreach($details as $inscrito)
-        <a href="/admin-inscrito-visualizar/{{$inscrito->user_id}}" class="list-group-item list-group-item-action">
+        <a href="/admin/inscrito/visualizar/{{$inscrito->user_id}}" class="list-group-item list-group-item-action">
             <div class=" d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{$inscrito->name}}</h5>
             </div>
@@ -31,7 +31,7 @@
         <div class="col-lg-9 m-5">
             <h1 class="display-6">Sua busca não retornou resultados</h1>
             
-            <a href="/admin-inscrito">Voltar para a busca</a>
+            <a href="/admin/inscrito">Voltar para a busca</a>
         </div>
         
         

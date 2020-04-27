@@ -6,7 +6,7 @@
 {{-- ---------------------------------------------------------------------------- --}}
 
 <div class="container shadow rounded mt-3 p-4">
-  <a href="/admin-parecerista-visualizar"> Voltar </a>
+  <a href="/admin/parecerista/visualizar"> Voltar </a>
   <h4 class="display-4">Enviar trabalho para outro avaliador</h4>
 
   <h6 class="mt-3">Avaliador de destino</h6>
@@ -29,7 +29,7 @@
 
   <div class="d-flex flex-column col-1 p-0">
     <button type="submit" class="btn btn-primary my-2">Enviar</button>
-    <a href="/admin-parecerista-visualizar" class="font-weigth-bold">Voltar </a>
+    <a href="/admin/parecerista/visualizar" class="font-weigth-bold">Voltar </a>
   </div>
 </div>
 
