@@ -3,8 +3,10 @@
 @include('includes/admin-config-congresso-tabs')
 
 <!-- início div container -->
+@if(session('mensagem'))
+  <div class="alert alert-success container">{{session('mensagem')}}</div>
+@endif
 <div class="container shadow mb-3 pb-4">
-  
   <!-- início Cabeçalho1 -->
   <div>
     <h1 class="display-3">Inscritos</h1>
@@ -25,7 +27,7 @@
             {{$modal['register_modality']}}
           </div>
           <div>
-            <form action="/admin-config-inscrito/{{ $modal['id']}}" method="post">
+            <form action="/admin/config/inscrito/{{ $modal['id']}}" method="post">
               @csrf
               <input hidden value="{{ $modal }}" >
               <button class="btn btn-sm btn-primary ml-2 " type="submit" >

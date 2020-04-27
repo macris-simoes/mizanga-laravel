@@ -45,7 +45,7 @@
                         <p class="">{{ $eixo['axis'] }}</p>
                     </div>
                     <div class="">
-                        <form action="/admin-config-eixos/{{ $eixo['id']}}" method="post">
+                        <form action="/admin/config/eixos/{{ $eixo['id']}}" method="post">
                             @csrf
                             <input hidden value="{{ $eixo }}" >
                             <button class="btn btn-primary ml-2 " type="submit" >

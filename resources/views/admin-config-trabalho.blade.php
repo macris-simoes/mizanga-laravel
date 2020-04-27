@@ -6,11 +6,11 @@
 {{-- fim da tabs do ADMIN CONFIG TRABALHO --}}
 
 <!-- início div container -->
+@if(session('mensagem'))
+  <div class="alert alert-success container">{{session('mensagem')}}</div>
+@endif
 <div class="container shadow">
 
-  @if(session('mensagem'))
-    <div class="alert alert-success container">{{session('mensagem')}}</div>
-@endif
   <!-- início Cabeçalho -->
   <div class="mb-1 pt-1">
     <h1 class="display-3">Trabalhos</h1>
@@ -31,7 +31,7 @@
           {{$modal['work_modality']}}
         </div>
         <div>
-          <form action="/admin-config-trabalho/{{ $modal['id']}}" method="post">
+          <form action="/admin/config/trabalho/{{ $modal['id']}}" method="post">
             @csrf
             <input hidden value="{{ $modal }}" >
             <button class="btn btn-sm btn-primary ml-2 " type="submit" >

@@ -160,7 +160,7 @@ class AdminController extends Controller
 
     public function inscritoDelete(AttendeeConfig $id){
         $id -> delete();
-       return redirect('/admin/config/inscrito')->with('mensagem','Apagado!');        
+       return redirect('/admin/config/inscrito')->with('mensagem','Modalidade de inscrição apagada.');        
     }
 
     //CONFIG TRABALHO
