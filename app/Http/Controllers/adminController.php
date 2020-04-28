@@ -265,7 +265,7 @@ class AdminController extends Controller
     public function listarInscrito()
     {
         $totalInscritos = Registration::count();
-        $inscritos = DB::table('registrations')->simplePaginate(10);
+        $inscritos = DB::table('registrations')->orderBy('name','asc')->simplePaginate(10);
         return view('admin-inscrito', ['totalInscritos' => $totalInscritos, 'inscritos' => $inscritos]);
     }
 
@@ -314,7 +314,7 @@ class AdminController extends Controller
 
     public function listarTrabalho(){   
         $totalTrabalhos = AbstractSubmission::count();
-        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
+        $trabalhos = DB::table('abstract_submissions')->orderBy('abstract_title','asc')->simplePaginate(10);
         return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
     }
 
@@ -364,7 +364,7 @@ class AdminController extends Controller
     public function listarParecerista()
     {
         $totalPareceristas = Registration::count();
-        $pareceristas = DB::table('referee_configs')->simplePaginate(10);
+        $pareceristas = DB::table('referee_configs')->orderBy('appraiser_name','asc')->simplePaginate(10);
         return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'pareceristas' => $pareceristas]);
     }
     public function adminPareceristaPost()
