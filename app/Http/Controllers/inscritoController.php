@@ -15,6 +15,7 @@ class inscritoController extends Controller
 {
     public function home() {
         $user_id = Auth::user()->id;
+        $end_date = 
         $inscrito = Registration::leftjoin('users', 'users.id', '=', 'registrations.user_id')
                     ->where('registrations.user_id', '=', $user_id)->first();
         return view('inscrito-home', ['inscrito' => $inscrito]);

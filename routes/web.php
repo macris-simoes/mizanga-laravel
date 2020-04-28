@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/home', 'HomeController@index');
 Route::get('/inscricao-usuario', 'InscricaoController@inscricaoIndex');
 Route::post('/inscricao-usuario', 'InscricaoController@inscricaoSubmitPost');
+Route::get('/cadastro', 'AdminController@cadastro');
+Route::post('/cadastro', 'AdminController@cadastroPost');
 
 
 //-----------CONTATO------------
@@ -48,8 +50,6 @@ Route::middleware(['auth'])->group(function () {
     //--------ADMINISTRADOR----------
     Route::prefix('admin')->group(function() {
         Route::get('/', 'AdminController@home');
-        Route::get('/cadastro', 'AdminController@cadastro');
-        Route::post('/cadastro', 'AdminController@cadastroPost');
 
         //--------CONGRESSO CONFIG----------
         Route::prefix('config')->group(function(){
