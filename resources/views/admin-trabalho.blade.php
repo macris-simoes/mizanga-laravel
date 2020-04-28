@@ -74,6 +74,7 @@
             </div>
         </a>
         @endforeach
+        {{ $trabalhos->links()}}
         
     </div>
     @else
