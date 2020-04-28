@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/home', 'HomeController@index');
 Route::get('/inscricao-usuario', 'InscricaoController@inscricaoIndex');
 Route::post('/inscricao-usuario', 'InscricaoController@inscricaoSubmitPost');
-Route::get('/cadastro', 'AdminController@cadastro');
-Route::post('/cadastro', 'AdminController@cadastroPost');
+Route::get('/admin-cadastro', 'AdminController@cadastro');
+Route::post('/admin-cadastro', 'AdminController@cadastroPost');
 
 
 //-----------CONTATO------------

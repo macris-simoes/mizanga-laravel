@@ -94,7 +94,7 @@ class AdminController extends Controller
 
         $novoAdmin->save();
 
-        return redirect('/admin/cadastro')->with('mensagem','Novo cadastro de ADMIN feito com sucesso.');
+        return redirect('/admin-cadastro')->with('mensagem','Novo cadastro de ADMIN feito com sucesso.');
 
     }
 
