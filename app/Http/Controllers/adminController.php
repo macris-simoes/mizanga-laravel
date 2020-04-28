@@ -363,7 +363,7 @@ class AdminController extends Controller
  
     public function listarParecerista()
     {
-        $totalPareceristas = Registration::count();
+        $totalPareceristas = RefereeConfig::count();
         $pareceristas = DB::table('referee_configs')->orderBy('appraiser_name','asc')->simplePaginate(10);
         return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'pareceristas' => $pareceristas]);
     }
