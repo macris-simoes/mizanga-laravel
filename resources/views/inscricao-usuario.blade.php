@@ -152,7 +152,7 @@
                 </div>
             </div>
 
-            <div class="my-3">
+            <div class="my-3" id="pais_residencia" onchange="exibir_ocultar(event)">
                 <h5>Endereço</h5>
                 <div class="form-row">
                     <div class="form-group col-md-2 mb-0"> 
@@ -171,13 +171,13 @@
                         <div class="text-danger">{{ $message }}</div>
                 @enderror
                 
-                <div class="form-row">                    
+                <div class="form-row" id="cidade">                    
                     <div class="form-group col-md-6">
                         <label for="city">Município*</label>
                         <input type="text" class="form-control" id="city" name="city" placeholder="Município" value="{{ old('city') }}">
                         
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6" id="estado">
                         <label for="uf">UF*</label>
                         <select class="form-control" name="uf" id="uf">
                             <option selected disabled>Escolha...</option>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
 
-                <div class="form-row">
+                <div class="form-row" id="pais">
                     <div class="form-group col-md-6">
                         <label for="country">País*</label>
                         <input type="text" class="form-control" id="country" name="country" placeholder="País" value="{{ old('country') }}">
@@ -328,5 +328,7 @@
         </form>
 
     </div>
+
+    <script src="/js/inscricao-usuario-endereco.js"></script>
 
 @endsection
