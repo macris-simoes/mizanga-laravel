@@ -7,14 +7,16 @@
             <li class="nav-item">
                 <a class="nav-link active " href="/inscrito">Informações</a>
             </li>
+            @if(date('Y-m-d') > $end_date->event_end_date)
             <li class="nav-item">
-                <a class="nav-link " href="/inscrito/certificados">Certificados</a>
+                <a class="nav-link " href="/inscrito/certificados">Certificados </a>
+            </li>
+            @endif
+            <li class="nav-item">
+            <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/inscrito/trabalho/cadastrados">Trabalhos cadastrados</a>
+            <a class="nav-link " href="/inscrito/trabalho/cadastrados">Trabalhos cadastrados</a>
             </li>
         </ul>
     </div>
