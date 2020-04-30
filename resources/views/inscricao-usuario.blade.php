@@ -15,13 +15,13 @@
         <form id="inscricao-usuario" name="inscricao-usuario" method="post" enctype="multipart/form-data">
             @csrf
             <div class="my-3">
-                <div class="form-row">
+                <div class="form-row" onchange="ocultar(event)">
                     <div class="form-group col-md-6">
                         <label for="register_modality">Modalidade*</label>
                         <select class="form-control" name="register_modality" id="register_modality">
                             <option selected disabled>Escolha...</option>
                             @foreach ($modalidades as $modalidade)                                
-                            <option value="{{$modalidade->register_modality}}">{{$modalidade->register_modality}}</option>
+                            <option  data-comprovante="{{$modalidade->attach_receipt}}" value="{{$modalidade->register_modality}}">{{$modalidade->register_modality}}</option>
                             @endforeach
                         </select>
                         @error('register_modality')
@@ -29,7 +29,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row" id="comprovante">
                     <div class="form-group col-md-6">
                         <label for="compMatricula" class="align-self-center mr-2">Comprovante de matrícula</label>
                         <div class="custom-file mb-4">
@@ -330,5 +330,6 @@
     </div>
 
     <script src="/js/inscricao-usuario-endereco.js"></script>
+    <script src="/js/inscricao-usuario-comprovante.js"></script>
 
 @endsection
