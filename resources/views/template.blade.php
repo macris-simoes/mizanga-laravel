@@ -57,13 +57,13 @@
                     <!-- parte de fora -->
                     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" class="rounded-circle"
+                        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true" class="rounded-circle"
                             height="45px">
                     </button>
                     <!-- parte de dentro (dropdown) -->
                     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
                         <div>
-                            <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}"
+                            <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true"
                                  height="45px" class="mx-auto d-block rounded-circle" alt="...">
                                 <div class="card-body ">
                                     <h5 class="card-title text-center">Seus Dados</h5>
@@ -128,12 +128,12 @@
                     <!-- parte de fora -->
                     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" class="rounded-circle" height="45px">
+                        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true" class="rounded-circle" height="45px">
                     </button>
                     <!-- parte de dentro (dropdown) -->
                     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
                         <div>
-                            <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}"
+                            <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true"
                                 height="45px" class="mx-auto d-block rounded-circle" alt="...">
                                 <div class="card-body ">
                                     <h5 class="card-title text-center">Seus Dados</h5>

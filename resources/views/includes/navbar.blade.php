@@ -6,12 +6,12 @@
   <div class="dropdown d-lg-none d-xl-none mr-1">
     <!-- parte de fora -->
     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-      <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" width="40px" height="40px">
+      <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true" width="40px" height="40px">
     </button>
     <!-- parte de dentro (dropdown) -->
     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
       <div>
-        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" height="45px" class="card-img-center rounded-circle" alt="...">
+        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true" height="45px" class="card-img-center rounded-circle" alt="...">
         <div class="card-body ">
           <h5 class="card-title">Seus Dados</h5>
           <p class="card-text">Nome Sobrenome</p>
@@ -50,7 +50,7 @@
   <div class="dropdown d-none d-lg-block d-xl-block">
     <!-- parte de fora -->
     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-      <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" class="rounded-circle" height="45px">
+      <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}&bold=true" class="rounded-circle" height="45px">
     </button>
     <!-- parte de dentro (dropdown) -->
     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
