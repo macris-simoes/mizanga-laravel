@@ -9,8 +9,9 @@ use App\AbstractSubmission;
 use App\ConferenceConfig;
 use App\Http\Requests\AbstractSubmissionsRequest;
 use App\Registration;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Validator;
 
 class inscritoController extends Controller
 {
@@ -21,6 +22,37 @@ class inscritoController extends Controller
                     ->where('registrations.user_id', '=', $user_id)->first();
         return view('inscrito-home', ['inscrito' => $inscrito, 'end_date' => $end_date]);
     }
+
+    public function infoUpdate(Request $request) {
+
+        $rules = array(
+            'email' => 'required|email:rfc,dns', 
+            'confirmEmail' => 'email:rfc,dns|same:email'
+        );
+        $error = Validator::make($request->all(), $rules);
+        
+        if($error->fails()) {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+
+        $user_id = Auth::user()->id;
+        
+        $inscrito = Registration::select('registrations.home_phone','registrations.work_phone', 'registrations.mobile_phone', 'registrations.email')->first()
+                ->leftjoin('users', 'users.id', '=', 'registrations.user_id')
+                ->where('registrations.user_id', '=', $user_id)->first(); 
+
+            $update = array (
+                'home_phone' => $request->home_phone,
+                'work_phone' => $request->work_phone,
+                'mobile_phone' => $request->mobile_phone,
+                'email' => $request->email,
+            );
+
+            $inscrito->update($update);
+            echo $inscrito;
+            return;
+    }
+
     public function certificados() {
         return view('inscrito-certificados');
     }

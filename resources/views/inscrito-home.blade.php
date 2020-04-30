@@ -12,6 +12,7 @@
                 <a class="nav-link " href="/inscrito/certificados">Certificados </a>
             </li>
             @endif
+            
             <li class="nav-item">
             <a class="nav-link" href="/inscrito/trabalho/enviar">Enviar trabalho</a>
             </li>
@@ -59,20 +60,64 @@
         <div class="my-3">
             <h5>Dados de contato</h5>
             <div class="row">
-                <p class="col-lg-4"><strong>Telefone residencial:</strong> {{ $inscrito['home_phone']}}</p>
-                <p class="col-lg-4"><strong>Telefone profissional:</strong> {{ $inscrito['work_phone']}}</p>
-                <p class="col-lg-4"><strong>Telefone celular:</strong> {{ $inscrito['mobile_phone']}}</p>
+                <p class="col-lg-4" ><strong>Telefone residencial:</strong><span class="homePhone"> {{ $inscrito['home_phone']}}</span></p>
+                <p class="col-lg-4" ><strong>Telefone profissional:</strong><span class="workPhone"> {{ $inscrito['work_phone']}}</span></p>
+                <p class="col-lg-4" ><strong>Telefone celular:</strong><span class="mobilePhone"> {{ $inscrito['mobile_phone']}}</span></p>
             
             </div>
             <div class="row">
-                <p class="col-lg-4"><strong>E-mail:</strong> {{ $inscrito['email']}}</p>   
+                <p class="col-lg-4" id="email"><strong>E-mail:</strong> <span class="email">{{ $inscrito['email']}}</span></p>   
             </div>
-            <div class="editar">
 
+
+
+
+            <div class="divEdit">
+                <form  name="editForm">
+                    @csrf
+                <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="home_phone">Telefone residencial</label>
+                            <input type="text" class="form-control phone_with_ddd" id="home_phone" name="home_phone" placeholder="Ex.: (00)0000-0000" value = "{{ $inscrito->home_phone }}">        
+                            </div>
+                        <div class="form-group col-md-4">
+                            <label for="work_phone">Telefone profissional</label>
+                            <input type="text" class="form-control phone_with_ddd" id="work_phone" name="work_phone" placeholder="Ex.: (00)0000-0000" value = "{{ $inscrito->work_phone }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="mobile_phone">Telefone celular</label>
+                            <input type="text" class="form-control mobile_with_ddd'" id="mobile_phone" name="mobile_phone" placeholder="Ex.: (00)00000-0000" value = "{{ $inscrito->mobile_phone }}">
+                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">E-mail*</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" value = "{{ $inscrito->email}}">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="confirmEmail">Confirmar e-mail*</label>
+                        <input type="text" class="form-control" id="confirmEmail" placeholder="Confirmar e-mail">
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="mr-2">
+                            <button class="mt-3 btn btn-primary edit" type="submit" style="width:120px">Enviar </button>
+                        </div>
+                        <div class="">
+                            <button class="mt-3 btn btn-alert cancel" type="submit" style="width:120px">Cancelar </button>
+                        </div>
+                    </div>
+                </form>
             </div>
+
+
+
+
+
             <div class="row">
                 <div class="col-12">
-                    <button class="mt-3 btn btn-primary btnEditar" style="width:120px" onclick="editar()">Editar</button>
+                    <button class="mt-3 btn btn-primary btnEditar" style="width:120px" >Editar</button>
+                    <div><p id="response"> </p></div>
                 </div>
             </div>
         </div>
@@ -126,45 +171,55 @@
         </div>
     </div>
 
-    <script>
-        let btnEditar = document.querySelector('.btnEditar')
-        let editarDados = document.querySelector(".editar")
+    <script>  
 
-    function editar() {
-        editarDados.innerHTML = `
-    <form method="POST">
-        <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="telResid">Telefone residencial</label>
-                    <input type="text" class="form-control phone_with_ddd" id="telResid" name="home_phone" placeholder="Ex.: (00)0000-0000">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="telProfis">Telefone profissional</label>
-                    <input type="text" class="form-control phone_with_ddd" id="telProfis" name="work_phone" placeholder="Ex.: (00)0000-0000">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="telCelular">Telefone celular</label>
-                    <input type="text" class="form-control mobile_with_ddd" id="telCelular" name="mobile_phone" placeholder="Ex.: (00)00000-0000">
-                </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="email">E-mail*</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="confirmEmail">Confirmar e-mail*</label>
-                <input type="text" class="form-control" id="confirmEmail" placeholder="Confirmar e-mail">
-            </div>
-        </div>
-        <div class="form-row">
-                <div class="col-12">
-                    <button class="mt-3 btn btn-primary" type="submit" style="width:120px">Enviar </button>
-                </div>
-            </div>
-    </form>
-        `
-        btnEditar.style.display = 'none'
-    }        
-    </script>
+$(function() {
+    
+    $('.divEdit').hide();
+
+    $('.btnEditar').on('click', function(){
+            $('.divEdit').show();
+            $('.btnEditar').hide();
+    });
+    $('.cancel').on('click', function(){
+            $('.divEdit').hide();
+            $('.btnEditar').show();
+    });
+
+    $('form[name ="editForm"]').submit(function(event){
+            event.preventDefault();
+            $('.phone_with_ddd').unmask();
+            $('.mobile_with_ddd').unmask();
+        
+        $.ajax({
+            url: "{{ route('inscrito.edit')}}",
+            type: "POST",
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(data) {
+                $('.homePhone').html(data.home_phone);
+                $('.workPhone').html(data.work_phone);
+                $('.mobilePhone').html(data.mobile_phone);
+                $('.email').html(data.email);
+
+                $('.divEdit').hide();
+                $('.btnEditar').show()
+
+                let html = '';
+                if (data.errors) {
+                    html = '<div class="alert alert-danger">';
+                        for (let count = 0; count < data.errors.length; count++) {
+                        html += `<p> ${data.errors[count]} </p>`;
+                        } 
+                        html += '</div>';
+                }
+            }
+        });
+    });
+
+});
+
+
+
+</script>
 @endsection
