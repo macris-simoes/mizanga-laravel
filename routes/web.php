@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
     //------------INSCRITO------------
     Route::prefix('inscrito')->group((function () {
         Route::get('/', 'InscritoController@home')->name('inscrito.home');
+        Route::post('/', 'InscritoController@infoUpdate')->name('inscrito.edit');
         Route::get('/certificados', 'InscritoController@certificados')->name('inscrito.certificados');
             Route::prefix('trabalho')->group(function () {
                 Route::get('/enviar', 'InscritoController@enviar')->name('trabalho.enviar');
