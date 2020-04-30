@@ -13,7 +13,6 @@
                 </div>
                     <a href="/admin/inscrito"> <span class="material-icons"> close </span> </a>
             </div>
-            <div>
             {{-- início da tabs do ADMIN READ INSCRITO --}}
 
             <div>
