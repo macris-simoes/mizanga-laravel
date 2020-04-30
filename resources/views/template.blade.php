@@ -57,14 +57,14 @@
                     <!-- parte de fora -->
                     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                        <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" width="40px"
-                            height="40px">
+                        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" class="rounded-circle"
+                            height="45px">
                     </button>
                     <!-- parte de dentro (dropdown) -->
                     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
                         <div>
-                            <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-                                width="70px" height="70px" class="mx-auto d-block" alt="...">
+                            <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}"
+                                 height="45px" class="mx-auto d-block rounded-circle" alt="...">
                                 <div class="card-body ">
                                     <h5 class="card-title text-center">Seus Dados</h5>
                                     <p class="text-center m-0 mt-2">{{Auth::user()->name}}</p>
@@ -128,14 +128,13 @@
                     <!-- parte de fora -->
                     <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                        <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png" width="40px"
-                            height="40px">
+                        <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}" class="rounded-circle" height="45px">
                     </button>
                     <!-- parte de dentro (dropdown) -->
                     <div class="dropdown-menu  dropdown-menu-right" class="card" aria-labelledby="dropdownMenuOffset">
                         <div>
-                            <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png"
-                                width="70px" height="70px" class="mx-auto d-block" alt="...">
+                            <img src="https://ui-avatars.com/api/?name={{Auth::user()->name}}"
+                                height="45px" class="mx-auto d-block rounded-circle" alt="...">
                                 <div class="card-body ">
                                     <h5 class="card-title text-center">Seus Dados</h5>
                                     <p class="text-center m-0 mt-2">{{Auth::user()->name}}</p>
@@ -174,7 +173,7 @@
                 <img src="{{ asset('img/crossmindlogo.png') }}" alt="" srcset="" class="apoiadores"> 
                 </div>
             </div>
-            <div class="col-md-2 col-lg-2 mt-3" >
+            <div class="col-md-3 col-lg-3 mt-3" >
                 <h6 class="text-uppercase mb-2 font-weight-bold text-white"> Links</h6>
                 <hr class="bg-warning mb-4 mt-0 d-inline-block mx-auto" style="width: 40px;">
                 <p> 
