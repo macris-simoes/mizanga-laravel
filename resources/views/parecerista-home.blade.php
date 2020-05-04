@@ -39,7 +39,7 @@
             @foreach($trabalhosAprovados as $trabalhoAprovado)
             <tr>
                 <td class="">{{$trabalhoAprovado->abstract_title}}</td>
-                <td class=""><a href="parecerista/trabalho/avaliar/{{$trabalhoAprovado->submission_id}}">Parecer</a></td>
+                <td class=""><a href="{{ url('storage/'.$trabalhoAprovado->include_evaluation) }}">Ver Parecer</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -55,7 +55,7 @@
             @foreach($trabalhosReprovados as $trabalhoReprovado)
             <tr>
                 <td class="">{{$trabalhoReprovado->abstract_title}}</td>
-                <td class=""><a href="parecerista/trabalho/avaliar/{{$trabalhoReprovado->submission_id}}">Ver avaliação</a></td>
+                <td class=""><a href="{{ url('storage/'.$trabalhoReprovado->include_evaluation) }}">Ver Avaliação</a></td>
             </tr>
             @endforeach
         </tbody>
