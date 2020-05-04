@@ -38,44 +38,25 @@
             <div class="list-group-flush">
 
                 <div class="list-group-item d-flex justify-content-between">
-                    <h6 class=" font-weight-bold">Trabalhos designados</h6>
+                    <h6 class=" font-weight-bold">Trabalhos pendentes</h6>
                 </div>
+                    @forelse($trabalhosPendentes as $trabalhoPendente)
+                    <div class="d-flex flex-column list-group-item">
+                        <div class="d-flex flex-row align-items-between flex-wrap">
+                            <div class="d-flex flex-column col-md-9">
+                                <p class="">{{$trabalhoPendente->abstract_title}} </p>
 
-                <div class="d-flex flex-column list-group-item">
-
-                    <div class="d-flex flex-row align-items-between flex-wrap">
-                        <div class="d-flex flex-column col-md-9">
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. </p>
-
-                            <small>Autor: John Doe</small>
-                            <small>Parecer: aguardando </small>
-                        </div>
-                        <div class="btn-group-vertical btn-group-sm col-md-3" role="group">
-                            <a class="d-flex justify-content-center align-items-center btn btn-warning border border-dark py-2" href="/admin/parecerista/substituir"> Retirar e substituir</a>
-                            <button type="submit" class="btn btn-warning border border-dark mt-1 py-2"> Apenas retirar </button>
+                                <small>Autor(a): {{$trabalhoPendente->author}}</small>
+                                <small>Parecer: aguardando </small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex flex-column list-group-item">
-
-                    <div class="d-flex flex-row align-items-between flex-wrap">
-                        <div class="d-flex flex-column col-md-9">
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. </p>
-
-                            <small>Autor: John Doe</small>
-                            <small>Parecer: aguardando </small>
-                        </div>
-                        <div class="btn-group-vertical btn-group-sm col-md-3" role="group">
-                            <a class="d-flex justify-content-center align-items-center btn btn-warning border border-dark py-2" href="/admin/parecerista/substituir"> Retirar e substituir</a>
-                            <button type="submit" class="btn btn-warning  border border-dark mt-1 py-2"> Apenas retirar </button>
-                        </div>
-                    </div>
-                </div>
-
-
-                {{-- fim div lista de trabalhos (abaixo)--}}
+                    @empty
+                    <p class="font-italic">Não há trabalhos avaliados.</p>
+                    @endforelse
+                    {{$trabalhosPendentes->links()}}
+                
+                    {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
 
             {{-- fim card-body (abaixo) --}}

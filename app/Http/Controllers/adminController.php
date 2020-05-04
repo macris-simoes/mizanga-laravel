@@ -350,8 +350,21 @@ class AdminController extends Controller
     public function listarParecerista()
     {
         $totalPareceristas = RefereeConfig::count();
-        $pareceristas = DB::table('referee_configs')->orderBy('appraiser_name','asc')->simplePaginate(10);
-        return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'pareceristas' => $pareceristas]);
+
+        $parecTrabalhos = DB::table("referee_configs")
+        ->select("referee_configs.*","trabalhos.quant")
+        ->join(DB::raw("(SELECT 
+            referee_configs.user_id, count(abstract_evaluations.id) as quant
+            FROM referee_configs 
+            LEFT JOIN mizanga.abstract_evaluations
+            ON abstract_evaluations.referee_id = referee_configs.user_id
+            GROUP BY referee_configs.user_id
+            ) as trabalhos"),function($join){
+                $join->on("referee_configs.user_id","=","trabalhos.user_id");
+        })
+        ->orderBy('appraiser_name','asc')->simplePaginate(10);;
+
+        return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'parecTrabalhos' => $parecTrabalhos]);
     }
     public function adminPareceristaPost()
     {
@@ -364,7 +377,11 @@ class AdminController extends Controller
         $eixosParecerista = AxisReferee::leftJoin('axis_configs','axis_configs.id','=','axis_referees.axis_id')
         ->where('axis_referees.referee_id','=',$parecerista_id)->get();
 
-        return view('admin-parecerista-visualizar', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
+        $trabalhosPendentes = AbstractEvaluation::leftJoin('abstract_submissions','abstract_submissions.id','=','abstract_evaluations.submission_id')
+        ->where('abstract_evaluations.referee_id','=',$parecerista_id)->where('abstract_evaluations.rate_work','=','')
+        ->select('abstract_submissions.*')->simplePaginate(5);
+
+        return view('admin-parecerista-visualizar', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista,'trabalhosPendentes' => $trabalhosPendentes]);
     }
     public function pareceristaTrabalhosAvaliados($parecerista_id)
     {
@@ -373,7 +390,11 @@ class AdminController extends Controller
         $eixosParecerista = AxisReferee::leftJoin('axis_configs','axis_configs.id','=','axis_referees.axis_id')
         ->where('axis_referees.referee_id','=',$parecerista_id)->get();
 
-        return view('admin-parecerista-visualizar-detalhe', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista]);
+        $trabalhosAvaliados = AbstractEvaluation::leftJoin('abstract_submissions','abstract_submissions.id','=','abstract_evaluations.submission_id')
+        ->where('abstract_evaluations.referee_id','=',$parecerista_id)->where('abstract_evaluations.rate_work','<>','')
+        ->select('abstract_submissions.*','abstract_evaluations.rate_work')->simplePaginate(5);
+
+        return view('admin-parecerista-visualizar-detalhe', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista, 'trabalhosAvaliados' => $trabalhosAvaliados]);
     }
 
 

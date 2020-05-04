@@ -38,55 +38,24 @@
             <div class="list-group-flush">
 
                 <div class="list-group-item d-flex justify-content-between">
-                    <h6 class="font-weight-bold">Trabalhos designados</h6>
-                    <h6 class="col-md-2 text-center font-weight-bold">Pareceres entregues</h6>
+                    <h6 class=" font-weight-bold">Trabalhos avaliados</h6>
                 </div>
-
+                @forelse($trabalhosAvaliados as $trabalhoAvaliado)
                 <div class="d-flex flex-column list-group-item">
-                    <div class="d-flex flex-row align-items-between">
-                        <div class="d-flex flex-column col-md-10">
+                    <div class="d-flex flex-row align-items-between flex-wrap">
+                        <div class="d-flex flex-column col-md-9">
+                            <p class="">{{$trabalhoAvaliado->abstract_title}} </p>
 
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. </p>
-
-                            <small>Autor: John Doe</small>
-                            <small>Parecer: aprovado </small>
-                        </div>
-                        <div class="d-flex col-md-2 justify-content-center ">
-                            
-                            <div class="btn-group-vertical" role="group">
-                                
-                                <button type="submit" class="btn btn-warning border border-dark mt-1 py-2"> ver </button>
-                                <button type="submit" class="btn btn-warning border border-dark mt-1 py-2"> apagar </button>
-                            
-                            </div>
+                            <small>Autor(a): {{$trabalhoAvaliado->author}}</small>
+                            <small>Parecer: {{$trabalhoAvaliado->rate_work}} </small>
                         </div>
                     </div>
                 </div>
-
-                <div class="d-flex flex-column list-group-item">
-                    <div class="d-flex flex-row align-items-between">
-                        <div class="d-flex flex-column col-md-10">
-
-                            <p class="">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. </p>
-
-                            <small>Autor: John Doe</small>
-                            <small>Parecer: aprovado </small>
-                        </div>
-                        <div class="d-flex col-md-2 justify-content-center ">
-                            
-                            <div class="btn-group-vertical" role="group">
-
-                                <button type="submit" class="btn btn-warning border border-dark mt-1 py-2"> ver </button>
-                                <button type="submit" class="btn btn-warning border border-dark mt-1 py-2"> apagar </button>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                @empty
+                    <p class="font-italic">Não há trabalhos avaliados.</p>
+                @endforelse
+                {{$trabalhosAvaliados->links()}}
+                
                 {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
             {{-- fim card-body (abaixo) --}}

@@ -24,17 +24,16 @@
     </div>
     {{-- fim do campo de busca --}}
 
-
     {{-- início dos cards de resultado da busca --}}
-    @if(isset($pareceristas))
+    
     <div class="list-group my-3">
-        @foreach($pareceristas as $parecerista)
-        <a href="/admin/parecerista/visualizar/{{$parecerista->user_id}}" class="list-group-item list-group-item-action">
+        @forelse($parecTrabalhos as $parecTrabalho)
+        <a href="/admin/parecerista/visualizar/{{$parecTrabalho->user_id}}" class="list-group-item list-group-item-action">
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column align-items-start">
-                    <h5 class="mb-1">{{$parecerista->appraiser_name}}</h5>
-                    <small>Parecerista || {{$parecerista->appraiser_email}}</small>
-                    <small>Trabalhos designados: 1234</small>
+                    <h5 class="mb-1">{{$parecTrabalho->appraiser_name}}</h5>
+                    <small>Parecerista || {{$parecTrabalho->appraiser_email}}</small>
+                    <small>Trabalhos designados: {{$parecTrabalho->quant}}</small>
                 </div>
                 
                 <div class="d-flex flex-column justify-content-between align-items-end">    
@@ -42,14 +41,13 @@
                 </div>
             </div>
         </a>
-        @endforeach
-        {{ $pareceristas->links()}}
+        @empty
+        <p class="font-italic">Não há parceristas cadastrados.</p>
+        @endforelse
+        {{$parecTrabalhos->links()}}
 
       
     </div>
-    @else
-    <p class="font-italic">Não há pareceristas cadastrados</p>
-    @endif
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->
 </div>
