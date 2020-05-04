@@ -15,7 +15,7 @@
             <small>Clique sobre o nome do inscrito para acessar as informações</small>
         </div>
         
-        <div class="col-lg-3 my-1">
+        {{-- <div class="col-lg-3 my-1">
             <div>
                 <span class="badge badge-success badge-pill">$</span>
                 <small>Pagamento realizado</small>
@@ -28,7 +28,7 @@
                 <span class="badge badge-warning badge-pill">A</span>
                 <small>Trabalho aprovado</small>
             </div>      
-        </div>
+        </div> --}}
     </div>
     
 

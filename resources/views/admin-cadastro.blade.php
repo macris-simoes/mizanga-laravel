@@ -45,7 +45,7 @@
     </div>
     <div class="container shadow">
         @if(session('mensagem'))
-            <div class="alert alert-success container">{{session('mensagem')}}</div>
+            <div class="alert alert-success container mt-3">{{session('mensagem')}}</div>
         @endif
         <div class="my-4 pt-1">
             <h1 class="display-3">Cadastrar Admin</h1>

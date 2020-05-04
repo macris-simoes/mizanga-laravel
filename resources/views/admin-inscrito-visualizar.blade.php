@@ -128,11 +128,6 @@
                         </p>
                     </div>
                 </div>
-                {{-- buttons --}}
-                <div class="mt-4 mb-1 d-flex flex-row justify-content-end">
-                    <input type="submit" class="btn btn-warning" value="Apagar registro">
-                </div>
-
             </div>
             {{-- FIM DIV DETALHES DA INSCRIÇÃO --}}
 

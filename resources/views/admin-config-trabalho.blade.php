@@ -9,7 +9,7 @@
 @if(session('mensagem'))
   <div class="alert alert-success container">{{session('mensagem')}}</div>
 @endif
-<div class="container shadow">
+<div class="container my-3 col-md-10 shadow">
 
   <!-- início Cabeçalho -->
   <div class="mb-1 pt-1">
@@ -26,7 +26,7 @@
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
     @foreach ($modals as $modal)
     <li class="list-group-item "> 
-      <div class="d-flex flex-row  align-items-center">
+      <div class="d-flex flex-row  align-items-center justify-content-between">
         <div>
           {{$modal['work_modality']}}
         </div>

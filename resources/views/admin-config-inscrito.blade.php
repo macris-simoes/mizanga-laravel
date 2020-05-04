@@ -6,7 +6,7 @@
 @if(session('mensagem'))
   <div class="alert alert-success container">{{session('mensagem')}}</div>
 @endif
-<div class="container shadow mb-3 pb-4">
+<div class="container my-3 col-md-10 shadow">
   <!-- início Cabeçalho1 -->
   <div>
     <h1 class="display-3">Inscritos</h1>
@@ -15,14 +15,14 @@
   <!-- fim Cabeçalho1 -->
   
   <!-- início div row -->
-  <div class= "row ">
+  <div class= "row mb-3">
     
     <!-- Início lista de modalidades -->
     <div class=" list-group-flush col-md-3 my-1 border-right">
       <h6 class="my-1 font-weight-bold">Modalidades</h6>
       @foreach ($modals as $modal)
       <li class="list-group-item "> 
-        <div class="d-flex flex-row  align-items-center">
+        <div class="d-flex flex-row  align-items-center justify-content-between">
           <div>
             {{$modal['register_modality']}}
           </div>

@@ -28,10 +28,10 @@
             {{-- fim da tabs do ADMIN READ INSCRITO --}}
 
 {{-- ------------------------------------------------------------------------------ --}}
-            @if(isset($trabalhos))
+   
             {{-- div lista de trabalhos --}}
             <div class="list-group-flush">
-                @foreach($trabalhos as $trabalho)
+                @forelse($trabalhos as $trabalho)
                 
                 <div class="d-flex flex-column list-group-item">
                     <div class="d-flex flex-row align-items-start ">
@@ -52,20 +52,15 @@
                             <p>{{$trabalho->abstract_body}}</p>
                         </div>
                     </div>
-                    <div class="d-flex flex-row justify-content-end">
-                        <button class="btn btn-warning">
-                            Deletar trabalho
-                        </button>
-                    </div>
                 </div>
-                @endforeach
+                
                 
                 {{-- fim div lista de trabalhos (abaixo)--}}
             </div>
             {{ $trabalhos->links() }}  
-            @else
+            @empty
                 <p class="font-italic">Não há trabalhos cadastrados</p>
-            @endif
+            @endforelse
             {{-- fim card-body (abaixo) --}}
         </div>
         {{-- fim da div card (abaixo) --}}

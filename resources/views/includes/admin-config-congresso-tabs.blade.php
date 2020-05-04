@@ -1,8 +1,7 @@
-   
 {{-- início da tabs do ADMIN CONFIG CONGRESSO --}}
 
 <div class="container">
-    <div class="container">
+    <div class="">
         <!-- Início do menu das pills -->
         <nav>
             <div class="nav nav-pills" id="nav-tab" role="tablist">
@@ -17,13 +16,21 @@
         <!-- fim da div container -->
     </div>
     {{-- fim da pills do ADMIN --}}
-    
-    <ul class="nav nav-tabs my-3" id="pills-tab" role="tablist">
-        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/congresso' ? 'active' : '' }}" href="/admin/config/congresso">Configurar congresso</a></li>
-        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/eixos' ? 'active' : '' }}" href="/admin/config/eixos">Inserir Eixos</a></li>
-        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/inscrito' ? 'active' : '' }}" href="/admin/config/inscrito">Configurar modalidades de inscrição</a></li>
-        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/trabalho' ? 'active' : '' }}" href="/admin/config/trabalho">Configurar trabalhos</a></li>
-        <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/parecerista' ? 'active' : '' }}" href="/admin/config/parecerista">Incluir pareceristas</a></li>
-    </ul>
-    
+    <div class="container">
+
+        <ul class="nav nav-tabs mt-3" id="pills-tab" role="tablist">
+            <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/congresso' ? 'active' : '' }}"
+                    href="/admin/config/congresso">Configurar congresso</a></li>
+            <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/eixos' ? 'active' : '' }}"
+                    href="/admin/config/eixos">Inserir Eixos</a></li>
+            <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/inscrito' ? 'active' : '' }}"
+                    href="/admin/config/inscrito">Configurar modalidades de inscrição</a></li>
+            <li class="nav-item"> <a class="nav-link {{Request::path() === 'admin/config/trabalho' ? 'active' : '' }}"
+                    href="/admin/config/trabalho">Configurar trabalhos</a></li>
+            <li class="nav-item"> <a
+                    class="nav-link {{Request::path() === 'admin/config/parecerista' ? 'active' : '' }}"
+                    href="/admin/config/parecerista">Incluir pareceristas</a></li>
+        </ul>
+    </div>
+
 </div>

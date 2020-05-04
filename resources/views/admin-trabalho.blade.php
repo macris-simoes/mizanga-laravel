@@ -15,7 +15,7 @@
             <small>Clique sobre o nome do trabalho para acessar as informações</small>
         </div>
         
-        <div class="col-lg-3 my-1">
+        {{-- <div class="col-lg-3 my-1">
             <div>
                 <span class="badge badge-warning badge-pill">A</span>
                 <small>Trabalho aprovado</small>
@@ -28,7 +28,7 @@
                 <span class="badge badge-dark badge-pill">X</span>
                 <small>Trabalho recusado</small>
             </div>      
-        </div>
+        </div> --}}
     </div>
 
     <form action="/admin/trabalho" method="POST">
@@ -56,7 +56,7 @@
     <div class="list-group my-3">
         
 
-        @foreach($trabalhos as $trabalho)
+        @forelse($trabalhos as $trabalho)
         <a href="/admin/trabalho/visualizar/{{$trabalho->id}}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{$trabalho->abstract_title}}</h5>
@@ -67,18 +67,18 @@
                 <small class="col-md-10">{{$trabalho->category}} || {{$trabalho->author}}</small>
                 
                 <div class="d-flex w-100 justify-content-end">
-                    <span class="badge badge-warning badge-pill">A</span>
+                    {{-- <span class="badge badge-warning badge-pill">A</span> --}}
                     {{-- <span class="badge badge-light badge-pill">...</span>
                     <span class="badge badge-dark badge-pill">X</span> --}}
                 </div>
             </div>
         </a>
-        @endforeach
+        @empty
+        <p class="font-italic">Não há trabalhos submetidos</p>
+        @endforelse
         {{ $trabalhos->links()}}
         
     </div>
-    @else
-    <p class="font-italic">Não há trabalhos submetidos</p>
     @endif
         {{-- fim dos cards de resultado da busca --}}
     <!-- fim lista de lista de eixos -->
