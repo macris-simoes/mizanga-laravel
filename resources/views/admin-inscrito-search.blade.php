@@ -1,10 +1,8 @@
-@if (isset($query))
+<p class="p-3"> Resultado da busca <b> {{$query ?? ''}} </b>: </p>
+<div class="bg-light d-flex justify-content-start">
 
-<p class="p-3"> Resultado da busca <b> {{$query}} </b>: </p>
-<div class="bg-light d-flex justify-content-center">
-
-    <div class="list-group col-md-10 my-3">
-        @foreach($details as $inscrito)
+    <div class="list-group col-md-10 m-2 bg-white">
+        @forelse($details as $inscrito)
         <a href="/admin/inscrito/visualizar/{{$inscrito->user_id}}" class="list-group-item list-group-item-action">
             <div class=" d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{$inscrito->name}}</h5>
@@ -15,32 +13,11 @@
 
             </div>
         </a>
-        @endforeach
+        @empty
+        <div class=" m-5">
+            <h5 class="display-6">Sua busca não retornou resultados</h5>
+        </div>
+        @endforelse
 
     </div>
 </div>
-
-
-@elseif(empty($query))
-
-    
-<div class="container my-5">
-    
-    <div class="container mt-3 col-md-10 shadow">
-        
-        <div class="col-lg-9 m-5">
-            <h1 class="display-6">Sua busca não retornou resultados</h1>
-            
-            <a href="/admin/inscrito">Voltar para a busca</a>
-        </div>
-        
-        
-    </div>
-
-    
-    
-
-    
-    @endif
-
-    {{-- fim do campo de busca --}}

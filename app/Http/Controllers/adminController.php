@@ -292,24 +292,16 @@ class AdminController extends Controller
     public function InscritoSearch(Request $request){
         $totalInscritos = Registration::count();
             $inscritos = DB::table('registrations')->simplePaginate(10);
-            
     
         $q = $request->input('q');
-        if($q != ""){
-            $registration = Registration::where('name', 'LIKE', '%' .$q. '%')
+
+            $registration = $q? 
+            Registration::where('name', 'LIKE', '%' .$q. '%')
                                             -> orWhere('email', 'LIKE', '%' .$q. '%')
                                             -> orWhere ('register_modality', 'LIKE', '%' .$q. '%')
-                                            -> get();
-            if(count($registration) > 0);
+                                            -> get() : [];
                 return view ('admin-inscrito') -> withDetails($registration)->withQuery($q)->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
-        }else{
-            return view('admin-inscrito-search')->withMessage('Não encontrado');
-            // return view('admin-inscrito')->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
-        };
     }
-
-
-
     //VER TRABALHOS
 
     public function listarTrabalho(){   
@@ -322,22 +314,16 @@ class AdminController extends Controller
         $totalTrabalhos = AbstractSubmission::count();
         $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
         
-            
         $q = $request->input('q');
-        if($q != ""){
-            $abstract = AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')
+            $abstract = $q? AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')
                                             -> orWhere('abstract_body', 'LIKE', '%' .$q. '%')
                                             -> orWhere ('first_keyword', 'LIKE', '%' .$q. '%')
                                             -> orWhere ('second_keyword', 'LIKE', '%' .$q. '%')
                                             -> orWhere ('third_keyword', 'LIKE', '%' .$q. '%')
                                             -> orWhere ('author', 'LIKE', '%' .$q. '%')
-                                            -> get();
-            if(count($abstract) > 0);
+                                            -> get() : [];
+            
                 return view ('admin-trabalho') -> withDetails($abstract)->withQuery($q)->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);;
-        }else{
-            return view('admin-trabalho-search')->withMessage('Não encontrado');
-        };
-        return view('admin-trabalho')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
     }
 
 

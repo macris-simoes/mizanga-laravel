@@ -11,7 +11,7 @@
     <div class="row my-3">  
         <div class="col-lg-9 my-1">
             <h1 class="display-4">Pesquisar Inscritos</h1>
-            <p>Inscrições até o momento: {{$totalInscritos}}</p>
+            <p>Inscrições até o momento: {{$totalInscritos ?? 'Ainda não há inscrições'}}</p>
             <small>Clique sobre o nome do inscrito para acessar as informações</small>
         </div>
         
@@ -32,7 +32,7 @@
     </div>
     
 
-    <form action="/admin-inscrito" method="POST">
+    <form action="/admin/inscrito" method="POST">
         @csrf
         <div class="input-group  mb-3">
             <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome"

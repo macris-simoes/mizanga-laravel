@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <form action="/admin-trabalho" method="POST">
+    <form action="/admin/trabalho" method="POST">
         @csrf
         <div class="input-group  mb-3">
             <input type="text" class="form-control" placeholder="Insira uma palavra ou trecho" aria-label="Buscar nome"
