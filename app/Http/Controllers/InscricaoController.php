@@ -14,7 +14,9 @@ use App\RefereeConfig;
 class InscricaoController extends Controller
 {
     public function inscricaoIndex() {
-        $modalidades = AttendeeConfig::all();
+        $modalidades = AttendeeConfig::where('register_end_date', '>=', date("Y-m-d H:i:s"))
+        ->where('register_start_date', '<=', date("Y-m-d H:i:s"))
+        ->get();
         return view("inscricao-usuario", ["modalidades"=>$modalidades]);
     }
 
