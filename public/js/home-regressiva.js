@@ -1,5 +1,5 @@
 // Definino a data para o countdown
-var dataDaRegressiva = new Date("Oct 2, 2020 23:59:59").getTime();
+var dataDaRegressiva = new Date("May 8, 2020 13:00:00").getTime();
 
 function executaRegressiva() {
   // Pega a data e a hora do dia de hoje

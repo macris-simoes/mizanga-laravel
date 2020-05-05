@@ -35,8 +35,12 @@
             height: 70px;
         }
 
+        .mizanga{
+            font-family: 'Amaranth', sans-serif;
+        }
+
     </style>
-    <title>Mizanga Beta</title>
+    <title>Mizanga Pro</title>
 </head>
 
 <body>
@@ -44,7 +48,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white container-flex">
         <div class="container">    
                 <a class="navbar-brand mr-auto" href="/home">
-                    <h2 class="text-primary"> Mizanga</h2>
+                    <h2 class="mizanga text-primary"> Mizanga</h2>
                 </a>
                 @if(!Auth::check())
                 <a class="btn btn-primary rounded-right d-lg-none d-xl-none mr-1" href="/login">LOGIN</a>
@@ -180,7 +184,7 @@
                     <a href="/inscricao-usuario" class="text-decoration-none text-white">Inscrição</a>
                 </p>
                 <p> 
-                    <a href="#" class="text-decoration-none text-white text-left">Sobre o Congresso</a>
+                    <a href="" class="text-decoration-none text-white text-left">Sobre o Congresso</a>
                 </p>
                 <p> 
                     <a href="/login" class="text-decoration-none text-white text-left">Login</a>
@@ -207,7 +211,7 @@
             <div class="col-md-7 col-lg-8">
       
               <!--Copyright-->
-              <p class="text-center text-md-left text-white"><small>© 2020 Copyright Congresso XXXXXX.
+              <p class="text-center text-md-left text-white"><small>© 2020 Copyright Congresso Mundial das Mizangueiras.
                 <a href="#" class="text-decoration-none text-white"> Desenvolvido por Mizanga.</a>
             </small></p>
       
@@ -218,22 +222,22 @@
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a class="btn-floating btn-sm mx-1">
+                      <a class="btn-floating btn-sm mx-1" href="#">
                         <img src="{{ asset('img/facebook (1).png') }}" alt="" srcset="">
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a class="btn-floating btn-sm mx-1">
+                      <a class="btn-floating btn-sm mx-1" href="#">
                         <img src="{{ asset('img/instagram (1).png') }}" alt="" srcset="">
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a class="btn-floating btn-sm mx-1">
+                      <a class="btn-floating btn-sm mx-1" href="#">
                         <img src="{{ asset('img/twitter.png') }}" alt="" srcset="">
                       </a>
                     </li>
                     <li class="list-inline-item">
-                      <a class="btn-floating btn-sm mx-1">
+                      <a class="btn-floating btn-sm mx-1" href="#">
                         <img src="{{ asset('img/whatsapp (3).png') }}" alt="" srcset="">
                       </a>
                     </li>

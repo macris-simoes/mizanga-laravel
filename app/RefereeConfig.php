@@ -16,7 +16,7 @@ class RefereeConfig extends Model
         return $this->hasMany(AxisReferee::class);
     }
 
-    public function abstract_evauations(){
+    public function abstract_evaluations(){
         return $this->hasMany(AbstractEvaluation::class);
     }
 

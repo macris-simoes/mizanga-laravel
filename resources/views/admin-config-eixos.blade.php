@@ -7,7 +7,7 @@
 @endif
 
 <!-- início div container CONFIG CONGRESSO -->
-<div class="container my-3 col-md-10 shadow">
+<div class="container my-3 shadow">
 
 
     <!-- início Cabeçalho1 -->

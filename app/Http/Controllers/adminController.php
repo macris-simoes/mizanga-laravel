@@ -356,7 +356,7 @@ class AdminController extends Controller
         ->join(DB::raw("(SELECT 
             referee_configs.user_id, count(abstract_evaluations.id) as quant
             FROM referee_configs 
-            LEFT JOIN mizanga.abstract_evaluations
+            LEFT JOIN abstract_evaluations
             ON abstract_evaluations.referee_id = referee_configs.user_id
             GROUP BY referee_configs.user_id
             ) as trabalhos"),function($join){

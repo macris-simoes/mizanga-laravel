@@ -6,7 +6,7 @@
 @if(session('mensagem'))
   <div class="alert alert-success container">{{session('mensagem')}}</div>
 @endif
-<div class="container my-3 col-md-10 shadow">
+<div class="container my-3 shadow">
   <!-- início Cabeçalho1 -->
   <div>
     <h1 class="display-3">Inscritos</h1>

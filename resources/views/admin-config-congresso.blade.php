@@ -3,11 +3,11 @@
 @include('includes/admin-config-congresso-tabs')
 
 @if(session('mensagem'))
-    <div class="alert alert-success container">{{session('mensagem')}}</div>
+    <div class="alert alert-success mt-3 container">{{session('mensagem')}}</div>
 @endif
 
 <!-- início div container CONFIG CONGRESSO -->
-<div class="container my-3 col-md-10 shadow">
+<div class="container my-3 shadow">
 
 
     <!-- início Cabeçalho1 -->

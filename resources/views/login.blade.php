@@ -55,7 +55,7 @@
 							</label>
 						</div>
 					</div>
-					{{-- <a href="/inscrito-home" class="btn btn-primary btn-block" type="submit">Login</a> --}}
+					
 					<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 				</form>
 				<small>Ainda não tem cadastro? <a href="/instrucoes-inscricao">Clique aqui e faça a sua inscrição.</a></small>

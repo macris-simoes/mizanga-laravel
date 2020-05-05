@@ -9,7 +9,7 @@
 @if(session('mensagem'))
   <div class="alert alert-success container">{{session('mensagem')}}</div>
 @endif
-<div class="container my-3 col-md-10 shadow">
+<div class="container my-3 shadow">
 
   <!-- início Cabeçalho -->
   <div class="mb-1 pt-1">
