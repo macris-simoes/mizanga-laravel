@@ -35,7 +35,7 @@ class AdminController extends Controller
         $trabalhosSubmetidos = AbstractSubmission::count();
         $trabalhosAvaliados = AbstractEvaluation::where('rate_work','<>','')->count();
         $congresso = ConferenceConfig::select('name_conference','event_start_date','event_end_date')->first();
-        $inscricoesTrabalho = AbstractConfig::orderBy('work_start_date','asc')->select('work_start_date')->first();
+        $inscricoesTrabalho = AbstractConfig::orderBy('work_start_date','asc')->get();        
     
         return view('admin-home', ['totalInscritos'=> $totalInscritos,'totalPareceristas'=> $totalPareceristas,'trabalhosSubmetidos'=>$trabalhosSubmetidos,'trabalhosAvaliados'=>$trabalhosAvaliados, 'congresso' => $congresso, 'inscricoesTrabalho'=> $inscricoesTrabalho]);
     }
@@ -94,7 +94,7 @@ class AdminController extends Controller
 
         $novoAdmin->save();
 
-        return redirect('/admin-cadastro')->with('mensagem','Novo cadastro de ADMIN feito com sucesso.');
+        return redirect('/admin/config/congresso')->with('mensagem','Novo cadastro de ADMIN feito com sucesso.');
 
     }
 

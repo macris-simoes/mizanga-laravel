@@ -9,7 +9,6 @@
 <!-- início div container CONFIG CONGRESSO -->
 <div class="container my-3 shadow">
 
-
     <!-- início Cabeçalho1 -->
     <div class="mb-1 pt-1">
         <h1 class="display-3">Eixos Temáticos</h1>
@@ -40,7 +39,7 @@
         <div class="list-group-flush">
             @foreach($eixos as $eixo)
             <div class="d-flex flex-column list-group-item">
-                <div class="d-flex flex-row align-items-start justify-content-between ">
+                <div class="d-flex flex-row justify-content-between">
                     <div class="d-flex flex-column">
                         <p class="">{{ $eixo['axis'] }}</p>
                     </div>
