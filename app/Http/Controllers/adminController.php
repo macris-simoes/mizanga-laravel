@@ -291,19 +291,16 @@ class AdminController extends Controller
 
     public function InscritoSearch(Request $request){
         $totalInscritos = Registration::count();
-            $inscritos = DB::table('registrations')->simplePaginate(10);
+            $inscritos = DB::table('registrations')->orderBy('name','asc')->simplePaginate(10);
     
         $q = $request->input('q');
 
             $registration = $q? 
-            Registration::where('name', 'LIKE', '%' .$q. '%')
-                                            -> orWhere('email', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('register_modality', 'LIKE', '%' .$q. '%')
-                                            -> get() : [];
+            Registration::where('name', 'LIKE', '%' .$q. '%')-> orWhere('email', 'LIKE', '%' .$q. '%')-> orWhere ('register_modality', 'LIKE', '%' .$q. '%')-> get() : [];
                 return view ('admin-inscrito') -> withDetails($registration)->withQuery($q)->with('totalInscritos', $totalInscritos)->with('inscritos', $inscritos);
     }
-    //VER TRABALHOS
 
+//VER TRABALHOS
     public function listarTrabalho(){   
         $totalTrabalhos = AbstractSubmission::count();
         $trabalhos = DB::table('abstract_submissions')->orderBy('abstract_title','asc')->simplePaginate(10);
@@ -315,20 +312,13 @@ class AdminController extends Controller
         $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
         
         $q = $request->input('q');
-            $abstract = $q? AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')
-                                            -> orWhere('abstract_body', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('first_keyword', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('second_keyword', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('third_keyword', 'LIKE', '%' .$q. '%')
-                                            -> orWhere ('author', 'LIKE', '%' .$q. '%')
-                                            -> get() : [];
+            $abstract = $q? AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')-> orWhere('abstract_body', 'LIKE', '%' .$q. '%')-> orWhere ('first_keyword', 'LIKE', '%' .$q. '%')-> orWhere ('second_keyword', 'LIKE', '%' .$q. '%')-> orWhere ('third_keyword', 'LIKE', '%' .$q. '%')-> orWhere ('author', 'LIKE', '%' .$q. '%')-> get() : [];
             
-                return view ('admin-trabalho') -> withDetails($abstract)->withQuery($q)->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);;
+                return view ('admin-trabalho') -> withDetails($abstract)->withQuery($q)->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
     }
 
 
-    public function visualizarTrabalho($trabalho_id)
-    {
+    public function visualizarTrabalho($trabalho_id){
         $trabalho = AbstractSubmission::leftJoin('registrations','registrations.user_id','=','abstract_submissions.registration_id')
         ->leftJoin('abstract_evaluations','abstract_evaluations.submission_id','=','abstract_submissions.id')
         ->leftJoin('referee_configs','referee_configs.user_id','=','abstract_evaluations.referee_id')
@@ -337,16 +327,19 @@ class AdminController extends Controller
         return view('admin-trabalho-visualizar')->with('trabalho', $trabalho)->with('trabalho_id', $trabalho_id);
     }
 
-    public function trabalhoDelete(AbstractSubmission $id){
-        $id -> delete();
-       return redirect('/admin/trabalho')->withMessage("trabalho apagado!");        
+    public function trabalhoDelete($id){
+        $trabalho = AbstractSubmission::find($id);
+        $trabalho -> delete();
+        $parecer = AbstractEvaluation::find($id);
+        $parecer -> delete();
+       return redirect('/admin/trabalho')->withMessage("Trabalho apagado!");        
     }
-    
+
+//FIM VER TRABALHOS
 
 
 
     // VER PARECERISTA
- 
     public function listarParecerista()
     {
         $totalPareceristas = RefereeConfig::count();
@@ -366,10 +359,7 @@ class AdminController extends Controller
 
         return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'parecTrabalhos' => $parecTrabalhos]);
     }
-    public function adminPareceristaPost()
-    {
-        return view('admin-parecerista');
-    }
+    
     public function pareceristaTrabalhosPendentes($parecerista_id)
     {
         $parecerista = RefereeConfig::where('user_id','=',$parecerista_id)->first();
@@ -396,6 +386,34 @@ class AdminController extends Controller
 
         return view('admin-parecerista-visualizar-detalhe', ['parecerista_id'=> $parecerista_id, 'parecerista' => $parecerista, 'eixosParecerista' => $eixosParecerista, 'trabalhosAvaliados' => $trabalhosAvaliados]);
     }
+
+    public function pareceristaSearch(Request $request){
+        $totalPareceristas = RefereeConfig::count();
+
+        $parecTrabalhos = DB::table("referee_configs")
+        ->select("referee_configs.*","trabalhos.quant")
+        ->join(DB::raw("(SELECT 
+            referee_configs.user_id, count(abstract_evaluations.id) as quant
+            FROM referee_configs 
+            LEFT JOIN abstract_evaluations
+            ON abstract_evaluations.referee_id = referee_configs.user_id
+            GROUP BY referee_configs.user_id
+            ) as trabalhos"),function($join){
+                $join->on("referee_configs.user_id","=","trabalhos.user_id");
+        })
+        ->orderBy('appraiser_name','asc')->simplePaginate(10);;
+
+       
+        
+        $q = $request->input('q');
+            $referee = $q? RefereeConfig::where('appraiser_cpf', 'LIKE', '%' .$q. '%')
+                                            -> orWhere('appraiser_name', 'LIKE', '%' .$q. '%')
+                                            -> orWhere ('appraiser_email', 'LIKE', '%' .$q. '%')
+                                            -> get() : [];
+            
+                                            return view('admin-parecerista', ['totalPareceristas' => $totalPareceristas, 'parecTrabalhos' => $parecTrabalhos]) -> withDetails($referee)->withQuery($q);
+    }
+
 
 
     public function pareceristaSubstituir()

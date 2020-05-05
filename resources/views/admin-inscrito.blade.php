@@ -38,7 +38,7 @@
             <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome"
                 aria-describedby="button-addon2" name="q">
             <div class="input-group-append">
-                <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+                <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
             </div>
         </div>
     </form>

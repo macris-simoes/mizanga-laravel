@@ -12,16 +12,25 @@
         <div>
             <h1 class="display-4">Pareceristas</h1>
             <p>Pareceristas cadastrados: {{$totalPareceristas}}</p>
-            <small>Clique sobre o nome do parecerista para acessar as informações</small>
+            <a href="/admin/config/parecerista"> Cadastrar novo parecerista </a>
         </div>
     </div>
+    <small>Clique sobre o nome do parecerista para acessar as informações</small>
 
-    <div class="input-group  mb-3">
-        <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+    <form action="/admin/parecerista" method="POST">
+        @csrf
+        <div class="input-group  mb-3">
+            <input type="text" class="form-control" placeholder="Insira um nome" aria-label="Buscar nome"
+                aria-describedby="button-addon2" name="q">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
+            </div>
         </div>
-    </div>
+    </form>
+
+    @if (isset($details))
+    @include('admin-parecerista-search')
+    @endif
     {{-- fim do campo de busca --}}
 
     {{-- início dos cards de resultado da busca --}}

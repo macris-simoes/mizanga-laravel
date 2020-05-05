@@ -7,6 +7,11 @@
 <!-- Início lista cRud index trabalho -->
 <div class="container mt-3 col-md-10 shadow">
 
+    @if(session('message'))
+<div class="alert alert-success container">{{session('message')}}</div>
+@endif
+
+
     {{-- início do campo de busca --}}
     <div class="row my-3">  
         <div class="col-lg-9 my-1">
@@ -37,7 +42,7 @@
             <input type="text" class="form-control" placeholder="Insira uma palavra ou trecho" aria-label="Buscar nome"
                 aria-describedby="button-addon2" name="q">
             <div class="input-group-append">
-                <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+                <button class="btn btn-primary" type="submit" id="button-addon2">Buscar</button>
             </div>
         </div>
     </form>

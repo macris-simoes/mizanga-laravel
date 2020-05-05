@@ -70,7 +70,7 @@
                         <a href="/admin/trabalho" class=""> Voltar </a>
                         <form action="/admin/trabalho/visualizar/{{ $trabalho['id']}}" method="post">
                             @csrf
-                            <input hidden value="{{$trabalho}} " >
+                            <input hidden value="{{$trabalho['id']}}" name="q" >
                             <button class="btn btn-warning ml-2 " type="submit">
                                 Apagar trabalho
                             </button>

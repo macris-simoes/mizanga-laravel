@@ -9,7 +9,7 @@
 <div class="container my-3 shadow">
     <div class="mb-1 pt-1">
         <h1 class="display-3">Incluir Parecerista</h1>
-        <p class="lead font-italic"></p>
+        <a class="" href="/admin/parecerista"> ver lista de pareceristas já cadastrados </a>
     </div>
     
     <form method="post" id="cadastro-parecerista">

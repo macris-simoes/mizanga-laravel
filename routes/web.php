@@ -91,7 +91,7 @@ Route::middleware(['auth'])->group(function () {
         //--------ADMIN-PARECERISTA----------
         Route::prefix('parecerista')->group(function(){
             Route::get('/', 'AdminController@listarParecerista');
-            Route::post('/', 'AdminController@adminPareceristaPost'); //SEARCH?
+            Route::post('/', 'AdminController@pareceristaSearch');
             Route::get('/visualizar/{user_id}', 'AdminController@pareceristaTrabalhosPendentes');
             Route::get('/visualizar-detalhe/{user_id}', 'AdminController@pareceristaTrabalhosAvaliados');
             Route::get('/substituir', 'AdminController@pareceristaSubstituir');
