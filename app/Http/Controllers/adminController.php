@@ -335,6 +335,23 @@ class AdminController extends Controller
        return redirect('/admin/trabalho')->withMessage("Trabalho apagado!");        
     }
 
+
+    public function trabalhoAtribuirParecerista(){
+        $totalTrabalhos = AbstractSubmission::count();
+        $trabalhos = DB::table('abstract_submissions')->orderBy('abstract_title','asc')->simplePaginate(10);
+        return view('admin-trabalho-atribuir')->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
+    }
+
+    public function trabalhoAtribuirPareceristaSearch(Request $request){
+        $totalTrabalhos = AbstractSubmission::count();
+        $trabalhos = DB::table('abstract_submissions')->simplePaginate(10);
+        
+        $q = $request->input('q');
+            $abstract = $q? AbstractSubmission::where('abstract_title', 'LIKE', '%' .$q. '%')-> orWhere('abstract_body', 'LIKE', '%' .$q. '%')-> orWhere ('first_keyword', 'LIKE', '%' .$q. '%')-> orWhere ('second_keyword', 'LIKE', '%' .$q. '%')-> orWhere ('third_keyword', 'LIKE', '%' .$q. '%')-> orWhere ('author', 'LIKE', '%' .$q. '%')-> get() : [];
+            
+                return view ('admin-trabalho-atribuir') -> withDetails($abstract)->withQuery($q)->with('totalTrabalhos', $totalTrabalhos)->with('trabalhos', $trabalhos);
+    }
+
 //FIM VER TRABALHOS
 
 

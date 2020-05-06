@@ -85,6 +85,8 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/', 'AdminController@trabalhoSearch');
             Route::get('/visualizar/{id}', 'AdminController@visualizarTrabalho');
             Route::post('/visualizar/{id}','AdminController@trabalhoDelete');
+            Route::get('/atribuir','AdminController@trabalhoAtribuirParecerista');
+            Route::post('/atribuir', 'AdminController@trabalhoAtribuirPareceristaSearch');
         });
 
 
